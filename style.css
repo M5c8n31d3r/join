@@ -1,0 +1,12 @@
+/* Elemente */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+}
+/* Klassen */
+/* ID's */
+/* Mobile View 1000px*/
+@media (max-width: 800px) {
+}
