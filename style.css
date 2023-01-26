@@ -1,9 +1,19 @@
+/* Variablen */
+:root {
+  --darkblue: #2a3647;
+  --darkblue-active: #091931;
+  --lightblue: #29abe2;
+  --grey: #cdcdcd;
+  --white: #ffffff;
+  --black: #000000;
+}
 /* Elemente */
 html {
   scroll-behavior: smooth;
 }
 body {
   margin: 0;
+  background-color: var(--darkblue);
 }
 /* Klassen */
 /* ID's */
