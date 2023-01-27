@@ -1,21 +1,74 @@
-/* Variablen */
+/* Variables */
 :root {
+  /* Colors */
   --darkblue: #2a3647;
   --darkblue-active: #091931;
   --lightblue: #29abe2;
   --grey: #cdcdcd;
   --white: #ffffff;
   --black: #000000;
+
+  /* Geometry */
+  --nav-width-d: 232px;
 }
+
 /* Elemente */
+* {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
+
 body {
   margin: 0;
-  background-color: var(--darkblue);
+  font-family: sans-serif;
 }
+
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--nav-width-d);
+  padding: 66px 0px;
+  gap: 103px;
+  background-color: var(--darkblue);
+  color: var(--white);
+  font-size: 16px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 /* Klassen */
+.menu {
+  width: {
+    100%
+  };
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 47px;
+  padding: 8px 50px;
+  gap: 15px;
+}
+
+.nav-item:hover {
+  background-color: var(--darkblue-active);
+}
+
+.nav-item img {
+  width: 25px;
+}
 /* ID's */
 /* Mobile View 1000px*/
 @media (max-width: 800px) {
