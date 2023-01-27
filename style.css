@@ -22,6 +22,7 @@ html {
 }
 
 body {
+  background-color: var(--grey);
   margin: 0;
   font-family: sans-serif;
 }
@@ -46,10 +47,17 @@ a {
   color: inherit;
   text-decoration: none;
 }
+input {
+  border-radius: 5px;
+  width: 80%;
+  height: 30px;
+  margin: 20px;
+}
 
 /* Klassen */
+/* ! Klasse für Button anlegen!!!! */
 .display-none {
-  display: none;
+  display: none !important;
 }
 .nav-item {
   display: flex;
@@ -76,12 +84,61 @@ a {
   height: 100vh;
   width: 100vw;
 }
+.bg-white {
+  background-color: var(--white);
+}
 .bg-dark {
   background-color: var(--darkblue);
+}
+.bg-grey {
+  background-color: var(--grey);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+.dialog {
+  background-color: var(--white);
+  height: 60vh;
+  width: 80vw;
+  border-radius: 25px;
+}
+.dialog2 {
+  width: 80vw;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+  bottom: 0;
+  margin-bottom: 60px;
+}
+.link {
+  color: var(--lightblue);
+  cursor: pointer;
 }
 /* ID's */
 #menu {
   width: 100%;
+}
+#logo-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 30px;
+}
+#logo {
+  width: 60px;
+}
+#hr {
+  background-color: var(--lightblue);
+  width: 60px;
+  height: 4px;
+  border: none;
+  border-radius: 3px;
 }
 /* Mobile View 1000px*/
 @media (max-width: 800px) {

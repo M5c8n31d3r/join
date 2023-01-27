@@ -12,12 +12,42 @@
   </head>
   <body>
     <!-- ! LOGIN-SCREEN  -->
-    <h1>Join</h1>
-
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-      blanditiis distinctio ipsam facere nam, non inventore similique minus
-      veniam ad quia deleniti tenetur eaque sit reiciendis cum quos aut rerum.
-    </p>
+    <div class="bg-dark fullscreen center display-none">
+      <img src="./assets/img/logos/logo-white.png" alt="" />
+    </div>
+    <div id="logo-container">
+      <img
+        src="./assets/img/logos/logo-dark.png"
+        alt="Join logo dark"
+        id="logo"
+      />
+    </div>
+    <div class="container">
+      <div class="dialog">
+        <h1 class="center">Log in</h1>
+        <hr id="hr" />
+        <form class="form" action="">
+          <input required type="email" placeholder="Email" />
+          <input
+            required
+            type="password"
+            placeholder="Password"
+            minlength="5"
+          />
+          <!-- todo: Klasse für Linkn definieren -->
+          <!-- todo: Funktion für Rendern der Ansicht "PW Vergessen" -->
+          <div class="link">Forgot my password</div>
+          <input type="checkbox" name="Remember me" id="rememberme" />
+          <label for="rememberme">Remember me</label>
+          <button>Log in</button>
+          <button>Guest Log in</button>
+        </form>
+      </div>
+      <div class="dialog2">
+        <div>Not a Join user?</div>
+        <!-- todo: Ansicht für Sign Up per JS rendern -->
+        <button>Sign Up</button>
+      </div>
+    </div>
   </body>
 </html>
