@@ -48,11 +48,6 @@ a {
 }
 
 /* Klassen */
-.menu {
-  width: {
-    100%
-  };
-}
 .nav-item {
   display: flex;
   align-items: center;
@@ -70,6 +65,9 @@ a {
   width: 25px;
 }
 /* ID's */
+#menu {
+  width: 100%;
+}
 /* Mobile View 1000px*/
 @media (max-width: 800px) {
 }
