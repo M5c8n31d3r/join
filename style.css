@@ -149,7 +149,7 @@ input {
   align-items: flex-start;
   padding: 243px 0px 0px;
   gap: 15px;
-  width: var(--nav-width-d)
+  width: var(--nav-width-d);
   height: 289px;
 }
 #nav-legal-container {
@@ -172,7 +172,7 @@ input {
   width: 106px;
   height: 49px;
 }
-#head-help{
+#head-help {
   width: 25px;
   cursor: pointer;
 }
