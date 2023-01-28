@@ -8,7 +8,9 @@
     <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
     <!-- JavaScript -->
+    <script src="./js/mini_backend.js"></script>
     <script src="./script.js"></script>
+    <script src="./js/index.js"></script>
   </head>
   <body>
     <!-- ! LOGIN-SCREEN  -->
@@ -27,12 +29,13 @@
         <h1 class="center">Log in</h1>
         <hr id="hr" />
         <form class="form" action="">
-          <input required type="email" placeholder="Email" />
+          <input required type="email" placeholder="Email" id="email" />
           <input
             required
             type="password"
             placeholder="Password"
             minlength="5"
+            id="password"
           />
           <!-- todo: Klasse für Linkn definieren -->
           <!-- todo: Funktion für Rendern der Ansicht "PW Vergessen" -->
