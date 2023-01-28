@@ -1,14 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Join</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css" />
-    <!-- JavaScript -->
-    <script src="./script.js"></script>
-  </head>
-  <body></body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join - Summary</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+
+  <!-- JavaScript -->
+  <script src="./script.js"></script>
+  <script src="./js/summary.js"></script>
+
+</head>
+
+<body onload="initSummary()">
+  <nav w3-include-html="./assets/templates/sidenav.html" class="left-main-container"></nav>
+
+  <div class="right-main-container">
+    <header w3-include-html="./assets/templates/header.html"></header>
+
+    <div class="summary-container">
+
+      <div class="summary-header">
+        <h1>Summary</h1>
+        <p>Everything in a nutshell!</p>
+      </div>
+
+
+      <div class="summary-row-1">
+        <div onclick="goToBoard()" class="summary-box btn-1">
+          <p id="board-counter" class="number-in-box"></p>
+          <p class="text-in-box">Tasks <br>in Board</p>
+        </div>
+        <div onclick="goToBoard()" class="summary-box">
+          <p id="progress-counter" class="number-in-box"></p>
+          <p class="text-in-box">Tasks <br>in Progress</p>
+        </div>
+        <div onclick="goToBoard()" class="summary-box">
+          <p id="feedback-counter" class="number-in-box"></p>
+          <p class="text-in-box">Awaiting <br>Feedback</p>
+        </div>
+      </div>
+
+      <div class="summary-row-2">
+        <div onclick="goToBoard()" class="urgent-box">
+          <div class="urgent-box-left">
+            <!-- <img src="../assets/icons/icon-urgent.svg" alt=""> -->
+            <div class="number-container">
+              <p id="urgent-counter" class="number-in-urgent-box"></p>
+              <p class="urgent-title">Urgent</p>
+            </div>
+          </div>
+          <div class="urgent-box-right">
+            <p id="deadline-date" class="deadline-date">February 15, 2023</p>
+            <p class="upcoming-deadline-title">Upcoming Deadline</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="summary-row-3">
+        <div onclick="goToBoard()" class="todo-container">
+          <!-- <img src="../assets/icons/icon-to-do.svg" alt=""> -->
+          <div class="todo-text-container">
+            <p id="todo-counter" class="todo-number">1</p>
+            <p class="todo-text">To-do</p>
+          </div>
+        </div>
+
+        <div onclick="goToBoard()" class="done-container">
+          <!-- <img src="../assets/icons/icon-done.svg" alt=""> -->
+          <div class="done-text-container">
+            <p id="done-counter" class="done-number"></p>
+            <p class="done-text">Done</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
 </html>

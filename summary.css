@@ -1,0 +1,91 @@
+/***** Summary Container *****/
+
+.summary-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/***** Summary Header *****/
+
+.summary-header {
+  display: flex;
+  align-items: center;
+}
+
+/***** Summary Row 1 *****/
+
+.summary-row-1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.summary-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/***** Summary Row 2 *****/
+
+.summary-row-2 {
+  display: flex;
+  align-items: center;
+}
+
+.urgent-box {
+  display: flex;
+}
+
+.urgent-box-left {
+  display: flex;
+  justify-content: center;
+}
+
+.number-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.urgent-box-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/***** Summary Row 3 *****/
+
+.summary-row-3 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-container,
+.done-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo-text-container,
+.done-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/***** Responsive Design *****/
+
+@media (min-width: 2560px) {
+}
+
+@media (max-width: 1440px) {
+}
+
+@media (max-width: 768px) {
+}
