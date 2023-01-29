@@ -1,5 +1,7 @@
-function initSummary() {
-  includeHTML();
+async function initSummary() {
+  await loadAllTasks();
+  loadAllCounters();
+  activeSummaryNavLink();
 }
 
 function goToBoard() {
