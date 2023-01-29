@@ -13,11 +13,24 @@
   align-items: center;
 }
 
+.summary-header > h1 {
+  border-right: 1px solid #000000;
+  padding-right: 2rem;
+  font-size: 3rem;
+}
+
+.summary-header > p {
+  padding-left: 2rem;
+  font-size: 1.5rem;
+}
+
 /***** Summary Row 1 *****/
 
 .summary-row-1 {
   display: flex;
   justify-content: space-between;
+  width: 600px;
+  margin-top: 3rem;
 }
 
 .summary-box {
@@ -25,6 +38,24 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-radius: 30px;
+  background-color: #ffffff;
+  width: 170px;
+  height: 170px;
+  padding: 1rem;
+}
+
+.summary-box:hover {
+  border: 2px solid #2a3647;
+  cursor: pointer;
+}
+
+.text-in-box {
+  text-align: center;
+}
+
+.number-in-box {
+  font-size: 4rem;
 }
 
 /***** Summary Row 2 *****/
