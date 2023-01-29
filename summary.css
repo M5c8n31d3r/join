@@ -63,15 +63,36 @@
 .summary-row-2 {
   display: flex;
   align-items: center;
+  height: 170px;
+  margin-top: 3rem;
 }
 
 .urgent-box {
   display: flex;
+  height: 170px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  border: 2px solid #ffffff;
+  width: 600px;
+  padding: 2rem;
+}
+
+.urgent-box:hover {
+  cursor: pointer;
+  border: 2px solid #2a3647;
 }
 
 .urgent-box-left {
   display: flex;
   justify-content: center;
+  align-items: center;
+  border-right: 1px solid #000000;
+  width: 50%;
+}
+
+.urgent-box-left > img {
+  width: 60px;
+  height: 60px;
 }
 
 .number-container {
@@ -79,6 +100,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-left: 1rem;
+}
+
+.number-in-urgent-box {
+  font-size: 2rem;
 }
 
 .urgent-box-right {
@@ -86,20 +112,61 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 50%;
+}
+
+.welcome-text-container {
+  margin-left: 8rem;
+}
+
+.welcome-name {
+  font-size: 3.5rem;
+  color: #29abe2;
+  font-weight: 700;
+}
+
+.welcome-text {
+  font-size: 3rem;
+}
+
+.text-box {
+  margin: 3rem 0;
+}
+
+.deadline-date {
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
 /***** Summary Row 3 *****/
 
 .summary-row-3 {
+  width: 600px;
   display: flex;
   justify-content: space-between;
+  margin-top: 3rem;
 }
 
 .todo-container,
 .done-container {
+  background-color: #ffffff;
+  width: 280px;
+  border-radius: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 2px solid #ffffff;
+}
+
+.todo-container:hover,
+.done-container:hover {
+  border: 2px solid #2a3647;
+  cursor: pointer;
+}
+
+.todo-number,
+.done-number {
+  font-size: 4rem;
 }
 
 .todo-text-container,
@@ -108,15 +175,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-left: 2rem;
 }
 
-/***** Responsive Design *****/
-
-@media (min-width: 2560px) {
+.done-container > img {
+  width: 60px;
+  height: 60px;
 }
 
-@media (max-width: 1440px) {
-}
-
-@media (max-width: 768px) {
+.todo-container > img {
+  width: 60px;
+  height: 60px;
 }
