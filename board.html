@@ -15,41 +15,52 @@
     <header w3-include-html="./assets/templates/header.html"></header>
     <nav w3-include-html="./assets/templates/navbar.html"></nav>
     <section class="content">
-      <p>Kanban Project Management Tool</p>
+      <p class="mobile">Kanban Project Management Tool</p>
       <div class="center-row space-between">
         <h1>Board</h1>
-        <a class="plus-btn-big center" href=""
-          ><img
-            class="icon-white"
-            src="/assets/img/icons/icon-plus.svg"
-            alt="New Task"
-        /></a>
+        <div class="space-between center gap">
+          <div class="desktop searchbar center">
+            <input type="search" name="q" placeholder="Find Task" /><img
+              src="/assets/img/icons/icon-magnifier.svg"
+              alt=""
+            />
+          </div>
+          <a class="plus-btn-big center" href=""
+            ><span class="desktop">Add task</span
+            ><img
+              class="icon-white"
+              src="/assets/img/icons/icon-plus.svg"
+              alt="New Task"
+          /></a>
+        </div>
       </div>
-      <div id="find-task-searchbar" class="center">
-        <input type="text" placeholder="Find Task" /><img
+      <div class="searchbar center mobile">
+        <input type="search" name="q" placeholder="Find Task" /><img
           src="/assets/img/icons/icon-magnifier.svg"
           alt=""
         />
       </div>
-      <div class="center-row space-between">
-        <h2>To do</h2>
-        <a class="plus-btn-small center" href=""
-          ><img src="/assets/img/icons/icon-plus.svg" alt="New To do"
-        /></a>
-      </div>
-      <div id="task-card">
-        <div>Design</div>
-        <h3>Website redesign</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, omnis
-          necessitatibus quaerat quibusdam vel earum!
-        </p>
-        <span>progress bar</span>
+      <section class="progress-cards">
         <div class="center-row space-between">
-          <div>Array User</div>
-          <img src="/assets/img/icons/icon-prio-low.svg" alt="low prio" />
+          <h2>To do</h2>
+          <a class="plus-btn-small center" href=""
+            ><img src="/assets/img/icons/icon-plus.svg" alt="New To do"
+          /></a>
         </div>
-      </div>
+        <div id="task-card">
+          <div>Design</div>
+          <h3>Website redesign</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, omnis
+            necessitatibus quaerat quibusdam vel earum!
+          </p>
+          <span>progress bar</span>
+          <div class="center-row space-between">
+            <div>Array User</div>
+            <img src="/assets/img/icons/icon-prio-low.svg" alt="low prio" />
+          </div>
+        </div>
+      </section>
     </section>
   </body>
 </html>
