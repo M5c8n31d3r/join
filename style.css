@@ -12,6 +12,8 @@
   /* Geometry */
   --nav-width-d: 232px;
   --nav-height-m: 80px;
+  --border-radius-big: 30px;
+  --border-radius-small: 10px;
 }
 
 /* Elemente */
@@ -67,13 +69,6 @@ a {
   cursor: pointer;
 }
 
-input {
-  border-radius: 5px;
-  width: 80%;
-  height: 30px;
-  margin: 20px;
-}
-
 h1 {
   font-size: 47px;
   font-weight: 700;
@@ -82,6 +77,11 @@ h1 {
 
 p {
   font-size: 16px;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
 }
 
 /* Klassen */
@@ -106,12 +106,16 @@ p {
   width: 25px;
 }
 .content {
-  padding: calc(var(--nav-height-m) + 33px) 0 0 33px;
+  padding: calc(var(--nav-height-m) + 33px) 33px 0 33px;
 }
 .center {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.center-row {
+  display: flex;
+  align-items: center;
 }
 .fullscreen {
   height: 100vh;
@@ -152,6 +156,21 @@ p {
 .link {
   color: var(--lightblue);
   cursor: pointer;
+}
+.space-between {
+  justify-content: space-between;
+}
+.plus-btn-small {
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--darkblue);
+  border-radius: var(--border-radius-small);
+}
+.input-kay {
+  border-radius: 5px;
+  width: 80%;
+  height: 30px;
+  margin: 20px;
 }
 /* ID's */
 #nav {
@@ -219,6 +238,43 @@ p {
   border: none;
   border-radius: 3px;
 }
+#task-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 18px 20px;
+  gap: 10px;
+  background-color: var(--white);
+  border-radius: var(--border-radius-big);
+  box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
+}
+
+#find-task-searchbar {
+  width: 60vw;
+  padding: 3px;
+  gap: 10px;
+  border: 1px solid #a8a8a8;
+  border-radius: var(--border-radius-small);
+  background-color: var(--white);
+  justify-content: space-between;
+}
+
+#find-task-searchbar input {
+  font-size: 16px;
+  width: 80%;
+  height: 41px;
+  margin: auto;
+  border: 0 solid;
+  padding: 11px;
+  border-right: 1px solid #a8a8a8;
+  background-color: transparent;
+}
+
+#find-task-searchbar img {
+  width: 50px;
+  height: 25px;
+}
+
 /* Mobile View 1000px*/
 @media (max-width: 800px) {
   header {
