@@ -132,7 +132,7 @@ input:focus {
   background-color: var(--darkblue);
 }
 .bg-grey {
-  background-color: var(--grey);
+  background-color: var(--grey-bg);
 }
 .container {
   display: flex;
@@ -184,7 +184,7 @@ input:focus {
   filter: invert();
 }
 
-.input-kay {
+.input-login {
   border-radius: 5px;
   width: 80%;
   height: 30px;
