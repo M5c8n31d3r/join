@@ -11,8 +11,10 @@
     <script src="./js/mini_backend.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/index.js"></script>
+    <script src="./musterdaten.js"></script>
   </head>
-  <body>
+
+  <body onload="initialisation()">
     <!-- ! LOGIN-SCREEN  -->
     <div class="bg-dark fullscreen center display-none">
       <img src="./assets/img/logos/logo-white.png" alt="" />
@@ -25,38 +27,42 @@
       />
     </div>
     <div class="container">
-      <div class="dialog">
+      <div class="dialog center">
         <h1 class="center">Log in</h1>
         <hr id="hr" />
-        <form class="form" action="">
-          <input
-            required
-            class="input-login"
-            type="email"
-            placeholder="Email"
-            id="email"
-          />
-          <input
-            required
-            class="input-login"
-            type="password"
-            placeholder="Password"
-            minlength="5"
-            id="password"
-          />
+        <form class="form center-column" action="">
+          <div class="input-login input-bar">
+            <input required type="email" placeholder="Email" id="email" />
+            <img src="/assets/img/icons/icon-email.svg" />
+          </div>
+          <div class="input-login input-bar">
+            <input
+              required
+              type="password"
+              placeholder="Password"
+              minlength="5"
+              id="password"
+            />
+            <img src="/assets/img/icons/icon-password.svg" />
+          </div>
           <!-- todo: Klasse für Link definieren -->
           <!-- todo: Funktion für Rendern der Ansicht "PW Vergessen" -->
           <div class="link">Forgot my password</div>
-          <input type="checkbox" name="Remember me" id="rememberme" />
-          <label for="rememberme">Remember me</label>
-          <button>Log in</button>
-          <button>Guest Log in</button>
+          <div>
+            <input type="checkbox" name="Remember me" id="rememberme" />
+            <label for="rememberme">Remember me</label>
+          </div>
+          <div class="login-btns">
+            <button id="btn-login" class="btn-login">Log in</button>
+            <button id="btn-login-guest" class="btn-login">Guest Log in</button>
+          </div>
         </form>
       </div>
-      <div class="dialog2">
-        <div>Not a Join user?</div>
+
+      <div class="dialog2 center">
+        <h4>Not a Join user?</h4>
         <!-- todo: Ansicht für Sign Up per JS rendern -->
-        <button>Sign Up</button>
+        <button class="btn-small">Sign Up</button>
       </div>
     </div>
   </body>
