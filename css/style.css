@@ -135,9 +135,6 @@ input:focus {
   display: flex;
 }
 
-.input-login input {
-}
-
 .display-none {
   display: none !important;
 }
@@ -228,7 +225,7 @@ input:focus {
   justify-content: center;
   align-items: center;
   padding: 4px 0px;
-  gap: 10px;
+  gap: 20px;
 }
 .link {
   color: var(--lightblue);

@@ -23,10 +23,10 @@
     <img src="./assets/img/logos/logo-dark.png" alt="Join logo dark" id="logo" />
   </div>
   <div class="container">
-    <div class="dialog">
+    <div class="dialog center">
       <h1 class="center">Log in</h1>
       <hr id="hr" />
-      <form class="form" action="">
+      <form class="form center-column" action="">
         <div class="input-login input-bar">
           <input required type="email" placeholder="Email" id="email" />
           <img src="/assets/img/icons/icon-email.svg" />
@@ -38,20 +38,22 @@
         <!-- todo: Klasse für Link definieren -->
         <!-- todo: Funktion für Rendern der Ansicht "PW Vergessen" -->
         <div class="link">Forgot my password</div>
-        <input type="checkbox" name="Remember me" id="rememberme" />
-        <label for="rememberme">Remember me</label>
+        <div>
+          <input type="checkbox" name="Remember me" id="rememberme" />
+          <label for="rememberme">Remember me</label>
+        </div>
+        <div class="login-btns">
+          <button id="btn-login" class="btn-login">Log in</button>
+          <button id="btn-login-guest" class="btn-login">Guest Log in</button>
+        </div>
+      </form>
     </div>
-    <div class="login-btns">
-      <button id="btn-login" class="btn-login">Log in</button>
-      <button id="btn-login-guest" class="btn-login">Guest Log in</button>
+
+    <div class="dialog2 center">
+      <h4>Not a Join user?</h4>
+      <!-- todo: Ansicht für Sign Up per JS rendern -->
+      <button class="btn-small">Sign Up</button>
     </div>
-    </form>
-  </div>
-  <div class="dialog2 center">
-    <h4>Not a Join user?</h4>
-    <!-- todo: Ansicht für Sign Up per JS rendern -->
-    <button class="btn-small">Sign Up</button>
-  </div>
   </div>
 </body>
 
