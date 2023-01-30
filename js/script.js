@@ -3,8 +3,12 @@ setURL("https://gruppe-445.developerakademie.net/smallest_backend_ever/");
 const users = new Array();
 const tasks = new Array();
 
+// ID of the user. 0 for guest
 let userLogIn = 0;
 
+/**
+ * Load the templates into the singe pages
+ */
 async function includeHTML() {
   let includeElements = document.querySelectorAll("[w3-include-html]");
   for (let i = 0; i < includeElements.length; i++) {
@@ -17,4 +21,15 @@ async function includeHTML() {
       element.innerHTML = "Page not found";
     }
   }
+}
+
+/**
+ * Load the data from the backend and convert to JSON-ARRAY
+ * @param {STRING} load -> Key of the data in Backend
+ * @returns array of JSON-Data
+ */
+async function loadBackend(load) {
+  let loaded = await backend.getItem(load);
+  let data = JSON.parse(loaded);
+  return data;
 }
