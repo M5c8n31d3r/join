@@ -96,6 +96,11 @@ button {
   height: 51px;
 }
 
+button:hover {
+  background-color: var(--lightblue);
+  border: none;
+}
+
 input {
   border: none;
 }
@@ -135,6 +140,11 @@ input:focus {
   display: flex;
 }
 
+.login-input-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
 .display-none {
   display: none !important;
 }
@@ -155,6 +165,10 @@ input:focus {
 }
 .content {
   padding: calc(var(--nav-height-m) + 16px) 33px 0 33px;
+}
+
+.h1-big {
+  font-size: 61px;
 }
 
 .gap {
@@ -198,7 +212,7 @@ input:focus {
   height: 100vh;
 }
 
-.dialog {
+.login-content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -209,11 +223,18 @@ input:focus {
   padding: 35px 23px;
   box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
 }
-.dialog h1 {
+.login-content h1 {
   margin-top: 0;
 }
-.dialog2 {
-  width: 80vw;
+.login-content-pw {
+  gap: 15px;
+}
+
+.font-lightblue {
+  color: var(--lightblue);
+}
+.login-content-sign-up {
+  width: 100vw;
   position: absolute;
   bottom: 0;
   margin-bottom: 60px;
@@ -279,6 +300,12 @@ input:focus {
   color: var(--darkblue);
   font-weight: 600;
 }
+#btn-login-guest:hover {
+  background-color: var(--white);
+  color: var(--lightblue);
+  border: 1px solid var(--lightblue);
+  font-weight: 600;
+}
 #head-logo img {
   display: unset;
   width: 32px;
@@ -321,11 +348,12 @@ input:focus {
   margin: 30px;
 }
 #logo {
-  width: 60px;
+  width: 64px;
 }
 #hr {
   background-color: var(--lightblue);
-  width: 60px;
+  width: 25%;
+  max-width: 150px;
   min-height: 4px;
   border: none;
   border-radius: 3px;
@@ -389,6 +417,48 @@ input:focus {
     width: var(--nav-width-d);
     padding: 66px 0px;
     height: unset;
+  }
+
+  .login-content {
+    max-width: 652px;
+    max-height: 513px;
+  }
+
+  .input-bar {
+    width: 422px;
+  }
+
+  .login-content-pw {
+    flex-direction: row-reverse;
+    justify-content: space-around;
+  }
+
+  .login-btns {
+    flex-direction: row;
+  }
+
+  .login-input-bars {
+    padding-bottom: 60px;
+  }
+
+  button {
+    z-index: 11;
+  }
+  .login-content-sign-up {
+    display: flex;
+    justify-content: end;
+    align-items: flex-start;
+    top: 0;
+    right: 0;
+    padding: 15px 30px;
+  }
+
+  .form {
+    padding-top: 25px;
+  }
+
+  #logo {
+    width: 100px;
   }
 
   #nav {
