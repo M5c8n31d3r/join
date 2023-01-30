@@ -1,9 +1,5 @@
 async function initialisation() {
-  let loaded = await loadBackend(`users`);
-  console.log(loaded);
-  for (let i = 0; i < loaded.length; i++) {
-    users.push(loaded[i]);
-  }
+  users.push(await loadBackend(`users`));
   console.log(users);
 }
 
@@ -11,8 +7,10 @@ function signUp() {
   const email = document.getElementById("email").value.toLowerCase();
   const password = document.getElementById("password").value;
 
-  for (let i = 0; i < users.length; i++) {
-    if (email == users[i].email) return 1;
+  if (users.length > 0) {
+    for (let i = 0; i < users.length; i++) {
+      if (email == users[i].email) return 1;
+    }
   }
 
   let user = {
