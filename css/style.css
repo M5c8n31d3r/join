@@ -151,9 +151,9 @@ input:focus {
 }
 .dialog {
   background-color: var(--white);
+  border-radius: var(--border-radius-big);
   height: 60vh;
   width: 80vw;
-  border-radius: 25px;
 }
 .dialog2 {
   width: 80vw;
