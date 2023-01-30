@@ -9,10 +9,34 @@
     <link rel="stylesheet" href="../css/style.css" />
     <!-- JavaScript -->
     <script src="../js/script.js"></script>
+    <script src="../js/mini_backend.js"></script>
   </head>
 
   <body onload="includeHTML()">
     <header w3-include-html="../assets/templates/header.html"></header>
     <nav w3-include-html="../assets/templates/navbar.html"></nav>
+    <section class="content">
+      <section id="new-contact">
+        <button class="btn-icon center gap">
+          New Contact
+          <img src="/assets/img/icons/icon-new-contact.svg" alt="" srcset="" />
+        </button>
+      </section>
+      <section id="contactlist">
+        <div class="cl-letters">A</div>
+        <hr />
+        <div class="cl-contact center-row">
+          <div class="cl-contact-left center">AM</div>
+          <div class="cl-contact-right center-column gap-s">
+            <div class="cl-contact-name">Anton Mayer</div>
+            <a
+              href="mailto:anton@gmail.com"
+              class="cl-contact-email font-lightblue"
+              >anton@gmail.com</a
+            >
+          </div>
+        </div>
+      </section>
+    </section>
   </body>
 </html>
