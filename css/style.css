@@ -12,8 +12,9 @@
   /* Geometry */
   --nav-width-d: 232px;
   --nav-height-m: 80px;
-  --border-radius-big: 30px;
-  --border-radius-small: 10px;
+  --border-radius-xl: 30px;
+  --border-radius-m: 10px;
+  --border-radius-xs: 8px;
 }
 
 /* Elemente */
@@ -87,6 +88,14 @@ p {
   font-size: 16px;
 }
 
+button {
+  background-color: var(--darkblue);
+  border-radius: var(--border-radius-xs);
+  color: white;
+  border: 1px solid var(--darkblue);
+  height: 51px;
+}
+
 input {
   border: none;
 }
@@ -97,21 +106,24 @@ input:focus {
 }
 
 /* Klassen */
-/* ! Klasse für Button anlegen!!!! */
 
 .input-bar {
   height: 41px;
   border: 1px solid #a8a8a8;
-  border-radius: var(--border-radius-small);
+  border-radius: var(--border-radius-m);
   background-color: var(--white);
   align-items: center;
   justify-content: space-between;
   padding: 13px 21px;
-  margin: 25px 0;
+  margin: 20px 0 0 0;
 }
 
 .input-bar input {
   font-size: 16px;
+}
+
+.btn-small {
+  width: 90px;
 }
 
 .input-bar img {
@@ -121,9 +133,6 @@ input:focus {
 
 .input-login {
   display: flex;
-}
-
-.input-login input {
 }
 
 .display-none {
@@ -160,6 +169,12 @@ input:focus {
   display: flex;
   align-items: center;
 }
+.center-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .fullscreen {
   height: 100vh;
   width: 100vw;
@@ -174,6 +189,7 @@ input:focus {
   background-color: var(--grey-bg);
 }
 .container {
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -181,22 +197,35 @@ input:focus {
   width: 100vw;
   height: 100vh;
 }
+
 .dialog {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   background-color: var(--white);
-  border-radius: var(--border-radius-big);
+  border-radius: var(--border-radius-xl);
   height: 60vh;
   width: 80vw;
   padding: 35px 23px;
   box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
 }
+.dialog h1 {
+  margin-top: 0;
+}
 .dialog2 {
   width: 80vw;
   position: absolute;
-  display: flex;
-  flex-direction: row;
-  align-items: space-between;
   bottom: 0;
   margin-bottom: 60px;
+  gap: 35px;
+}
+.login-btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 0px;
+  gap: 20px;
 }
 .link {
   color: var(--lightblue);
@@ -205,18 +234,22 @@ input:focus {
 .space-between {
   justify-content: space-between;
 }
+
+.btn-login {
+  width: 180px;
+}
 .plus-btn-small {
   width: 30px;
   height: 30px;
   border: 2px solid var(--darkblue);
-  border-radius: var(--border-radius-small);
+  border-radius: var(--border-radius-m);
 }
 
 .plus-btn-big {
   background-color: var(--darkblue);
   width: 40px;
   height: 40px;
-  border-radius: var(--border-radius-small);
+  border-radius: var(--border-radius-m);
 }
 
 .icon-white {
@@ -240,6 +273,11 @@ input:focus {
 
 #head-logo {
   display: none;
+}
+#btn-login-guest {
+  background-color: var(--white);
+  color: var(--darkblue);
+  font-weight: 600;
 }
 #head-logo img {
   display: unset;
@@ -288,10 +326,16 @@ input:focus {
 #hr {
   background-color: var(--lightblue);
   width: 60px;
-  height: 4px;
+  min-height: 4px;
   border: none;
   border-radius: 3px;
+  margin: 0;
 }
+
+.form {
+  height: 100%;
+}
+
 #task-card {
   display: flex;
   flex-direction: column;
@@ -299,7 +343,7 @@ input:focus {
   padding: 18px 20px;
   gap: 10px;
   background-color: var(--white);
-  border-radius: var(--border-radius-big);
+  border-radius: var(--border-radius-xl);
   box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
 }
 
@@ -308,7 +352,7 @@ input:focus {
   padding: 3px;
   gap: 10px;
   border: 1px solid #a8a8a8;
-  border-radius: var(--border-radius-small);
+  border-radius: var(--border-radius-m);
   background-color: var(--white);
   justify-content: space-between;
 }
