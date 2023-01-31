@@ -1,6 +1,11 @@
 async function initialisation() {
-  users.push(await loadBackend(`users`));
-  console.log(users);
+  let download = await downloadFromServer();
+  download = await JSON.parse(download);
+  users.splice(0, users.length);
+  for (let i = 0; i < download.users.length; i++) {
+    users.push(download.users[i]);
+  }
+  console.log("fertig");
 }
 
 function signUp() {
@@ -28,15 +33,29 @@ function signUp() {
 function signIn() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
+
+  for (let i = 0; i < users.length; i++) {
+    if (
+      email.toLowerCase() == users[i].email &&
+      password == users[i].password
+    ) {
+      userLogIn = users[i].id;
+      window.location.assign("./html/summary.html");
+    } else {
+      alert("Es ist ein Fehler aufgetreten. Bitte kontrolliere deine Eingabe.");
+    }
+  }
 }
 
-/*
-USERS{
-id : INT,
-name : STRING,
-email : STRING, → VALIDIERUNG!!!
-password : STRING,
-picture : URL
-phone : STRING
+function signInGuest() {
+  userLogIn = 0;
+  window.location.assign("./html/summary.html");
 }
-*/
+
+function renderSignUp() {
+  alert("SignUp");
+}
+
+function renderPasswordReset() {
+  alert("Hier kommt die Seite für dein neues Passwort.");
+}
