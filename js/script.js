@@ -28,8 +28,8 @@ async function includeHTML() {
  * @param {STRING} load -> Key of the data in Backend
  * @returns array of JSON-Data
  */
-async function loadBackend(load) {
-  let loaded = await backend.getItem(load);
-  let data = JSON.parse(loaded);
-  return data;
-}
+// async function loadBackend(load) {
+//   let loaded = await backend.getItem(load);
+//   let data = await JSON.parse(loaded);
+//   return data;
+// }
