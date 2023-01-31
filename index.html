@@ -49,7 +49,7 @@
           </div>
           <!-- todo: Funktion für Rendern der Ansicht "PW Vergessen" -->
           <div class="login-content-pw center-column">
-            <a onclick="showPasswordReset()" class="font-lightblue"
+            <a onclick="renderPasswordReset()" class="font-lightblue"
               >Forgot my password</a
             >
             <div>
@@ -58,8 +58,16 @@
             </div>
           </div>
           <div class="login-btns">
-            <button id="btn-login" class="btn-login">Log in</button>
-            <button id="btn-login-guest" class="btn-login">Guest Log in</button>
+            <button id="btn-login" class="btn-login" onclick="signIn()">
+              Log in
+            </button>
+            <button
+              id="btn-login-guest"
+              class="btn-login"
+              onclick="signInGuest()"
+            >
+              Guest Log in
+            </button>
           </div>
         </form>
       </div>
@@ -67,7 +75,7 @@
     <div class="login-content-sign-up center">
       <h4>Not a Join user?</h4>
       <!-- todo: Ansicht für Sign Up per JS rendern -->
-      <button class="btn-small">Sign Up</button>
+      <button class="btn-small" onclick="renderSignUp()">Sign Up</button>
     </div>
   </body>
 </html>
