@@ -41,8 +41,6 @@ function signIn() {
     ) {
       userLogIn = users[i].id;
       window.location.assign("./html/summary.html");
-    } else {
-      alert("Es ist ein Fehler aufgetreten. Bitte kontrolliere deine Eingabe.");
     }
   }
 }
