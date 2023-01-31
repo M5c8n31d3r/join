@@ -9,7 +9,7 @@ let musterUsers = [
   },
   {
     id: 1,
-    name: "Deniis",
+    name: "Dennis",
     email: "dennis@schneider",
     password: "11111111",
     picture: "",
