@@ -64,7 +64,7 @@ let musterTasks = [
     category: "ToDo",
     assignedTo: 1,
     dueDate: 1676358000, // 14.02.2023 08:00,
-    state: "in Progress",
+    state: "progress",
     subtask: []
   }
 ];
