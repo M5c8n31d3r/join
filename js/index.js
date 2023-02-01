@@ -46,8 +46,19 @@ function signIn() {
 }
 
 function signInGuest() {
-  userLogIn = 0;
+  document.getElementById("email").required = false;
+  document.getElementById("password").required = false;
+  userLogIn = users[0].id;
   window.location.assign("./html/summary.html");
+}
+
+function swapPassword() {
+  let password = document.getElementById("password");
+  if (password.type == "password") {
+    password.type = "text";
+  } else {
+    password.type = "password";
+  }
 }
 
 function renderSignUp() {
