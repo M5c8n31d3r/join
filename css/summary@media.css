@@ -22,6 +22,7 @@
   .summary-box {
     width: 110px;
     height: 110px;
+    margin: 4px;
   }
 
   .text-in-box {
@@ -71,6 +72,8 @@
   .todo-container,
   .done-container {
     width: 175px;
+    height: 110px;
+    margin: 8px;
   }
 
   .todo-container > img {
