@@ -4,7 +4,7 @@ const users = new Array();
 const tasks = new Array();
 
 // ID of the user. 0 for guest
-let userLogIn = 0;
+let userLogIn = NULL;
 
 /**
  * Load the templates into the singe pages
