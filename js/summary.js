@@ -1,9 +1,41 @@
 async function initSummary() {
   await includeHTML();
-  setURL(
-    "https://kai-beckmann.developerakademie.net/Join-Javascript/smallest_backend_ever"
-  );
-  await loadAllTasks();
+  await loadTasks();
   loadAllCounters();
-  activeSummaryNavLink();
+  // activeSummaryNavLink();
+}
+
+async function loadTasks() {
+  let download = await downloadFromServer();
+  download = await JSON.parse(download);
+  tasks.splice(0, tasks.length);
+  for (let i = 0; i < download.tasks.length; i++) {
+    tasks.push(download.tasks[i]);
+  }
+  console.log("fertig");
+}
+
+function loadAllCounters() {
+  let allTasks = document.getElementById("board-counter");
+  let progress = document.getElementById("progress-counter");
+  let review = document.getElementById("feedback-counter");
+  let counterProgress = 0;
+  let counterReview = 0;
+
+  allTasks.innerHTML = tasks.length;
+
+  for (let i = 0; i < tasks.length; i++) {
+    if (tasks[i].state == "progress") {
+      counterProgress++;
+    }
+    if (tasks[i].state == "review") {
+      counterReview++;
+    }
+  }
+  progress.innerHTML = counterProgress;
+  review.innerHTML = counterReview;
+}
+
+function goToBoard() {
+  window.location.assign("./board.html");
 }
