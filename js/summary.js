@@ -19,8 +19,10 @@ function loadAllCounters() {
   let allTasks = document.getElementById("board-counter");
   let progress = document.getElementById("progress-counter");
   let review = document.getElementById("feedback-counter");
+  let todo = document.getElementById("todo-counter");
   let counterProgress = 0;
   let counterReview = 0;
+  let counterTodo = 0;
 
   allTasks.innerHTML = tasks.length;
 
@@ -31,9 +33,13 @@ function loadAllCounters() {
     if (tasks[i].state == "review") {
       counterReview++;
     }
+    if (tasks[i].state == "ToDo") {
+      counterTodo++;
+    }
   }
   progress.innerHTML = counterProgress;
   review.innerHTML = counterReview;
+  todo.innerHTML = counterTodo;
 }
 
 function goToBoard() {
