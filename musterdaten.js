@@ -42,7 +42,8 @@ let musterTasks = [
     priority: -1,
     category: "ToDo",
     assignedTo: 3,
-    dueDate: 1676358000, // 14.02.2023 08:00
+    dueDate: 1676358000, // 14.02.2023 08:00,
+    state: "ToDo",
     subtask: [
       {
         done: false,
@@ -62,7 +63,8 @@ let musterTasks = [
     priority: 0,
     category: "ToDo",
     assignedTo: 1,
-    dueDate: 1676358000, // 14.02.2023 08:00
+    dueDate: 1676358000, // 14.02.2023 08:00,
+    state: "in Progress",
     subtask: []
   }
 ];
