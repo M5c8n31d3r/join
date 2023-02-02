@@ -66,6 +66,26 @@ let musterTasks = [
     dueDate: 1676358000, // 14.02.2023 08:00,
     state: "progress",
     subtask: []
+  },
+  {
+    id: 2,
+    titel: "Dritte Musteraufgabe",
+    description: "Ich würde ja jetzt Lorem machen, aber das geht in js nicht",
+    priority: 0,
+    category: "done",
+    assignedTo: 2,
+    dueDate: 1676358000, // 14.02.2023 08:00,
+    state: "done",
+    subtask: [
+      {
+        done: false,
+        description: "Musterdaten.js löschen"
+      },
+      {
+        done: false,
+        description: "Musterdaten.js aus index.js entfernen"
+      }
+    ]
   }
 ];
 

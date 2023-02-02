@@ -83,6 +83,12 @@ h1 {
   margin: 25px 0 25px 0;
 }
 
+h2 {
+  font-style: normal;
+  font-size: 21px;
+  font-weight: 700;
+}
+
 p {
   font-size: 16px;
 }
@@ -379,7 +385,7 @@ input:focus {
   height: 100%;
 }
 
-#task-card {
+.task-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -515,6 +521,10 @@ input:focus {
     width: 15px;
   }
 
+  .task-col {
+    width: 25vw;
+  }
+
   .searchbar {
     display: flex;
     align-items: center;
@@ -530,6 +540,15 @@ input:focus {
     min-height: 47px;
     padding: 8px 50px;
     gap: 15px;
+  }
+
+  .progress-cols {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 26px;
   }
 
   .nav-icon img {
