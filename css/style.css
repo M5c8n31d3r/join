@@ -137,6 +137,7 @@ input:focus {
 
 .input-login {
   display: flex;
+  z-index: 1;
 }
 
 .login-input-bars {
