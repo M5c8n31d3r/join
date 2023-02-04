@@ -431,6 +431,10 @@ input:focus {
   color: var(--white);
 }
 
+.cl-letters {
+  border-bottom: 1px solid var(--grey);
+}
+
 /* Desktop View 800px+*/
 @media (min-width: 800px) {
   header {

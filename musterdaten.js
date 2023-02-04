@@ -9,7 +9,7 @@ let musterUsers = [
   },
   {
     id: 1,
-    name: "Dennis",
+    name: "Dennis Schneider",
     email: "dennis@schneider",
     password: "11111111",
     picture: "",
@@ -17,7 +17,7 @@ let musterUsers = [
   },
   {
     id: 2,
-    name: "Michael",
+    name: "Michael Schneider",
     email: "michael@schneider",
     password: "12345678",
     picture: "",
@@ -25,8 +25,16 @@ let musterUsers = [
   },
   {
     id: 3,
-    name: "Kay",
+    name: "Kay Beckmann",
     email: "kay@beckmann",
+    password: "abcdef",
+    picture: "",
+    phone: "+49 1637 164850"
+  },
+  {
+    id: 4,
+    name: "Dori Mittermeyer",
+    email: "dori@web.de",
     password: "abcdef",
     picture: "",
     phone: "+49 1637 164850"
