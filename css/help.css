@@ -1,0 +1,45 @@
+/***** Help Container *****/
+
+.help-container {
+  padding: 48px 5%;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.headline {
+  font-size: 64px;
+}
+
+.question-cnt {
+  margin-top: 64px;
+}
+
+.number-cnt {
+  display: flex;
+  margin-top: 8px;
+}
+
+.number {
+  margin-right: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.number > p {
+  font-size: 24px;
+}
+
+/***** Responsive Design *****/
+
+@media (max-width: 1440px) {
+  .headline {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 600px) {
+  .help-container {
+    height: 80vh;
+  }
+}
