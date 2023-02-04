@@ -38,6 +38,14 @@ let musterUsers = [
     password: "abcdef",
     picture: "",
     phone: "+49 1637 164850"
+  },
+  {
+    id: 5,
+    name: "Alfredo Bertoli",
+    email: "mister@bestpasta.it",
+    password: "abcdef",
+    picture: "",
+    phone: "+49 1637 164850"
   }
 ];
 
