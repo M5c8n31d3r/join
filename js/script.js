@@ -30,11 +30,11 @@ async function loadDataFromServer() {
   let download = await downloadFromServer();
   download = await JSON.parse(download);
 
-  for (let i = 0; i < data.users.length; i++) {
+  for (let i = 0; i < download.users.length; i++) {
     users.push(download.users[i]);
   }
 
-  for (let i = 0; i < data.tasks.length; i++) {
+  for (let i = 0; i < download.tasks.length; i++) {
     tasks.push(download.tasks[i]);
   }
 }
