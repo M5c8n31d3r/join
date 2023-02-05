@@ -46,8 +46,9 @@
 }
 
 .summary-box:hover {
-  border: 2px solid var(--darkblue);
+  background-color: var(--darkblue);
   cursor: pointer;
+  color: var(--white);
 }
 
 .text-in-box {
@@ -78,8 +79,9 @@
 }
 
 .urgent-box:hover {
+  background-color: var(--darkblue);
   cursor: pointer;
-  border: 2px solid var(--darkblue);
+  color: var(--white);
 }
 
 .urgent-box-left {
@@ -161,8 +163,16 @@
 
 .todo-container:hover,
 .done-container:hover {
-  border: 2px solid var(--darkblue);
+  background-color: var(--darkblue);
   cursor: pointer;
+  color: var(--white);
+}
+
+.todo-container:hover,
+.done-container:hover {
+  background-color: var(--darkblue);
+  cursor: pointer;
+  color: var(--white);
 }
 
 .todo-number,
