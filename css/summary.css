@@ -189,12 +189,20 @@
   margin-left: 2rem;
 }
 
+.todo-container > img {
+  width: 60px;
+  height: 60px;
+}
+
+.todo-container > img:hover {
+  filter: invert(100%);
+}
+
 .done-container > img {
   width: 60px;
   height: 60px;
 }
 
-.todo-container > img {
-  width: 60px;
-  height: 60px;
+.done-container > img:hover {
+  filter: invert(100%);
 }
