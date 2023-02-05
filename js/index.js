@@ -1,11 +1,5 @@
 async function initialisation() {
-  let download = await downloadFromServer();
-  download = await JSON.parse(download);
-  users.splice(0, users.length);
-  for (let i = 0; i < download.users.length; i++) {
-    users.push(download.users[i]);
-  }
-  console.log("fertig");
+  loadDataFromServer();
 }
 
 function signUp() {
@@ -61,8 +55,20 @@ function swapPassword() {
   }
 }
 
-function renderSignUp() {
-  alert("SignUp");
+function switchscreen() {
+  let login = document.getElementById("login");
+  let signup = document.getElementById("signup");
+  let btn = document.getElementById("btn");
+
+  if (login.classList.contains("display-none")) {
+    login.classList.remove("display-none");
+    signup.classList.add("display-none");
+    btn.classList.remove("display-none");
+  } else {
+    login.classList.add("display-none");
+    signup.classList.remove("display-none");
+    btn.classList.add("display-none");
+  }
 }
 
 function renderPasswordReset() {

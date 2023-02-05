@@ -27,7 +27,8 @@
       />
     </div>
     <div class="container">
-      <div class="login-content center">
+      <!-- SIGN IN -->
+      <div class="login-content center" id="login">
         <h1 class="h1-big center">Log in</h1>
         <hr id="hr" />
         <form class="form center-column" onsubmit="return false">
@@ -74,11 +75,45 @@
           </div>
         </form>
       </div>
+      <!-- Sign UP -->
+      <div class="login-content center display-none" id="signup">
+        <img src="./assets/img/icons/icon-arrow-back.svg" alt="" onclick="switchscreen()">
+        <h1 class="h1-big center">Sign in</h1>
+        <hr id="hr" />
+        <form class="form center-column" onsubmit="return false">
+        <div class="input-login input-bar">
+          <input
+            required
+            type="password"
+            placeholder="Password"
+            id="passwordsignup"
+          />
+          <img src="/assets/img/icons/icon-name.svg" />
+        </div>
+        <div class="input-login input-bar">
+          <input required type="email" placeholder="Email" id="emailsignup" />
+          <img src="/assets/img/icons/icon-email.svg" />
+        </div>
+        <div class="input-login input-bar">
+          <input
+            required
+            type="password"
+            placeholder="Password"
+            id="passwordsignuprepeat"
+          />
+          <img src="/assets/img/icons/icon-password.svg" />
+        </div>
+        <div class="login-btns">
+          <button id="btn-login" class="btn-login" onclick="signUp()">
+            Sign up
+          </button>
+        </form>
+        </div>
+      </div>
     </div>
-    <div class="login-content-sign-up center">
+    <div class="login-content-sign-up center" id="btn">
       <h4>Not a Join user?</h4>
-      <!-- todo: Ansicht für Sign Up per JS rendern -->
-      <button class="btn-small" onclick="renderSignUp()">Sign Up</button>
+      <button class="btn-small" onclick="switchscreen()">Sign Up</button>
     </div>
   </body>
 </html>

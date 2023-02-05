@@ -1,7 +1,7 @@
 setURL("https://gruppe-445.developerakademie.net/smallest_backend_ever/");
 
-const users = new Array();
-const tasks = new Array();
+let users = [];
+let tasks = [];
 
 // ID of the user. 0 for guest
 let userLogIn = null;
@@ -24,12 +24,17 @@ async function includeHTML() {
 }
 
 /**
- * Load the data from the backend and convert to JSON-ARRAY
- * @param {STRING} load -> Key of the data in Backend
- * @returns array of JSON-Data
+ * Load all Data from the Backend an push it in the two arrays for users and tasks
  */
-// async function loadBackend(load) {
-//   let loaded = await backend.getItem(load);
-//   let data = await JSON.parse(loaded);
-//   return data;
-// }
+async function loadDataFromServer() {
+  let download = await downloadFromServer();
+  download = await JSON.parse(download);
+
+  for (let i = 0; i < data.users.length; i++) {
+    users.push(download.users[i]);
+  }
+
+  for (let i = 0; i < data.tasks.length; i++) {
+    tasks.push(download.tasks[i]);
+  }
+}
