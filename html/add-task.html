@@ -16,7 +16,26 @@
     <header w3-include-html="../assets/templates/header.html"></header>
     <nav w3-include-html="../assets/templates/navbar.html"></nav>
     <section class="content">
-      <p class="mobile">Here you can add a task, later....</p>
+      <h1>Add Task</h1>
+      <form action="" class=add-task-form >
+        <div class="form-inputs center-column">
+          <label for="task-title">Title</label>
+          <input id="task-title" type="text" class="input-bar add-task-form-input" />
+        </div>
+        <div class="form-inputs center-column">
+          <label for="task-description">Description</label>
+          <textarea id="task-description" rows="4" class="input-bar add-task-form-input" /></textarea>
+        </div>
+        <div class="form-inputs center-column">
+          <label for="task-category">Category</label>
+          <select name="category" id="task-category" class="input-bar add-task-form-input" size="1">
+            <option value="">New category</option>
+            <option value="sales">Sales <div class="category-color"> </div></option> 
+            <option value="marketing">Marketing</option>
+            <option value="backoffice">Backoffice</option>
+          </select>
+        </div>
+      </form>
     </section>
   </body>
 </html>
