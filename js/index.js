@@ -3,25 +3,34 @@ async function initialisation() {
 }
 
 function signUp() {
-  const email = document.getElementById("email").value.toLowerCase();
-  const password = document.getElementById("password").value;
+  const email = document.getElementById("emailsignup").value.toLowerCase();
+  const password = document.getElementById("passwordsignup").value;
+  const passwordrepeat = document.getElementById("passwordsignuprepeat").value;
+  let user = {};
 
   if (users.length > 0) {
     for (let i = 0; i < users.length; i++) {
-      if (email == users[i].email) return 1;
+      if (email == users[i].email) {
+        alert("Benutzer schon vorhanden");
+        return 1;
+      }
     }
   }
 
-  let user = {
-    id: users.length,
-    email: email,
-    password: password
-  };
+  if (password == passwordrepeat) {
+    user = {
+      id: users.length,
+      email: email,
+      password: password
+    };
+  } else {
+    alert("Passwort prüfen");
+    return 1;
+  }
 
   users.push(user);
   backend.setItem("users", JSON.stringify(users));
-  console.log(users);
-  return 0;
+  window.location.assign("./index.html");
 }
 
 function signIn() {
