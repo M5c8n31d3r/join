@@ -1,7 +1,7 @@
 setURL("https://gruppe-445.developerakademie.net/smallest_backend_ever/");
 
-let users = [];
-let tasks = [];
+const users = [];
+const tasks = [];
 
 // ID of the user. 0 for guest
 let userLogIn = null;
