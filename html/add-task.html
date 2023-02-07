@@ -17,24 +17,85 @@
     <nav w3-include-html="../assets/templates/navbar.html"></nav>
     <section class="content">
       <h1>Add Task</h1>
-      <form action="" class=add-task-form >
-        <div class="form-inputs center-column">
-          <label for="task-title">Title</label>
-          <input id="task-title" type="text" class="input-bar add-task-form-input" />
-        </div>
-        <div class="form-inputs center-column">
-          <label for="task-description">Description</label>
-          <textarea id="task-description" rows="4" class="input-bar add-task-form-input" /></textarea>
-        </div>
-        <div class="form-inputs center-column">
-          <label for="task-category">Category</label>
-          <select name="category" id="task-category" class="input-bar add-task-form-input" size="1">
-            <option value="">New category</option>
-            <option value="sales">Sales <div class="category-color"> </div></option> 
-            <option value="marketing">Marketing</option>
-            <option value="backoffice">Backoffice</option>
-          </select>
-        </div>
+      <form action="" class="add-task-form">
+        <section class="add-task-left">
+          <div class="form-inputs center-column">
+            <label for="task-title">Title</label>
+            <input
+              id="task-title"
+              type="text"
+              class="input-bar add-task-form-input"
+            />
+          </div>
+          <div class="form-inputs center-column">
+            <label for="task-description">Description</label>
+            <textarea
+              id="task-description"
+              rows="4"
+              class="input-bar add-task-form-input"
+            ></textarea>
+          </div>
+          <div class="form-inputs center-column">
+            <label for="task-category">Category</label>
+            <select
+              name="category"
+              id="task-category"
+              class="input-bar add-task-form-input"
+              size="1"
+            >
+              <option value="">New category</option>
+              <option value="sales">Sales</option>
+              <option name="marketing" value="marketing">Marketing</option>
+              <option value="backoffice">Backoffice</option>
+              <label for="marketing">
+                <div class="category-color">dfsd</div>
+              </label>
+            </select>
+          </div>
+          <div class="form-inputs center-column">
+            <label for="task-assigned-to">Assigned to</label>
+            <select
+              name="assigned-to"
+              id="task-assigned-to"
+              class="input-bar add-task-form-input"
+              size="1"
+            ></select>
+          </div>
+        </section>
+        <section class="add-task-right">
+          <div class="form-inputs center-column">
+            <label for="task-due-date">Due date</label>
+            <input
+              id="task-due-date"
+              type="date"
+              class="input-bar add-task-form-input"
+            />
+          </div>
+          <label for="task-prio">Prio</label>
+          <div class="form-inputs center-row add-task-prio-row">
+            <input type="radio" name="prio" id="task-urgent" />
+            <input type="radio" name="prio" id="task-medium" />
+            <input type="radio" name="prio" id="task-low" />
+            <label for="task-urgent" class="task-urgent task-prio-card-label">
+              <div class="task-prio-card task-prio-urgent">
+                <span class="">Urgent</span>
+                <img src="../assets/img/icons/icon-prio-urgent.svg" />
+              </div>
+            </label>
+            <label for="task-medium" class="task-prio-card-label">
+              <div class="task-prio-card task-prio-medium">
+                <span class="">Medium</span>
+                <img src="../assets/img/icons/icon-prio-medium.svg" />
+              </div>
+            </label>
+            <label for="task-low" class="task-prio-card-label">
+              <div class="task-prio-card task-prio-low">
+                <span class="">Low</span>
+                <img src="../assets/img/icons/icon-prio-low.svg" />
+              </div>
+            </label>
+          </div>
+        </section>
       </form>
     </section>
   </body>
