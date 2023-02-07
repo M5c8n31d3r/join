@@ -116,6 +116,7 @@ button:hover {
 
 input {
   border: none;
+  width: 100%;
 }
 
 textarea:focus,
@@ -126,6 +127,7 @@ input:focus {
 /* Klassen */
 
 .input-bar {
+  max-width: 65vw;
   height: 41px;
   border: 1px solid #a8a8a8;
   border-radius: var(--border-radius-m);
@@ -191,6 +193,9 @@ input:focus {
 .gap-s {
   gap: 5px;
 }
+.flex {
+  display: flex;
+}
 .center {
   display: flex;
   align-items: center;
@@ -204,6 +209,29 @@ input:focus {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+
+.left {
+  left: 20px;
+}
+
+.top {
+  top: 20px;
+}
+.unset-width {
+  width: unset;
+}
+
+.back-arrow {
+  width: 22px;
+  height: 22px;
 }
 
 .fullscreen {
@@ -245,6 +273,7 @@ input:focus {
 }
 .login-content-pw {
   gap: 15px;
+  z-index: 2;
 }
 
 .font-lightblue {
@@ -497,7 +526,7 @@ input:focus {
   }
 
   .login-input-bars {
-    padding-bottom: 60px;
+    padding-bottom: 5%;
   }
 
   button {

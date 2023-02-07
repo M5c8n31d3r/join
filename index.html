@@ -56,8 +56,8 @@
             <a onclick="renderPasswordReset()" class="font-lightblue"
               >Forgot my password</a
             >
-            <div>
-              <input type="checkbox" name="Remember me" id="rememberme" />
+            <div class="flex  gap">
+              <input class="unset-width" type="checkbox" name="Remember me" id="rememberme" />
               <label for="rememberme">Remember me</label>
             </div>
           </div>
@@ -76,9 +76,10 @@
         </form>
       </div>
       <!-- Sign UP -->
-      <div class="login-content center display-none" id="signup">
+      <div class="login-content relative center display-none" id="signup">
         <!-- todo: bild noch nach links verschieben -->
-        <img src="./assets/img/icons/icon-arrow-back.svg" alt="" onclick="switchscreen()">
+        <a class="back-arrow absolute left top" onclick="switchscreen()"><img 
+        src="./assets/img/icons/icon-arrow-back.svg" alt="Go back"></a>
         <h1 class="h1-big center">Sign in</h1>
         <hr id="hr" />
         <form class="form center-column" onsubmit="return false">
