@@ -200,6 +200,10 @@ input:focus {
 .flex {
   display: flex;
 }
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
 .center {
   display: flex;
   align-items: center;
@@ -466,11 +470,24 @@ input:focus {
   box-shadow: 0 5px var(--grey);
 }
 
-input[type="radio"]:checked + label.task-urgent .task-prio-card {
+input[type="radio"]:checked + label .task-prio-urgent {
   background-color: var(--urgent);
+  color: white;
+  font-weight: bold;
 }
-#task-medium:checked + label.task-medium .task-prio-card {
-  background-color: yellow;
+input[type="radio"]:checked + label .task-prio-medium {
+  background-color: var(--medium);
+  color: white;
+  font-weight: bold;
+}
+input[type="radio"]:checked + label .task-prio-low {
+  background-color: var(--low);
+  color: white;
+  font-weight: bold;
+}
+
+input[type="radio"]:checked + label .prio-icon {
+  filter: brightness(100) saturate(0);
 }
 
 input[type="radio"] {

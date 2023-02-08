@@ -71,29 +71,40 @@
               class="input-bar add-task-form-input"
             />
           </div>
-          <label for="task-prio">Prio</label>
-          <div class="form-inputs center-row add-task-prio-row">
-            <input type="radio" name="prio" id="task-urgent" />
-            <input type="radio" name="prio" id="task-medium" />
-            <input type="radio" name="prio" id="task-low" />
-            <label for="task-urgent" class="task-urgent task-prio-card-label">
-              <div class="task-prio-card task-prio-urgent">
-                <span class="">Urgent</span>
-                <img src="../assets/img/icons/icon-prio-urgent.svg" />
-              </div>
-            </label>
-            <label for="task-medium" class="task-prio-card-label">
-              <div class="task-prio-card task-prio-medium">
-                <span class="">Medium</span>
-                <img src="../assets/img/icons/icon-prio-medium.svg" />
-              </div>
-            </label>
-            <label for="task-low" class="task-prio-card-label">
-              <div class="task-prio-card task-prio-low">
-                <span class="">Low</span>
-                <img src="../assets/img/icons/icon-prio-low.svg" />
-              </div>
-            </label>
+          <div class="form-inputs gap flex-column">
+            <label for="task-prio">Prio</label>
+            <div class="center-row add-task-prio-row gap">
+              <input type="radio" name="prio" id="task-urgent" />
+              <label for="task-urgent" class="task-urgent task-prio-card-label">
+                <div class="task-prio-card task-prio-urgent">
+                  <span class="">Urgent</span>
+                  <img
+                    class="prio-icon"
+                    src="../assets/img/icons/icon-prio-urgent.svg"
+                  />
+                </div>
+              </label>
+              <input type="radio" name="prio" id="task-medium" />
+              <label for="task-medium" class="task-prio-card-label">
+                <div class="task-prio-card task-prio-medium">
+                  <span class="">Medium</span>
+                  <img
+                    class="prio-icon"
+                    src="../assets/img/icons/icon-prio-medium.svg"
+                  />
+                </div>
+              </label>
+              <input type="radio" name="prio" id="task-low" />
+              <label for="task-low" class="task-prio-card-label">
+                <div class="task-prio-card task-prio-low">
+                  <span class="">Low</span>
+                  <img
+                    class="prio-icon"
+                    src="../assets/img/icons/icon-prio-low.svg"
+                  />
+                </div>
+              </label>
+            </div>
           </div>
         </section>
       </form>
