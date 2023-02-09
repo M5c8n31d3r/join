@@ -52,7 +52,7 @@ let musterUsers = [
 let musterTasks = [
   {
     id: 0,
-    titel: "Muster Daten löschen",
+    title: "Muster Daten löschen",
     description:
       "Nachdem die Intigration des Backend läuft, können die Musterdaten gelöscht werden.",
     priority: -1,
@@ -73,7 +73,7 @@ let musterTasks = [
   },
   {
     id: 1,
-    titel: "Mobile first",
+    title: "Mobile first",
     description:
       "Alle Layouts werden erst für die Mobilansicht erstellt und dann für den Desktop optimiert",
     priority: 0,
@@ -85,7 +85,7 @@ let musterTasks = [
   },
   {
     id: 2,
-    titel: "Dritte Musteraufgabe",
+    title: "Dritte Musteraufgabe",
     description: "Ich würde ja jetzt Lorem machen, aber das geht in js nicht",
     priority: 0,
     category: "done",

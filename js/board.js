@@ -41,7 +41,7 @@ function loadTask() {
 function renderCard(task) {
   return `<div class="task-card">
         <div></div>
-        <h3>${task["titel"]}</h3>
+        <h3>${task["title"]}</h3>
         <p>${task["description"]}
         </p>
         <span>progress bar</span>
