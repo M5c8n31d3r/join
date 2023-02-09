@@ -22,6 +22,7 @@ function signUp() {
   if (password == passwordrepeat) {
     user = {
       id: users.length,
+      name: "X Unknown",
       email: email,
       password: password
     };
@@ -31,8 +32,8 @@ function signUp() {
   }
 
   users.push(user);
-  backend.setItem("users", JSON.stringify(users));
-  window.location.assign("./index.html");
+  backend.setItem("users", users);
+  switchscreen();
 }
 
 function signIn() {
