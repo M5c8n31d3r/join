@@ -8,6 +8,7 @@ function signUp() {
   const email = document.getElementById("emailsignup").value.toLowerCase();
   const password = document.getElementById("passwordsignup").value;
   const passwordrepeat = document.getElementById("passwordsignuprepeat").value;
+  const error = document.getElementById("wrongpassword");
   let user = {};
 
   if (users.length > 0) {
@@ -27,7 +28,7 @@ function signUp() {
       password: password
     };
   } else {
-    alert("Passwort prüfen");
+    error.classList.remove("display-none");
     return 1;
   }
 
