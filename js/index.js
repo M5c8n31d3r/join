@@ -1,3 +1,5 @@
+let idForPasswordReset = 0;
+
 async function initialisation() {
   loadDataFromServer();
 }
@@ -94,4 +96,9 @@ function passwordReset() {
     passwordreset.classList.remove("display-none");
     btn.classList.add("display-none");
   }
+}
+
+function sendNewPassword() {
+  let email = document.getElementById("forgotpasswordemail");
+  alert(email.value);
 }
