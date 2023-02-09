@@ -8,16 +8,17 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css" />
     <!-- JavaScript -->
-    <script src="../js/script.js"></script>
     <script src="../js/mini_backend.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/add-task.js"></script>
   </head>
 
-  <body onload="includeHTML()">
+  <body onload="initAddTask()">
     <header w3-include-html="../assets/templates/header.html"></header>
     <nav w3-include-html="../assets/templates/navbar.html"></nav>
     <section class="content">
       <h1>Add Task</h1>
-      <form action="" class="add-task-form">
+      <form action="" class="add-task-form" onsubmit="return false">
         <section class="add-task-left">
           <div class="form-inputs center-column">
             <label for="task-title">Title</label>
@@ -106,6 +107,7 @@
               </label>
             </div>
           </div>
+          <button onclick="saveTask()">Speichern</button>
         </section>
       </form>
     </section>
