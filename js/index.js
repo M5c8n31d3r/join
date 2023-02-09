@@ -80,6 +80,18 @@ function switchscreen() {
   }
 }
 
-function renderPasswordReset() {
-  alert("Hier kommt die Seite für dein neues Passwort.");
+function passwordReset() {
+  let login = document.getElementById("login");
+  let passwordreset = document.getElementById("forgotpasswordscreen");
+  let btn = document.getElementById("btn");
+
+  if (login.classList.contains("display-none")) {
+    login.classList.remove("display-none");
+    passwordreset.classList.add("display-none");
+    btn.classList.remove("display-none");
+  } else {
+    login.classList.add("display-none");
+    passwordreset.classList.remove("display-none");
+    btn.classList.add("display-none");
+  }
 }
