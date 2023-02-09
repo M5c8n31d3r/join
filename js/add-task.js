@@ -15,4 +15,9 @@ function saveTask() {
   };
   tasks.push(task);
   backend.setItem("tasks", tasks);
+  setTimeout(loadDelay, 1000);
+}
+
+function loadDelay() {
+  window.location.assign("./board.html");
 }
