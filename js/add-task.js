@@ -52,5 +52,6 @@ function selectCategory(id) {
         <span>${categories[id]["name"]}</span>
         <div class="category-color" style="background-color: ${categories[id]["color"]}"></div>
       </div>`;
+  document.getElementById("category-input").value = categories[id]["name"];
   document.getElementById("category-input").classList.add("display-none");
 }
