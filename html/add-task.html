@@ -40,29 +40,17 @@
             <label for="task-category">Category</label>
             <div class="dropdown">
               <div class="dropdown-input flex space-between">
-                <input type="text" id="input-category" /><img
-                  src="../assets/img/icons/icon-dopdown-arrow.svg"
-                />
+                <div id="filled-category"></div>
+                <input
+                  id="category-input"
+                  type="text"
+                  id="input-category"
+                /><img src="../assets/img/icons/icon-dopdown-arrow.svg" />
               </div>
               <div class="dropdown-item flex">
                 <span class="category-name">New category</span>
               </div>
-              <div class="dropdown-item flex">
-                <span class="category-name">Marketing</span>
-                <div class="category-color bg-marketing"></div>
-              </div>
-              <div class="dropdown-item flex">
-                <span class="category-name">Sales</span>
-                <div class="category-color bg-sales"></div>
-              </div>
-              <div class="dropdown-item flex">
-                <span class="category-name">Backoffice</span>
-                <div class="category-color"></div>
-              </div>
-              <div class="dropdown-item flex">
-                <span class="category-name">Shipping</span>
-                <div class="category-color"></div>
-              </div>
+              <div id="category-list"></div>
             </div>
             <div class="category-colors flex">
               <div class="category-color bg-marketing"></div>

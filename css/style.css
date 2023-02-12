@@ -14,12 +14,12 @@
   --shadow: rgba(0, 0, 0, 0.1);
 
   /* Colors task-categorys */
-  --cat-orange: #ff8a00;
-  --cat-light-blue: #8aa4ff;
-  --cat-red: #ff0000;
-  --cat-apple-green: #2ad300;
-  --cat-magenta: #e200be;
-  --cat-bright-blue: #0038ff;
+  --orange: #ff8a00;
+  --light-blue: #8aa4ff;
+  --red: #ff0000;
+  --apple-green: #2ad300;
+  --magenta: #e200be;
+  --bright-blue: #0038ff;
 
   /* Geometry */
   --nav-width-d: 232px;
