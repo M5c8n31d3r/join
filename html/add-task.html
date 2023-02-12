@@ -38,20 +38,40 @@
           </div>
           <div class="form-inputs center-column">
             <label for="task-category">Category</label>
-            <select
-              name="category"
-              id="task-category"
-              class="input-bar add-task-form-input"
-              size="1"
-            >
-              <option value="">New category</option>
-              <option value="sales">Sales</option>
-              <option name="marketing" value="marketing">Marketing</option>
-              <option value="backoffice">Backoffice</option>
-              <label for="marketing">
-                <div class="category-color">dfsd</div>
-              </label>
-            </select>
+            <div class="dropdown">
+              <div class="dropdown-input flex space-between">
+                <input type="text" id="input-category" /><img
+                  src="../assets/img/icons/icon-dopdown-arrow.svg"
+                />
+              </div>
+              <div class="dropdown-item flex">
+                <span class="category-name">New category</span>
+              </div>
+              <div class="dropdown-item flex">
+                <span class="category-name">Marketing</span>
+                <div class="category-color bg-marketing"></div>
+              </div>
+              <div class="dropdown-item flex">
+                <span class="category-name">Sales</span>
+                <div class="category-color bg-sales"></div>
+              </div>
+              <div class="dropdown-item flex">
+                <span class="category-name">Backoffice</span>
+                <div class="category-color"></div>
+              </div>
+              <div class="dropdown-item flex">
+                <span class="category-name">Shipping</span>
+                <div class="category-color"></div>
+              </div>
+            </div>
+            <div class="category-colors flex">
+              <div class="category-color bg-marketing"></div>
+              <div class="category-color bg-sales"></div>
+              <div class="category-color"></div>
+              <div class="category-color"></div>
+              <div class="category-color"></div>
+              <div class="category-color"></div>
+            </div>
           </div>
           <div class="form-inputs center-column">
             <label for="task-assigned-to">Assigned to</label>
