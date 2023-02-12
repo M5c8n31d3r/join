@@ -3,11 +3,10 @@
 .help-container {
   padding: 48px 5%;
   height: 100vh;
-  overflow-y: scroll;
 }
 
 .headline {
-  font-size: 64px;
+  font-size: 48px;
 }
 
 .question-cnt {
@@ -28,6 +27,12 @@
 
 .number > p {
   font-size: 24px;
+}
+
+.icon-arrow-back-black {
+  cursor: pointer;
+  position: absolute;
+  right: 100px;
 }
 
 /***** Responsive Design *****/

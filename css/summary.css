@@ -168,10 +168,8 @@
   color: var(--white);
 }
 
-.todo-container:hover,
-.done-container:hover {
-  background-color: var(--darkblue);
-  cursor: pointer;
+.todo-icon,
+.done-icon :hover {
   color: var(--white);
 }
 
@@ -187,15 +185,13 @@
   align-items: center;
   justify-content: center;
   margin-left: 2rem;
+  width: 60px;
+  height: 60px;
 }
 
 .todo-container > img {
   width: 60px;
   height: 60px;
-}
-
-.todo-container > img:hover {
-  filter: invert(100%);
 }
 
 .done-container > img {
@@ -204,5 +200,9 @@
 }
 
 .done-container > img:hover {
+  filter: invert(100%);
+}
+
+.todo-container > img:hover {
   filter: invert(100%);
 }
