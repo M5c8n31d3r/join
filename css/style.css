@@ -14,7 +14,12 @@
   --shadow: rgba(0, 0, 0, 0.1);
 
   /* Colors task-categorys */
-  --cat-sales: #4460db;
+  --cat-orange: #ff8a00;
+  --cat-light-blue: #8aa4ff;
+  --cat-red: #ff0000;
+  --cat-apple-green: #2ad300;
+  --cat-magenta: #e200be;
+  --cat-bright-blue: #0038ff;
 
   /* Geometry */
   --nav-width-d: 232px;
@@ -455,6 +460,25 @@ input:focus {
   width: 100%;
 }
 
+.dropdown {
+  background-color: var(--white);
+  border: 1px solid #a8a8a8;
+  border-radius: var(--border-radius-m);
+  overflow: hidden;
+}
+
+.dropdown-input {
+  padding: 13px 21px;
+}
+
+.dropdown-item {
+  padding: 13px 21px;
+}
+
+.dropdown-item:hover {
+  background-color: var(--grey);
+}
+
 .task-prio-card-label {
   width: 100%;
 }
@@ -510,10 +534,19 @@ input[type="radio"] {
 }
 
 .category-color {
-  min-height: 10px;
-  min-width: 10px;
-  border-radius: 25px;
-  background-color: var(--cat-sales);
+  min-height: 20px;
+  min-width: 20px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  margin: 0 0px 0 20px;
+}
+
+.bg-marketing {
+  background-color: var(--cat-orange);
+}
+
+.bg-sales {
+  background-color: var(--cat-light-blue);
 }
 
 .task-card {
