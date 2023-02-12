@@ -397,6 +397,12 @@ input:focus {
   display: none;
 }
 
+.icon-arrow-back-black {
+  cursor: pointer;
+  position: absolute;
+  right: 100px;
+}
+
 #new-contact {
   display: flex;
   justify-content: flex-end;
