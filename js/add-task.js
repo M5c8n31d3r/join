@@ -56,6 +56,7 @@ function selectCategory(id) {
   filledCategory.classList.remove("display-none");
   document.getElementById("category-input").value = categories[id]["name"];
   document.getElementById("category-input").classList.add("display-none");
+  document.getElementById("new-category-colors").classList.add("display-none");
   toggleDropdown();
 }
 
