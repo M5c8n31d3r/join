@@ -41,16 +41,26 @@
             <div class="dropdown">
               <div class="dropdown-input flex space-between">
                 <div id="filled-category"></div>
-                <input id="category-input" type="text" /><img
-                  src="../assets/img/icons/icon-dopdown-arrow.svg"
+                <input
+                  id="category-input"
+                  type="text"
+                  placeholder="Add category"
                 />
+                <div onclick="toggleDropdown()" class="dropdown-arrow">
+                  <img src="../assets/img/icons/icon-dopdown-arrow.svg" />
+                </div>
               </div>
-              <div class="dropdown-item flex">
-                <span class="category-name">New category</span>
+              <div id="dropdown-list-category" class="display-none">
+                <div onclick="newCategory()" class="dropdown-item flex">
+                  <span class="category-name">New category</span>
+                </div>
+                <div id="category-list"></div>
               </div>
-              <div id="category-list"></div>
             </div>
-            <div class="category-colors flex">
+            <div
+              id="new-category-colors"
+              class="category-colors flex display-none"
+            >
               <div class="category-color bg-marketing"></div>
               <div class="category-color bg-sales"></div>
               <div class="category-color"></div>

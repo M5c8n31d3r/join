@@ -47,11 +47,32 @@ function loadCategories() {
 }
 
 function selectCategory(id) {
-  document.getElementById("filled-category").innerHTML = `
+  let filledCategory = document.getElementById("filled-category");
+  filledCategory.innerHTML = `
       <div class="flex">
         <span>${categories[id]["name"]}</span>
         <div class="category-color" style="background-color: ${categories[id]["color"]}"></div>
       </div>`;
+  filledCategory.classList.remove("display-none");
   document.getElementById("category-input").value = categories[id]["name"];
   document.getElementById("category-input").classList.add("display-none");
+  toggleDropdown();
+}
+
+function toggleDropdown() {
+  let list = document.getElementById("dropdown-list-category");
+  if (list.classList.contains("display-none")) {
+    list.classList.remove("display-none");
+  } else {
+    list.classList.add("display-none");
+  }
+}
+
+function newCategory() {
+  document
+    .getElementById("new-category-colors")
+    .classList.remove("display-none");
+  document.getElementById("category-input").classList.remove("display-none");
+  document.getElementById("filled-category").classList.add("display-none");
+  toggleDropdown();
 }
