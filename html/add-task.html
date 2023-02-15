@@ -40,14 +40,40 @@
             <label for="task-category">Category</label>
             <div class="dropdown">
               <div class="dropdown-input flex space-between">
-                <div id="filled-category"></div>
-                <input
-                  id="category-input"
-                  type="text"
-                  placeholder="Add category"
-                />
-                <div onclick="toggleDropdown()" class="dropdown-arrow">
+                <div id="filled-category" class="display-none"></div>
+                <div id="new-category-inputs" class="flex">
+                  <input
+                    id="category-input"
+                    type="text"
+                    placeholder="Add category"
+                  />
+                  <div
+                    class="category-color display-none"
+                    id="new-category-color"
+                  ></div>
+                </div>
+                <div
+                  id="category-dropdown-arrow"
+                  onclick="toggleDropdown()"
+                  class="dropdown-arrow"
+                >
                   <img src="../assets/img/icons/icon-dopdown-arrow.svg" />
+                </div>
+                <div id="dropdown-accept" class="flex display-none">
+                  <div class="icon-dropdown icon-dropdown-left center">
+                    <img
+                      onclick="clearInput()"
+                      class=""
+                      src="../assets/img/icons/icon-x.svg"
+                    />
+                  </div>
+                  <div class="icon-dropdown center">
+                    <img
+                      onclick="saveNewCategory()"
+                      class="svg-white"
+                      src="../assets/img/icons/icon-check.svg"
+                    />
+                  </div>
                 </div>
               </div>
               <div id="dropdown-list-category" class="display-none">
@@ -61,12 +87,36 @@
               id="new-category-colors"
               class="category-colors flex display-none"
             >
-              <div class="category-color bg-marketing"></div>
-              <div class="category-color bg-sales"></div>
-              <div class="category-color"></div>
-              <div class="category-color"></div>
-              <div class="category-color"></div>
-              <div class="category-color"></div>
+              <div
+                onclick="addNewCatergoryColor('--orange')"
+                class="category-color"
+                style="background-color: var(--orange)"
+              ></div>
+              <div
+                onclick="addNewCatergoryColor('--light-blue')"
+                class="category-color"
+                style="background-color: var(--light-blue)"
+              ></div>
+              <div
+                onclick="addNewCatergoryColor('--red')"
+                class="category-color"
+                style="background-color: var(--red)"
+              ></div>
+              <div
+                onclick="addNewCatergoryColor('--apple-green')"
+                class="category-color"
+                style="background-color: var(--apple-green)"
+              ></div>
+              <div
+                onclick="addNewCatergoryColor('--magenta')"
+                class="category-color"
+                style="background-color: var(--magenta)"
+              ></div>
+              <div
+                onclick="addNewCatergoryColor('--bright-blue')"
+                class="category-color"
+                style="background-color: var(--bright-blue)"
+              ></div>
             </div>
           </div>
           <div class="form-inputs center-column">
