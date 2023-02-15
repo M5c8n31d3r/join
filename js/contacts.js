@@ -132,6 +132,8 @@ function addEditUser(id, edit) {
   let editUser = document.getElementById("add-edit-contact");
   let headline = "";
   let underheadline = "";
+  let icon = "";
+  let checkout = "";
 
   contactlist.classList.add("display-none");
   details.classList.add("display-none");
@@ -141,15 +143,44 @@ function addEditUser(id, edit) {
   if (edit) {
     headline = "Edit contact";
     underheadline = "";
+    icon = getFirstLetters(users[id]);
+    checkout = "Save";
   } else {
     headline = "Add contact";
     underheadline = "Tasks are better with a team!";
+    icon = '<img src="../assets/img/icons/icon-name.svg">';
+    id = users.length;
+    checkout = "Create contact";
   }
-  renderAddEditUser(id, headline, underheadline);
+  renderAddEditUser(id, headline, underheadline, icon, checkout);
 }
 
-function renderAddEditUser(id, headline, underheadline) {
+function renderAddEditUser(id, headline, underheadline, icon, checkout) {
   let contact = document.getElementById("add-edit-contact");
+  contact.innerHTML = /*html */ `
+  <div class="head">
+    <h1>${headline}</h1>
+    <h2>${underheadline}</h2>
+    <hr id="hr">
+    <div class="cl-contact-left center">${icon}</div>
+  </div>
+  <div class="contact-detail">
+    <input type="text" value="${
+      id == users.length ? "" : users[id].name
+    }" placeholder="Name">
+    <input type="email" value="${
+      id == users.length ? "" : users[id].email
+    }" placeholder="Email">
+    <input type="phone" value="${
+      id == users.length ? "" : users[id].phone
+    }" placeholder="Phonenumber">
+    <button class="login-btn" onclick="save()">${checkout}</button>
+  </div>
+  `;
+}
+
+function save() {
+  alert("Jetzt muss ich die Scheiße nur noch speichern...");
 }
 
 function returnContacts() {
