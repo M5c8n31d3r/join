@@ -154,23 +154,32 @@
   background-color: var(--white);
   height: 170px;
   width: 280px;
-  border-radius: 30px;
+  border-radius: var(--border-radius-xl);
   display: flex;
   align-items: center;
   justify-content: center;
   border: 2px solid var(--white);
+  cursor: pointer;
 }
 
 .todo-container:hover,
 .done-container:hover {
   background-color: var(--darkblue);
-  cursor: pointer;
   color: var(--white);
 }
 
 .todo-icon,
-.done-icon :hover {
-  color: var(--white);
+.done-icon {
+  border-radius: 50%;
+  background-color: var(--darkblue);
+}
+
+.todo-container:hover .todo-icon {
+  background: url(/assets/img/icons/icon-to-do-2.svg);
+}
+
+.done-container:hover .done-icon {
+  background: url(/assets/img/icons/icon-done-2.svg);
 }
 
 .todo-number,
@@ -187,22 +196,4 @@
   margin-left: 2rem;
   width: 60px;
   height: 60px;
-}
-
-.todo-container > img {
-  width: 60px;
-  height: 60px;
-}
-
-.done-container > img {
-  width: 60px;
-  height: 60px;
-}
-
-.done-container > img:hover {
-  filter: invert(100%);
-}
-
-.todo-container > img:hover {
-  filter: invert(100%);
 }
