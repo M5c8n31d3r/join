@@ -602,6 +602,10 @@ input[type="radio"] {
   border-bottom: 1px solid var(--grey);
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 /* Desktop View 800px+*/
 @media (min-width: 800px) {
   header {

@@ -58,7 +58,9 @@ function checkForLetter() {}
 
 function renderSingleContact(user) {
   return `
-    <div class="cl-contact center-row">
+    <div class="cl-contact center-row pointer" onclick="renderUserEdit(${
+      user.id
+    })">
       <div class="cl-contact-left center">${getFirstLetters(user)}</div>
       <div class="cl-contact-right center-column gap-s">
         <div class="cl-contact-name">${user["name"]}</div>
@@ -87,4 +89,8 @@ function getFirstLetters(user) {
     .map((user) => user.charAt(0))
     .join("");
   return firstLetters;
+}
+
+function renderUserEdit(id) {
+  alert(id);
 }
