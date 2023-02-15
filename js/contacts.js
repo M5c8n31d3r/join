@@ -118,10 +118,39 @@ function renderDetails(id) {
   }</a>
   <h3>Mobil</h3>
   <div>${users[id].phone}</div>
+
+  <div class="pointer" onclick="addEditUser(${id}, ${true})">
+    EDIT
+  </div>
   `;
 }
 
-function addEditUser(id, edit) {}
+function addEditUser(id, edit) {
+  let details = document.getElementById("details");
+  let contactlist = document.getElementById("contactlist");
+  let btn = document.getElementById("btn");
+  let editUser = document.getElementById("add-edit-contact");
+  let headline = "";
+  let underheadline = "";
+
+  contactlist.classList.add("display-none");
+  details.classList.add("display-none");
+  btn.classList.add("display-none");
+  editUser.classList.remove("display-none");
+
+  if (edit) {
+    headline = "Edit contact";
+    underheadline = "";
+  } else {
+    headline = "Add contact";
+    underheadline = "Tasks are better with a team!";
+  }
+  renderAddEditUser(id, headline, underheadline);
+}
+
+function renderAddEditUser(id, headline, underheadline) {
+  let contact = document.getElementById("add-edit-contact");
+}
 
 function returnContacts() {
   let contactlist = document.getElementById("contactlist");
