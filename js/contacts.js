@@ -2,17 +2,8 @@ let letterlist = [];
 
 async function initContacts() {
   await includeHTML();
-  await loadContacts();
+  await loadDataFromServer();
   renderContacts();
-}
-
-async function loadContacts() {
-  let download = await downloadFromServer();
-  download = await JSON.parse(download);
-  users.splice(0, users.length);
-  for (let i = 1; i < download.users.length; i++) {
-    users.push(download.users[i]);
-  }
 }
 
 function renderContacts() {
