@@ -46,9 +46,6 @@ function renderContact() {
   }
 }
 
-// ToDo: Wird diese Funktion noch benötigt? Wofür war die gedacht?
-function checkForLetter() {}
-
 function renderSingleContact(user) {
   return `
     <div class="cl-contact center-row pointer" onclick="showDetails(${
