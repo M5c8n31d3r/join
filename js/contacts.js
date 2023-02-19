@@ -162,22 +162,40 @@ function renderAddEditUser(id, headline, underheadline, icon, checkout) {
     <div class="cl-contact-left center">${icon}</div>
   </div>
   <div class="contact-detail">
-    <input type="text" value="${
+    <input type="text" required id="edit-name" value="${
       id == users.length ? "" : users[id].name
     }" placeholder="Name">
-    <input type="email" value="${
+    <input type="email" required id="edit-email" value="${
       id == users.length ? "" : users[id].email
     }" placeholder="Email">
-    <input type="phone" value="${
+    <input type="phone" id="edit-phone" value="${
       id == users.length ? "" : users[id].phone
     }" placeholder="Phonenumber">
-    <button class="login-btn" onclick="save()">${checkout}</button>
+    <button class="login-btn" onclick="save(${id})">${checkout}</button>
   </div>
   `;
 }
 
-function save() {
-  alert("Jetzt muss ich die Scheiße nur noch speichern...");
+function save(id) {
+  const name = document.getElementById("edit-name").value;
+  const email = document.getElementById("edit-email").value;
+  const phone = document.getElementById("edit-phone").value;
+
+  if (id == users.length) {
+    let user = {
+      id: id,
+      name: name,
+      email: email,
+      phone: phone
+    };
+    users.push(user);
+    backend.setItem(users);
+  } else {
+    users[id].name = name;
+    users[id].email = email;
+    users[id].phone = phone;
+  }
+  returnContacts();
 }
 
 function returnContacts() {
