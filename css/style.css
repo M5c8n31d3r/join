@@ -350,6 +350,10 @@ input:focus {
 .desktop {
   display: none;
 }
+
+.min-height {
+  min-height: 250px;
+}
 /* ID's */
 #nav {
   width: 100%;

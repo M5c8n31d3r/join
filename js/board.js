@@ -1,17 +1,10 @@
+let currentDragElementID = -1;
+
 async function initBoard() {
   await includeHTML();
-  await loadTasks();
+  await loadDataFromServer();
   loadTask();
   // activeSummaryNavLink();
-}
-
-async function loadTasks() {
-  let download = await downloadFromServer();
-  download = await JSON.parse(download);
-  tasks.splice(0, tasks.length);
-  for (let i = 0; i < download.tasks.length; i++) {
-    tasks.push(download.tasks[i]);
-  }
 }
 
 function loadTask() {
@@ -39,8 +32,9 @@ function loadTask() {
 }
 
 function renderCard(task) {
-  return `<div class="task-card">
-        <div></div>
+  return /* html */ `<div class="task-card" draggable="true" ondragstart="drag(${
+    task.id
+  })">
         <h3>${task["title"]}</h3>
         <p>${task["description"]}
         </p>
@@ -64,4 +58,17 @@ function prioIconEnding(task) {
   if (task["priority"] == 1) {
     return "urgent";
   }
+}
+
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(id) {
+  currentDragElementID = id;
+}
+
+function changeState(state) {
+  tasks[currentDragElementID].state = state;
+  loadTask();
 }
