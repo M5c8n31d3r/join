@@ -51,7 +51,12 @@
               ><img src="/assets/img/icons/icon-plus.svg" alt="New To do"
             /></a>
           </div>
-          <div id="col-todo"></div>
+          <div
+            class="min-height"
+            id="col-todo"
+            ondrop="changeState('ToDo')"
+            ondragover="allowDrop(event)"
+          ></div>
         </div>
         <div class="task-col">
           <div class="center-row space-between">
@@ -60,7 +65,12 @@
               ><img src="/assets/img/icons/icon-plus.svg" alt="New To do"
             /></a>
           </div>
-          <div id="col-progress"></div>
+          <div
+            class="min-height"
+            id="col-progress"
+            ondrop="changeState('progress')"
+            ondragover="allowDrop(event)"
+          ></div>
         </div>
         <div class="task-col">
           <div class="center-row space-between">
@@ -69,7 +79,12 @@
               ><img src="/assets/img/icons/icon-plus.svg" alt="New To do"
             /></a>
           </div>
-          <div id="col-awaiting"></div>
+          <div
+            class="min-height"
+            id="col-awaiting"
+            ondrop="changeState('awaiting')"
+            ondragover="allowDrop(event)"
+          ></div>
         </div>
         <div class="task-col">
           <div class="center-row space-between">
@@ -78,7 +93,12 @@
               ><img src="/assets/img/icons/icon-plus.svg" alt="New To do"
             /></a>
           </div>
-          <div id="col-done"></div>
+          <div
+            class="min-height"
+            id="col-done"
+            ondrop="changeState('done')"
+            ondragover="allowDrop(event)"
+          ></div>
         </div>
       </section>
     </section>
