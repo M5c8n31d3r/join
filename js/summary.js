@@ -5,6 +5,29 @@ async function initSummary() {
   // activeSummaryNavLink();
 }
 
+function setWelcomeMsg() {
+  const currDate = new Date();
+  const currHour = currDate.getHours();
+  const welcomeTextDesk = document.getElementById("welcome-text-desk");
+  const welcomeTextMobile = document.getElementById("welcome-text-mobile");
+  let welcomeText = "";
+
+  switch (true) {
+    case currHour < 12:
+      welcomeText = "Good morning,";
+      break;
+    case currHour >= 12 && currHour < 17:
+      welcomeText = "Good afternoon,";
+      break;
+    case currHour >= 17:
+      welcomeText = "Good evening,";
+      break;
+  }
+
+  welcomeTextDesk.innerHTML = welcomeText;
+  welcomeTextMobile.innerHTML = welcomeText;
+}
+
 async function loadTasks() {
   let download = await downloadFromServer();
   download = await JSON.parse(download);
