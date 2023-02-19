@@ -189,7 +189,7 @@ function save(id) {
       phone: phone
     };
     users.push(user);
-    backend.setItem(users);
+    backend.setItem("users", users);
   } else {
     users[id].name = name;
     users[id].email = email;

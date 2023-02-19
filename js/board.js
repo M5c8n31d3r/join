@@ -71,4 +71,5 @@ function drag(id) {
 function changeState(state) {
   tasks[currentDragElementID].state = state;
   loadTask();
+  backend.setItem("tasks", tasks);
 }
