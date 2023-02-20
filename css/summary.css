@@ -117,27 +117,25 @@
   width: 50%;
 }
 
-.welcome-text-container {
-  margin-left: 8rem;
+.welcome-desk {
+  display: flex;
+  flex-direction: column;
 }
 
-.welcome-name {
-  font-size: 3.5rem;
-  color: var(--lightblue);
+#welcome-text-desk {
+  font-size: var(--welcome-text-size);
+  font-weight: 500;
+}
+
+#welcome-name-desk {
+  font-size: var(--welcome-name-size);
   font-weight: 700;
-}
-
-.welcome-text {
-  font-size: 3rem;
-}
-
-.text-box {
-  margin: 3rem 0;
+  color: var(--lightblue);
 }
 
 .deadline-date {
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 24px;
 }
 
 /***** Summary Row 3 *****/
@@ -171,15 +169,16 @@
 .todo-icon,
 .done-icon {
   border-radius: 50%;
-  background-color: var(--darkblue);
 }
 
 .todo-container:hover .todo-icon {
   background: url(/assets/img/icons/icon-to-do-2.svg);
+  /* filter: invert(100%);*/
 }
 
 .done-container:hover .done-icon {
   background: url(/assets/img/icons/icon-done-2.svg);
+  /* filter: invert(100%);*/
 }
 
 .d-none {
@@ -187,11 +186,9 @@
 }
 
 .todo-container:hover {
-  display: block;
 }
 
 .done-container:hover {
-  display: block;
 }
 .todo-number,
 .done-number {
@@ -207,20 +204,4 @@
   margin-left: 2rem;
   width: 60px;
   height: 60px;
-}
-
-.welcome-desk {
-  display: flex;
-  flex-direction: column;
-}
-
-#welcome-text-desk {
-  font-size: var(--welcome-text-size);
-  font-weight: 500;
-}
-
-#welcome-name-desk {
-  font-size: var(--welcome-name-size);
-  font-weight: 700;
-  color: var(--lightblue);
 }
