@@ -5,6 +5,15 @@ async function initSummary() {
   // activeSummaryNavLink();
 }
 
+async function setCurrentUser() {
+  document.getElementById("welcome-name-mobile").innerHTML = escapeHTML(
+    currentUser["name"]
+  );
+  document.getElementById("welcome-name-desk").innerHTML = escapeHTML(
+    currentUser["name"]
+  );
+}
+
 function setWelcomeMsg() {
   const currDate = new Date();
   const currHour = currDate.getHours();
