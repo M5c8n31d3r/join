@@ -8,6 +8,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./assets/fonts/material-icons.css" />
+    <link rel="stylesheet" href="./css/fonts.css" />
     <!-- JavaScript -->
     <script src="./js/mini_backend.js"></script>
     <script src="./js/script.js"></script>
@@ -66,12 +67,16 @@
             </div>
           </div>
           <div class="login-btns">
-            <button id="btn-login" class="btn-login" onclick="signIn()">
+            <button
+              id="btn-login"
+              class="btn-login font-21 font-bold"
+              onclick="signIn()"
+            >
               Log in
             </button>
             <button
               id="btn-login-guest"
-              class="btn-login"
+              class="btn-login font-21 font-bold"
               onclick="signInGuest()"
             >
               Guest Log in
@@ -157,8 +162,12 @@
       </div>
     </div>
     <div class="login-content-sign-up center" id="btn">
-      <h4>Not a Join user?</h4>
-      <button class="btn-small" onclick="switchscreen()">Sign Up</button>
+      <span style="height: 51px" class="font-21 flex center"
+        >Not a Join user?</span
+      >
+      <button class="btn-small font-bold" onclick="switchscreen()">
+        Sign Up
+      </button>
     </div>
   </body>
 </html>
