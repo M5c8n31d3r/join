@@ -1,10 +1,45 @@
 /***** Responsive Design *****/
 
-@media (min-width: 2560px) {
+@media (max-width: 1200px) {
+  #content-summary {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3.5vh;
+  }
+
+  #ui {
+    flex-direction: column;
+  }
+
+  #data {
+    margin-right: unset;
+    margin-top: 3.5vh;
+  }
+
+  .welcome-desk {
+    flex-direction: row;
+    margin-top: 3vh;
+  }
+
+  #welcome-text-desk,
+  #welcome-name-desk {
+    font-size: 40px;
+  }
+
+  #welcome-text-desk {
+    margin-right: 16px;
+  }
 }
 
-@media (max-width: 1440px) {
+/*//////////////////////////////////////////////////////*/
+
+@media (max-width: 940px) {
+  .welcome-desk {
+    display: none;
+  }
 }
+
+/*//////////////////////////////////////////////////////*/
 
 @media (max-width: 768px) {
   .summary-header > h1 {
@@ -13,6 +48,15 @@
 
   .summary-header > p {
     font-size: 1rem;
+  }
+
+  .nav-item {
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 22%;
+    height: 100%;
+    gap: 8px;
+    padding: 0 0 13px;
   }
 
   .summary-row-1 {
@@ -89,5 +133,20 @@
   .done-container > img {
     width: 40px;
     height: 40px;
+  }
+
+  .welcome-desk {
+    display: none;
+    flex-direction: row;
+    margin-top: 3vh;
+  }
+
+  #welcome-text-desk,
+  #welcome-name-desk {
+    font-size: 40px;
+  }
+
+  #welcome-text-desk {
+    margin: 16px;
   }
 }

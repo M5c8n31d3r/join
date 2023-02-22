@@ -22,12 +22,25 @@
     <header w3-include-html="../assets/templates/header.html"></header>
     <nav w3-include-html="../assets/templates/navbar.html"></nav>
 
-    <section class="content">
-      <div class="right-main-container">
-        <div class="summary-container">
-          <div class="summary-header">
-            <h1>Summary</h1>
-            <p>Everything in a nutshell!</p>
+<body onload="initSummary()">
+  <header w3-include-html="../assets/templates/header.html"></header>
+  <nav w3-include-html="../assets/templates/navbar.html"></nav>
+
+  <section class="content">
+    <div class="right-main-container">
+      <div class="summary-container">
+        <div class="summary-header">
+          <h1>Summary</h1>
+          <div id="headline-separator"></div>
+          <p>Everything in a nutshell!</p>
+        </div>
+
+        <div id="ui"> </div>
+
+        <div class="summary-row-1">
+          <div onclick="goToBoard()" class="summary-box btn-1">
+            <div id="board-counter" class="number-in-box"></div>
+            <p class="text-in-box">Tasks <br />in Board</p>
           </div>
 
           <div class="summary-row-1">
@@ -59,9 +72,20 @@
                 <p class="upcoming-deadline-title">Upcoming Deadline</p>
               </div>
             </div>
-            <div class="welcome-desk">
-              <span id="welcome-text-desk">Good morning,</span>
-              <span id="welcome-name-desk">Guest</span>
+            <div class="urgent-box-right">
+              <p id="deadline-date" class="deadline-date"></p>
+              <p class="upcoming-deadline-title">Upcoming Deadline</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="summary-row-3">
+          <div onclick="goToBoard()" class="todo-container">
+            <img class="todo-icon" src="../assets/img/icons/icon-to-do.svg" alt="" />
+            <!-- <img class="todo-icon" src="../assets/img/icons/icon-to-do-2.svg" style="display: none;" alt="" /> -->
+            <div class="todo-text-container">
+              <div id="todo-counter" class="todo-number"></div>
+              <p class="todo-text">To-do</p>
             </div>
           </div>
 
@@ -93,7 +117,15 @@
             </div>
           </div>
         </div>
+
+        <div class="welcome-desk">
+          <span id="welcome-text-desk">Good morning,</span>
+          <span id="welcome-name-desk">Guest</span>
+        </div>
       </div>
-    </section>
-  </body>
+    </div>
+    </div>
+  </section>
+</body>
+
 </html>

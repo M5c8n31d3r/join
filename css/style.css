@@ -27,11 +27,19 @@
   --border-radius-xl: 30px;
   --border-radius-m: 10px;
   --border-radius-xs: 8px;
+  --task-card-width: 250px;
+
+  /* Text */
   --welcome-text-size: 47px;
   --welcome-name-size: 64px;
+
+  /* Animations/Transitions */
+  --welcome-mobile-transition: 400ms;
+  --welcome-mobile-delay: 800ms;
+
+  /* Elemente */
 }
 
-/* Elemente */
 * {
   box-sizing: border-box;
   font-family: "inter", sans-serif;
@@ -365,6 +373,22 @@ input:focus {
 .min-height {
   min-height: 250px;
 }
+
+.welcome-mobile-fade {
+  opacity: 0;
+}
+
+#welcome-text-mobile {
+  font-size: var(--welcome-text-size);
+  font-weight: 500;
+}
+
+#welcome-name-mobile {
+  font-size: var(--welcome-name-size);
+  font-weight: 700;
+  color: var(--lightblue);
+}
+
 /* ID's */
 #nav {
   width: 100%;
