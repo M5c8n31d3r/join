@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join - Summary</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Join - Summary</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/summary.css" />
+    <link rel="stylesheet" href="../css/summary@media.css" />
+    <link rel="stylesheet" href="../css/fonts.css" />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/summary.css" />
-  <link rel="stylesheet" href="../css/summary@media.css" />
-
-  <!-- JavaScript -->
-  <script src="../js/mini_backend.js"></script>
-  <script src="../js/script.js"></script>
-  <script src="../js/summary.js"></script>
-</head>
+    <!-- JavaScript -->
+    <script src="../js/mini_backend.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/summary.js"></script>
+  </head>
 
 <body onload="initSummary()">
   <header w3-include-html="../assets/templates/header.html"></header>
@@ -32,6 +32,7 @@
     </div>
     <div id="ui">
       <div class="summary-container">
+<<<<<<< HEAD
         <div class="summary-row-1">
           <div onclick="goToBoard()" class="summary-box btn-1">
             <div id="board-counter" class="number-in-box"></div>
@@ -55,10 +56,44 @@
                 <p id="urgent-counter" class="number-in-urgent-box"></p>
                 <p class="urgent-title">Urgent</p>
               </div>
+=======
+        <div class="summary-header">
+          <h1>Summary</h1>
+          <div id="headline-separator"></div>
+          <p>Everything in a nutshell!</p>
+        </div>
+
+        <div id="ui"> </div>
+
+          <div class="summary-row-1">
+            <div onclick="goToBoard()" class="summary-box btn-1">
+              <div id="board-counter" class="number-in-box"></div>
+              <p class="text-in-box">Tasks <br />in Board</p>
+>>>>>>> 6318751cc112b76022de1aaab5061ea166e55d50
             </div>
-            <div class="urgent-box-right">
-              <p id="deadline-date" class="deadline-date"></p>
-              <p class="upcoming-deadline-title">Upcoming Deadline</p>
+            <div onclick="goToBoard()" class="summary-box">
+              <div id="progress-counter" class="number-in-box"></div>
+              <p class="text-in-box">Tasks <br />in Progress</p>
+            </div>
+            <div onclick="goToBoard()" class="summary-box">
+              <div id="feedback-counter" class="number-in-box"></div>
+              <p class="text-in-box">Awaiting <br />Feedback</p>
+            </div>
+          </div>
+
+          <div class="summary-row-2">
+            <div onclick="goToBoard()" class="urgent-box">
+              <div class="urgent-box-left">
+                <img src="../assets/img/icons/icon-urgent.svg" alt="" />
+                <div class="number-container">
+                  <p id="urgent-counter" class="number-in-urgent-box"></p>
+                  <p class="urgent-title">Urgent</p>
+                </div>
+              </div>
+              <div class="urgent-box-right">
+                <p id="deadline-date" class="deadline-date"></p>
+                <p class="upcoming-deadline-title">Upcoming Deadline</p>
+              </div>
             </div>
           </div>
         </div>

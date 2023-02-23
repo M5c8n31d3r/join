@@ -5,10 +5,9 @@ async function initialisation() {
 }
 
 function signUp() {
+  const userName = document.getElementById("usersignup").value;
   const email = document.getElementById("emailsignup").value.toLowerCase();
   const password = document.getElementById("passwordsignup").value;
-  const passwordrepeat = document.getElementById("passwordsignuprepeat").value;
-  const error = document.getElementById("wrongpassword");
   let user = {};
 
   if (users.length > 0) {
@@ -20,17 +19,12 @@ function signUp() {
     }
   }
 
-  if (password == passwordrepeat) {
-    user = {
-      id: users.length,
-      name: "X Unknown",
-      email: email,
-      password: password
-    };
-  } else {
-    error.classList.remove("display-none");
-    return 1;
-  }
+  user = {
+    id: users.length,
+    name: userName,
+    email: email,
+    password: password
+  };
 
   users.push(user);
   backend.setItem("users", users);
@@ -59,12 +53,18 @@ function signInGuest() {
   window.location.assign("./html/summary.html");
 }
 
-function swapPassword() {
-  let password = document.getElementById("password");
+function swapPassword(passwordParameter, iconParameter) {
+  let password = document.getElementById(passwordParameter);
+  let icon = document.getElementById(iconParameter);
+
   if (password.type == "password") {
     password.type = "text";
+    //! todo: Richtiges Icon noch einbinden !!!!
+    icon.src = "/assets/img/icons/icon-name.svg";
   } else {
     password.type = "password";
+    //! todo: Richtiges Icon noch einbinden !!!!
+    icon.src = "/assets/img/icons/icon-urgent.svg";
   }
 }
 

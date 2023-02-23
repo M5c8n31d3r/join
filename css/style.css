@@ -42,6 +42,7 @@
 
 * {
   box-sizing: border-box;
+  font-family: "inter", sans-serif;
 }
 
 html {
@@ -51,8 +52,8 @@ html {
 body {
   background-color: var(--grey-bg);
   margin: 0;
-  font-family: inter sans-serif;
   font-size: 16px;
+  font-family: "inter" sans-serif;
 }
 
 header {
@@ -128,6 +129,7 @@ button {
   color: white;
   border: 1px solid var(--darkblue);
   height: 51px;
+  font-size: 16px;
 }
 
 button:hover {
@@ -138,7 +140,6 @@ button:hover {
 input {
   border: none;
   width: 100%;
-  font-size: 16px;
 }
 
 textarea:focus,
@@ -150,7 +151,7 @@ input:focus {
 
 .input-bar {
   max-width: 65vw;
-  height: 41px;
+  height: 51px;
   border: 1px solid #a8a8a8;
   border-radius: var(--border-radius-m);
   background-color: var(--white);
@@ -161,7 +162,7 @@ input:focus {
 }
 
 .input-bar input {
-  font-size: 16px;
+  font-size: 21px;
 }
 
 .btn-small {
@@ -304,6 +305,14 @@ input:focus {
 
 .font-lightblue {
   color: var(--lightblue);
+}
+
+.font-21 {
+  font-size: 21px;
+}
+
+.font-bold {
+  font-weight: bold;
 }
 
 .login-content-sign-up {
