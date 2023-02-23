@@ -68,12 +68,10 @@ function swapPassword(passwordParameter, iconParameter) {
 
   if (password.type == "password") {
     password.type = "text";
-    //! todo: Richtiges Icon noch einbinden !!!!
-    icon.src = "/assets/img/icons/icon-name.svg";
+    icon.src = "/assets/img/icons/icon-password-visible.svg";
   } else {
     password.type = "password";
-    //! todo: Richtiges Icon noch einbinden !!!!
-    icon.src = "/assets/img/icons/icon-urgent.svg";
+    icon.src = "/assets/img/icons/icon-password-not-visible.svg";
   }
 }
 
