@@ -47,8 +47,9 @@
                 id="password"
               />
               <img
+                id="signin-password-icon"
                 src="/assets/img/icons/icon-password.svg"
-                onclick="swapPassword()"
+                onclick="swapPassword('password', 'signin-password-icon')"
               />
             </div>
           </div>
@@ -58,7 +59,7 @@
             >
             <div class="flex gap">
               <input
-                class="unset-width"
+                class="unset-width pointer"
                 type="checkbox"
                 name="Remember me"
                 id="rememberme"
@@ -69,14 +70,14 @@
           <div class="login-btns">
             <button
               id="btn-login"
-              class="btn-login font-21 font-bold"
+              class="btn-login font-21 font-bold pointer"
               onclick="signIn()"
             >
               Log in
             </button>
             <button
               id="btn-login-guest"
-              class="btn-login font-21 font-bold"
+              class="btn-login font-21 font-bold pointer"
               onclick="signInGuest()"
             >
               Guest Log in
@@ -95,9 +96,9 @@
           <div class="input-login input-bar">
             <input
               required
-              type="password"
-              placeholder="Password"
-              id="passwordsignup"
+              type="text"
+              placeholder="Benutzer"
+              id="usersignup"
             />
             <img src="/assets/img/icons/icon-name.svg" />
           </div>
@@ -110,15 +111,20 @@
               required
               type="password"
               placeholder="Password"
-              id="passwordsignuprepeat"
+              id="passwordsignup"
             />
-            <img src="/assets/img/icons/icon-password.svg" />
-          </div>
-          <div class="error display-none" id="wrongpassword">
-            Dein Password ist falsch
+            <img
+              id="signup-password-icon"
+              src="/assets/img/icons/icon-password.svg"
+              onclick="swapPassword('passwordsignup', 'signup-password-icon')"
+            />
           </div>
           <div class="login-btns">
-            <button id="btn-signup" class="btn-login" onclick="signUp()">
+            <button
+              id="btn-signup"
+              class="btn-login pointer"
+              onclick="signUp()"
+            >
               Sign up
             </button>
           </div>
@@ -129,7 +135,7 @@
         class="login-content relative center display-none"
         id="forgotpasswordscreen"
       >
-        <a class="back-arraw absolute left top" onclick="passwordReset()">
+        <a class="back-arrow absolute left top" onclick="passwordReset()">
           <img src="./assets/img/icons/icon-arrow-back.svg" alt="Go back" />
         </a>
         <h1 class="h1-big center">
@@ -153,7 +159,7 @@
           </div>
           <button
             id="btnsendnewpassword"
-            class="login-btn"
+            class="login-btn pointer"
             onclick="sendNewPassword()"
           >
             Send me the email
@@ -165,7 +171,7 @@
       <span style="height: 51px" class="font-21 flex center"
         >Not a Join user?</span
       >
-      <button class="btn-small font-bold" onclick="switchscreen()">
+      <button class="btn-small font-bold pointer" onclick="switchscreen()">
         Sign Up
       </button>
     </div>
