@@ -2,6 +2,7 @@ let idForPasswordReset = 0;
 
 async function initialisation() {
   loadDataFromServer();
+  loadDataFromLocalStorage();
 }
 
 function signUp() {
@@ -34,6 +35,7 @@ function signUp() {
 function signIn() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
+  let rememberMe = document.getElementById("rememberme").checked;
 
   for (let i = 0; i < users.length; i++) {
     if (
@@ -43,6 +45,13 @@ function signIn() {
       userLogIn = users[i].id;
       window.location.assign("./html/summary.html");
     }
+  }
+  if (rememberMe) {
+    user = {
+      email: email,
+      password: password
+    };
+    localStorage.setItem("user", JSON.stringify(user));
   }
 }
 
@@ -103,4 +112,15 @@ function passwordReset() {
 function sendNewPassword() {
   let email = document.getElementById("forgotpasswordemail");
   alert(email.value);
+}
+
+function loadDataFromLocalStorage() {
+  if (localStorage.getItem("user")) {
+    let user = localStorage.getItem("user");
+    user = JSON.parse(user);
+
+    document.getElementById("email").value = user.email;
+    document.getElementById("password").value = user.password;
+    document.getElementById("rememberme").checked = true;
+  }
 }
