@@ -43,8 +43,13 @@
 .summary-row-1 {
   display: flex;
   justify-content: space-between;
-  width: 600px;
   margin-top: 3rem;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 35px;
+  width: 580px;
+  height: 170px;
 }
 
 .summary-box {
@@ -56,7 +61,8 @@
   background-color: var(--white);
   width: 170px;
   height: 170px;
-  padding: 1rem;
+  box-shadow: 0px 0px 4px rgb(0 0 0 / 10%);
+  padding: 25px 0px;
 }
 
 .summary-box:hover {
@@ -84,17 +90,22 @@
 
 .urgent-box {
   display: flex;
-  height: 170px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   background-color: var(--white);
   border-radius: 30px;
   border: 2px solid var(--white);
-  width: 600px;
-  padding: 2rem;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+  padding: 28px 48px;
+  gap: 61px;
+  width: 580px;
+  height: 150px;
 }
 
 .urgent-box:hover {
-  background-color: var(--darkblue);
   cursor: pointer;
+  background-color: var(--darkblue);
   color: var(--white);
 }
 
@@ -102,7 +113,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-right: 1px solid var(--black);
+  border-right: 2px solid #d1d1d1;
   width: 50%;
 }
 
@@ -155,31 +166,61 @@ d-none {
 .welcome-desk {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 3px;
+  position: absolute;
+  width: 385px;
+  height: 85px;
+  left: 920px;
+  top: 533px;
 }
 
 #welcome-text-desk {
   font-size: var(--welcome-text-size);
+  font-family: "Inter";
+  font-style: normal;
   font-weight: 500;
+  font-size: 47px;
+  line-height: 120%;
+  width: 338px;
+  height: 56px;
 }
 
 #welcome-name-desk {
+  font-family: "Inter";
+  font-style: normal;
   font-size: var(--welcome-name-size);
   font-weight: 700;
   color: var(--lightblue);
+  width: 385px;
+  height: 77px;
+  font-size: 64px;
+  line-height: 120%;
 }
 
 .deadline-date {
   font-weight: 700;
-  font-size: 24px;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 120%;
+  width: 148px;
+  height: 19px;
 }
 
 /***** Summary Row 3 *****/
 
 .summary-row-3 {
-  width: 600px;
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
   margin-top: 3rem;
+  padding: 0px;
+  gap: 35px;
+  width: 580px;
+  height: 150px;
 }
 
 .todo-container,
@@ -188,6 +229,7 @@ d-none {
   height: 170px;
   width: 280px;
   border-radius: var(--border-radius-xl);
+  box-shadow: 0px 0px 4px rgb(0 0 0 / 10%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -203,6 +245,14 @@ d-none {
 
 .todo-icon,
 .done-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 10px;
+  width: 69px;
+  height: 69px;
   border-radius: 50%;
 }
 
