@@ -111,10 +111,12 @@ function resetMusterdaten() {
     users.push(musterUsers[i]);
   }
   backend.setItem("users", users);
+  console.log("Userdaten zurück gesetzt");
 
   tasks.splice(0, tasks.length);
   for (let i = 0; i < musterTasks.length; i++) {
     tasks.push(musterTasks[i]);
   }
   backend.setItem("tasks", tasks);
+  console.log("Tasks zurück gesetzt");
 }
