@@ -219,6 +219,10 @@ input:focus {
 .gap-s {
   gap: 5px;
 }
+
+.gap-xl {
+  gap: 55px;
+}
 .flex {
   display: flex;
 }
