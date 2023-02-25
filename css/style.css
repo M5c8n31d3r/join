@@ -171,6 +171,28 @@ input:focus {
   }
 }
 
+.animationFadeInRight {
+  animation: fadeInRight 0.2s ease-in-out 0s 1 normal forwards;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
 /* Klassen */
 
 .input-bar {
