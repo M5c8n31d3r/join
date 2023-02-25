@@ -9,6 +9,7 @@ async function initAddTask() {
   await includeHTML();
   await loadDataFromServer();
   loadCategories();
+  loadUserList();
   // activeSummaryNavLink();
 }
 
@@ -54,11 +55,11 @@ function selectCategory(id) {
   document.getElementById("category-input").value = categories[id]["name"];
   document.getElementById("category-input").classList.add("display-none");
   document.getElementById("new-category-colors").classList.add("display-none");
-  toggleDropdown();
+  toggleDropdown("category");
 }
 
-function toggleDropdown() {
-  let list = document.getElementById("dropdown-list-category");
+function toggleDropdown(listName) {
+  let list = document.getElementById(`dropdown-list-${listName}`);
   if (list.classList.contains("display-none")) {
     list.classList.remove("display-none");
   } else {
@@ -79,7 +80,7 @@ function newCategory() {
   document.getElementById("category-input").value = "";
   document.getElementById("category-input").select();
   document.getElementById("filled-category").classList.add("display-none");
-  toggleDropdown();
+  toggleDropdown("category");
 }
 
 function clearInput() {
@@ -91,7 +92,7 @@ function clearInput() {
     .classList.remove("display-none");
 
   document.getElementById("filled-category").classList.remove("display-none");
-  toggleDropdown();
+  toggleDropdown("category");
 }
 
 function saveNewCategory() {
@@ -128,4 +129,19 @@ function fillCatergory(id) {
   <span>${categories[id]["name"]}</span>
   <div class="category-color" style="background-color: ${categories[id]["color"]}"></div>
 </div>`;
+}
+
+function loadUserList() {
+  let listItems = document.getElementById("user-list");
+  listItems.innerHTML = "";
+  for (let i = 1; i < users.length; i++) {
+    let listItem = users[i];
+    listItems.innerHTML += `
+      <div id='user-${listItem["id"]}' onclick='selectCategory(${
+      listItem["id"] - 1
+    })' class="dropdown-item flex space-between">
+        <span class="assigned-to-name">${listItem["name"]}</span>
+        <input style="width: unset" type="checkbox">
+      </div>`;
+  }
 }

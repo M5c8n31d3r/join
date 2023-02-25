@@ -56,7 +56,7 @@
                 </div>
                 <div
                   id="category-dropdown-arrow"
-                  onclick="toggleDropdown()"
+                  onclick="toggleDropdown('category')"
                   class="dropdown-arrow"
                 >
                   <img src="../assets/img/icons/icon-dopdown-arrow.svg" />
@@ -122,13 +122,55 @@
             </div>
           </div>
           <div class="form-inputs center-column">
-            <label for="task-assigned-to">Assigned to</label>
-            <select
-              name="assigned-to"
-              id="task-assigned-to"
-              class="input-bar add-task-form-input"
-              size="1"
-            ></select>
+            <label for="task-category">Assigned to</label>
+            <div class="dropdown">
+              <div class="dropdown-input flex space-between">
+                <div id="new-assigned-to-user-inputs" class="flex">
+                  <input
+                    id="assigned-to-user-input"
+                    type="text"
+                    placeholder="Select contact to assign"
+                  />
+                </div>
+                <div
+                  id="assigned-to-dropdown-arrow"
+                  onclick="toggleDropdown('assigned-to')"
+                  class="dropdown-arrow"
+                >
+                  <img src="../assets/img/icons/icon-dopdown-arrow.svg" />
+                </div>
+                <div id="dropdown-accept-user" class="flex display-none">
+                  <div class="icon-dropdown icon-dropdown-left center">
+                    <img
+                      onclick="clearInput()"
+                      class=""
+                      src="../assets/img/icons/icon-x.svg"
+                    />
+                  </div>
+                  <div class="icon-dropdown center">
+                    <img
+                      onclick="saveNewContact()"
+                      class="svg-white"
+                      src="../assets/img/icons/icon-check.svg"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div id="dropdown-list-assigned-to" class="display-none">
+                <div id="user-list" class="flex-column space-between"></div>
+                <div
+                  onclick="newAssignedToContact()"
+                  class="dropdown-item flex space-between"
+                >
+                  <span class="assigned-to-name">Invite new contact</span>
+                  <img
+                    class="icon-white"
+                    src="../assets/img/icons/icon-new-contact.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </section>
         <section class="add-task-right">

@@ -195,6 +195,10 @@ input:focus {
 
 /* Klassen */
 
+.full-width {
+  width: 100%;
+}
+
 .input-bar {
   height: 41px;
   border: 1px solid #a8a8a8;
