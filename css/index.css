@@ -81,4 +81,12 @@
       opacity: 1;
     }
   }
+  .login-content-sign-up {
+    display: flex;
+    justify-content: end;
+    align-items: flex-start;
+    top: 0;
+    right: 0;
+    padding: 15px 30px;
+  }
 }

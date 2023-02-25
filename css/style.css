@@ -160,6 +160,10 @@ input:focus {
   margin: 20px 0 0 0;
 }
 
+.t-align-center {
+  text-align: center;
+}
+
 .input-bar input {
   font-size: 21px;
 }
@@ -206,7 +210,7 @@ input:focus {
 }
 
 .h1-big {
-  font-size: 61px;
+  font-size: 61 px;
 }
 
 .gap {
@@ -355,6 +359,10 @@ input:focus {
 }
 .space-between {
   justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
 }
 
 .btn-login {
@@ -699,6 +707,9 @@ input[type="radio"] {
     gap: 103px;
   }
 
+  h1 {
+    font-size: 61px;
+  }
   .login-content {
     width: 652px;
     height: 513px;
