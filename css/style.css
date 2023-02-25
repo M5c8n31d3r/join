@@ -150,8 +150,7 @@ input:focus {
 /* Klassen */
 
 .input-bar {
-  max-width: 65vw;
-  height: 51px;
+  height: 41px;
   border: 1px solid #a8a8a8;
   border-radius: var(--border-radius-m);
   background-color: var(--white);
@@ -292,9 +291,23 @@ input:focus {
   border-radius: var(--border-radius-xl);
   height: 60vh;
   width: 80vw;
-  padding: 35px 23px;
+  padding: 35px 28px;
   box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
 }
+
+.sign-up-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 35px 22.5px;
+  isolation: isolate;
+  background: #ffffff;
+  width: 85vw;
+  height: 60vh;
+  box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
+  border-radius: 30px;
+}
+
 .login-content h1 {
   margin-top: 0;
 }
@@ -322,6 +335,7 @@ input:focus {
   margin-bottom: 60px;
   gap: 35px;
 }
+
 .login-btns {
   display: flex;
   flex-direction: column;
@@ -686,12 +700,13 @@ input[type="radio"] {
   }
 
   .login-content {
-    max-width: 652px;
-    max-height: 513px;
+    width: 652px;
+    height: 513px;
+    padding: 35px 115px;
   }
 
   .input-bar {
-    width: 422px;
+    height: 51px;
   }
 
   .login-content-pw {
@@ -707,20 +722,19 @@ input[type="radio"] {
     padding-bottom: 5%;
   }
 
+  .sign-up-content {
+    padding: 35px 115px;
+    width: 652px;
+    height: 559px;
+  }
+
   button {
     z-index: 11;
-  }
-  .login-content-sign-up {
-    display: flex;
-    justify-content: end;
-    align-items: flex-start;
-    top: 0;
-    right: 0;
-    padding: 15px 30px;
   }
 
   .form {
     padding-top: 25px;
+    width: 100%;
   }
 
   #logo {
