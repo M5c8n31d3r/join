@@ -54,10 +54,12 @@ function loadAllCounters() {
   let todo = document.getElementById("todo-counter");
   let done = document.getElementById("done-counter");
   let dueDate = document.getElementById("deadline-date");
+  let urgent = document.getElementById("urgent-counter");
   let counterProgress = 0;
   let counterReview = 0;
   let counterTodo = 0;
   let counterDone = 0;
+  let counterUrgent = 0;
   let tempDate = Number.MAX_SAFE_INTEGER; // Größte mögliche Zahl
 
   allTasks.innerHTML = tasks.length;
@@ -75,6 +77,9 @@ function loadAllCounters() {
     if (tasks[i].state == "done") {
       counterDone++;
     }
+    if (tasks[i].priority == -1) {
+      counterUrgent++;
+    }
     if (tasks[i].dueDate < tempDate) {
       tempDate = tasks[i].dueDate;
     }
@@ -83,6 +88,7 @@ function loadAllCounters() {
   review.innerHTML = counterReview;
   todo.innerHTML = counterTodo;
   done.innerHTML = counterDone;
+  urgent.innerHTML = counterUrgent;
   tempDate = new Date(tempDate);
   dueDate.innerHTML = tempDate.toDateString(); //Fehler in der Convertierung
 }
