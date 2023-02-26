@@ -254,6 +254,27 @@ d-none {
   color: var(--white);
 }
 
+.todo-container:hover .summary-icons,
+.done-container:hover .summary-icons {
+  background-color: var(--white);
+  color: var(--white);
+}
+
+.todo-container:hover .summary-icon,
+.done-container:hover .summary-icon {
+  filter: brightness(0);
+}
+
+.summary-icons {
+  background-color: var(--darkblue);
+  width: 69px;
+  height: 69px;
+  border-radius: 100%;
+}
+.summary-icons img {
+  padding: 25px;
+}
+
 .todo-icon,
 .done-icon {
   display: flex;
