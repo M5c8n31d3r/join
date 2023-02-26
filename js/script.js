@@ -1,3 +1,7 @@
+/**
+ * This File contains all functions, which are used in different files.
+ */
+
 setURL("https://gruppe-445.developerakademie.net/smallest_backend_ever/");
 
 const users = [];
@@ -37,4 +41,19 @@ async function loadDataFromServer() {
   for (let i = 0; i < download.tasks.length; i++) {
     tasks.push(download.tasks[i]);
   }
+}
+
+/**
+ *
+ * @param {INT} id -> ID of the edited user
+ *
+ * Save the initials to the user-object
+ */
+function setInitials(id) {
+  let firstLetters = users[id].name
+    .split(" ")
+    .map((user) => user.charAt(0))
+    .join("");
+
+  users[id].initials = firstLetters;
 }

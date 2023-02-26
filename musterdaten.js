@@ -4,6 +4,7 @@ let musterUsers = [
     name: "guest",
     email: "guest@guest.de",
     password: "",
+    initials: "",
     picture: "",
     phone: ""
   },
@@ -12,6 +13,7 @@ let musterUsers = [
     name: "Dennis Schneider",
     email: "dennis@schneider",
     password: "11111111",
+    initials: "DS",
     picture: "",
     phone: "+49 160 12345678"
   },
@@ -20,6 +22,7 @@ let musterUsers = [
     name: "Michael Schneider",
     email: "michael@schneider",
     password: "12345678",
+    initials: "MS",
     picture: "",
     phone: "+49 168 87654321"
   },
@@ -28,6 +31,7 @@ let musterUsers = [
     name: "Kay Beckmann",
     email: "kay@beckmann",
     password: "abcdef",
+    initials: "KB",
     picture: "",
     phone: "+49 1637 164850"
   },
@@ -36,6 +40,7 @@ let musterUsers = [
     name: "Dori Mittermeyer",
     email: "dori@web.de",
     password: "abcdef",
+    initials: "DM",
     picture: "",
     phone: "+49 1637 164850"
   },
@@ -44,6 +49,7 @@ let musterUsers = [
     name: "Alfredo Bertoli",
     email: "mister@bestpasta.it",
     password: "abcdef",
+    initials: "AB",
     picture: "",
     phone: "+49 1637 164850"
   }

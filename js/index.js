@@ -28,6 +28,7 @@ function signUp() {
   };
 
   users.push(user);
+  setInitials(user.id);
   backend.setItem("users", users);
   switchscreen();
 }
