@@ -1,6 +1,8 @@
 let today = new Date().toISOString().split("T")[0];
 
 let selectedUsers = [];
+let selectedCategory = {};
+let selectedPriority = null;
 
 async function initAddTask() {
   await includeHTML();
@@ -18,7 +20,8 @@ function saveTask() {
     id: tasks.length,
     title: title,
     description: description,
-    category: "",
+    priority: selectedPriority,
+    category: selectedCategory,
     assignedTo: selectedUsers,
     dueDate: "",
     state: "ToDo",
@@ -39,13 +42,9 @@ function loadCategories() {
   for (let i = 0; i < categories.length; i++) {
     let listItem = categories[i];
     listItems.innerHTML += `
-      <div id='category-${listItem["id"]}' onclick='selectCategory(${
-      listItem["id"] - 1
-    })' class="dropdown-item flex">
-        <span class="category-name">${listItem["name"]}</span>
-        <div class="category-color" style="background-color: ${
-          listItem["color"]
-        }"></div>
+      <div id='category-${categories[i].id}' onclick='selectCategory(${categories[i].id})' class="dropdown-item flex">
+        <span class="category-name">${categories[i].name}</span>
+        <div class="category-color" style="background-color: ${categories[i].color}"></div>
       </div>`;
   }
 }
@@ -54,7 +53,7 @@ function selectCategory(id) {
   let filledCategory = document.getElementById("filled-category");
   filledCategory.innerHTML = fillCatergory(id);
   filledCategory.classList.remove("display-none");
-  document.getElementById("category-input").value = categories[id]["name"];
+  document.getElementById("category-input").value = categories[id].name;
   document.getElementById("category-input").classList.add("display-none");
   document.getElementById("new-category-colors").classList.add("display-none");
   toggleDropdown("category");
@@ -106,6 +105,7 @@ function saveNewCategory() {
     name: newCatValue,
     color: newCatColor
   });
+  backend.setItem("categories", categories);
   loadCategories();
   let filledCategory = document.getElementById("filled-category");
   filledCategory.innerHTML = fillCatergory(categories.length - 1);
@@ -126,6 +126,11 @@ function addNewCatergoryColor(color) {
 }
 
 function fillCatergory(id) {
+  selectedCategory = {
+    id: id,
+    name: categories[id].name,
+    color: categories[id].color
+  };
   return `
 <div class="flex">
   <span>${categories[id].name}</span>
@@ -176,4 +181,8 @@ function renderSelectedUserDetails(selectedUser) {
 
 function getToday() {
   document.getElementById("task-due-date").setAttribute("min", today);
+}
+
+function setPrio(priority) {
+  selectedPriority = priority;
 }

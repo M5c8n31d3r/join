@@ -202,7 +202,10 @@
             <div class="center-row add-task-prio-row gap">
               <input type="radio" name="prio" id="task-urgent" />
               <label for="task-urgent" class="task-urgent task-prio-card-label">
-                <div class="task-prio-card task-prio-urgent">
+                <div
+                  class="task-prio-card task-prio-urgent"
+                  onclick="setPrio(-1)"
+                >
                   <span class="">Urgent</span>
                   <img
                     class="prio-icon"
@@ -212,7 +215,10 @@
               </label>
               <input type="radio" name="prio" id="task-medium" />
               <label for="task-medium" class="task-prio-card-label">
-                <div class="task-prio-card task-prio-medium">
+                <div
+                  class="task-prio-card task-prio-medium"
+                  onclick="setPrio(0)"
+                >
                   <span class="">Medium</span>
                   <img
                     class="prio-icon"
@@ -222,7 +228,7 @@
               </label>
               <input type="radio" name="prio" id="task-low" />
               <label for="task-low" class="task-prio-card-label">
-                <div class="task-prio-card task-prio-low">
+                <div class="task-prio-card task-prio-low" onclick="setPrio(1)">
                   <span class="">Low</span>
                   <img
                     class="prio-icon"
