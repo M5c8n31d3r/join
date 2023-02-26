@@ -143,7 +143,9 @@ function loadUserList() {
       listItem["id"] - 1
     })' class="dropdown-item flex space-between">
         <span class="assigned-to-name">${listItem["name"]}</span>
-        <input style="width: unset" type="checkbox">
+        <input style="width: unset" id="user-checkbox-${
+          listItem["id"]
+        }" type="checkbox">
       </div>`;
   }
 }
@@ -151,8 +153,10 @@ function loadUserList() {
 function selectUser(id) {
   if (selectedUsers.indexOf(id) === -1) {
     selectedUsers.push(id);
+    document.getElementById("user-checkbox-" + (id + 1)).checked = true;
   } else {
     selectedUsers.splice(selectedUsers.indexOf(id), 1);
+    document.getElementById("user-checkbox-" + (id + 1)).checked = false;
   }
   renderSelectedUsers();
 }
