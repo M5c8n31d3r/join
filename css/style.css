@@ -140,6 +140,7 @@ button:hover {
 input {
   border: none;
   width: 100%;
+  font-size: 16px;
 }
 
 textarea:focus,
@@ -273,6 +274,10 @@ input:focus {
 .gap-xl {
   gap: 55px;
 }
+.margin0 {
+  margin: 0;
+}
+
 .flex {
   display: flex;
 }
@@ -376,6 +381,10 @@ input:focus {
 
 .font-lightblue {
   color: var(--lightblue);
+}
+
+.font-16 {
+  font-size: 16px;
 }
 
 .font-21 {
@@ -663,10 +672,6 @@ input[type="radio"] {
   display: none;
 }
 
-.add-task-form-input {
-  margin: 0;
-}
-
 .form-inputs {
   gap: 10px;
   margin: 30px 0;
@@ -744,6 +749,11 @@ input[type="radio"] {
 
 /* Desktop View 800px+*/
 @media (min-width: 800px) {
+  *,
+  input,
+  textarea {
+    font-size: 21px;
+  }
   header {
     padding: 20px 36px 20px 348px;
     height: 89px;
@@ -764,6 +774,7 @@ input[type="radio"] {
   h1 {
     font-size: 61px;
   }
+
   .login-content {
     width: 652px;
     height: 513px;

@@ -22,20 +22,20 @@
       <h1>Add Task</h1>
       <form action="" class="add-task-form" onsubmit="return false">
         <section class="add-task-left">
+          <!-- Title -->
           <div class="form-inputs center-column">
             <label for="task-title">Title</label>
-            <input
-              id="task-title"
-              type="text"
-              class="input-bar add-task-form-input"
-            />
+            <div class="input-bar margin0">
+              <input id="task-title" type="text" class="margin0" />
+            </div>
           </div>
+          <!-- Description -->
           <div class="form-inputs center-column">
             <label for="task-description">Description</label>
             <textarea
               id="task-description"
               rows="4"
-              class="input-bar add-task-form-input"
+              class="input-bar margin0"
             ></textarea>
           </div>
           <!-- Add Category -->
@@ -49,6 +49,7 @@
                     id="category-input"
                     type="text"
                     placeholder="Add category"
+                    class=""
                   />
                   <div
                     class="category-color display-none"
@@ -177,14 +178,19 @@
           </div>
         </section>
         <section class="add-task-right">
+          <!-- Due date -->
           <div class="form-inputs center-column">
             <label for="task-due-date">Due date</label>
-            <input
-              id="task-due-date"
-              type="date"
-              class="input-bar add-task-form-input"
-            />
+            <div class="input-bar margin0">
+              <input
+                id="task-due-date"
+                type="date"
+                class="margin0"
+                placeholder="dd/mm/yyyy"
+              />
+            </div>
           </div>
+          <!-- Prio -->
           <div class="form-inputs gap flex-column">
             <label for="task-prio">Prio</label>
             <div class="center-row add-task-prio-row gap">

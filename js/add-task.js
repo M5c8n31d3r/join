@@ -4,6 +4,7 @@ let categories = [
   { id: 3, name: "Backoffice", color: "var(--red)" },
   { id: 4, name: "Product management", color: "var(--magenta)" }
 ];
+let today = new Date().toISOString().split("T")[0];
 
 let selectedUsers = [];
 
@@ -12,6 +13,7 @@ async function initAddTask() {
   await loadDataFromServer();
   loadCategories();
   loadUserList();
+  getToday();
   // activeSummaryNavLink();
 }
 
@@ -175,4 +177,8 @@ function renderSelectedUsers() {
 function renderSelectedUserDetails(selectedUser) {
   const user = users.find((n) => n.id - 1 === selectedUser);
   return user.name;
+}
+
+function getToday() {
+  document.getElementById("task-due-date").setAttribute("min", today);
 }
