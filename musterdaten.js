@@ -62,7 +62,11 @@ let musterTasks = [
     description:
       "Nachdem die Intigration des Backend läuft, können die Musterdaten gelöscht werden.",
     priority: -1,
-    category: "ToDo",
+    category: {
+      id: 3,
+      name: "Product management",
+      color: "var(--magenta)"
+    },
     assignedTo: 3,
     dueDate: 1676358000, // 14.02.2023 08:00,
     state: "ToDo",
@@ -83,7 +87,11 @@ let musterTasks = [
     description:
       "Alle Layouts werden erst für die Mobilansicht erstellt und dann für den Desktop optimiert",
     priority: 0,
-    category: "ToDo",
+    category: {
+      id: 2,
+      name: "Backoffice",
+      color: "var(--red)"
+    },
     assignedTo: 1,
     dueDate: 1676358000, // 14.02.2023 08:00,
     state: "progress",
@@ -93,8 +101,12 @@ let musterTasks = [
     id: 2,
     title: "Dritte Musteraufgabe",
     description: "Ich würde ja jetzt Lorem machen, aber das geht in js nicht",
-    priority: 0,
-    category: "done",
+    priority: 1,
+    category: {
+      id: 0,
+      name: "Marketing",
+      color: "var(--orange)"
+    },
     assignedTo: 2,
     dueDate: 1676358000, // 14.02.2023 08:00,
     state: "done",
@@ -112,10 +124,26 @@ let musterTasks = [
 ];
 
 let musterCategories = [
-  { id: 0, name: "Marketing", color: "var(--orange)" },
-  { id: 1, name: "Sales", color: "var(--light-blue)" },
-  { id: 2, name: "Backoffice", color: "var(--red)" },
-  { id: 3, name: "Product management", color: "var(--magenta)" }
+  {
+    id: 0,
+    name: "Marketing",
+    color: "var(--orange)"
+  },
+  {
+    id: 1,
+    name: "Sales",
+    color: "var(--light-blue)"
+  },
+  {
+    id: 2,
+    name: "Backoffice",
+    color: "var(--red)"
+  },
+  {
+    id: 3,
+    name: "Product management",
+    color: "var(--magenta)"
+  }
 ];
 
 function resetMusterdaten() {
@@ -134,7 +162,7 @@ function resetMusterdaten() {
   console.log("Tasks zurück gesetzt");
 
   categories.splice(categories.length);
-  for (let i = 0; i < musterCategories; i++) {
+  for (let i = 0; i < musterCategories.length; i++) {
     categories.push(musterCategories[i]);
   }
   backend.setItem("categories", categories);
