@@ -5,6 +5,8 @@ let categories = [
   { id: 4, name: "Product management", color: "var(--magenta)" }
 ];
 
+let selectedUsers = [];
+
 async function initAddTask() {
   await includeHTML();
   await loadDataFromServer();
@@ -137,11 +139,34 @@ function loadUserList() {
   for (let i = 1; i < users.length; i++) {
     let listItem = users[i];
     listItems.innerHTML += `
-      <div id='user-${listItem["id"]}' onclick='selectCategory(${
+      <div id='user-${listItem["id"]}' onclick='selectUser(${
       listItem["id"] - 1
     })' class="dropdown-item flex space-between">
         <span class="assigned-to-name">${listItem["name"]}</span>
         <input style="width: unset" type="checkbox">
       </div>`;
   }
+}
+
+function selectUser(id) {
+  if (selectedUsers.indexOf(id) === -1) {
+    selectedUsers.push(id);
+  }
+  renderSelectedUsers();
+}
+
+function renderSelectedUsers() {
+  let selectedUserList = document.getElementById("assigned-to-user");
+  selectedUserList.innerHTML = "";
+  for (let i = 0; i < selectedUsers.length; i++) {
+    const selectedUser = selectedUsers[i];
+    selectedUserList.innerHTML += `<div>${renderSelectedUserDetails(
+      selectedUser
+    )}</div>`;
+  }
+}
+
+function renderSelectedUserDetails(selectedUser) {
+  const user = users.find((n) => n.id - 1 === selectedUser);
+  return user.name;
 }
