@@ -111,6 +111,13 @@ let musterTasks = [
   }
 ];
 
+let musterCategories = [
+  { id: 0, name: "Marketing", color: "var(--orange)" },
+  { id: 1, name: "Sales", color: "var(--light-blue)" },
+  { id: 2, name: "Backoffice", color: "var(--red)" },
+  { id: 3, name: "Product management", color: "var(--magenta)" }
+];
+
 function resetMusterdaten() {
   users.splice(0, users.length);
   for (let i = 0; i < musterUsers.length; i++) {
@@ -125,4 +132,11 @@ function resetMusterdaten() {
   }
   backend.setItem("tasks", tasks);
   console.log("Tasks zurück gesetzt");
+
+  categories.splice(categories.length);
+  for (let i = 0; i < musterCategories; i++) {
+    categories.push(musterCategories[i]);
+  }
+  backend.setItem("categories", categories);
+  console.log("Categories zurück gesetzt");
 }
