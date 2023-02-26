@@ -42,6 +42,10 @@ async function loadDataFromServer() {
   for (let i = 0; i < download.tasks.length; i++) {
     tasks.push(download.tasks[i]);
   }
+
+  for (let i = 0; i < download.categories.length; i++) {
+    categories.push(download.categories[i]);
+  }
 }
 
 /**
