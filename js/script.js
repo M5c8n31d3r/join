@@ -6,12 +6,7 @@ setURL("https://gruppe-445.developerakademie.net/smallest_backend_ever/");
 
 const users = [];
 const tasks = [];
-const categories = [
-  { id: 1, name: "Marketing", color: "var(--orange)" },
-  { id: 2, name: "Sales", color: "var(--light-blue)" },
-  { id: 3, name: "Backoffice", color: "var(--red)" },
-  { id: 4, name: "Product management", color: "var(--magenta)" }
-];
+const categories = [];
 
 // ID of the user. 0 for guest
 let userLogIn = null;
