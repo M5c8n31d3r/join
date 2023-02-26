@@ -151,6 +151,8 @@ function loadUserList() {
 function selectUser(id) {
   if (selectedUsers.indexOf(id) === -1) {
     selectedUsers.push(id);
+  } else {
+    selectedUsers.splice(selectedUsers.indexOf(id), 1);
   }
   renderSelectedUsers();
 }
