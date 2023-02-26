@@ -49,13 +49,13 @@ function renderCard(task) {
 }
 
 function prioIconEnding(task) {
-  if (task["priority"] == -1) {
+  if (task["priority"] == 1) {
     return "low";
   }
   if (task["priority"] == 0) {
     return "medium";
   }
-  if (task["priority"] == 1) {
+  if (task["priority"] == -1) {
     return "urgent";
   }
 }
