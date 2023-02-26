@@ -141,13 +141,11 @@ function loadUserList() {
   for (let i = 1; i < users.length; i++) {
     let listItem = users[i];
     listItems.innerHTML += `
-      <div id='user-${listItem["id"]}' onclick='selectUser(${
-      listItem["id"] - 1
-    })' class="dropdown-item flex space-between">
-        <span class="assigned-to-name">${listItem["name"]}</span>
-        <input style="width: unset" id="user-checkbox-${
-          listItem["id"]
-        }" type="checkbox">
+      <div id='user-${listItem.id}' onclick='selectUser(${listItem.id})' 
+      class="dropdown-item flex space-between">
+        <span class="assigned-to-name">${listItem.name}</span>
+        <input style="width: unset" id="user-checkbox-${listItem.id}" 
+        type="checkbox">
       </div>`;
   }
 }
@@ -155,10 +153,10 @@ function loadUserList() {
 function selectUser(id) {
   if (selectedUsers.indexOf(id) === -1) {
     selectedUsers.push(id);
-    document.getElementById("user-checkbox-" + (id + 1)).checked = true;
+    document.getElementById("user-checkbox-" + id).checked = true;
   } else {
     selectedUsers.splice(selectedUsers.indexOf(id), 1);
-    document.getElementById("user-checkbox-" + (id + 1)).checked = false;
+    document.getElementById("user-checkbox-" + id).checked = false;
   }
   renderSelectedUsers();
 }
@@ -167,15 +165,14 @@ function renderSelectedUsers() {
   let selectedUserList = document.getElementById("assigned-to-user");
   selectedUserList.innerHTML = "";
   for (let i = 0; i < selectedUsers.length; i++) {
-    const selectedUser = selectedUsers[i];
     selectedUserList.innerHTML += `<div>${renderSelectedUserDetails(
-      selectedUser
+      selectedUsers[i]
     )}</div>`;
   }
 }
 
 function renderSelectedUserDetails(selectedUser) {
-  const user = users.find((n) => n.id - 1 === selectedUser);
+  const user = users.find((n) => n.id === selectedUser);
   return user.name;
 }
 
