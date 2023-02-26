@@ -23,7 +23,7 @@ function saveTask() {
     priority: selectedPriority,
     category: selectedCategory,
     assignedTo: selectedUsers,
-    dueDate: "",
+    dueDate: document.getElementById("task-due-date").value,
     state: "ToDo",
     subtask: []
   };
