@@ -1,9 +1,3 @@
-let categories = [
-  { id: 1, name: "Marketing", color: "var(--orange)" },
-  { id: 2, name: "Sales", color: "var(--light-blue)" },
-  { id: 3, name: "Backoffice", color: "var(--red)" },
-  { id: 4, name: "Product management", color: "var(--magenta)" }
-];
 let today = new Date().toISOString().split("T")[0];
 
 let selectedUsers = [];
@@ -24,7 +18,11 @@ function saveTask() {
     id: tasks.length,
     title: title,
     description: description,
-    state: "ToDo"
+    category: "",
+    assignedTo: selectedUsers,
+    dueDate: "",
+    state: "ToDo",
+    subtask: []
   };
   tasks.push(task);
   backend.setItem("tasks", tasks);
@@ -130,8 +128,8 @@ function addNewCatergoryColor(color) {
 function fillCatergory(id) {
   return `
 <div class="flex">
-  <span>${categories[id]["name"]}</span>
-  <div class="category-color" style="background-color: ${categories[id]["color"]}"></div>
+  <span>${categories[id].name}</span>
+  <div class="category-color" style="background-color: ${categories[id].color}"></div>
 </div>`;
 }
 
