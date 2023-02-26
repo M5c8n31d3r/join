@@ -1,3 +1,7 @@
+/**
+ * This File contains all functions, which are used in different files.
+ */
+
 setURL("https://gruppe-445.developerakademie.net/smallest_backend_ever/");
 
 const users = [];
