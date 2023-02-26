@@ -736,13 +736,16 @@ input[type="radio"] {
   height: 25px;
 }
 
-.cl-contact-left {
+.initials {
   border-radius: var(--border-radius-xl);
   background-color: orange;
   height: 42px;
   width: 42px;
-  margin: 10px 25px 10px 15px;
   color: var(--white);
+}
+
+.cl-contact-left {
+  margin: 10px 25px 10px 15px;
 }
 
 .cl-letters {

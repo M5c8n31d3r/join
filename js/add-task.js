@@ -163,7 +163,7 @@ function renderSelectedUsers() {
   let selectedUserList = document.getElementById("assigned-to-user");
   selectedUserList.innerHTML = "";
   for (let i = 0; i < selectedUsers.length; i++) {
-    selectedUserList.innerHTML += `<div>${renderSelectedUserDetails(
+    selectedUserList.innerHTML += `<div class="initials center">${renderSelectedUserDetails(
       selectedUsers[i]
     )}</div>`;
   }
@@ -171,7 +171,7 @@ function renderSelectedUsers() {
 
 function renderSelectedUserDetails(selectedUser) {
   const user = users.find((n) => n.id === selectedUser);
-  return user.name;
+  return user.initials;
 }
 
 function getToday() {

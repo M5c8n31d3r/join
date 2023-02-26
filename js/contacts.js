@@ -48,7 +48,7 @@ function renderContact() {
 function renderSingleContact(user) {
   return `
     <div class="cl-contact center-row pointer" onclick="showDetails(${user.id})">
-      <div class="cl-contact-left center">${user.initials}</div>
+      <div class="cl-contact-left initials center">${user.initials}</div>
       <div class="cl-contact-right center-column gap-s">
         <div class="cl-contact-name">${user["name"]}</div>
         <a
@@ -89,7 +89,7 @@ function renderDetails(id) {
   <img src="../assets/img/icons/icon-arrow-back-black.svg" onclick="returnContacts()">
   <div>Better with a team</div>
   <hr id="hr">
-  <div class="cl-contact-left center">${users[id].initials}</div>
+  <div class="cl-contact-left initials center">${users[id].initials}</div>
   <div class="cl-contact-right center-column gap-s">
     <div class="cl-contact-name">${users[id].name}</div>
     <a onclick="addTask()">
@@ -148,7 +148,7 @@ function renderAddEditUser(id, headline, underheadline, icon, checkout) {
     <h1>${headline}</h1>
     <h2>${underheadline}</h2>
     <hr id="hr">
-    <div class="cl-contact-left center">${icon}</div>
+    <div class="cl-contact-left initials center">${icon}</div>
   </div>
   <div class="contact-detail">
     <input type="text" required id="edit-name" value="${
