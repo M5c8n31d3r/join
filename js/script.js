@@ -38,3 +38,18 @@ async function loadDataFromServer() {
     tasks.push(download.tasks[i]);
   }
 }
+
+/**
+ *
+ * @param {INT} id -> ID of the edited user
+ *
+ * Save the initials to the user-object
+ */
+function setInitials(id) {
+  let firstLetters = users[id].name
+    .split(" ")
+    .map((user) => user.charAt(0))
+    .join("");
+
+  users[id].initials = firstLetters;
+}

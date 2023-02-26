@@ -34,13 +34,12 @@ function renderLetterGroup(contactlist) {
 
 function renderContact() {
   for (let i = 0; i < users.length; i++) {
-    const user = users[i];
-    let firstLetter = getFirstLetter(user);
+    let firstLetter = getFirstLetter(users[i]);
     for (let j = 0; j < letterlist.length; j++) {
       const letterLetterlist = letterlist[j];
       if (letterLetterlist == firstLetter) {
         document.getElementById(`group-${firstLetter}`).innerHTML +=
-          renderSingleContact(user);
+          renderSingleContact(users[i]);
       }
     }
   }
@@ -48,10 +47,8 @@ function renderContact() {
 
 function renderSingleContact(user) {
   return `
-    <div class="cl-contact center-row pointer" onclick="showDetails(${
-      user.id
-    })">
-      <div class="cl-contact-left center">${getFirstLetters(user)}</div>
+    <div class="cl-contact center-row pointer" onclick="showDetails(${user.id})">
+      <div class="cl-contact-left center">${user.initials}</div>
       <div class="cl-contact-right center-column gap-s">
         <div class="cl-contact-name">${user["name"]}</div>
         <a
@@ -73,14 +70,6 @@ function pushFirstLetter(user) {
   }
 }
 
-function getFirstLetters(user) {
-  let firstLetters = user["name"]
-    .split(" ")
-    .map((user) => user.charAt(0))
-    .join("");
-  return firstLetters;
-}
-
 function showDetails(id) {
   let details = document.getElementById("details");
   let contactlist = document.getElementById("contactlist");
@@ -100,7 +89,7 @@ function renderDetails(id) {
   <img src="../assets/img/icons/icon-arrow-back-black.svg" onclick="returnContacts()">
   <div>Better with a team</div>
   <hr id="hr">
-  <div class="cl-contact-left center">${getFirstLetters(users[id])}</div>
+  <div class="cl-contact-left center">${users[id].initials}</div>
   <div class="cl-contact-right center-column gap-s">
     <div class="cl-contact-name">${users[id].name}</div>
     <a onclick="addTask()">
@@ -140,7 +129,7 @@ function addEditUser(id, edit) {
   if (edit) {
     headline = "Edit contact";
     underheadline = "";
-    icon = getFirstLetters(users[id]);
+    icon = users[id].initials;
     checkout = "Save";
   } else {
     headline = "Add contact";
@@ -194,6 +183,7 @@ function save(id) {
     users[id].email = email;
     users[id].phone = phone;
   }
+  setInitials(id);
   backend.setItem("users", users);
   returnContacts();
 }
