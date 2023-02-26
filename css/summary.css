@@ -38,6 +38,9 @@
   font-size: 1.5rem;
 }
 
+.summary-row123 {
+}
+
 /***** Summary Row 1 *****/
 
 .summary-row-1 {
@@ -113,8 +116,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-right: 2px solid #d1d1d1;
-  width: 50%;
+  margin-right: -40px;
+  margin-left: 13px;
 }
 
 .urgent-box-left > img {
@@ -134,12 +137,19 @@
   font-size: 2rem;
 }
 
+#urgent-separator {
+  width: 0;
+  height: 102px;
+  border-left: solid 2px var(--dimmed);
+  border-radius: 2px;
+  margin: 0 61px;
+}
+
 .urgent-box-right {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 50%;
 }
 
 .welcome-mobile {
@@ -175,6 +185,7 @@ d-none {
   height: 85px;
   left: 920px;
   top: 533px;
+  margin-top: 40px;
 }
 
 #welcome-text-desk {

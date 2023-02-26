@@ -33,53 +33,58 @@
     </div>
 
     <div id="ui"></div>
-    <div class="summary-row-1">
-      <div onclick="goToBoard()" class="summary-box btn-1">
-        <div id="board-counter" class="number-in-box"></div>
-        <p class="text-in-box">Tasks <br />in Board</p>
+    <div class="summary-row123">
+      <div class="summary-row-1">
+        <div onclick="goToBoard()" class="summary-box btn-1">
+          <div id="board-counter" class="number-in-box"></div>
+          <p class="text-in-box">Tasks <br />in Board</p>
+        </div>
+        <div onclick="goToBoard()" class="summary-box">
+          <div id="progress-counter" class="number-in-box"></div>
+          <p class="text-in-box">Tasks <br />in Progress</p>
+        </div>
+        <div onclick="goToBoard()" class="summary-box">
+          <div id="feedback-counter" class="number-in-box"></div>
+          <p class="text-in-box">Awaiting <br />Feedback</p>
+        </div>
       </div>
-      <div onclick="goToBoard()" class="summary-box">
-        <div id="progress-counter" class="number-in-box"></div>
-        <p class="text-in-box">Tasks <br />in Progress</p>
-      </div>
-      <div onclick="goToBoard()" class="summary-box">
-        <div id="feedback-counter" class="number-in-box"></div>
-        <p class="text-in-box">Awaiting <br />Feedback</p>
-      </div>
-    </div>
 
-    <div class="summary-row-2">
-      <div onclick="goToBoard()" class="urgent-box">
-        <div class="urgent-box-left">
-          <img src="../assets/img/icons/icon-urgent.svg" alt="" />
-          <div class="number-container">
-            <p id="urgent-counter" class="number-in-urgent-box"></p>
-            <p class="urgent-title">Urgent</p>
+      <div class="summary-row-2">
+        <div onclick="goToBoard()" class="urgent-box">
+          <div class="urgent-box-left">
+            <img src="../assets/img/icons/icon-urgent.svg" alt="" />
+            <div class="number-container">
+              <p id="urgent-counter" class="number-in-urgent-box"></p>
+              <p class="urgent-title">Urgent</p>
+            </div>
+          </div>
+
+          <div id="urgent-separator"></div>
+
+          <div class="urgent-box-right">
+            <p id="deadline-date" class="deadline-date"></p>
+            <p class="upcoming-deadline-title">Upcoming Deadline</p>
           </div>
         </div>
-        <div class="urgent-box-right">
-          <p id="deadline-date" class="deadline-date"></p>
-          <p class="upcoming-deadline-title">Upcoming Deadline</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="summary-row-3">
-      <div onclick="goToBoard()" class="todo-container">
-        <img class="todo-icon" src="../assets/img/icons/icon-to-do.svg" alt="" />
-        <!-- <img class="todo-icon" src="../assets/img/icons/icon-to-do-2.svg" style="display: none;" alt="" /> -->
-        <div class="todo-text-container">
-          <div id="todo-counter" class="todo-number"></div>
-          <p class="todo-text">To-do</p>
-        </div>
       </div>
 
-      <div onclick="goToBoard()" class="done-container">
-        <img class="done-icon" src="../assets/img/icons/icon-done.svg" alt="" />
-        <!-- <img class="d-none" src="../assets/img/icons/icon-done-2.svg" style="display: none;" alt="" /> -->
-        <div class="done-text-container">
-          <div id="done-counter" class="done-number"></div>
-          <p class="done-text">Done</p>
+      <div class="summary-row-3">
+        <div onclick="goToBoard()" class="todo-container">
+          <img class="todo-icon" src="../assets/img/icons/icon-to-do.svg" alt="" />
+          <!-- <img class="todo-icon" src="../assets/img/icons/icon-to-do-2.svg" style="display: none;" alt="" /> -->
+          <div class="todo-text-container">
+            <div id="todo-counter" class="todo-number"></div>
+            <p class="todo-text">To-do</p>
+          </div>
+        </div>
+
+        <div onclick="goToBoard()" class="done-container">
+          <img class="done-icon" src="../assets/img/icons/icon-done.svg" alt="" />
+          <!-- <img class="d-none" src="../assets/img/icons/icon-done-2.svg" style="display: none;" alt="" /> -->
+          <div class="done-text-container">
+            <div id="done-counter" class="done-number"></div>
+            <p class="done-text">Done</p>
+          </div>
         </div>
       </div>
     </div>

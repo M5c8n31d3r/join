@@ -17,8 +17,9 @@
   }
 
   .welcome-desk {
-    flex-direction: row;
-    margin-top: 3vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
   }
 
   #welcome-text-desk,
@@ -28,6 +29,14 @@
 
   #welcome-text-desk {
     margin-right: 16px;
+  }
+}
+
+/*//////////////////////////////////////////////////////*/
+
+@media (max-width: 1160px) {
+  .welcome-desk {
+    display: none;
   }
 }
 
