@@ -1,17 +1,23 @@
 async function initSummary() {
   await includeHTML();
-  await loadTasks();
+  await loadDataFromServer();
   loadAllCounters();
   // activeSummaryNavLink();
+  setWelcomeMsg();
+  await setCurrentUser();
 }
 
 async function setCurrentUser() {
-  document.getElementById("welcome-name-mobile").innerHTML = escapeHTML(
-    currentUser["name"]
-  );
-  document.getElementById("welcome-name-desk").innerHTML = escapeHTML(
-    currentUser["name"]
-  );
+  userLogIn = localStorage.getItem("userLogIn", userLogIn);
+  if (userLogIn == null || userLogIn == 0) {
+    // document.getElementById("welcome-name-mobile").innerHTML = "";
+    document.getElementById("welcome-name-desk").innerHTML = "";
+  } else {
+    // document.getElementById("welcome-name-mobile").innerHTML =
+    users[userLogIn].name;
+    document.getElementById("welcome-name-desk").innerHTML =
+      users[userLogIn].name;
+  }
 }
 
 function setWelcomeMsg() {
@@ -34,17 +40,7 @@ function setWelcomeMsg() {
   }
 
   welcomeTextDesk.innerHTML = welcomeText;
-  welcomeTextMobile.innerHTML = welcomeText;
-}
-
-async function loadTasks() {
-  let download = await downloadFromServer();
-  download = await JSON.parse(download);
-  tasks.splice(0, tasks.length);
-  for (let i = 0; i < download.tasks.length; i++) {
-    tasks.push(download.tasks[i]);
-  }
-  console.log("fertig");
+  // welcomeTextMobile.innerHTML = welcomeText;
 }
 
 function loadAllCounters() {
@@ -68,7 +64,7 @@ function loadAllCounters() {
     if (tasks[i].state == "progress") {
       counterProgress++;
     }
-    if (tasks[i].state == "review") {
+    if (tasks[i].state == "awaiting") {
       counterReview++;
     }
     if (tasks[i].state == "ToDo") {

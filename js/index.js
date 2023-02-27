@@ -43,7 +43,7 @@ function signIn() {
       email.toLowerCase() == users[i].email &&
       password == users[i].password
     ) {
-      userLogIn = users[i].id;
+      storeLocal(users[i].id);
       window.location.assign("./html/summary.html");
     }
   }
@@ -59,8 +59,12 @@ function signIn() {
 function signInGuest() {
   document.getElementById("email").required = false;
   document.getElementById("password").required = false;
-  userLogIn = users[0].id;
+  storeLocal(users[0].id);
   window.location.assign("./html/summary.html");
+}
+
+function storeLocal(id) {
+  localStorage.setItem("userLogIn", users[id].id);
 }
 
 function swapPassword(passwordParameter, iconParameter) {
