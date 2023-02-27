@@ -1,3 +1,11 @@
+const counter = [
+  { type: "progress", name: "counterProgress", value: 0 },
+  { type: "awaiting", name: "counterReview", value: 0 },
+  { type: "ToDo", name: "counterTodo", value: 0 },
+  { type: "done", name: "counterDone", value: 0 },
+  { type: -1, name: "counterUrgent", value: 0 }
+];
+
 async function initSummary() {
   await includeHTML();
   await loadDataFromServer();
@@ -44,51 +52,41 @@ function setWelcomeMsg() {
 }
 
 function loadAllCounters() {
-  let allTasks = document.getElementById("board-counter");
-  let progress = document.getElementById("progress-counter");
-  let review = document.getElementById("feedback-counter");
-  let todo = document.getElementById("todo-counter");
-  let done = document.getElementById("done-counter");
-  let dueDate = document.getElementById("deadline-date");
-  let urgent = document.getElementById("urgent-counter");
-  let counterProgress = 0;
-  let counterReview = 0;
-  let counterTodo = 0;
-  let counterDone = 0;
-  let counterUrgent = 0;
-  let tempDate = Number.MAX_SAFE_INTEGER; // Größte mögliche Zahl
-
-  allTasks.innerHTML = tasks.length;
-
   for (let i = 0; i < tasks.length; i++) {
-    if (tasks[i].state == "progress") {
-      counterProgress++;
-    }
-    if (tasks[i].state == "awaiting") {
-      counterReview++;
-    }
-    if (tasks[i].state == "ToDo") {
-      counterTodo++;
-    }
-    if (tasks[i].state == "done") {
-      counterDone++;
-    }
-    if (tasks[i].priority == -1) {
-      counterUrgent++;
-    }
-    if (tasks[i].dueDate < tempDate) {
-      tempDate = tasks[i].dueDate;
+    for (let j = 0; j < counter.length; j++) {
+      counter[j].value += counterLoop(i, counter[j].type);
     }
   }
-  progress.innerHTML = counterProgress;
-  review.innerHTML = counterReview;
-  todo.innerHTML = counterTodo;
-  done.innerHTML = counterDone;
-  urgent.innerHTML = counterUrgent;
-  tempDate = new Date(tempDate);
-  dueDate.innerHTML = tempDate.toDateString(); //Fehler in der Convertierung
+  renderCounter();
+}
+
+function renderCounter() {
+  document.getElementById("board-counter").innerHTML = tasks.length;
+  document.getElementById("progress-counter").innerHTML = counter[0].value;
+  document.getElementById("feedback-counter").innerHTML = counter[1].value;
+  document.getElementById("todo-counter").innerHTML = counter[2].value;
+  document.getElementById("done-counter").innerHTML = counter[3].value;
+  document.getElementById("urgent-counter").innerHTML = counter[4].value;
+}
+
+function counterLoop(id, name) {
+  if (tasks[id].state == name || tasks[id].priority == name) {
+    return 1;
+  } else {
+    return 0;
+  }
 }
 
 function goToBoard() {
   window.location.assign("./board.html");
 }
+
+/*
+! Das war der erste entwurf zur Zeit, muss noch überarbeitet werden !
+document.getElementById("deadline-date"),
+if (tasks[i].dueDate < tempDate) {
+tempDate = tasks[i].dueDate;
+}
+tempDate = new Date(tempDate);
+dueDate.innerHTML = tempDate.toDateString(); //Fehler in der Convertierung
+    */
