@@ -6,6 +6,7 @@ async function initialisation() {
 }
 
 function signUp() {
+  let userExist = false;
   const userName = document.getElementById("usersignup").value;
   const email = document.getElementById("emailsignup").value.toLowerCase();
   const password = document.getElementById("passwordsignup").value;
@@ -14,23 +15,28 @@ function signUp() {
   if (users.length > 0) {
     for (let i = 0; i < users.length; i++) {
       if (email == users[i].email) {
-        alert("Benutzer schon vorhanden");
-        return 1;
+        userExist = true;
       }
     }
   }
 
-  user = {
-    id: users.length,
-    name: userName,
-    email: email,
-    password: password
-  };
+  if (!userExist) {
+    user = {
+      id: users.length,
+      name: userName,
+      email: email,
+      password: password
+    };
 
-  users.push(user);
-  setInitials(user.id);
-  backend.setItem("users", users);
-  switchscreen();
+    users.push(user);
+    setInitials(user.id);
+    backend.setItem("users", users);
+    switchscreen();
+  } else {
+    let error = document.getElementById("signup-error");
+    error.classList.remove("display-none");
+    error.innerHTML = "Bitte prüfen Sie ihre Eingabe!";
+  }
 }
 
 function signIn() {
