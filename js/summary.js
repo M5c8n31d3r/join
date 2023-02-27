@@ -12,10 +12,10 @@ async function initSummary() {
   loadAllCounters();
   // activeSummaryNavLink();
   setWelcomeMsg();
-  await setCurrentUser();
+  setCurrentUser();
 }
 
-async function setCurrentUser() {
+function setCurrentUser() {
   userLogIn = localStorage.getItem("userLogIn", userLogIn);
   if (userLogIn == null || userLogIn == 0) {
     // document.getElementById("welcome-name-mobile").innerHTML = "";
