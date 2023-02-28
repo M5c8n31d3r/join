@@ -118,12 +118,3 @@ function timeConverter(UNIX_timestamp) {
   let date = a.getDate();
   return month + " " + date + ", " + year;
 }
-/*
-! Das war der erste entwurf zur Zeit, muss noch überarbeitet werden !
-document.getElementById("deadline-date"),
-if (tasks[i].dueDate < tempDate) {
-tempDate = tasks[i].dueDate;
-}
-tempDate = new Date(tempDate);
-dueDate.innerHTML = tempDate.toDateString(); //Fehler in der Convertierung
-    */
