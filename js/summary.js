@@ -11,7 +11,6 @@ async function initSummary() {
   await loadDataFromServer();
   setActive("nav-summary");
   loadAllCounters();
-  // activeSummaryNavLink();
   setWelcomeMsg();
   setCurrentUser();
   setDeadline();
