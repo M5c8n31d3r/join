@@ -30,6 +30,14 @@ function loadTask() {
       doneTasks.innerHTML += renderCard(task);
     }
   }
+  toDoTasks.innerHTML += renderDropArea("dropzone-ToDo");
+  progressTasks.innerHTML += renderDropArea("dropzone-progress");
+  awaitingTasks.innerHTML += renderDropArea("dropzone-awaiting");
+  doneTasks.innerHTML += renderDropArea("dropzone-done");
+}
+
+function renderDropArea(id) {
+  return /* html */ `<div id="${id}" class="box display-none"></div>`;
 }
 
 function renderCard(task) {
@@ -61,17 +69,37 @@ function prioIconEnding(task) {
   }
 }
 
+function toggleDropZone() {
+  let todo = document.getElementById("dropzone-ToDo");
+  let progress = document.getElementById("dropzone-progress");
+  let awaiting = document.getElementById("dropzone-awaiting");
+  let done = document.getElementById("dropzone-done");
+
+  if (todo.classList.contains("display-none")) {
+    todo.classList.remove("display-none");
+    progress.classList.remove("display-none");
+    awaiting.classList.remove("display-none");
+    done.classList.remove("display-none");
+  } else {
+    todo.classList.add("display-none");
+    progress.classList.add("display-none");
+    awaiting.classList.add("display-none");
+    done.classList.add("display-none");
+  }
+}
+
 function allowDrop(ev) {
   ev.preventDefault();
 }
 
 function drag(id) {
   currentDragElementID = id;
+  toggleDropZone();
 }
 
 function changeState(state) {
   tasks[currentDragElementID].state = state;
+  toggleDropZone();
   loadTask();
   backend.setItem("tasks", tasks);
-  console.log(tasks);
 }
