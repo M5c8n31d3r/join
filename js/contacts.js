@@ -176,7 +176,8 @@ function save(id) {
         id: id,
         name: name,
         email: email,
-        phone: phone
+        phone: phone,
+        isUser: false
       };
       users.push(user);
     } else {
