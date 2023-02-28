@@ -51,7 +51,7 @@
           </div>
           <!-- Add Category -->
           <div class="form-inputs center-column">
-            <label for="task-category">Category</label>
+            <label for="category-input">Category</label>
             <div class="dropdown">
               <div class="dropdown-input flex space-between">
                 <div id="filled-category" class="display-none"></div>
@@ -136,7 +136,7 @@
           </div>
           <!-- Assigned to -->
           <div class="form-inputs center-column">
-            <label for="task-category">Assigned to</label>
+            <label for="assigned-to-user-input">Assigned to</label>
             <div class="dropdown">
               <div class="dropdown-input flex space-between">
                 <div id="new-assigned-to-user-inputs" class="flex">
@@ -242,6 +242,22 @@
                 </div>
               </label>
             </div>
+          </div>
+          <!-- Add Subtasks -->
+          <div class="form-inputs center-column">
+            <label for="task-subtask">Subtasks</label>
+            <div class="dropdown flex center">
+              <input
+                id="task-subtask"
+                type="text"
+                placeholder="Add new Subtask"
+                class="dropdown-input"
+              />
+              <div onclick="addSubtask()" class="dropdown-arrow">
+                <img src="../assets/img/icons/icon-plus.svg" />
+              </div>
+            </div>
+            <div id="task-subtasks"></div>
           </div>
           <button onclick="saveTask()">Create</button>
           <button onclick="clearAll()">Clear All</button>

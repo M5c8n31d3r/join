@@ -3,6 +3,7 @@ let today = new Date().toISOString().split("T")[0];
 let selectedUsers = [];
 let selectedCategory = {};
 let selectedPriority = null;
+let subtasks = [];
 
 async function initAddTask() {
   await includeHTML();
@@ -199,4 +200,26 @@ function clearAll() {
   selectedCategory = {};
   selectedPriority = null;
   renderSelectedUsers();
+}
+
+function addSubtask() {
+  let subtask = document.getElementById("task-subtask");
+  subtasks.push(subtask.value);
+  subtask.value = "";
+  renderSubtasks();
+}
+
+function renderSubtasks() {
+  let subtasks1 = document.getElementById("task-subtasks");
+  subtasks1.innerHTML = "";
+  for (let i = 0; i < subtasks.length; i++) {
+    const subtask = subtasks[i];
+    subtasks1.innerHTML += `
+    <div class="flex gap">
+      <div class="flex">
+        <input class="checkbox" type="checkbox" id="subtask-${i}">
+      </div>
+      <label for="subtask-${i}"> ${subtask}</label>
+    </div>`;
+  }
 }

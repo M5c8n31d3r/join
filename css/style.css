@@ -258,6 +258,11 @@ input:focus {
 .nav-item-active {
   background-color: var(--darkblue-active);
 }
+.checkbox {
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.5em;
+}
 
 .nav-item img {
   height: 25px;
@@ -308,6 +313,9 @@ input:focus {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+.flex-start {
+  justify-content: flex-start;
 }
 
 .relative {
