@@ -27,7 +27,7 @@ function saveTask() {
     assignedTo: selectedUsers,
     dueDate: Date.parse(document.getElementById("task-due-date").value),
     state: "ToDo",
-    subtask: []
+    subtask: subtasks
   };
   tasks.push(task);
   backend.setItem("tasks", tasks);
