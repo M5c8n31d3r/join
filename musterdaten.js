@@ -74,7 +74,7 @@ let musterTasks = [
       color: "var(--magenta)"
     },
     assignedTo: 3,
-    dueDate: "2023-03-16",
+    dueDate: 1681603200000,
     state: "ToDo",
     subtask: [
       {
@@ -99,7 +99,7 @@ let musterTasks = [
       color: "var(--red)"
     },
     assignedTo: 1,
-    dueDate: "2023-04-16",
+    dueDate: 1678838400000,
     state: "progress",
     subtask: []
   },
@@ -114,7 +114,7 @@ let musterTasks = [
       color: "var(--orange)"
     },
     assignedTo: 2,
-    dueDate: "2023-02-28",
+    dueDate: 1679961600000,
     state: "done",
     subtask: [
       {

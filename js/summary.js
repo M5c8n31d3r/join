@@ -13,6 +13,7 @@ async function initSummary() {
   // activeSummaryNavLink();
   setWelcomeMsg();
   setCurrentUser();
+  setDeadline();
 }
 
 function setCurrentUser() {
@@ -81,6 +82,42 @@ function goToBoard() {
   window.location.assign("./board.html");
 }
 
+function setDeadline() {
+  let dateField = document.getElementById("deadline-date");
+  let minDate = Number.MAX_SAFE_INTEGER;
+
+  for (let i = 0; i < tasks.length; i++) {
+    if (tasks[i].dueDate != "") {
+      if (tasks[i].dueDate < minDate) {
+        minDate = tasks[i].dueDate;
+      }
+    }
+  }
+  dateField.innerHTML = timeConverter(minDate);
+  console.log(timeConverter(minDate));
+}
+
+function timeConverter(UNIX_timestamp) {
+  let a = new Date(UNIX_timestamp);
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+  let year = a.getFullYear();
+  let month = months[a.getMonth()];
+  let date = a.getDate();
+  return month + " " + date + ", " + year;
+}
 /*
 ! Das war der erste entwurf zur Zeit, muss noch überarbeitet werden !
 document.getElementById("deadline-date"),
