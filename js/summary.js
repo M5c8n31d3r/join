@@ -95,7 +95,6 @@ function setDeadline() {
     }
   }
   dateField.innerHTML = timeConverter(minDate);
-  console.log(timeConverter(minDate));
 }
 
 function timeConverter(UNIX_timestamp) {
