@@ -83,7 +83,11 @@
   }
 
   .number-in-box {
-    font-size: 2rem;
+    font-size: 3rem;
+    /* padding: 7px; */
+    margin-top: -8px;
+    margin-bottom: -14px;
+    margin-right: -12px;
   }
 
   .summary-row-2 {
