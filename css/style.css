@@ -277,6 +277,10 @@ input:focus {
   gap: 5px;
 }
 
+.gap-l {
+  gap: 35px;
+}
+
 .gap-xl {
   gap: 55px;
 }
@@ -517,6 +521,7 @@ input:focus {
   width: 32px;
   height: 39.02px;
 }
+
 #head-right {
   display: flex;
   justify-content: flex-end;
