@@ -6,7 +6,8 @@ let musterUsers = [
     password: "",
     initials: "",
     picture: "",
-    phone: ""
+    phone: "",
+    isUser: true
   },
   {
     id: 1,
@@ -15,7 +16,8 @@ let musterUsers = [
     password: "11111111",
     initials: "DS",
     picture: "",
-    phone: "+49 160 12345678"
+    phone: "+49 160 12345678",
+    isUser: true
   },
   {
     id: 2,
@@ -24,7 +26,8 @@ let musterUsers = [
     password: "12345678",
     initials: "MS",
     picture: "",
-    phone: "+49 168 87654321"
+    phone: "+49 168 87654321",
+    isUser: true
   },
   {
     id: 3,
@@ -33,7 +36,8 @@ let musterUsers = [
     password: "abcdef",
     initials: "KB",
     picture: "",
-    phone: "+49 1637 164850"
+    phone: "+49 1637 164850",
+    isUser: true
   },
   {
     id: 4,
@@ -42,7 +46,8 @@ let musterUsers = [
     password: "abcdef",
     initials: "DM",
     picture: "",
-    phone: "+49 1637 164850"
+    phone: "+49 1637 164850",
+    isUser: false
   },
   {
     id: 5,
@@ -51,7 +56,8 @@ let musterUsers = [
     password: "abcdef",
     initials: "AB",
     picture: "",
-    phone: "+49 1637 164850"
+    phone: "+49 1637 164850",
+    isUser: false
   }
 ];
 
