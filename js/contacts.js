@@ -171,21 +171,42 @@ function save(id) {
   const phone = document.getElementById("edit-phone").value;
 
   if (id == users.length) {
-    let user = {
-      id: id,
-      name: name,
-      email: email,
-      phone: phone
-    };
-    users.push(user);
+    if (!getUserExist(email)) {
+      let user = {
+        id: id,
+        name: name,
+        email: email,
+        phone: phone
+      };
+      users.push(user);
+    } else {
+      errorMSG();
+    }
   } else {
-    users[id].name = name;
-    users[id].email = email;
-    users[id].phone = phone;
+    if (users[id].email == email) {
+      saveExistingUser(id, name, email, phone);
+    } else {
+      if (!getUserExist(email)) {
+        saveExistingUser(id, name, email, phone);
+      } else {
+        errorMSG();
+      }
+    }
   }
   setInitials(id);
   backend.setItem("users", users);
   returnContacts();
+}
+
+function saveExistingUser(id, name, email, phone) {
+  users[id].name = name;
+  users[id].email = email;
+  users[id].phone = phone;
+}
+
+function errorMSG() {
+  // !Error erstellen
+  alert("Email schon vergeben");
 }
 
 function returnContacts() {
