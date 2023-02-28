@@ -62,3 +62,15 @@ function setInitials(id) {
 
   users[id].initials = firstLetters;
 }
+
+function getUserExist(email) {
+  if (users.length > 0) {
+    for (let i = 0; i < users.length; i++) {
+      if (email == users[i].email) {
+        return true;
+      }
+    }
+  } else {
+    return false;
+  }
+}

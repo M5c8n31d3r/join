@@ -12,15 +12,7 @@ function signUp() {
   const password = document.getElementById("passwordsignup").value;
   let user = {};
 
-  if (users.length > 0) {
-    for (let i = 0; i < users.length; i++) {
-      if (email == users[i].email) {
-        userExist = true;
-      }
-    }
-  }
-
-  if (!userExist) {
+  if (!getUserExist(email)) {
     user = {
       id: users.length,
       name: userName,
@@ -35,7 +27,7 @@ function signUp() {
   } else {
     let error = document.getElementById("signup-error");
     error.classList.remove("display-none");
-    error.innerHTML = "Bitte prüfen Sie ihre Eingabe!";
+    error.innerHTML = "Email schon vorhanden!";
   }
 }
 
