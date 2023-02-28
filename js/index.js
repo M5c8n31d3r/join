@@ -17,7 +17,8 @@ function signUp() {
       id: users.length,
       name: userName,
       email: email,
-      password: password
+      password: password,
+      isUser: true
     };
 
     users.push(user);
@@ -39,7 +40,8 @@ function signIn() {
   for (let i = 0; i < users.length; i++) {
     if (
       email.toLowerCase() == users[i].email &&
-      password == users[i].password
+      password == users[i].password &&
+      users[i].isUser
     ) {
       storeLocal(users[i].id);
       window.location.assign("./html/summary.html");
