@@ -10,6 +10,7 @@ async function initAddTask() {
   loadCategories();
   loadUserList();
   getToday();
+  setActive("nav-add-task");
   // activeSummaryNavLink();
 }
 

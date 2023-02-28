@@ -3,6 +3,7 @@ let currentDragElementID = -1;
 async function initBoard() {
   await includeHTML();
   await loadDataFromServer();
+  setActive("nav-board");
   loadTask();
   // activeSummaryNavLink();
 }

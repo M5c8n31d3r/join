@@ -254,7 +254,8 @@ input:focus {
   gap: 10px;
 }
 
-.nav-item:hover {
+.nav-item:hover,
+.nav-item-active {
   background-color: var(--darkblue-active);
 }
 

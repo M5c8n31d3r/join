@@ -3,6 +3,7 @@ let letterlist = [];
 async function initContacts() {
   await includeHTML();
   await loadDataFromServer();
+  setActive("nav-contacts");
   renderContacts();
 }
 

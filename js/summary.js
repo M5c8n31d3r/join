@@ -9,6 +9,7 @@ const counter = [
 async function initSummary() {
   await includeHTML();
   await loadDataFromServer();
+  setActive("nav-summary");
   loadAllCounters();
   // activeSummaryNavLink();
   setWelcomeMsg();
