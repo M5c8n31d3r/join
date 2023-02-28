@@ -23,7 +23,7 @@ function saveTask() {
     priority: selectedPriority,
     category: selectedCategory,
     assignedTo: selectedUsers,
-    dueDate: document.getElementById("task-due-date").value,
+    dueDate: Date.parse(document.getElementById("task-due-date").value),
     state: "ToDo",
     subtask: []
   };
@@ -142,14 +142,16 @@ function loadUserList() {
   let listItems = document.getElementById("user-list");
   listItems.innerHTML = "";
   for (let i = 1; i < users.length; i++) {
-    let listItem = users[i];
-    listItems.innerHTML += `
+    if (users[i].isUser) {
+      let listItem = users[i];
+      listItems.innerHTML += `
       <div id='user-${listItem.id}' onclick='selectUser(${listItem.id})' 
       class="dropdown-item flex space-between">
         <span class="assigned-to-name">${listItem.name}</span>
         <input style="width: unset" id="user-checkbox-${listItem.id}" 
         type="checkbox">
       </div>`;
+    }
   }
 }
 
