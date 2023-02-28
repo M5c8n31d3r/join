@@ -186,3 +186,14 @@ function getToday() {
 function setPrio(priority) {
   selectedPriority = priority;
 }
+
+function clearAll() {
+  document.getElementById("task-title").value = "";
+  document.getElementById("task-description").value = "";
+  document.getElementById("task-due-date").value = "";
+
+  selectedUsers = [];
+  selectedCategory = {};
+  selectedPriority = null;
+  renderSelectedUsers();
+}
