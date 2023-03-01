@@ -29,9 +29,14 @@ function saveTask() {
     state: "ToDo",
     subtask: subtasks
   };
-  tasks.push(task);
-  backend.setItem("tasks", tasks);
-  setTimeout(loadDelay, 1000);
+
+  if (task.title != "" && task.description != "" && task.dueDate != NaN) {
+    tasks.push(task);
+    backend.setItem("tasks", tasks);
+    // setTimeout(loadDelay, 1000);
+  } else {
+    alert("Pflichtfelder ausfüllen!!!");
+  }
 }
 
 function loadDelay() {
