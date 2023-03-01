@@ -342,6 +342,10 @@ input:focus {
   height: 22px;
 }
 
+.back-arrow img {
+  filter: brightness(0) saturate(0);
+}
+
 .fullscreen {
   height: 100vh;
   width: 100vw;
@@ -827,6 +831,10 @@ input[type="radio"] {
 
   .login-input-bars {
     padding-bottom: 5%;
+  }
+
+  .back-arrow img {
+    filter: none;
   }
 
   .sign-up-content {
