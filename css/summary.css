@@ -64,7 +64,7 @@
   background-color: var(--white);
   width: 170px;
   height: 170px;
-  box-shadow: var(--shadow);
+  box-shadow: var(--box-shadow);
   padding: 25px 0px;
 }
 
@@ -102,7 +102,7 @@
   background-color: var(--white);
   border-radius: 30px;
   border: 2px solid var(--white);
-  box-shadow: var(--shadow);
+  box-shadow: var(--box-shadow);
   padding: 28px 48px;
   gap: 61px;
   width: 580px;
@@ -251,7 +251,7 @@ d-none {
   height: 170px;
   width: 280px;
   border-radius: var(--border-radius-xl);
-  box-shadow: var(--shadow);
+  box-shadow: var(--box-shadow);
   display: flex;
   align-items: center;
   justify-content: center;
