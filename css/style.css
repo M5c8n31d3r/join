@@ -632,16 +632,14 @@ input:focus {
 
 .add-task-form {
   display: flex;
+  flex-direction: column;
 }
 
 .add-task-left {
   width: 100%;
-  padding-right: 40px;
-  border-right: 1px solid var(--shadow);
 }
 
 .add-task-right {
-  padding-left: 40px;
   width: 100%;
 }
 
@@ -882,6 +880,19 @@ input[type="radio"] {
     width: 100%;
   }
 
+  .add-task-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .add-task-middle {
+    width: 2px;
+    background-color: var(--shadow);
+    margin: 0 40px;
+  }
+
   #logo {
     width: 100px;
   }
@@ -957,10 +968,11 @@ input[type="radio"] {
   }
 
   .content {
-    padding: calc(var(--nav-height-m) + 50px) 33px 0
+    padding: calc(var(--nav-height-m) + 50px) 50px 0
       calc(var(--nav-width-d) + 50px);
     margin: auto;
   }
+
   .plus-btn-big {
     gap: 15px;
     height: 51px;
