@@ -229,6 +229,31 @@ input:focus {
   width: 90px;
 }
 
+.btn-line {
+  background-color: var(--white);
+  color: var(--darkblue);
+  font-weight: 600;
+}
+.btn-line:hover {
+  background-color: var(--white) !important;
+  color: var(--lightblue);
+  border: 1px solid var(--lightblue);
+  font-weight: 600;
+}
+
+.line-btn {
+  filter: none;
+}
+
+.btn-line:hover .line-btn {
+  filter: invert(58%) sepia(78%) saturate(1783%) hue-rotate(165deg)
+    brightness(95%) contrast(85%);
+}
+
+.padding-sides {
+  padding: 0 20px;
+}
+
 .input-bar img {
   height: 20px;
   width: 25px;
@@ -317,6 +342,11 @@ input:focus {
 }
 .flex-start {
   justify-content: flex-start;
+}
+
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .relative {
