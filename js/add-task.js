@@ -200,11 +200,18 @@ function clearAll() {
   document.getElementById("task-title").value = "";
   document.getElementById("task-description").value = "";
   document.getElementById("task-due-date").value = "";
+  document.getElementById("category-input").value = "";
+  document.getElementById("task-urgent").checked = false;
+  document.getElementById("task-medium").checked = false;
+  document.getElementById("task-low").checked = false;
 
   selectedUsers = [];
   selectedCategory = {};
   selectedPriority = null;
+  subtasks = [];
+
   renderSelectedUsers();
+  renderSubtasks();
 }
 
 function addSubtask() {
