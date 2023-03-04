@@ -81,6 +81,7 @@ function newCategory() {
     .classList.remove("display-none");
   document.getElementById("category-input").classList.remove("display-none");
   document.getElementById("dropdown-accept").classList.remove("display-none");
+  document.getElementById("category-input").disabled = false;
   document
     .getElementById("category-dropdown-arrow")
     .classList.add("display-none");
@@ -186,6 +187,12 @@ function renderSelectedUsers() {
 function renderSelectedUserDetails(selectedUser) {
   const user = users.find((n) => n.id === selectedUser);
   return user.initials;
+}
+
+function newAssignedToContact() {
+  document.getElementById("assigned-to-user-input").disabled = false;
+  document.getElementById("assigned-to-user-input").focus();
+  toggleDropdown("assigned-to");
 }
 
 function getToday() {
