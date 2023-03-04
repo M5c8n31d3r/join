@@ -6,7 +6,6 @@ async function initialisation() {
 }
 
 function signUp() {
-  let userExist = false;
   const userName = document.getElementById("usersignup").value;
   const email = document.getElementById("emailsignup").value.toLowerCase();
   const password = document.getElementById("passwordsignup").value;
@@ -16,7 +15,7 @@ function signUp() {
     user = {
       id: users.length,
       name: userName,
-      email: email,
+      email: email.toLowerCase(),
       password: password,
       isUser: true
     };
@@ -36,17 +35,17 @@ function signIn() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
   let rememberMe = document.getElementById("rememberme").checked;
+  let userID = getUserExist(email);
 
-  for (let i = 0; i < users.length; i++) {
-    if (
-      email.toLowerCase() == users[i].email &&
-      password == users[i].password &&
-      users[i].isUser
-    ) {
-      storeLocal(users[i].id);
+  if (userID) {
+    if (password == users[userID].password) {
+      storeLocal(userID);
       window.location.assign("./html/summary.html");
+    } else {
+      alert("ERROR");
     }
   }
+
   if (rememberMe) {
     user = {
       email: email,

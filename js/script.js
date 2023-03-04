@@ -66,8 +66,8 @@ function setInitials(id) {
 function getUserExist(email) {
   if (users.length > 0) {
     for (let i = 0; i < users.length; i++) {
-      if (email == users[i].email) {
-        return true;
+      if (email.toLowerCase() == users[i].email) {
+        return i;
       }
     }
   } else {
