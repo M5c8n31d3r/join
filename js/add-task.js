@@ -33,7 +33,7 @@ function saveTask() {
   if (task.title != "" && task.description != "" && task.dueDate != NaN) {
     tasks.push(task);
     backend.setItem("tasks", tasks);
-    // setTimeout(loadDelay, 1000);
+    setTimeout(loadDelay, 1000);
   } else {
     alert("Pflichtfelder ausfüllen!!!");
   }
