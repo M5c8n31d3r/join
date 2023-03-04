@@ -76,18 +76,20 @@ function toggleDropdown(listName) {
 }
 
 function newCategory() {
+  let categoryInput = document.getElementById("category-input");
+
   document
     .getElementById("new-category-colors")
     .classList.remove("display-none");
-  document.getElementById("category-input").classList.remove("display-none");
+  categoryInput.classList.remove("display-none");
   document.getElementById("dropdown-accept").classList.remove("display-none");
-  document.getElementById("category-input").disabled = false;
+  categoryInput.disabled = false;
   document
     .getElementById("category-dropdown-arrow")
     .classList.add("display-none");
 
-  document.getElementById("category-input").value = "";
-  document.getElementById("category-input").select();
+  categoryInput.value = "";
+  categoryInput.select();
   document.getElementById("filled-category").classList.add("display-none");
   toggleDropdown("category");
 }
