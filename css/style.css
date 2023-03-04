@@ -893,6 +893,12 @@ input[type="radio"] {
     margin: 0 40px;
   }
 
+  .add-task-btns {
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+  }
+
   #logo {
     width: 100px;
   }
