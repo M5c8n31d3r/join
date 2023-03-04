@@ -649,6 +649,18 @@ input:focus {
   width: 100%;
 }
 
+.add-task-btns {
+  display: none;
+}
+
+.add-task-btn-create-m {
+  position: fixed;
+  top: 13px;
+  right: 24px;
+  display: flex;
+  z-index: 10;
+}
+
 .dropdown {
   background-color: var(--white);
   border: 1px solid #a8a8a8;
@@ -896,9 +908,14 @@ input[type="radio"] {
   }
 
   .add-task-btns {
+    display: flex;
     position: absolute;
     right: 50px;
     bottom: 50px;
+  }
+
+  .add-task-btn-create-m {
+    display: none;
   }
 
   .task-prio-card {
