@@ -167,7 +167,7 @@ function resetMusterdaten() {
   backend.setItem("tasks", tasks);
   console.log("Tasks zurück gesetzt");
 
-  categories.splice(categories.length);
+  categories.splice(0, categories.length);
   for (let i = 0; i < musterCategories.length; i++) {
     categories.push(musterCategories[i]);
   }
