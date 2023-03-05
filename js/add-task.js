@@ -29,14 +29,21 @@ function saveTask() {
     state: "ToDo",
     subtask: subtasks
   };
-  debugger;
+
   if (task.title != "" && task.description != "" && !isNaN(task.dueDate)) {
     tasks.push(task);
     backend.setItem("tasks", tasks);
-    setTimeout(loadDelay, 1000);
+    showTaskAddedInfobox();
   } else {
     checkAlert(task);
   }
+}
+
+function showTaskAddedInfobox() {
+  document
+    .getElementById("task-added-infobox")
+    .classList.remove("display-none");
+  setTimeout(loadDelay(), 2000);
 }
 
 function checkAlert(task) {
