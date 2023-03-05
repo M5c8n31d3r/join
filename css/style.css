@@ -15,6 +15,7 @@
 
   /* Shadow */
   --box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 
   /* Colors task-categorys */
   --orange: #ff8a00;
