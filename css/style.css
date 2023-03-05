@@ -107,6 +107,10 @@ a {
   cursor: pointer;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 h1 {
   font-size: 47px;
   font-weight: 700;
@@ -117,6 +121,9 @@ h2 {
   font-style: normal;
   font-size: 21px;
   font-weight: 700;
+}
+
+h3 {
 }
 
 p {
@@ -337,6 +344,10 @@ input:focus {
   margin: 0;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .flex {
   display: flex;
 }
@@ -540,6 +551,12 @@ input:focus {
   padding-top: 15px;
   border-radius: var(--border-radius-m);
   border: 4px dashed var(--darkblue);
+}
+
+.progress-cols {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
 }
 
 /* ID's */

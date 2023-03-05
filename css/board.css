@@ -24,3 +24,14 @@
 
 .taskcard-user-prio {
 }
+
+.progress {
+  width: 100%;
+  height: 8px;
+}
+
+.taskcard-subtasks-done {
+  width: fit-content;
+  font-size: 12px;
+  white-space: nowrap;
+}

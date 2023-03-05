@@ -49,11 +49,20 @@ function renderCard(task) {
         }" class="taskcard-category flex center"><div class="taskcard-category-name">${
     task.category.name
   }</div></div>
-        <h3 class="taskcard-title">${task["title"]}</h3>
+        <h3 class="taskcard-title font-16 bold">${task["title"]}</h3>
         <p class="taskcard-description">${task["description"]}
         </p>
-        <div class="taskcard-subtasks flex space-between"> <span>progress bar</span><span>x/x Done</span></div>
-        
+        <div class="taskcard-subtasks flex center gap-s space-between"> 
+          <div class="progress">
+            <div class="progress-bar w-${
+              (1 / task["subtask"].length) * 100
+            }" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="${
+    task["subtask"].length
+  }"></div>
+          </div>
+          <span class="taskcard-subtasks-done">x/${
+            task["subtask"].length
+          } Done</span></div>
         <div class="taskcard-user-prio"> 
         <div class="center-row space-between">
             <div>${task["assignedTo"]}</div>
