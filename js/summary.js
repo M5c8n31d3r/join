@@ -38,13 +38,13 @@ function setWelcomeMsg() {
 
   switch (true) {
     case currHour < 12:
-      welcomeText = "Good morning";
+      welcomeText = "Good morning!";
       break;
     case currHour >= 12 && currHour < 17:
-      welcomeText = "Good afternoon";
+      welcomeText = "Good afternoon!";
       break;
     case currHour >= 17:
-      welcomeText = "Good evening";
+      welcomeText = "Good evening!";
       break;
   }
 

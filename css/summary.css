@@ -90,8 +90,8 @@
 .summary-row-2 {
   display: flex;
   align-items: center;
-  height: 170px;
-  margin-top: 3rem;
+  height: 120px;
+  margin-top: 50px;
 }
 
 .urgent-box {
@@ -104,7 +104,7 @@
   border: 2px solid var(--white);
   box-shadow: var(--box-shadow);
   padding: 28px 48px;
-  gap: 61px;
+  gap: 14px;
   width: 580px;
   height: 150px;
 }
@@ -152,7 +152,7 @@
 #urgent-separator {
   width: 0;
   height: 102px;
-  border-left: solid 2px var(--dimmed);
+  border-left: solid 3px var(--dimmed);
   border-radius: 2px;
   margin: 0 61px;
 }
@@ -227,8 +227,13 @@ d-none {
   font-weight: 700;
   font-size: 21px;
   line-height: 120%;
-  width: 148px;
-  height: 19px;
+  width: 172px;
+  height: 0px;
+}
+
+.upcoming-deadline-title {
+  font-size: 16px;
+  margin-right: 22px;
 }
 
 /***** Summary Row 3 *****/
