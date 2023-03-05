@@ -230,10 +230,16 @@ input:focus {
   font-size: 21px;
 }
 
+.input-alert-box {
+  height: 12px;
+}
+
 .input-alert {
   font-size: 12px;
-  font-weight: lighter;
+  font-weight: 400;
   color: var(--urgent);
+  margin: 0;
+  padding: 0;
 }
 
 .btn-small {

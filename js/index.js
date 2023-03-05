@@ -25,9 +25,9 @@ function signUp() {
     backend.setItem("users", users);
     switchscreen();
   } else {
-    let error = document.getElementById("signup-error");
-    error.classList.remove("display-none");
-    error.innerHTML = "Email schon vorhanden!";
+    let alert = document.getElementById("signup-alert");
+    alert.classList.remove("display-none");
+    alert.innerHTML = "Email already exist!";
   }
 }
 

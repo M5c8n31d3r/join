@@ -120,6 +120,7 @@
             />
             <img src="/assets/img/icons/icon-name.svg" />
           </div>
+          <div class="input-alert-box"></div>
           <div class="input-login input-bar">
             <input
               required
@@ -129,6 +130,9 @@
               class="pointer"
             />
             <img src="/assets/img/icons/icon-email.svg" />
+          </div>
+          <div class="input-alert-box">
+            <div id="signup-alert" class="input-alert display-none"></div>
           </div>
           <div class="input-login input-bar">
             <input
@@ -145,7 +149,8 @@
               onclick="swapPassword('passwordsignup', 'signup-password-icon')"
             />
           </div>
-          <div id="signup-error" class="error display-none"></div>
+          <div class="input-alert-box"></div>
+
           <div class="login-btns">
             <button
               id="btn-signup"
