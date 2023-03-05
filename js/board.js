@@ -44,16 +44,24 @@ function renderCard(task) {
   return /* html */ `<div class="task-card" draggable="true" ondragstart="drag(${
     task.id
   })">
-        <h3>${task["title"]}</h3>
-        <p>${task["description"]}
+        <div style="background-color: ${
+          task.category.color
+        }" class="taskcard-category flex center"><div class="taskcard-category-name">${
+    task.category.name
+  }</div></div>
+        <h3 class="taskcard-title">${task["title"]}</h3>
+        <p class="taskcard-description">${task["description"]}
         </p>
-        <span>progress bar</span>
+        <div class="taskcard-subtasks flex space-between"> <span>progress bar</span><span>x/x Done</span></div>
+        
+        <div class="taskcard-user-prio"> 
         <div class="center-row space-between">
             <div>${task["assignedTo"]}</div>
             <img src="/assets/img/icons/icon-prio-${prioIconEnding(
               task
             )}.svg" alt="${prioIconEnding(task)} prio" />
             </div>
+        </div>
     </div>`;
 }
 

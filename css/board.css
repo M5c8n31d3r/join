@@ -1,0 +1,26 @@
+.taskcard-category {
+  padding: 4px 25px;
+  border-radius: 8px;
+  width: fit-content;
+  margin: 0 0 15px 0;
+}
+
+.taskcard-category-name {
+  color: var(--white);
+  font-size: 16px;
+}
+
+.taskcard-title {
+  margin: 0 0 10px 0;
+}
+
+.taskcard-description {
+  margin: 0 0 18px 0;
+}
+
+.taskcard-subtasks {
+  margin: 0 0 18px 0;
+}
+
+.taskcard-user-prio {
+}
