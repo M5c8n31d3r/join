@@ -110,46 +110,53 @@
         <h1 class="center">Sign up</h1>
         <hr id="hr" />
         <form class="form center-column" onsubmit="return false">
-          <div class="input-login input-bar">
-            <input
-              required
-              type="text"
-              placeholder="Benutzer"
-              id="usersignup"
-              class="pointer"
-            />
-            <img src="/assets/img/icons/icon-name.svg" />
+          <div class="input-box">
+            <div class="input-login input-bar">
+              <input
+                required
+                type="text"
+                placeholder="Benutzer"
+                id="usersignup"
+                class="pointer"
+              />
+              <img src="/assets/img/icons/icon-name.svg" />
+            </div>
+            <div class="input-alert-box"></div>
           </div>
-          <div class="input-alert-box"></div>
-          <div class="input-login input-bar">
-            <input
-              required
-              type="email"
-              placeholder="Email"
-              id="emailsignup"
-              class="pointer"
-            />
-            <img src="/assets/img/icons/icon-email.svg" />
+
+          <div class="input-box">
+            <div class="input-login input-bar">
+              <input
+                required
+                type="email"
+                placeholder="Email"
+                id="emailsignup"
+                class="pointer"
+              />
+              <img src="/assets/img/icons/icon-email.svg" />
+            </div>
+            <div class="input-alert-box">
+              <div id="signup-alert" class="input-alert display-none"></div>
+            </div>
           </div>
-          <div class="input-alert-box">
-            <div id="signup-alert" class="input-alert display-none"></div>
+          <div class="input-box">
+            <div class="input-login input-bar">
+              <input
+                required
+                type="password"
+                placeholder="Password"
+                id="passwordsignup"
+                class="pointer"
+              />
+              <img
+                id="signup-password-icon"
+                src="/assets/img/icons/icon-password.svg"
+                class="pointer"
+                onclick="swapPassword('passwordsignup', 'signup-password-icon')"
+              />
+            </div>
+            <div class="input-alert-box"></div>
           </div>
-          <div class="input-login input-bar">
-            <input
-              required
-              type="password"
-              placeholder="Password"
-              id="passwordsignup"
-              class="pointer"
-            />
-            <img
-              id="signup-password-icon"
-              src="/assets/img/icons/icon-password.svg"
-              class="pointer"
-              onclick="swapPassword('passwordsignup', 'signup-password-icon')"
-            />
-          </div>
-          <div class="input-alert-box"></div>
 
           <div class="login-btns">
             <button
