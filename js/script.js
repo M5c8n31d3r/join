@@ -4,6 +4,7 @@
 
 setURL("https://gruppe-445.developerakademie.net/smallest_backend_ever/");
 
+// Arrays for the Data
 const users = [];
 const tasks = [];
 const categories = [];
@@ -12,13 +13,13 @@ const categories = [];
 let userLogIn = null;
 
 /**
- * Load the templates into the singe pages
+ * Load the templates into the single pages
  */
 async function includeHTML() {
   let includeElements = document.querySelectorAll("[w3-include-html]");
   for (let i = 0; i < includeElements.length; i++) {
     const element = includeElements[i];
-    file = element.getAttribute("w3-include-html"); // "includes/header.html"
+    file = element.getAttribute("w3-include-html");
     let resp = await fetch(file);
     if (resp.ok) {
       element.innerHTML = await resp.text();
@@ -29,7 +30,7 @@ async function includeHTML() {
 }
 
 /**
- * Load all Data from the Backend an push it in the two arrays for users and tasks
+ * Load all Data from the Backend an push it in the two arrays for users, tasks and categories
  */
 async function loadDataFromServer() {
   let download = await downloadFromServer();
@@ -63,6 +64,11 @@ function setInitials(id) {
   users[id].initials = firstLetters;
 }
 
+/**
+ *
+ * @param {STRING} email -> Email which is to check in the users-Array
+ * @returns the ID of the user, which fit to the email. If no user was found, it returns FALSE
+ */
 function getUserExist(email) {
   if (users.length > 0) {
     for (let i = 0; i < users.length; i++) {
@@ -75,12 +81,22 @@ function getUserExist(email) {
   }
 }
 
+/**
+ *
+ * @param {STRING} id -> ID of the active menu
+ * Set the active menu for visual feedback in menubar
+ */
 function setActive(id) {
   let activeItem = document.getElementById(id);
 
   activeItem.classList.add("nav-item-active");
 }
 
+/**
+ *
+ * @param {STRING} elementID -> ID of the element, which should be displayed
+ * Show the alert-massages
+ */
 function showAlert(elementID) {
   document.getElementById(elementID).classList.remove("display-none");
 }
