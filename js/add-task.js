@@ -29,13 +29,26 @@ function saveTask() {
     state: "ToDo",
     subtask: subtasks
   };
-
-  if (task.title != "" && task.description != "" && task.dueDate != NaN) {
+  debugger;
+  if (task.title != "" && task.description != "" && !isNaN(task.dueDate)) {
     tasks.push(task);
     backend.setItem("tasks", tasks);
     setTimeout(loadDelay, 1000);
   } else {
-    alert("Pflichtfelder ausfüllen!!!");
+    checkAlert(task);
+  }
+}
+
+function checkAlert(task) {
+  console.log(task);
+  if (task.title == "") {
+    showAlert("title-alert");
+  }
+  if (task.description == "") {
+    showAlert("description-alert");
+  }
+  if (isNaN(task.dueDate)) {
+    showAlert("due-date-alert");
   }
 }
 
