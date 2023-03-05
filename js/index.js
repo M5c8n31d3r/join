@@ -1,10 +1,16 @@
 let idForPasswordReset = 0;
 
+/**
+ * Initialisation after loading the page
+ */
 async function initialisation() {
   loadDataFromServer();
   loadDataFromLocalStorage();
 }
 
+/**
+ * Save new user to the backend
+ */
 function signUp() {
   const userName = document.getElementById("usersignup").value;
   const email = document.getElementById("emailsignup").value.toLowerCase();
@@ -29,6 +35,9 @@ function signUp() {
   }
 }
 
+/**
+ * If the Email and Password are correct, the user will get access
+ */
 function signIn() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
@@ -53,6 +62,9 @@ function signIn() {
   }
 }
 
+/**
+ * LogIn as guest
+ */
 function signInGuest() {
   document.getElementById("email").required = false;
   document.getElementById("password").required = false;
@@ -60,10 +72,23 @@ function signInGuest() {
   window.location.assign("./html/summary.html");
 }
 
+/**
+ *
+ * @param {INT} id -> ID of the user
+ * Store the id in localStorage
+ */
 function storeLocal(id) {
-  localStorage.setItem("userLogIn", users[id].id);
+  localStorage.setItem("userLogIn", id);
 }
 
+/**
+ *
+ * @param {STRING} passwordParameter HTML-ID of Password input field
+ * @param {STRING} iconParameter HTML-ID of Icon in Password input field
+ *
+ * switch type of input-field for password, to show and hide password.
+ * switch the icon in the password-input-field
+ */
 function swapPassword(passwordParameter, iconParameter) {
   let password = document.getElementById(passwordParameter);
   let icon = document.getElementById(iconParameter);
@@ -77,6 +102,9 @@ function swapPassword(passwordParameter, iconParameter) {
   }
 }
 
+/**
+ * Switch the screen between SignIn and SignUp
+ */
 function switchscreen() {
   let login = document.getElementById("login");
   let signup = document.getElementById("signup");
@@ -93,6 +121,9 @@ function switchscreen() {
   }
 }
 
+/**
+ * switch the screen between SignIn and Forgot-Password
+ */
 function passwordReset() {
   let login = document.getElementById("login");
   let passwordreset = document.getElementById("forgotpasswordscreen");
@@ -109,11 +140,18 @@ function passwordReset() {
   }
 }
 
+/**
+ * ! NOCH NICHT FERTIG !
+ * ToDo: Email versand einrichten
+ */
 function sendNewPassword() {
   let email = document.getElementById("forgotpasswordemail");
   alert(email.value);
 }
 
+/**
+ * Fill the User-Data-Inputfields with data in localStorage
+ */
 function loadDataFromLocalStorage() {
   if (localStorage.getItem("user")) {
     let user = localStorage.getItem("user");
