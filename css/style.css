@@ -839,6 +839,30 @@ input[type="radio"] {
   cursor: pointer;
 }
 
+.infobox {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 230px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.info {
+  background-color: var(--darkblue);
+  color: var(--white);
+  height: 50px;
+  width: 300px;
+  border-radius: var(--border-radius-m);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+}
+
 /* Desktop View 800px+*/
 @media (min-width: 800px) {
   *,
