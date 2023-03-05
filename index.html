@@ -66,6 +66,11 @@
                 onclick="swapPassword('password', 'signin-password-icon')"
               />
             </div>
+            <div class="input-alert-box">
+              <div id="signin-alert" class="input-alert display-none">
+                Wrong password
+              </div>
+            </div>
           </div>
           <div class="login-content-pw center-column">
             <a onclick="passwordReset()" class="font-lightblue"
@@ -136,7 +141,9 @@
               <img src="/assets/img/icons/icon-email.svg" />
             </div>
             <div class="input-alert-box">
-              <div id="signup-alert" class="input-alert display-none"></div>
+              <div id="signup-alert" class="input-alert display-none">
+                Email already exist!
+              </div>
             </div>
           </div>
           <div class="input-box">

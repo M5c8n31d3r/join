@@ -25,9 +25,7 @@ function signUp() {
     backend.setItem("users", users);
     switchscreen();
   } else {
-    let alert = document.getElementById("signup-alert");
-    alert.classList.remove("display-none");
-    alert.innerHTML = "Email already exist!";
+    showAlert("signup-alert");
   }
 }
 
@@ -42,7 +40,7 @@ function signIn() {
       storeLocal(userID);
       window.location.assign("./html/summary.html");
     } else {
-      alert("ERROR");
+      showAlert("signin-alert");
     }
   }
 
@@ -53,6 +51,10 @@ function signIn() {
     };
     localStorage.setItem("user", JSON.stringify(user));
   }
+}
+
+function showAlert(elementID) {
+  document.getElementById(elementID).classList.remove("display-none");
 }
 
 function signInGuest() {
