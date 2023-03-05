@@ -53,10 +53,6 @@ function signIn() {
   }
 }
 
-function showAlert(elementID) {
-  document.getElementById(elementID).classList.remove("display-none");
-}
-
 function signInGuest() {
   document.getElementById("email").required = false;
   document.getElementById("password").required = false;

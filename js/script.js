@@ -80,3 +80,7 @@ function setActive(id) {
 
   activeItem.classList.add("nav-item-active");
 }
+
+function showAlert(elementID) {
+  document.getElementById(elementID).classList.remove("display-none");
+}
