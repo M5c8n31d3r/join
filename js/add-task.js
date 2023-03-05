@@ -1,10 +1,13 @@
+// Global variables
 let today = new Date().toISOString().split("T")[0];
-
 let selectedUsers = [];
 let selectedCategory = {};
 let selectedPriority = null;
 let subtasks = [];
 
+/**
+ * Initialisation after loading the page
+ */
 async function initAddTask() {
   await includeHTML();
   await loadDataFromServer();
@@ -15,6 +18,10 @@ async function initAddTask() {
   // activeSummaryNavLink();
 }
 
+/**
+ * Save the input in a task-object and push the task to the tasks-array
+ * saves the tasks-array in the backend
+ */
 function saveTask() {
   const title = document.getElementById("task-title").value;
   const description = document.getElementById("task-description").value;
@@ -39,6 +46,9 @@ function saveTask() {
   }
 }
 
+/**
+ * Show the infobox for 'Task added'
+ */
 function showTaskAddedInfobox() {
   document
     .getElementById("task-added-infobox")
@@ -46,6 +56,11 @@ function showTaskAddedInfobox() {
   setTimeout(loadDelay(), 2000);
 }
 
+/**
+ *
+ * @param {OBJECT} task -> one task
+ * check the requiered fields and show the information in HTML-file
+ */
 function checkAlert(task) {
   console.log(task);
   if (task.title == "") {
@@ -59,15 +74,20 @@ function checkAlert(task) {
   }
 }
 
+/**
+ * Redirect to the board
+ */
 function loadDelay() {
   window.location.assign("./board.html");
 }
 
+/**
+ * Generate the drop-down-list of categories
+ */
 function loadCategories() {
   let listItems = document.getElementById("category-list");
   listItems.innerHTML = "";
   for (let i = 0; i < categories.length; i++) {
-    let listItem = categories[i];
     listItems.innerHTML += `
       <div id='category-${categories[i].id}' onclick='selectCategory(${categories[i].id})' class="dropdown-item flex">
         <span class="category-name">${categories[i].name}</span>
@@ -76,6 +96,12 @@ function loadCategories() {
   }
 }
 
+/**
+ *
+ * @param {INT} id -> ID of the category
+ *
+ * ToDo: hier noch prüfen
+ */
 function selectCategory(id) {
   let filledCategory = document.getElementById("filled-category");
   filledCategory.innerHTML = fillCatergory(id);
@@ -86,6 +112,11 @@ function selectCategory(id) {
   toggleDropdown("category");
 }
 
+/**
+ *
+ * @param {STRING} listName HTML-Name of the Drop-Down-List
+ * Show and hide the drop-down-menus
+ */
 function toggleDropdown(listName) {
   let list = document.getElementById(`dropdown-list-${listName}`);
   if (list.classList.contains("display-none")) {
@@ -95,6 +126,9 @@ function toggleDropdown(listName) {
   }
 }
 
+/**
+ * ToDo: hier noch prüfen
+ */
 function newCategory() {
   let categoryInput = document.getElementById("category-input");
 
@@ -114,6 +148,9 @@ function newCategory() {
   toggleDropdown("category");
 }
 
+/**
+ * Clear all user inputs
+ */
 function clearInput() {
   document.getElementById("new-category-colors").classList.add("display-none");
   document.getElementById("category-input").classList.add("display-none");
@@ -126,6 +163,9 @@ function clearInput() {
   toggleDropdown("category");
 }
 
+/**
+ * ToDo: hier noch prüfen
+ */
 function saveNewCategory() {
   let newCatValue = document.getElementById("category-input").value;
   let newCatColor =
@@ -148,6 +188,12 @@ function saveNewCategory() {
     .classList.remove("display-none");
 }
 
+/**
+ *
+ * @param {STRING} color CSS-Color for the new category
+ *
+ * ToDo: hier noch prüfen
+ */
 function addNewCatergoryColor(color) {
   let selectedColor = color;
   document.getElementById(
@@ -155,6 +201,13 @@ function addNewCatergoryColor(color) {
   ).style.backgroundColor = `var(${selectedColor}`;
 }
 
+/**
+ *
+ * @param {INT} id ID of the category
+ * @returns HTML-Code for the category in drop-down-menu
+ *
+ * ToDo: hier noch prüfen
+ */
 function fillCatergory(id) {
   selectedCategory = {
     id: id,
@@ -168,6 +221,10 @@ function fillCatergory(id) {
 </div>`;
 }
 
+/**
+ * Generate the users for drop-down-menu "assigned to"
+ * Just user which are user.isUser == true
+ */
 function loadUserList() {
   let listItems = document.getElementById("user-list");
   listItems.innerHTML = "";
@@ -185,6 +242,11 @@ function loadUserList() {
   }
 }
 
+/**
+ *
+ * @param {INT} id ID of the user
+ * ToDo: hier noch prüfen
+ */
 function selectUser(id) {
   if (selectedUsers.indexOf(id) === -1) {
     selectedUsers.push(id);
@@ -196,6 +258,9 @@ function selectUser(id) {
   renderSelectedUsers();
 }
 
+/**
+ * Render the small circle with the initials of the selected useres
+ */
 function renderSelectedUsers() {
   let selectedUserList = document.getElementById("assigned-to-user");
   selectedUserList.innerHTML = "";
@@ -206,25 +271,43 @@ function renderSelectedUsers() {
   }
 }
 
+/**
+ *
+ * @param {INT} selectedUser ID of the selected user
+ * @returns {STRING} The initials of the selected user
+ */
 function renderSelectedUserDetails(selectedUser) {
   const user = users.find((n) => n.id === selectedUser);
   return user.initials;
 }
 
+/**
+ * ToDo: hier noch prüfen
+ */
 function newAssignedToContact() {
   document.getElementById("assigned-to-user-input").disabled = false;
   document.getElementById("assigned-to-user-input").focus();
   toggleDropdown("assigned-to");
 }
 
+/**
+ * Set the date in HTML-Due-Date-Dropdown to the actual date
+ */
 function getToday() {
   document.getElementById("task-due-date").setAttribute("min", today);
 }
 
+/**
+ *
+ * @param {INT} priority set the global variable for priority
+ */
 function setPrio(priority) {
   selectedPriority = priority;
 }
 
+/**
+ * Clear all user inputs
+ */
 function clearAll() {
   document.getElementById("task-title").value = "";
   document.getElementById("task-description").value = "";
@@ -243,6 +326,10 @@ function clearAll() {
   renderSubtasks();
 }
 
+/**
+ * push the value of the input-field to the global-array of subtasks
+ * ToDo: hier noch prüfen
+ */
 function addSubtask() {
   let subtask = document.getElementById("task-subtask");
   subtasks.push(subtask.value);
@@ -250,6 +337,9 @@ function addSubtask() {
   renderSubtasks();
 }
 
+/**
+ * render the list of subtasks
+ */
 function renderSubtasks() {
   let subtasks1 = document.getElementById("task-subtasks");
   subtasks1.innerHTML = "";
