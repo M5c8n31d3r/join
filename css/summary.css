@@ -37,6 +37,11 @@
   padding-left: 2rem;
   font-size: 1.5rem;
 }
+.headline-tooltype {
+  display: none;
+  font-size: 19px;
+  margin-bottom: 20px;
+}
 
 .summary-row123 {
 }
@@ -155,6 +160,7 @@
   border-left: solid 3px var(--dimmed);
   border-radius: 2px;
   margin: 0 61px;
+  margin-right: 28px;
 }
 
 .urgent-box-right {
@@ -302,16 +308,6 @@ d-none {
   width: 69px;
   height: 69px;
   border-radius: 50%;
-}
-
-.todo-container:hover .todo-icon {
-  background: url(/assets/img/icons/icon-to-do-2.svg);
-  /* filter: invert(100%);*/
-}
-
-.done-container:hover .done-icon {
-  background: url(/assets/img/icons/icon-done-2.svg);
-  /* filter: invert(100%);*/
 }
 
 .d-none {

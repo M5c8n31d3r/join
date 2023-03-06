@@ -538,6 +538,10 @@ input:focus {
   display: none;
 }
 
+.desktop-2 {
+  display: flex;
+}
+
 .min-height {
   min-height: 250px;
 }

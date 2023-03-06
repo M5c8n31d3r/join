@@ -249,6 +249,16 @@
 /*////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 @media (max-width: 800px) {
+  .headline-tooltype {
+    display: block;
+    margin-bottom: 0px;
+  }
+  .summary-header > p {
+    font-size: 21px;
+    margin-top: 0px;
+    margin-left: -30px;
+    height: 0px;
+  }
 }
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -336,10 +346,10 @@
 
   .todo-container,
   .done-container {
-    width: 256px;
-    height: 160px;
-    margin: 0px;
-    margin-top: 64px;
+    width: 170px;
+    height: 100px;
+    margin: 2px;
+    margin-top: 8px;
   }
 
   .todo-container > img {
