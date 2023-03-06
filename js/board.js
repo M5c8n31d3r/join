@@ -65,7 +65,7 @@ function renderCard(task) {
           } Done</span></div>
         <div class="taskcard-user-prio"> 
         <div class="center-row space-between">
-            <div>${task["assignedTo"]}</div>
+            <div id="assignedToUser"></div>
             <img src="/assets/img/icons/icon-prio-${prioIconEnding(
               task
             )}.svg" alt="${prioIconEnding(task)} prio" />
@@ -119,4 +119,19 @@ function changeState(state) {
   toggleDropZone();
   loadTask();
   backend.setItem("tasks", tasks);
+}
+
+// noch nicht eingebunden -> DS
+function renderUser(task) {
+  let userList = document.getElementById("assignedToUser");
+  userList.innerHTML = "";
+  for (let i = 0; i < task.assignedTo.length; i++) {
+    const user = task.assignedTo[i];
+    userList.innerHTML += `<div>${renderSelectedUserDetails(user)}</div>`;
+  }
+}
+
+function renderSelectedUserDetails(user) {
+  const user1 = users.find((n) => n.id === user);
+  return user1.initials;
 }
