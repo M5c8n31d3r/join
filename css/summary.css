@@ -147,6 +147,11 @@
   height: 75px;
 }
 
+.urgent-title {
+  font-weight: 400;
+  font-size: 14px;
+}
+
 .number-in-urgent-box {
   font-weight: 600;
   font-size: 47px;
@@ -334,4 +339,18 @@ d-none {
   margin-left: 2rem;
   width: 60px;
   height: 60px;
+}
+
+.todo-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+  margin-top: auto;
+}
+
+.done-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+  margin-top: auto;
 }

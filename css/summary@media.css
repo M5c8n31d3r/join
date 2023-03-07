@@ -56,12 +56,12 @@
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
 }
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-@media (max-width: 400px) {
+@media (max-width: 570px) {
   .headline-tooltype {
     display: block;
     margin-bottom: -20px;
@@ -75,7 +75,6 @@
     align-items: flex-start;
     padding: 0px;
     gap: 24px;
-
     position: absolute;
     width: 363px;
     height: 378px;
@@ -209,14 +208,14 @@
   }
   .deadline-date {
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
     width: 148px;
     height: 0px;
   }
 
   .upcoming-deadline-title {
-    font-size: 16px;
-    margin-right: 0px;
+    font-size: 14px;
+    margin-right: 18px;
   }
   /*************************/
   .summary-row-3 {
@@ -273,6 +272,7 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 120%;
+    margin-top: auto;
   }
 }
 
