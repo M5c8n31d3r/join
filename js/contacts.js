@@ -1,5 +1,9 @@
+// Global variables
 let letterlist = [];
 
+/**
+ * Initialisation after loading the page
+ */
 async function initContacts() {
   await includeHTML();
   await loadDataFromServer();
@@ -7,6 +11,9 @@ async function initContacts() {
   renderContacts();
 }
 
+/**
+ * Render the whole contactlist
+ */
 function renderContacts() {
   let contactlist = document.getElementById("contactlist");
   contactlist.innerHTML = "";
@@ -16,23 +23,34 @@ function renderContacts() {
   renderContact();
 }
 
+/**
+ * Create the List of Firstletters
+ */
 function createLetterlist() {
   for (let i = 1; i < users.length; i++) {
-    const user = users[i];
-    pushFirstLetter(user);
+    if (letterlist.indexOf(getFirstLetter(users[i]))) {
+      letterlist.push(getFirstLetter(users[i]));
+    }
   }
 }
 
+/**
+ *
+ * @param {OBJECT} contactlist HTML-Object
+ * Render the Letters for grouping the contacts
+ */
 function renderLetterGroup(contactlist) {
   letterlist.sort();
   for (let i = 0; i < letterlist.length; i++) {
-    const letter = letterlist[i];
-    contactlist.innerHTML += `<div id=letter-${letter} class="cl-letters">${letter}</div>
-    <div id=group-${letter}></div>
+    contactlist.innerHTML += `<div id=letter-${letterlist[i]} class="cl-letters">${letterlist[i]}</div>
+    <div id=group-${letterlist[i]}></div>
     `;
   }
 }
 
+/**
+ * ToDO Beschreibung ergänzen
+ */
 function renderContact() {
   for (let i = 0; i < users.length; i++) {
     let firstLetter = getFirstLetter(users[i]);
@@ -46,6 +64,12 @@ function renderContact() {
   }
 }
 
+/**
+ *
+ * @param {Object} user one user of users-array
+ * @returns HTML-Object
+ * Render the contact-information of a single user
+ */
 function renderSingleContact(user) {
   return `
     <div class="cl-contact center-row pointer" onclick="showDetails(${user.id})">
@@ -61,16 +85,21 @@ function renderSingleContact(user) {
     </div>`;
 }
 
+/**
+ *
+ * @param {Object} user one user of users-array
+ * @returns CHAR
+ * Return the first letter of the name
+ */
 function getFirstLetter(user) {
   return user["name"].charAt(0);
 }
 
-function pushFirstLetter(user) {
-  if (letterlist.indexOf(getFirstLetter(user))) {
-    letterlist.push(getFirstLetter(user));
-  }
-}
-
+/**
+ *
+ * @param {INT} id ID of the user
+ * Hide the contactlist and show the details
+ */
 function showDetails(id) {
   let details = document.getElementById("details");
   let contactlist = document.getElementById("contactlist");
@@ -83,6 +112,13 @@ function showDetails(id) {
   renderDetails(id);
 }
 
+/**
+ *
+ * @param {INT} id ID of the user
+ * render the detail-screen of user-informations
+ *
+ * TODO addTask noch programmieren
+ */
 function renderDetails(id) {
   let details = document.getElementById("details");
   details.innerHTML = /*html */ `
@@ -112,6 +148,13 @@ function renderDetails(id) {
   `;
 }
 
+/**
+ *
+ * @param {INT} id
+ * @param {BOOLEAN} edit EDIT is TRUE, ADD is FALSE
+ *
+ * switch between add-user and edit-user
+ */
 function addEditUser(id, edit) {
   let details = document.getElementById("details");
   let contactlist = document.getElementById("contactlist");
@@ -142,6 +185,16 @@ function addEditUser(id, edit) {
   renderAddEditUser(id, headline, underheadline, icon, checkout);
 }
 
+/**
+ *
+ * @param {INT*} id ID of the user
+ * @param {STRING} headline Headline of edit-card
+ * @param {STRING} underheadline Underheadline of edit-card
+ * @param {STRING} icon URL of the icon / Initials of the user
+ * @param {STRING} checkout Button-text
+ *
+ * Render the Card for edditing and adding contacts
+ */
 function renderAddEditUser(id, headline, underheadline, icon, checkout) {
   let contact = document.getElementById("add-edit-contact");
   contact.innerHTML = /*html */ `
@@ -166,11 +219,17 @@ function renderAddEditUser(id, headline, underheadline, icon, checkout) {
   `;
 }
 
+/**
+ *
+ * @param {INT} id ID of the user
+ * Push the user input to users-array and save the array in the backend
+ */
 function save(id) {
   const name = document.getElementById("edit-name").value;
   const email = document.getElementById("edit-email").value;
   const phone = document.getElementById("edit-phone").value;
 
+  //Save a new user
   if (id == users.length) {
     if (!getUserExist(email)) {
       let user = {
@@ -185,6 +244,7 @@ function save(id) {
       errorMSG();
     }
   } else {
+    //edit an existing user
     if (users[id].email == email) {
       saveExistingUser(id, name, email, phone);
     } else {
@@ -200,12 +260,24 @@ function save(id) {
   returnContacts();
 }
 
+/**
+ *
+ * @param {INT} id
+ * @param {STRING} name Name of the user
+ * @param {STRING} email Email of the user
+ * @param {STRING} phone Phonenumber of the user
+ *
+ * override user-details with input data
+ */
 function saveExistingUser(id, name, email, phone) {
   users[id].name = name;
   users[id].email = email;
   users[id].phone = phone;
 }
 
+/**
+ * Errormassage if the mail is used otherwise
+ */
 function errorMSG() {
   // !Error erstellen
   alert("Email schon vergeben");
@@ -225,6 +297,11 @@ function returnContacts() {
   renderContacts();
 }
 
+/**
+ * Add a new Task
+ *
+ * ToDo -> open the overlay template
+ */
 function addTask() {
   alert("Hier entsteht ein neuer Task!");
 }
