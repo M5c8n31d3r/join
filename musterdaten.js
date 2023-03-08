@@ -73,7 +73,7 @@ let musterTasks = [
       name: "Product management",
       color: "var(--magenta)"
     },
-    assignedTo: 3,
+    assignedTo: [3],
     dueDate: 1681603200000,
     state: "ToDo",
     subtask: [
@@ -98,7 +98,7 @@ let musterTasks = [
       name: "Backoffice",
       color: "var(--red)"
     },
-    assignedTo: 1,
+    assignedTo: [1],
     dueDate: 1678838400000,
     state: "progress",
     subtask: []
@@ -113,7 +113,7 @@ let musterTasks = [
       name: "Marketing",
       color: "var(--orange)"
     },
-    assignedTo: 2,
+    assignedTo: [2],
     dueDate: 1679961600000,
     state: "done",
     subtask: [

@@ -84,7 +84,7 @@ function renderCard(task) {
           } Done</span></div>
         <div class="taskcard-user-prio"> 
         <div class="center-row space-between">
-            <div id="assignedToUser"></div>
+            <div id="assignedToUser">${renderUser(task)}</div>
             <img src="/assets/img/icons/icon-prio-${prioIconEnding(
               task
             )}.svg" alt="${prioIconEnding(task)} prio" />
@@ -170,11 +170,9 @@ function changeState(state) {
  * ToDo wird noch bearbeitet -> Beschreibung muss noch angepasst werden
  */
 function renderUser(task) {
-  let userList = document.getElementById("assignedToUser");
-  userList.innerHTML = "";
   for (let i = 0; i < task.assignedTo.length; i++) {
     const user = task.assignedTo[i];
-    userList.innerHTML += `<div>${renderSelectedUserDetails(user)}</div>`;
+    return `<div>${renderSelectedUserDetails(user)}</div>`;
   }
 }
 
