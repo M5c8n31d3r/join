@@ -118,7 +118,7 @@ let musterTasks = [
     state: "done",
     subtask: [
       {
-        done: false,
+        done: true,
         description: "Musterdaten.js löschen"
       },
       {

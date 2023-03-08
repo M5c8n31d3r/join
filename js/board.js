@@ -74,14 +74,14 @@ function renderCard(task) {
         <div class="taskcard-subtasks flex center gap-s space-between"> 
           <div class="progress">
             <div class="progress-bar w-${
-              (1 / task["subtask"].length) * 100
-            }" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="${
-    task["subtask"].length
-  }"></div>
+              (countDoneSubtasks(task.subtask) / task["subtask"].length) * 100
+            }" role="progressbar" aria-valuenow="${countDoneSubtasks(
+    task.subtask
+  )}" aria-valuemin="0" aria-valuemax="${task["subtask"].length}"></div>
           </div>
-          <span class="taskcard-subtasks-done">x/${
-            task["subtask"].length
-          } Done</span></div>
+          <span class="taskcard-subtasks-done">${countDoneSubtasks(
+            task.subtask
+          )}/${task.subtask.length} Done</span></div>
         <div class="taskcard-user-prio"> 
         <div class="center-row space-between">
             <div class="flex gap-s">${renderUser(task)}</div>
@@ -93,6 +93,14 @@ function renderCard(task) {
     </div>`;
 }
 
+function countDoneSubtasks(subtasks) {
+  let countDone = 0;
+  for (let i = 0; i < subtasks.length; i++) {
+    const subtask = subtasks[i];
+    subtask.done ? countDone++ : 0;
+  }
+  return countDone;
+}
 /**
  *
  * @param {OBJECT} task one task of Tasks-Array
