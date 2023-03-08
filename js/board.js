@@ -170,10 +170,12 @@ function changeState(state) {
  * ToDo wird noch bearbeitet -> Beschreibung muss noch angepasst werden
  */
 function renderUser(task) {
+  let userList = "";
   for (let i = 0; i < task.assignedTo.length; i++) {
     const user = task.assignedTo[i];
-    return `<div>${renderSelectedUserDetails(user)}</div>`;
+    userList += `<div>${renderAssignedUser(user)}</div>`;
   }
+  return userList;
 }
 
 /**
@@ -182,7 +184,7 @@ function renderUser(task) {
  * @returns
  * ToDo: Klärung wofür die Funktion ist
  */
-function renderSelectedUserDetails(user) {
+function renderAssignedUser(user) {
   const user1 = users.find((n) => n.id === user);
   return user1.initials;
 }
