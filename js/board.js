@@ -84,7 +84,7 @@ function renderCard(task) {
           } Done</span></div>
         <div class="taskcard-user-prio"> 
         <div class="center-row space-between">
-            <div id="assignedToUser">${renderUser(task)}</div>
+            <div class="flex gap-s">${renderUser(task)}</div>
             <img src="/assets/img/icons/icon-prio-${prioIconEnding(
               task
             )}.svg" alt="${prioIconEnding(task)} prio" />
@@ -173,7 +173,9 @@ function renderUser(task) {
   let userList = "";
   for (let i = 0; i < task.assignedTo.length; i++) {
     const user = task.assignedTo[i];
-    userList += `<div>${renderAssignedUser(user)}</div>`;
+    userList += `<div class="initials center">${renderAssignedUser(
+      user
+    )}</div>`;
   }
   return userList;
 }
