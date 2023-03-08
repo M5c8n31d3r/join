@@ -53,7 +53,7 @@ function showTaskAddedInfobox() {
   document
     .getElementById("task-added-infobox")
     .classList.remove("display-none");
-  setTimeout(loadDelay(), 2000);
+  loadPageWithDelay("./board.html");
 }
 
 /**
@@ -72,13 +72,6 @@ function checkAlert(task) {
   if (isNaN(task.dueDate)) {
     showAlert("due-date-alert");
   }
-}
-
-/**
- * Redirect to the board
- */
-function loadDelay() {
-  window.location.assign("./board.html");
 }
 
 /**

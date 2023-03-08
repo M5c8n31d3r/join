@@ -100,3 +100,17 @@ function setActive(id) {
 function showAlert(elementID) {
   document.getElementById(elementID).classList.remove("display-none");
 }
+
+/**
+ *
+ * @param {STRING} page -> The URL to the page, which will load
+ */
+function loadPageWithDelay(page) {
+  let timeout = setTimeout(
+    function (page) {
+      window.location.assign(page);
+    },
+    2000,
+    page
+  );
+}

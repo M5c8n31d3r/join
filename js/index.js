@@ -47,7 +47,7 @@ function signIn() {
   if (userID) {
     if (password == users[userID].password) {
       storeLocal(userID);
-      window.location.assign("./html/summary.html");
+      loadPageWithDelay("./html/summary.html");
     } else {
       showAlert("signin-alert");
     }
@@ -69,7 +69,7 @@ function signInGuest() {
   document.getElementById("email").required = false;
   document.getElementById("password").required = false;
   storeLocal(users[0].id);
-  window.location.assign("./html/summary.html");
+  loadPageWithDelay("./html/summary.html");
 }
 
 /**

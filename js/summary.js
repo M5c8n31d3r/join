@@ -79,7 +79,7 @@ function counterLoop(id, name) {
 }
 
 function goToBoard() {
-  window.location.assign("./board.html");
+  loadPageWithDelay("./board.html");
 }
 
 function setDeadline() {
