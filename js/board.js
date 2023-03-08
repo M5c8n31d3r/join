@@ -1,13 +1,20 @@
+// Global variables
 let currentDragElementID = -1;
 
+/**
+ * Initialisation after loading the page
+ */
 async function initBoard() {
   await includeHTML();
   await loadDataFromServer();
   setActive("nav-board");
   loadTask();
-  // activeSummaryNavLink();
 }
 
+/**
+ * Load HTML-Elements
+ * ToDo: Länge der Funktion prüfen
+ */
 function loadTask() {
   let toDoTasks = document.getElementById("col-todo");
   let progressTasks = document.getElementById("col-progress");
@@ -20,13 +27,13 @@ function loadTask() {
 
   for (let i = 0; i < tasks.length; i++) {
     const task = tasks[i];
-    if (tasks[i]["state"] == "ToDo") {
+    if (tasks[i].state == "ToDo") {
       toDoTasks.innerHTML += renderCard(task);
-    } else if (tasks[i]["state"] == "progress") {
+    } else if (tasks[i].state == "progress") {
       progressTasks.innerHTML += renderCard(task);
-    } else if (tasks[i]["state"] == "awaiting") {
+    } else if (tasks[i].state == "awaiting") {
       awaitingTasks.innerHTML += renderCard(task);
-    } else if (tasks[i]["state"] == "done") {
+    } else if (tasks[i].state == "done") {
       doneTasks.innerHTML += renderCard(task);
     }
   }
@@ -36,10 +43,22 @@ function loadTask() {
   doneTasks.innerHTML += renderDropArea("dropzone-done");
 }
 
+/**
+ *
+ * @param {STRING} id HTML-ID of Drop-Area
+ * @returns HTML-Box for Drop-Area
+ */
 function renderDropArea(id) {
   return /* html */ `<div id="${id}" class="box display-none"></div>`;
 }
 
+/**
+ *
+ * @param {OBJECT} task One Task of Tasks-Array
+ * @returns HTML-Card with Task-Information
+ *
+ * ToDo Länge der Funktion prüfen
+ */
 function renderCard(task) {
   return /* html */ `<div class="task-card" draggable="true" ondragstart="drag(${
     task.id
@@ -74,18 +93,26 @@ function renderCard(task) {
     </div>`;
 }
 
+/**
+ *
+ * @param {OBJECT} task one task of Tasks-Array
+ * @returns String for priority
+ */
 function prioIconEnding(task) {
-  if (task["priority"] == 1) {
+  if (task.priority == 1) {
     return "low";
   }
-  if (task["priority"] == 0) {
+  if (task.priority == 0) {
     return "medium";
   }
-  if (task["priority"] == -1) {
+  if (task.priority == -1) {
     return "urgent";
   }
 }
 
+/**
+ * Show and hide the drop-zone for switching tasks
+ */
 function toggleDropZone() {
   let todo = document.getElementById("dropzone-ToDo");
   let progress = document.getElementById("dropzone-progress");
@@ -105,15 +132,30 @@ function toggleDropZone() {
   }
 }
 
+/**
+ *
+ * @param {} ev
+ * ! ICH HABE KEINE AHNUNG WARUM MAN DIE FUNKTION BENÖTIGT !
+ */
 function allowDrop(ev) {
   ev.preventDefault();
 }
 
+/**
+ *
+ * @param {INT} id ID of the draged task
+ * Set the global variable with task.id
+ */
 function drag(id) {
   currentDragElementID = id;
   toggleDropZone();
 }
 
+/**
+ *
+ * @param {STRING} state State of the drop-zone
+ * Set the new state of a task
+ */
 function changeState(state) {
   tasks[currentDragElementID].state = state;
   toggleDropZone();
@@ -121,7 +163,12 @@ function changeState(state) {
   backend.setItem("tasks", tasks);
 }
 
-// noch nicht eingebunden -> DS
+/**
+ *
+ * @param {OBJECT} task one task of tasks-array
+ * ! noch nicht eingebunden -> DS
+ * ToDo wird noch bearbeitet -> Beschreibung muss noch angepasst werden
+ */
 function renderUser(task) {
   let userList = document.getElementById("assignedToUser");
   userList.innerHTML = "";
@@ -131,6 +178,12 @@ function renderUser(task) {
   }
 }
 
+/**
+ *
+ * @param {INT} user ??????????
+ * @returns
+ * ToDo: Klärung wofür die Funktion ist
+ */
 function renderSelectedUserDetails(user) {
   const user1 = users.find((n) => n.id === user);
   return user1.initials;
