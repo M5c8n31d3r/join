@@ -179,7 +179,7 @@ function renderUser(task) {
   let userList = "";
   for (let i = 0; i < task.assignedTo.length; i++) {
     const user = task.assignedTo[i];
-    userList += `<div class="initials center">${renderAssignedUser(
+    userList += `<div class="initials font-12 center">${renderAssignedUser(
       user
     )}</div>`;
   }
