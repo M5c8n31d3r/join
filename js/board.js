@@ -73,11 +73,9 @@ function renderCard(task) {
         </p>
         <div class="taskcard-subtasks flex center gap-s space-between"> 
           <div class="progress">
-            <div class="progress-bar w-${
-              (countDoneSubtasks(task.subtask) / task["subtask"].length) * 100
-            }" role="progressbar" aria-valuenow="${countDoneSubtasks(
-    task.subtask
-  )}" aria-valuemin="0" aria-valuemax="${task["subtask"].length}"></div>
+            <div class="progress-bar" role="progressbar" style="width: ${
+              (countDoneSubtasks(task.subtask) / task.subtask.length) * 100
+            }%"></div>
           </div>
           <span class="taskcard-subtasks-done">${countDoneSubtasks(
             task.subtask
