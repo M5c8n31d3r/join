@@ -146,7 +146,7 @@ button {
 
 button:hover {
   background-color: var(--lightblue);
-  border: none;
+  border: 1px solid var(--lightblue);
 }
 
 input {
