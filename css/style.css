@@ -1042,13 +1042,6 @@ input[type="radio"] {
     width: 25vw;
   }
 
-  .searchbar {
-    display: flex;
-    align-items: center;
-    width: 300px;
-    height: 51px;
-  }
-
   .nav-item {
     display: flex;
     align-items: center;
@@ -1057,15 +1050,6 @@ input[type="radio"] {
     min-height: 47px;
     padding: 8px 50px;
     gap: 15px;
-  }
-
-  .progress-cols {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 26px;
   }
 
   .nav-icon img {
