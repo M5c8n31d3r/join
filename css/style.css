@@ -333,6 +333,11 @@ input:focus {
 .gap {
   gap: 20px;
 }
+
+.gap-m {
+  gap: 10px;
+}
+
 .gap-s {
   gap: 5px;
 }

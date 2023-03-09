@@ -34,6 +34,16 @@
   white-space: nowrap;
 }
 
+.btn-board {
+  width: 40px;
+  height: 40px;
+  padding: 0 10px;
+}
+
+.btn-board-text {
+  display: none;
+}
+
 @media (min-width: 800px) {
   .searchbar {
     display: flex;
@@ -49,5 +59,15 @@
     align-items: flex-start;
     padding: 0px;
     gap: 26px;
+  }
+
+  .btn-board {
+    padding: 0 10px;
+    height: 51px;
+    width: unset;
+  }
+
+  .btn-board-text {
+    display: unset;
   }
 }
