@@ -204,7 +204,7 @@ d-none {
   justify-content: center;
   align-items: flex-start;
   padding: 0px;
-  gap: 60px;
+  gap: 8px;
   position: absolute;
   width: 385px;
   height: 85px;
@@ -231,7 +231,7 @@ d-none {
   font-weight: 700;
   color: var(--lightblue);
   width: 385px;
-  height: 77px;
+  height: 124px;
   font-size: 64px;
   line-height: 120%;
 }
@@ -260,7 +260,7 @@ d-none {
   padding: 0px;
   gap: 35px;
   width: 580px;
-  height: 520px;
+  height: 490px;
 }
 
 .todo-container,
