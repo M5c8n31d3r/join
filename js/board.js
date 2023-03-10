@@ -91,6 +91,11 @@ function renderCard(task) {
     </div>`;
 }
 
+/**
+ *
+ * @param {OBJECT} subtasks Array of subtasks
+ * @returns {INT} Counter of subtasks, which are ready
+ */
 function countDoneSubtasks(subtasks) {
   let countDone = 0;
   for (let i = 0; i < subtasks.length; i++) {
