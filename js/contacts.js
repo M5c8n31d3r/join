@@ -205,15 +205,22 @@ function renderAddEditUser(id, headline, underheadline, icon, checkout) {
     <div class="cl-contact-left initials center">${icon}</div>
   </div>
   <div class="contact-detail">
-    <input type="text" required id="edit-name" value="${
-      id == users.length ? "" : users[id].name
-    }" placeholder="Name">
-    <input type="email" required id="edit-email" value="${
-      id == users.length ? "" : users[id].email
-    }" placeholder="Email">
-    <input type="phone" id="edit-phone" value="${
-      id == users.length ? "" : users[id].phone
-    }" placeholder="Phonenumber">
+    <div class="input-login input-bar">
+      <input type="text" required id="edit-name" value="${
+        id == users.length ? "" : users[id].name
+      }" placeholder="Name">
+    </div>
+    <div class="input-login input-bar">
+      <input type="email" required id="edit-email" value="${
+        id == users.length ? "" : users[id].email
+      }" placeholder="Email">
+    </div>
+    <div class="input-login input-bar">
+      <input type="phone" id="edit-phone" value="${
+        id == users.length ? "" : users[id].phone
+      }" placeholder="Phonenumber">
+    </div>
+    
     <button class="login-btn" onclick="save(${id})">${checkout}</button>
   </div>
   `;
@@ -283,6 +290,9 @@ function errorMSG() {
   alert("Email schon vergeben");
 }
 
+/**
+ * ToDo Beschreibung erstellen
+ */
 function returnContacts() {
   let contactlist = document.getElementById("contactlist");
   let details = document.getElementById("details");
