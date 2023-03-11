@@ -159,6 +159,7 @@ function allowDrop(ev) {
  */
 function drag(id) {
   currentDragElementID = id;
+  tasks[id].state = "";
   toggleDropZone();
 }
 
