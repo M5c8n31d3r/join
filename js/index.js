@@ -51,6 +51,10 @@ function signIn() {
     } else {
       showAlert("signin-alert");
     }
+  } else {
+    document
+      .getElementById("signin-alert-user")
+      .classList.remove("display-none");
   }
 
   if (rememberMe) {
