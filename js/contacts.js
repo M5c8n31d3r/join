@@ -313,5 +313,5 @@ function returnContacts() {
  * ToDo -> open the overlay template
  */
 function addTask() {
-  alert("Hier entsteht ein neuer Task!");
+  document.getElementById("addtask-dialog").classList.remove("display-none");
 }

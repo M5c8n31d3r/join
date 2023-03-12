@@ -295,3 +295,7 @@ function renderAssignedUserName(user) {
   const user1 = users.find((n) => n.id === user);
   return user1.name;
 }
+
+function showAddTask() {
+  document.getElementById("addtask-dialog").classList.remove("display-none");
+}

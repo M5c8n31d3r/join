@@ -1,0 +1,272 @@
+<h1>Add Task</h1>
+<div id="task-added-infobox" class="infobox display-none">
+  <div class="info">Task added to backlog</div>
+</div>
+<form action="" class="add-task-form" onsubmit="return false">
+  <button
+    class="add-task-btn-create-m flex center font-21 padding-sides"
+    onclick="saveTask()"
+  >
+    Create &ensp;<img
+      src="../assets/img/icons/icon-check.svg"
+      class="back-arrow"
+    />
+  </button>
+  <section class="add-task-left">
+    <!-- Title -->
+    <div class="form-inputs center-column">
+      <label for="task-title">Title</label>
+      <div class="input-bar margin0">
+        <input
+          required
+          id="task-title"
+          type="text"
+          class="margin0"
+          placeholder="Enter a title"
+        />
+      </div>
+      <div class="input-alert-box">
+        <div id="title-alert" class="input-alert display-none">
+          This field is required
+        </div>
+      </div>
+    </div>
+    <!-- Description -->
+    <div class="form-inputs center-column">
+      <label for="task-description">Description</label>
+      <textarea
+        required
+        id="task-description"
+        rows="4"
+        class="input-bar margin0"
+        placeholder="Enter a description"
+      ></textarea>
+      <div class="input-alert-box">
+        <div id="description-alert" class="input-alert display-none">
+          This field is required
+        </div>
+      </div>
+    </div>
+    <!-- Add Category -->
+    <div class="form-inputs center-column">
+      <label for="category-input">Category</label>
+      <div class="dropdown">
+        <div class="dropdown-input flex space-between">
+          <div id="filled-category" class="display-none"></div>
+          <div id="new-category-inputs" class="flex">
+            <input
+              id="category-input"
+              disabled
+              type="text"
+              placeholder="Add category"
+              class=""
+            />
+            <div
+              class="category-color display-none"
+              id="new-category-color"
+            ></div>
+          </div>
+          <div
+            id="category-dropdown-arrow"
+            onclick="toggleDropdown('category')"
+            class="dropdown-arrow"
+          >
+            <img src="../assets/img/icons/icon-dopdown-arrow.svg" />
+          </div>
+          <div id="dropdown-accept" class="flex display-none">
+            <div class="icon-dropdown icon-dropdown-left center">
+              <img
+                onclick="clearInput()"
+                class=""
+                src="../assets/img/icons/icon-x.svg"
+              />
+            </div>
+            <div class="icon-dropdown center">
+              <img
+                onclick="saveNewCategory()"
+                class="svg-white"
+                src="../assets/img/icons/icon-check.svg"
+              />
+            </div>
+          </div>
+        </div>
+        <div id="dropdown-list-category" class="display-none">
+          <div onclick="newCategory()" class="dropdown-item flex">
+            <span class="category-name">New category</span>
+          </div>
+          <div id="category-list"></div>
+        </div>
+      </div>
+      <div id="new-category-colors" class="category-colors flex display-none">
+        <div
+          onclick="addNewCatergoryColor('--orange')"
+          class="category-color"
+          style="background-color: var(--orange)"
+        ></div>
+        <div
+          onclick="addNewCatergoryColor('--light-blue')"
+          class="category-color"
+          style="background-color: var(--light-blue)"
+        ></div>
+        <div
+          onclick="addNewCatergoryColor('--red')"
+          class="category-color"
+          style="background-color: var(--red)"
+        ></div>
+        <div
+          onclick="addNewCatergoryColor('--apple-green')"
+          class="category-color"
+          style="background-color: var(--apple-green)"
+        ></div>
+        <div
+          onclick="addNewCatergoryColor('--magenta')"
+          class="category-color"
+          style="background-color: var(--magenta)"
+        ></div>
+        <div
+          onclick="addNewCatergoryColor('--bright-blue')"
+          class="category-color"
+          style="background-color: var(--bright-blue)"
+        ></div>
+      </div>
+    </div>
+    <!-- Assigned to -->
+    <div class="form-inputs center-column">
+      <label for="assigned-to-user-input">Assigned to</label>
+      <div class="dropdown">
+        <div class="dropdown-input flex space-between">
+          <div id="new-assigned-to-user-inputs" class="flex">
+            <input
+              id="assigned-to-user-input"
+              disabled
+              type="text"
+              placeholder="Select contact to assign"
+            />
+          </div>
+          <div
+            id="assigned-to-dropdown-arrow"
+            onclick="toggleDropdown('assigned-to')"
+            class="dropdown-arrow"
+          >
+            <img src="../assets/img/icons/icon-dopdown-arrow.svg" />
+          </div>
+          <div id="dropdown-accept-user" class="flex display-none">
+            <div class="icon-dropdown icon-dropdown-left center">
+              <img
+                onclick="clearInput()"
+                class=""
+                src="../assets/img/icons/icon-x.svg"
+              />
+            </div>
+            <div class="icon-dropdown center">
+              <img
+                onclick="saveNewContact()"
+                class="svg-white"
+                src="../assets/img/icons/icon-check.svg"
+              />
+            </div>
+          </div>
+        </div>
+        <div id="dropdown-list-assigned-to" class="display-none">
+          <div id="user-list" class="flex-column space-between"></div>
+          <div
+            onclick="newAssignedToContact()"
+            class="dropdown-item flex space-between"
+          >
+            <span class="assigned-to-name">Invite new contact</span>
+            <img
+              class="icon-white"
+              src="../assets/img/icons/icon-new-contact.svg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      <div id="assigned-to-user" class="flex gap-s"></div>
+    </div>
+  </section>
+  <section class="add-task-middle"></section>
+  <section class="add-task-right">
+    <!-- Due date -->
+    <div class="form-inputs center-column">
+      <label for="task-due-date">Due date</label>
+      <div class="input-bar margin0">
+        <input
+          required
+          id="task-due-date"
+          type="date"
+          class="margin0"
+          placeholder="dd/mm/yyyy"
+        />
+      </div>
+      <div class="input-alert-box">
+        <div id="due-date-alert" class="input-alert display-none">
+          This field is required
+        </div>
+      </div>
+    </div>
+    <!-- Prio -->
+    <div class="form-inputs gap flex-column">
+      <label for="task-prio">Prio</label>
+      <div class="center-row add-task-prio-row gap">
+        <input type="radio" name="prio" id="task-urgent" />
+        <label for="task-urgent" class="task-urgent task-prio-card-label">
+          <div class="task-prio-card task-prio-urgent" onclick="setPrio(-1)">
+            <span class="">Urgent</span>
+            <img
+              class="prio-icon"
+              src="../assets/img/icons/icon-prio-urgent.svg"
+            />
+          </div>
+        </label>
+        <input type="radio" name="prio" id="task-medium" />
+        <label for="task-medium" class="task-prio-card-label">
+          <div class="task-prio-card task-prio-medium" onclick="setPrio(0)">
+            <span class="">Medium</span>
+            <img
+              class="prio-icon"
+              src="../assets/img/icons/icon-prio-medium.svg"
+            />
+          </div>
+        </label>
+        <input type="radio" name="prio" id="task-low" />
+        <label for="task-low" class="task-prio-card-label">
+          <div class="task-prio-card task-prio-low" onclick="setPrio(1)">
+            <span class="">Low</span>
+            <img
+              class="prio-icon"
+              src="../assets/img/icons/icon-prio-low.svg"
+            />
+          </div>
+        </label>
+      </div>
+    </div>
+    <!-- Add Subtasks -->
+    <div class="form-inputs center-column">
+      <label for="task-subtask">Subtasks</label>
+      <div class="dropdown flex center">
+        <input
+          id="task-subtask"
+          type="text"
+          placeholder="Add new Subtask"
+          class="dropdown-input"
+        />
+        <div onclick="addSubtask()" class="dropdown-arrow">
+          <img src="../assets/img/icons/icon-plus.svg" />
+        </div>
+      </div>
+      <div id="task-subtasks"></div>
+    </div>
+  </section>
+</form>
+<div class="add-task-btns flex-end gap">
+  <button class="btn-line font-21 padding-sides" onclick="clearAll()">
+    Clear &ensp;<img src="../assets/img/icons/icon-x.svg" class="line-btn" />
+  </button>
+  <button class="flex center font-21 padding-sides" onclick="saveTask()">
+    Create Task &ensp;<img
+      src="../assets/img/icons/icon-check.svg"
+      class="back-arrow"
+    />
+  </button>
+</div>

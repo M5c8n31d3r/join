@@ -25,6 +25,7 @@
     <script src="../js/mini_backend.js"></script>
     <script src="../js/script.js"></script>
     <script src="../js/board.js"></script>
+    <script src="../js/add-task.js"></script>
   </head>
 
   <body onload="initBoard()">
@@ -41,8 +42,11 @@
               alt=""
             />
           </div>
-          <button class="btn-board flex gap-m center font-21 font-bold pointer">
-            <span class="btn-board-text"> Add task</span
+          <button
+            class="btn-board flex gap-m center font-21 font-bold pointer"
+            onclick="showAddTask()"
+          >
+            <span class="btn-board-text">Add task</span
             ><img
               class="icon-white"
               src="../assets/img/icons/icon-plus.svg"
@@ -117,6 +121,9 @@
       </section>
       <div id="taskcard-big" class="taskcard-big display-none"></div>
     </section>
+    <div class="dialog content display-none" id="addtask-dialog">
+      <div w3-include-html="../assets/templates/addtask.html"></div>
+    </div>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

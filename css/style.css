@@ -587,6 +587,11 @@ input:focus {
   padding: 21px 0px;
 }
 
+.dialog {
+  z-index: 10;
+  background-color: var(--grey);
+}
+
 /* ID's */ /*////////////////////////////////////////////////////////////////////////////////////////////////*/
 #welcome-text-mobile {
   font-size: var(--welcome-text-size);
