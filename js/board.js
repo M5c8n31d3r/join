@@ -83,7 +83,7 @@ function renderCard(task) {
         <div class="taskcard-user-prio"> 
         <div class="center-row space-between">
             <div class="flex gap-s">${renderUser(task)}</div>
-            <img src="/assets/img/icons/icon-prio-${prioIconEnding(
+            <img src="../assets/img/icons/icon-prio-${prioIconEnding(
               task
             )}.svg" alt="${prioIconEnding(task)} prio" />
             </div>
