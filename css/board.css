@@ -83,6 +83,21 @@
   padding-top: 31px;
 }
 
+.tcb-prio {
+  padding: 4px 18px;
+  border-radius: 10px;
+}
+
+.tcp-prio-name {
+  color: var(--white);
+}
+
+.tcp-prio-icon {
+  width: 16px;
+
+  filter: brightness(100) saturate(0);
+}
+
 @media (min-width: 800px) {
   .searchbar {
     display: flex;

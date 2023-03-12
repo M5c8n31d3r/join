@@ -1,6 +1,12 @@
 // Global variables
 let currentDragElementID = -1;
 
+let prios = [
+  { id: -1, name: "Urgent", color: "var(--urgent)" },
+  { id: 0, name: "Medium", color: "var(--medium)" },
+  { id: 1, name: "Low", color: "var(--low)" }
+];
+
 /**
  * Initialisation after loading the page
  */
@@ -115,10 +121,16 @@ function showTask(id) {
     )}</span>
   </div>
   <div class="tcb-line flex">
-    <span class="tcp-subline">Priority:</span>
-    <div class="tcb-prio" style="">
-      <span>${task.priority}</span>
-      <img src="../assets/img/icons/icon-prio-${prioIconEnding(task)}.svg"/>
+    <span class="tcp-subline center-row">Priority:</span>
+    <div class="tcb-prio flex gap-m" style="background-color: ${
+      prios.find((item) => item.id === task.priority).color
+    }">
+      <span class="tcp-prio-name">${
+        prios.find((item) => item.id === task.priority).name
+      }</span>
+      <img class="tcp-prio-icon" src="../assets/img/icons/icon-prio-${prioIconEnding(
+        task
+      )}.svg"/>
     </div>
   </div>
   <div class="tcb-line">
