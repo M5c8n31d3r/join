@@ -325,7 +325,7 @@ function clearAll() {
  */
 function addSubtask() {
   let subtask = document.getElementById("task-subtask");
-  subtasks.push(subtask.value);
+  subtasks.push({ description: subtask.value, done: 0 });
   subtask.value = "";
   renderSubtasks();
 }
@@ -343,7 +343,7 @@ function renderSubtasks() {
       <div class="flex">
         <input class="checkbox" type="checkbox" id="subtask-${i}">
       </div>
-      <label for="subtask-${i}"> ${subtask}</label>
+      <label for="subtask-${i}"> ${subtask.description}</label>
     </div>`;
   }
 }
