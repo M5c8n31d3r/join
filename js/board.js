@@ -135,12 +135,26 @@ function showTask(id) {
   </div>
   <div class="tcb-line">
     <span class="tcp-subline">Subtasks:</span>
+    ${tcbRenderSubtasks(task)}
   </div>
   <div class="tcb-line">
     <span class="tcp-subline">Assigned to:</span>
     ${renderUser(task)}
   </div>
 `;
+}
+
+function tcbRenderSubtasks(task) {
+  for (let i = 0; i < task.subtask.length; i++) {
+    const subtask = task.subtask[i];
+    return /*html*/ `
+    <div class="flex gap">
+      <div class="flex">
+        <input class="checkbox" type="checkbox" id="subtask-${i}">
+      </div>
+      <label for="subtask-${i}"> ${subtask}</label>
+    </div>`;
+  }
 }
 
 function closeTask() {
