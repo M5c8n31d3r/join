@@ -45,7 +45,7 @@
 }
 
 .taskcard-big {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
@@ -53,6 +53,13 @@
   padding: calc(var(--nav-height-m) + 60px) 33px
     calc(var(--nav-height-m) + 16px) 33px;
   background-color: var(--grey-bg);
+}
+
+.tcb-headline {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 43px;
+  padding-top: 17px;
 }
 
 @media (min-width: 800px) {
