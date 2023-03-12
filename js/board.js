@@ -93,19 +93,21 @@ function renderCard(task) {
 
 function showTask(id) {
   let taskcard = document.getElementById("taskcard-big");
+  let task = tasks[id];
   taskcard.innerHTML = "";
   taskcard.classList.remove("display-none");
   $("body").addClass("no-scroll");
   taskcard.innerHTML += /* html */ `
   <div class="tcb-first-line flex space-between">
-    <div style="background-color: ${tasks[id].category.color}" class="taskcard-category flex center">
-      <div class="taskcard-category-name">${tasks[id].category.name}</div>
+    <div style="background-color: ${task.category.color}" class="taskcard-category flex center">
+      <div class="taskcard-category-name">${task.category.name}</div>
     </div>
     <a class="back-arrow left top" onclick="closeTask()"><img src="../assets/img/icons/icon-arrow-back.svg" alt="Go back"/>
     </a>
   </div>
-  <p class="tcb-headline">${tasks[id]["title"]}</p>
-  <div class="tcb-description">${tasks[id]["description"]}</div>
+  <p class="tcb-headline">${task["title"]}</p>
+  <div class="tcb-description">${task["description"]}</div>
+  <span class="tcp-subline">Due Date:</span><span class="tcp-due-date">${task["dueDate"]}</span>
 `;
 }
 

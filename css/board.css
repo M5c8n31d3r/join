@@ -62,6 +62,15 @@
   padding-top: 17px;
 }
 
+.tcp-subline {
+  padding-right: 25px;
+  font-weight: 700;
+}
+
+.tcp-description {
+  font-size: 16px;
+}
+
 @media (min-width: 800px) {
   .searchbar {
     display: flex;
