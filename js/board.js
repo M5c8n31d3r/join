@@ -122,6 +122,9 @@ function showTask(id) {
     </div>
   </div>
   <div class="tcb-line">
+    <span class="tcp-subline">Subtasks:</span>
+  </div>
+  <div class="tcb-line">
     <span class="tcp-subline">Assigned to:</span>
     ${renderUser(task)}
   </div>
