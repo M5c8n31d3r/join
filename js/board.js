@@ -82,7 +82,7 @@ function renderCard(task) {
           )}/${task.subtask.length} Done</span></div>
         <div class="taskcard-user-prio"> 
         <div class="center-row space-between">
-            <div class="flex gap-s">${renderUser(task)}</div>
+            <div class="flex gap-s">${renderUserInitials(task)}</div>
             <img src="../assets/img/icons/icon-prio-${prioIconEnding(
               task
             )}.svg" alt="${prioIconEnding(task)} prio" />
@@ -99,15 +99,32 @@ function showTask(id) {
   $("body").addClass("no-scroll");
   taskcard.innerHTML += /* html */ `
   <div class="tcb-first-line flex space-between">
-    <div style="background-color: ${task.category.color}" class="taskcard-category flex center">
+    <div style="background-color: ${
+      task.category.color
+    }" class="taskcard-category flex center">
       <div class="taskcard-category-name">${task.category.name}</div>
     </div>
     <a class="back-arrow left top" onclick="closeTask()"><img src="../assets/img/icons/icon-arrow-back.svg" alt="Go back"/>
     </a>
   </div>
-  <p class="tcb-headline">${task["title"]}</p>
+   <p class="tcb-headline">${task["title"]}</p>
   <div class="tcb-description">${task["description"]}</div>
-  <span class="tcp-subline">Due Date:</span><span class="tcp-due-date">${task["dueDate"]}</span>
+  <div class="tcb-line">
+    <span class="tcp-subline">Due Date:</span><span class="tcp-due-date">${timeConverter(
+      task["dueDate"]
+    )}</span>
+  </div>
+  <div class="tcb-line flex">
+    <span class="tcp-subline">Priority:</span>
+    <div class="tcb-prio" style="">
+      <span>${task.priority}</span>
+      <img src="../assets/img/icons/icon-prio-${prioIconEnding(task)}.svg"/>
+    </div>
+  </div>
+  <div class="tcb-line">
+    <span class="tcp-subline">Assigned to:</span>
+    ${renderUser(task)}
+  </div>
 `;
 }
 
@@ -207,13 +224,29 @@ function changeState(state) {
  * ! noch nicht eingebunden -> DS
  * ToDo wird noch bearbeitet -> Beschreibung muss noch angepasst werden
  */
+function renderUserInitials(task) {
+  let userList = "";
+  for (let i = 0; i < task.assignedTo.length; i++) {
+    const user = task.assignedTo[i];
+    userList += `<div class="initials-board font-12 center">${renderAssignedUserInitials(
+      user
+    )}</div>`;
+  }
+  return userList;
+}
+
 function renderUser(task) {
   let userList = "";
   for (let i = 0; i < task.assignedTo.length; i++) {
     const user = task.assignedTo[i];
-    userList += `<div class="initials-board font-12 center">${renderAssignedUser(
-      user
-    )}</div>`;
+    userList += /*html*/ `
+    <div class="tcb-user-line flex center-row gap">
+      <div class="initials font-16 center">${renderAssignedUserInitials(
+        user
+      )}</div>
+      <div>${renderAssignedUserName(user)}</div>
+    </div>
+    `;
   }
   return userList;
 }
@@ -224,7 +257,12 @@ function renderUser(task) {
  * @returns
  * ToDo: Klärung wofür die Funktion ist
  */
-function renderAssignedUser(user) {
+function renderAssignedUserInitials(user) {
   const user1 = users.find((n) => n.id === user);
   return user1.initials;
+}
+
+function renderAssignedUserName(user) {
+  const user1 = users.find((n) => n.id === user);
+  return user1.name;
 }

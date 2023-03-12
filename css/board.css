@@ -67,8 +67,20 @@
   font-weight: 700;
 }
 
+.tcb-line {
+  padding-top: 25px;
+}
+
 .tcp-description {
   font-size: 16px;
+}
+
+.tcb-user-line {
+  padding-bottom: 13px;
+}
+
+.tcb-user-line:first-of-type {
+  padding-top: 31px;
 }
 
 @media (min-width: 800px) {
