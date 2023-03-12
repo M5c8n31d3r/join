@@ -114,3 +114,32 @@ function loadPageWithDelay(page) {
     page
   );
 }
+
+/**
+ *
+ * @param {INT} UNIX_timestamp Time as Unix-Time in seconds since 01.01.1970
+ * @returns {STRING} Time as STRING -> MM DD, YYYY
+ *
+ * Convert the Unix-time to human readable timestamp
+ */
+function timeConverter(UNIX_timestamp) {
+  let a = new Date(UNIX_timestamp);
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+  let year = a.getFullYear();
+  let month = months[a.getMonth()];
+  let date = a.getDate();
+  return month + " " + date + ", " + year;
+}
