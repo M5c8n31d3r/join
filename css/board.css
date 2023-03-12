@@ -44,6 +44,17 @@
   display: none;
 }
 
+.taskcard-big {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: calc(var(--nav-height-m) + 60px) 33px
+    calc(var(--nav-height-m) + 16px) 33px;
+  background-color: var(--grey-bg);
+}
+
 @media (min-width: 800px) {
   .searchbar {
     display: flex;

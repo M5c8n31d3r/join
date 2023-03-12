@@ -60,9 +60,9 @@ function renderDropArea(id) {
  * ToDo Länge der Funktion prüfen
  */
 function renderCard(task) {
-  return /* html */ `<div class="task-card" draggable="true" ondragstart="drag(${
+  return /* html */ `<div class="task-card" onclick="showTask(${
     task.id
-  })">
+  })" draggable="true" ondragstart="drag(${task.id})">
         <div style="background-color: ${
           task.category.color
         }" class="taskcard-category flex center"><div class="taskcard-category-name">${
@@ -89,6 +89,21 @@ function renderCard(task) {
             </div>
         </div>
     </div>`;
+}
+
+function showTask(id) {
+  let taskcard = document.getElementById("taskcard-big");
+  taskcard.innerHTML = "";
+  taskcard.classList.remove("display-none");
+  taskcard.innerHTML += /* html */ `<div class="tcb-first-line flex space-between"><div style="background-color: ${tasks[id].category.color}" class="taskcard-category flex center"><div class="taskcard-category-name">${tasks[id].category.name}</div>
+</div><a class="back-arrow left top" onclick="closeTask()"
+  ><img src="../assets/img/icons/icon-arrow-back.svg" alt="Go back"
+/></a></div>`;
+}
+
+function closeTask() {
+  let taskcard = document.getElementById("taskcard-big");
+  taskcard.classList.add("display-none");
 }
 
 /**
