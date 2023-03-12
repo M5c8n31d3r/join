@@ -135,7 +135,7 @@ function showTask(id) {
   </div>
   <div class="tcb-line">
     <span class="tcp-subline">Subtasks:</span>
-    ${tcbRenderSubtasks(task)}
+    <div id="tcb-subtasks">${tcbInitRenderSubtasks(task)}</div>
   </div>
   <div class="tcb-line">
     <span class="tcp-subline">Assigned to:</span>
@@ -144,17 +144,45 @@ function showTask(id) {
 `;
 }
 
-function tcbRenderSubtasks(task) {
+/**
+ * tcb = TaskCardBig
+ * @param {*} task
+ * @returns
+ */
+function tcbInitRenderSubtasks(task) {
+  let subtasks = "";
   for (let i = 0; i < task.subtask.length; i++) {
     const subtask = task.subtask[i];
-    return /*html*/ `
-    <div class="flex gap">
+    subtasks += /*html*/ `
+    <div id="subtask-${task.id}-${i}" class="flex gap center-row task-done-${subtask.done}">
       <div class="flex">
-        <input class="checkbox" type="checkbox" id="subtask-${i}">
+        <input type="checkbox" id="subtask-${i}" onclick="toggleSubtaskStatus(${task.id}, ${i})">
       </div>
-      <label for="subtask-${i}"> ${subtask}</label>
+      <label class="margin0 flex" for="subtask-${i}"> ${subtask.description}</label>
     </div>`;
   }
+  return subtasks;
+}
+
+function tcbChangedRenderSubtasks(task) {
+  let tcbSubtasks = document.getElementById("tcb-subtasks");
+  let subtasks = "";
+  for (let i = 0; i < task.subtask.length; i++) {
+    const subtask = task.subtask[i];
+    subtasks += /*html*/ `
+    <div id="subtask-${task.id}-${i}" class="flex gap center-row task-done-${subtask.done}">
+      <div class="flex">
+        <input type="checkbox" id="subtask-${i}" onclick="toggleSubtaskStatus(${task.id}, ${i})">
+      </div>
+      <label class="margin0 flex" for="subtask-${i}"> ${subtask.description}</label>
+    </div>`;
+  }
+  tcbSubtasks.innerHTML = subtasks;
+}
+
+function toggleSubtaskStatus(taskId, subtaskId) {
+  tasks[taskId].subtask[subtaskId].done ^= true;
+  tcbChangedRenderSubtasks(tasks[taskId]);
 }
 
 function closeTask() {

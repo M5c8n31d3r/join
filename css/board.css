@@ -44,6 +44,11 @@
   display: none;
 }
 
+.task-done-1,
+.task-done-true {
+  text-decoration: line-through;
+}
+
 .taskcard-big {
   position: fixed;
   top: 0;
