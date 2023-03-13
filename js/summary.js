@@ -19,11 +19,11 @@ async function initSummary() {
 function setCurrentUser() {
   userLogIn = localStorage.getItem("userLogIn", userLogIn);
   if (userLogIn == null || userLogIn == 0) {
-    // document.getElementById("welcome-name-mobile").innerHTML = "";
+    document.getElementById("welcome-name-mobile").innerHTML = "";
     document.getElementById("welcome-name-desk").innerHTML = "";
   } else {
-    // document.getElementById("welcome-name-mobile").innerHTML =
-    users[userLogIn].name;
+    document.getElementById("welcome-name-mobile").innerHTML =
+      users[userLogIn].name;
     document.getElementById("welcome-name-desk").innerHTML =
       users[userLogIn].name;
   }
@@ -49,7 +49,7 @@ function setWelcomeMsg() {
   }
 
   welcomeTextDesk.innerHTML = welcomeText;
-  // welcomeTextMobile.innerHTML = welcomeText;
+  welcomeTextMobile.innerHTML = welcomeText;
 }
 
 function loadAllCounters() {

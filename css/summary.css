@@ -227,7 +227,7 @@ d-none {
   font-weight: 500;
   font-size: 47px;
   line-height: 120%;
-  width: 338px;
+  /* width: 338px; */
   height: 56px;
 }
 
@@ -267,7 +267,7 @@ d-none {
   padding: 0px;
   gap: 35px;
   width: 580px;
-  height: 490px;
+  height: 480px;
 }
 
 .todo-container,

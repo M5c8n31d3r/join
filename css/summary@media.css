@@ -69,6 +69,14 @@
     width: 255px;
     height: 19px;
   }
+
+  #welcome-text-mobile {
+    font-size: 32px;
+  }
+
+  #welcome-name-mobile {
+    font-size: 42px;
+  }
   #summery-row123 {
     display: flex;
     flex-direction: column;
