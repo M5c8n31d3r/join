@@ -31,6 +31,9 @@
   #welcome-text-desk {
     margin-right: 16px;
   }
+  .context-header--item {
+    display: block;
+  }
 }
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -45,6 +48,11 @@
 
 @media (max-width: 940px) {
   .welcome-desk {
+    display: none;
+  }
+  #logo-nav,
+  #menu-legal,
+  #menu-help {
     display: none;
   }
 }

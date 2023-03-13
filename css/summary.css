@@ -196,7 +196,7 @@
   flex-direction: column;
   z-index: 1;
   background-color: var(--grey-bg);
-  opacity: 1;
+  opacity: 0;
   transition: opacity var(--welcome-mobile-transition) ease-in
     var(--welcome-mobile-delay);
 }
