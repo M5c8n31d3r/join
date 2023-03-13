@@ -156,10 +156,11 @@ function tcbInitRenderSubtasks(task) {
     subtasks += /*html*/ `
     <div id="subtask-${task.id}-${i}" class="flex gap center-row task-done-${subtask.done}">
       <div class="flex">
-        <input type="checkbox" id="subtask-${i}" onclick="toggleSubtaskStatus(${task.id}, ${i})">
+        <input type="checkbox" id="subtask-${task.id}-${i}-input" onclick="toggleSubtaskStatus(${task.id}, ${i})">
       </div>
-      <label class="margin0 flex" for="subtask-${i}"> ${subtask.description}</label>
+      <label class="margin0 flex" for="subtask-${task.id}-${i}-input"> ${subtask.description}</label>
     </div>`;
+    // checkStatusSubtask(task.id, i);
   }
   return subtasks;
 }
@@ -172,13 +173,28 @@ function tcbChangedRenderSubtasks(task) {
     subtasks += /*html*/ `
     <div id="subtask-${task.id}-${i}" class="flex gap center-row task-done-${subtask.done}">
       <div class="flex">
-        <input type="checkbox" id="subtask-${i}" onclick="toggleSubtaskStatus(${task.id}, ${i})">
+        <input type="checkbox" id="subtask-${task.id}-${i}-input" onclick="toggleSubtaskStatus(${task.id}, ${i})">
       </div>
-      <label class="margin0 flex" for="subtask-${i}"> ${subtask.description}</label>
+      <label class="margin0 flex" for="subtask-${task.id}-${i}-input"> ${subtask.description}</label>
     </div>`;
+    // checkStatusSubtask(task.id, i);
   }
   tcbSubtasks.innerHTML = subtasks;
 }
+
+// function checkStatusSubtask(taskId, subtaskId) {
+//   if ((tasks[taskId].subtask[subtaskId].done = true)) {
+//     // console.log(`subtask-${taskId}-${subtaskId}-input`);
+//     document
+//       .getElementById(`subtask-${taskId}-${subtaskId}-input`)
+//       .setAttribute("checked", "checked");
+//   } else {
+//     // console.log(`subtask-${taskId}-${subtaskId}-input`);
+//     document
+//       .getElementById(`subtask-${taskId}-${subtaskId}-input`)
+//       .setAttribute("checked");
+//   }
+// }
 
 function toggleSubtaskStatus(taskId, subtaskId) {
   tasks[taskId].subtask[subtaskId].done ^= true;
