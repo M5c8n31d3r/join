@@ -1,4 +1,4 @@
-/***** Summary Container *****/
+/***** Summary Container *****/ /*////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 .summary-container {
   display: flex;
@@ -20,7 +20,7 @@
   align-items: center;
 }
 
-/***** Summary Header *****/
+/***** Summary Header *****/ /*////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 .summary-header {
   display: flex;
@@ -46,7 +46,7 @@
 .summary-row123 {
 }
 
-/***** Summary Row 1 *****/
+/***** Summary Row 1 *****/ /*////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 .summary-row-1 {
   display: flex;
@@ -67,6 +67,8 @@
   justify-content: center;
   border-radius: 30px;
   background-color: var(--white);
+  padding: 25px 0px;
+  gap: 13px;
   width: 170px;
   height: 170px;
   box-shadow: var(--box-shadow);
@@ -77,6 +79,9 @@
   background-color: var(--darkblue);
   cursor: pointer;
   color: var(--white);
+  width: 180px;
+  height: 180px;
+  box-shadow: var(--box-shadow-hover);
 }
 
 .text-in-box {
@@ -91,8 +96,7 @@
   font-weight: 600;
 }
 
-/***** Summary Row 2 *****/
-
+/***** Summary Row 2 *****/ /*////////////////////////////////////////////////////////////////////////////////////////////////*/
 .summary-row-2 {
   display: flex;
   align-items: center;
@@ -120,6 +124,9 @@
   cursor: pointer;
   background-color: var(--darkblue);
   color: var(--white);
+  width: 590px;
+  height: 160px;
+  box-shadow: var(--box-shadow-hover);
 }
 
 .urgent-box-left {
@@ -249,7 +256,7 @@ d-none {
   margin-right: 22px;
 }
 
-/***** Summary Row 3 *****/
+/***** Summary Row 3 *****/ /*////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 .summary-row-3 {
   display: flex;
@@ -266,8 +273,8 @@ d-none {
 .todo-container,
 .done-container {
   background-color: var(--white);
-  height: 170px;
-  width: 280px;
+  width: 272.5px;
+  height: 150px;
   border-radius: var(--border-radius-xl);
   box-shadow: var(--box-shadow);
   display: flex;
@@ -275,12 +282,17 @@ d-none {
   justify-content: center;
   border: 2px solid var(--white);
   cursor: pointer;
+  padding: 38px 19px;
+  gap: 18px;
 }
 
 .todo-container:hover,
 .done-container:hover {
   background-color: var(--darkblue);
   color: var(--white);
+  width: 282.5px;
+  height: 160px;
+  box-shadow: var(--box-shadow-hover);
 }
 
 .todo-container:hover .summary-icons,
@@ -324,8 +336,8 @@ d-none {
 .todo-number,
 .done-number {
   font-size: 64px;
-  width: 31px;
-  height: 77px;
+  width: 103px;
+  height: 102px;
   padding-top: 16px;
   font-weight: 600;
 }
@@ -346,6 +358,8 @@ d-none {
   font-size: 14px;
   line-height: 120%;
   margin-top: auto;
+  width: 103px;
+  height: 25px;
 }
 
 .done-text {
@@ -353,4 +367,6 @@ d-none {
   font-size: 14px;
   line-height: 120%;
   margin-top: auto;
+  width: 103px;
+  height: 25px;
 }

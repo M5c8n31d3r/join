@@ -147,6 +147,11 @@
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
   }
+  .summary-box:hover {
+    width: 120px;
+    height: 120px;
+    box-shadow: var(--box-shadow-hover);
+  }
   .number-in-box {
     margin-top: -8px;
     margin-bottom: -14px;
@@ -176,6 +181,11 @@
     height: 110px;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
+  }
+  .urgent-box:hover {
+    width: 370px;
+    height: 120px;
+    box-shadow: var(--box-shadow-hover);
   }
 
   .urgent-box-left {
@@ -223,10 +233,10 @@
     flex-direction: row;
     align-items: center;
     padding: 0px;
-    gap: 15px;
+    gap: 10px;
     height: 40px;
     margin-left: -20px;
-    width: 77%;
+    width: 40px;
   }
   .todo-container,
   .done-container {
@@ -234,11 +244,26 @@
     margin-left: 0px;
     margin-top: 306px;
     padding: 38px 19px;
-    gap: 0px;
+    gap: 10px;
     width: 177.5px;
     height: 110px;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--box-shadow);
     border-radius: 20px;
+  }
+  .todo-container:hover {
+    padding: 38px 19px;
+    gap: 10px;
+    box-shadow: var(--box-shadow-hover);
+    width: 180.5px;
+    height: 120px;
+  }
+
+  .done-container:hover {
+    padding: 38px 19px;
+    gap: 10px;
+    box-shadow: var(--box-shadow-hover);
+    width: 180.5px;
+    height: 120px;
   }
 
   .todo-text-container,
@@ -267,12 +292,24 @@
   .done-number {
     font-weight: 600;
     font-size: 47px;
+    width: 69px;
+    height: 73px;
   }
   .todo-text {
     font-weight: 400;
     font-size: 14px;
     line-height: 120%;
     margin-top: auto;
+    width: 69px;
+    height: 17px;
+  }
+  .done-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
+    margin-top: auto;
+    width: 69px;
+    height: 17px;
   }
 }
 
