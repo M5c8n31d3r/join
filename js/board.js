@@ -308,6 +308,11 @@ function renderUserInitials(task) {
   return userList;
 }
 
+/**
+ * ToDO Beschreibung fehlt noch
+ * @param {*} task
+ * @returns
+ */
 function renderUser(task) {
   let userList = "";
   for (let i = 0; i < task.assignedTo.length; i++) {
@@ -335,11 +340,19 @@ function renderAssignedUserInitials(user) {
   return user1.initials;
 }
 
+/**
+ * ToDO Beschreibung fehlt noch
+ * @param {*} user
+ * @returns
+ */
 function renderAssignedUserName(user) {
   const user1 = users.find((n) => n.id === user);
   return user1.name;
 }
 
+/**
+ * ToDO Beschreibung fehlt noch
+ */
 function showAddTask() {
   document.getElementById("addtask-dialog").classList.remove("display-none");
 }
