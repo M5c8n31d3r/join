@@ -147,7 +147,7 @@ function timeConverter(UNIX_timestamp) {
 /**
  * Logout and reset currentUser
  */
-async function logout() {
+async function logOut() {
   currentUser = [];
   await saveOnServer("currentUser", currentUser);
   window.location.href = "./index.html";
