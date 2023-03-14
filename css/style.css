@@ -95,6 +95,8 @@ header {
   box-shadow: var(--box-shadow);
   opacity: 0;
   transition: opacity 220ms ease;
+  margin-right: 36px;
+  margin-top: 16px;
 }
 
 .context-main {
@@ -714,6 +716,12 @@ input:focus {
   width: 49px;
   border-radius: 25px;
   border: 3px solid var(--darkblue);
+  cursor: pointer;
+  overflow: hidden;
+  padding: 2px;
+}
+#head-user-image:hover {
+  border: solid 3px var(--lightblue);
 }
 
 #head-help,

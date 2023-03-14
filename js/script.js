@@ -143,3 +143,12 @@ function timeConverter(UNIX_timestamp) {
   let date = a.getDate();
   return month + " " + date + ", " + year;
 }
+
+/**
+ * Logout and reset currentUser
+ */
+async function logout() {
+  currentUser = [];
+  await saveOnServer("currentUser", currentUser);
+  window.location.href = "./index.html";
+}

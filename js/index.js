@@ -166,3 +166,48 @@ function loadDataFromLocalStorage() {
     document.getElementById("rememberme").checked = true;
   }
 }
+
+/**
+ * Toggles the visibility of the context menu
+ * @param {Object} ctxMenuId The ID of the context menu
+ */
+function toggleContextMenu(ctxMenuId) {
+  const ctxMenu = document.getElementById(ctxMenuId);
+
+  if (ctxMenu.classList.contains("d-none")) {
+    showCtxMenu(ctxMenu);
+  } else {
+    hideCtxMenu(ctxMenu);
+  }
+}
+
+/**
+ * Shows the context menu
+ * @param {Object} ctxMenu The context menu
+ */
+function showCtxMenu(ctxMenu) {
+  ctxMenu.classList.remove("d-none");
+  setTimeout(() => {
+    ctxMenu.classList.add("context--show");
+  }, 1);
+}
+
+/**
+ * Hides the context menu
+ * @param {Object} ctxMenu The context menu
+ */
+function hideCtxMenu(ctxMenu) {
+  ctxMenu.classList.remove("context--show");
+  setTimeout(() => {
+    ctxMenu.classList.add("d-none");
+  }, HEADER_CTX_MENU_ANIM_TIME);
+}
+
+/**
+ * Logout and reset currentUser
+ */
+async function logout() {
+  currentUser = [];
+  await saveOnServer("currentUser", currentUser);
+  window.location.href = "./index.html";
+}
