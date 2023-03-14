@@ -44,6 +44,66 @@
 }
 
 .summary-row123 {
+  margin-left: -10px;
+}
+
+/***** Welcome-desk & mobile *****/ /*////////////////////////////////////////////////////////////////////////////////////////////////*/
+.welcome-mobile {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+  background-color: var(--grey-bg);
+  opacity: 0;
+  transition: opacity var(--welcome-mobile-transition) ease-in
+    var(--welcome-mobile-delay);
+}
+
+d-none {
+  display: none !important;
+}
+
+.welcome-desk {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+  position: absolute;
+  width: 385px;
+  height: 85px;
+  left: 920px;
+  top: 533px;
+  margin-top: 40px;
+}
+
+#welcome-text-desk {
+  font-size: var(--welcome-text-size);
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 47px;
+  line-height: 120%;
+  height: 56px;
+}
+
+#welcome-name-desk {
+  font-family: "Inter";
+  font-style: normal;
+  font-size: var(--welcome-name-size);
+  font-weight: 700;
+  color: var(--lightblue);
+  width: 385px;
+  height: 124px;
+  font-size: 64px;
+  line-height: 120%;
 }
 
 /***** Summary Row 1 *****/ /*////////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -184,65 +244,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.welcome-mobile {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  z-index: 1;
-  background-color: var(--grey-bg);
-  opacity: 0;
-  transition: opacity var(--welcome-mobile-transition) ease-in
-    var(--welcome-mobile-delay);
-}
-
-d-none {
-  display: none !important;
-}
-
-.welcome-desk {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 8px;
-  position: absolute;
-  width: 385px;
-  height: 85px;
-  left: 920px;
-  top: 533px;
-  margin-top: 40px;
-}
-
-#welcome-text-desk {
-  font-size: var(--welcome-text-size);
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 47px;
-  line-height: 120%;
-  /* width: 338px; */
-  height: 56px;
-}
-
-#welcome-name-desk {
-  font-family: "Inter";
-  font-style: normal;
-  font-size: var(--welcome-name-size);
-  font-weight: 700;
-  color: var(--lightblue);
-  width: 385px;
-  height: 124px;
-  font-size: 64px;
-  line-height: 120%;
 }
 
 .deadline-date {
