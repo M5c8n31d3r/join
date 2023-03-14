@@ -135,7 +135,7 @@ function showTask(id) {
   </div>
   <div class="tcb-line">
     <span class="tcp-subline">Subtasks:</span>
-    <div id="tcb-subtasks">${tcbInitRenderSubtasks(task)}</div>
+    <div id="tcb-subtasks">${tcbRenderSubtasks(task)}</div>
   </div>
   <div class="tcb-line">
     <span class="tcp-subline">Assigned to:</span>
@@ -149,7 +149,7 @@ function showTask(id) {
  * @param {OBJECT} task
  * @returns {ARRAY} Subtasks as HTML-Object
  */
-function tcbInitRenderSubtasks(task) {
+function tcbRenderSubtasks(task) {
   let subtasks = "";
   for (let i = 0; i < task.subtask.length; i++) {
     const subtask = task.subtask[i];
@@ -166,7 +166,6 @@ function tcbInitRenderSubtasks(task) {
       subtask.description
     }</label>
     </div>`;
-    // checkStatusSubtask(task.id, i);
   }
   return subtasks;
 }
@@ -187,28 +186,13 @@ function tcbChangedRenderSubtasks(task) {
       </div>
       <label class="margin0 flex" for="subtask-${task.id}-${i}-input"> ${subtask.description}</label>
     </div>`;
-    // checkStatusSubtask(task.id, i);
   }
   tcbSubtasks.innerHTML = subtasks;
 }
 
-// function checkStatusSubtask(taskId, subtaskId) {
-//   if ((tasks[taskId].subtask[subtaskId].done = true)) {
-//     // console.log(`subtask-${taskId}-${subtaskId}-input`);
-//     document
-//       .getElementById(`subtask-${taskId}-${subtaskId}-input`)
-//       .setAttribute("checked", "checked");
-//   } else {
-//     // console.log(`subtask-${taskId}-${subtaskId}-input`);
-//     document
-//       .getElementById(`subtask-${taskId}-${subtaskId}-input`)
-//       .setAttribute("checked");
-//   }
-// }
-
 function toggleSubtaskStatus(taskId, subtaskId) {
   tasks[taskId].subtask[subtaskId].done ^= true;
-  tcbChangedRenderSubtasks(tasks[taskId]);
+  tcbRenderSubtasks(tasks[taskId]);
 }
 
 function closeTask() {
