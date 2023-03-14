@@ -145,35 +145,6 @@ function timeConverter(UNIX_timestamp) {
 }
 
 /**
- * Reads the page name and converts it to a container ID
- * @returns String
- *
- * ! WARUM????
- */
-// function getPageName() {
-// let path = window.location.pathname;
-// path = path.split("/").pop();
-// path = path.split(".").shift();
-// path = "menu-" + path;
-//
-// return path;
-// }
-
-/**
- * Highlightes the menu item for the current page
- *
- * ! WARUM ZEILE 89 MACHT DAS SCHON!!!!!
- */
-// function controlMenuHighlighting() {
-// const path = getPageName();
-//
-// if (path != "menu-help") {
-// let menuToActivate = document.getElementById(path);
-// menuToActivate.classList.add("nav-item-active");
-// }
-// }
-
-/**
  * Fill the User-Data-Inputfields with data in localStorage
  */
 function loadDataFromLocalStorage() {
@@ -191,43 +162,43 @@ function loadDataFromLocalStorage() {
  * Toggles the visibility of the context menu
  * @param {Object} ctxMenuId The ID of the context menu
  *
- * ! WELCHES KONTEXT MENÜ?? WIR HABEN KEINE KLASSE D-NONE!!!!!
+ *
  */
-// function toggleContextMenu(ctxMenuId) {
-// const ctxMenu = document.getElementById(ctxMenuId);
-//
-// if (ctxMenu.classList.contains("d-none")) {
-// showCtxMenu(ctxMenu);
-// } else {
-// hideCtxMenu(ctxMenu);
-// }
-// }
+function toggleContextMenu(ctxMenuId) {
+  const ctxMenu = document.getElementById(ctxMenuId);
+
+  if (ctxMenu.classList.contains("d-none")) {
+    showCtxMenu(ctxMenu);
+  } else {
+    hideCtxMenu(ctxMenu);
+  }
+}
 
 /**
  * Shows the context menu
  * @param {Object} ctxMenu The context menu
  *
- * ! WELCHES KONTEXT MENÜ?? WIR HABEN KEINE KLASSE D-NONE!!!!!
+ *
  */
-// function showCtxMenu(ctxMenu) {
-// ctxMenu.classList.remove("d-none");
-// setTimeout(() => {
-// ctxMenu.classList.add("context--show");
-// }, 1);
-// }
+function showCtxMenu(ctxMenu) {
+  ctxMenu.classList.remove("d-none");
+  setTimeout(() => {
+    ctxMenu.classList.add("context--show");
+  }, 1);
+}
 
 /**
  * Hides the context menu
  * @param {Object} ctxMenu The context menu
  *
- * ! WELCHES KONTEXT MENÜ?? WIR HABEN KEINE KLASSE D-NONE!!!!!
+ *
  */
-// function hideCtxMenu(ctxMenu) {
-// ctxMenu.classList.remove("context--show");
-// setTimeout(() => {
-// ctxMenu.classList.add("d-none");
-// });
-// }
+function hideCtxMenu(ctxMenu) {
+  ctxMenu.classList.remove("context--show");
+  setTimeout(() => {
+    ctxMenu.classList.add("d-none");
+  });
+}
 
 /**
  * Logout and reset currentUser
