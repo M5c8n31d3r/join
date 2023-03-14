@@ -73,6 +73,7 @@
   height: 170px;
   box-shadow: var(--box-shadow);
   padding: 25px 0px;
+  transition: all 100ms ease-in-out;
 }
 
 .summary-box:hover {
@@ -118,6 +119,7 @@
   gap: 14px;
   width: 580px;
   height: 150px;
+  transition: all 100ms ease-in-out;
 }
 
 .urgent-box:hover {
@@ -284,6 +286,7 @@ d-none {
   cursor: pointer;
   padding: 38px 19px;
   gap: 18px;
+  transition: all 100ms ease-in-out;
 }
 
 .todo-container:hover,
