@@ -167,7 +167,7 @@ function loadDataFromLocalStorage() {
 function toggleContextMenu(ctxMenuId) {
   const ctxMenu = document.getElementById(ctxMenuId);
 
-  if (ctxMenu.classList.contains("d-none")) {
+  if (ctxMenu.classList.contains("display-none")) {
     showCtxMenu(ctxMenu);
   } else {
     hideCtxMenu(ctxMenu);
@@ -181,7 +181,7 @@ function toggleContextMenu(ctxMenuId) {
  *
  */
 function showCtxMenu(ctxMenu) {
-  ctxMenu.classList.remove("d-none");
+  ctxMenu.classList.remove("display-none");
   setTimeout(() => {
     ctxMenu.classList.add("context--show");
   }, 1);
@@ -196,7 +196,7 @@ function showCtxMenu(ctxMenu) {
 function hideCtxMenu(ctxMenu) {
   ctxMenu.classList.remove("context--show");
   setTimeout(() => {
-    ctxMenu.classList.add("d-none");
+    ctxMenu.classList.add("display-none");
   });
 }
 
@@ -208,7 +208,5 @@ function hideCtxMenu(ctxMenu) {
 async function logOut() {
   userLogIn = null;
   localStorage.setItem("userLogIn", userLogIn);
-  // !DAS IST NICHT DIE BACKEND FUNCTION!!!
-  // await saveOnServer("currentUser", currentUser);
   loadPageWithDelay("../index.html");
 }
