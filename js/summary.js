@@ -82,6 +82,10 @@ function goToBoard() {
   loadPageWithDelay("./board.html");
 }
 
+function goToSummary() {
+  loadPageWithDelay("./summary.html");
+}
+
 function setDeadline() {
   let dateField = document.getElementById("deadline-date");
   let minDate = Number.MAX_SAFE_INTEGER;

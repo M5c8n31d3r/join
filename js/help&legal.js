@@ -1,3 +1,3 @@
-function goToBoard() {
+function goToSummary() {
   window.location.assign("./summary.html");
 }
