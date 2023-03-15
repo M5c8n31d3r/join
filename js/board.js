@@ -360,3 +360,17 @@ function renderAssignedUserName(user) {
 function showAddTask() {
   document.getElementById("addtask-dialog").classList.remove("display-none");
 }
+
+/**
+ * Delete one Item of TASKS-Array
+ *
+ * @param {INT} id Item to delete
+ */
+function deleteTask(id) {
+  tasks.splice(id, 1);
+  for (let i = 0; i < tasks.length; i++) {
+    tasks[i].id = i;
+  }
+  backend.setItem("tasks", tasks);
+  closeTask();
+}
