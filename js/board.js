@@ -108,7 +108,7 @@ function showTask(id) {
     <div style="background-color: ${
       task.category.color
     }" class="taskcard-category flex center">
-      <div class="taskcard-category-name">${task.category.name}</div>
+      <div class="taskcard-category-name font-21">${task.category.name}</div>
     </div>
     <a class="back-arrow left top" onclick="closeTask()"><img src="../assets/img/icons/icon-arrow-back.svg" alt="Go back"/>
     </a>
@@ -122,7 +122,7 @@ function showTask(id) {
   </div>
   <div class="tcb-line flex">
     <span class="tcp-subline center-row">Priority:</span>
-    <div class="tcb-prio flex gap-m" style="background-color: ${
+    <div class="tcb-prio flex center-row gap-m" style="background-color: ${
       prios.find((item) => item.id === task.priority).color
     }">
       <span class="tcp-prio-name">${
@@ -141,6 +141,7 @@ function showTask(id) {
     <span class="tcp-subline">Assigned to:</span>
     ${renderUser(task)}
   </div>
+  <div class="tcb-btn-edit-task flex center" onclick="editTask(${task})"><img class="icon-white" src="../assets/img/icons/icon-to-do.svg" alt="New Task"></div>
 `;
 }
 

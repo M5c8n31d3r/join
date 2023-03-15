@@ -7,7 +7,6 @@
 
 .taskcard-category-name {
   color: var(--white);
-  font-size: 16px;
 }
 
 .taskcard-title {
@@ -94,6 +93,7 @@
 }
 
 .tcp-prio-name {
+  line-height: 0;
   color: var(--white);
 }
 
@@ -101,6 +101,22 @@
   width: 16px;
 
   filter: brightness(100) saturate(0);
+}
+
+.tcb-btn-edit-task {
+  padding: 6px;
+  height: 40px;
+  border-radius: var(--border-radius-m);
+  background-color: var(--darkblue);
+  position: absolute;
+  right: 22px;
+  bottom: calc(41px + var(--nav-height-m));
+}
+
+.tcb-btn-edit-task img {
+  filter: brightness(1) saturate(0);
+  height: 26px;
+  width: 26px;
 }
 
 @media (min-width: 800px) {
