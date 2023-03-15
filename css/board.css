@@ -106,6 +106,7 @@
 .tcb-btn-edit-task {
   padding: 6px;
   height: 40px;
+  width: 40px;
   border-radius: var(--border-radius-m);
   background-color: var(--darkblue);
   position: absolute;
