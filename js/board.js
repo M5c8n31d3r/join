@@ -101,7 +101,9 @@ function showTask(id) {
   let taskcard = document.getElementById("taskcard-big");
   let task = tasks[id];
   taskcard.innerHTML = "";
-  taskcard.classList.remove("display-none");
+  document
+    .getElementById("taskcard-big-container")
+    .classList.remove("display-none");
   $("body").addClass("no-scroll");
   taskcard.innerHTML += /* html */ `
   <div class="tcb-first-line flex space-between">
@@ -205,7 +207,7 @@ function toggleSubtaskStatus(taskId, subtaskId) {
 }
 
 function closeTask() {
-  let taskcard = document.getElementById("taskcard-big");
+  let taskcard = document.getElementById("taskcard-big-container");
   taskcard.classList.add("display-none");
   $("body").removeClass("no-scroll");
   loadTask();
