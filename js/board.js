@@ -176,15 +176,22 @@ function tcbRenderSubtasks(task) {
  */
 function tcbChangedRenderSubtasks(task) {
   let tcbSubtasks = document.getElementById("tcb-subtasks");
+  tcbSubtasks.innerHTML = "";
   let subtasks = "";
   for (let i = 0; i < task.subtask.length; i++) {
     const subtask = task.subtask[i];
     subtasks += /*html*/ `
-    <div id="subtask-${task.id}-${i}" class="flex gap center-row task-done-${subtask.done}">
+    <div id="subtask-${task.id}-${i}" class="flex gap center-row task-done-${
+      subtask.done
+    }">
       <div class="flex">
-        <input type="checkbox" id="subtask-${task.id}-${i}-input" onclick="toggleSubtaskStatus(${task.id}, ${i})">
+        <input type="checkbox" ${subtask.done ? "checked" : ""} id="subtask-${
+      task.id
+    }-${i}-input" onclick="toggleSubtaskStatus(${task.id}, ${i})">
       </div>
-      <label class="margin0 flex" for="subtask-${task.id}-${i}-input"> ${subtask.description}</label>
+      <label class="margin0 flex" for="subtask-${task.id}-${i}-input"> ${
+      subtask.description
+    }</label>
     </div>`;
   }
   tcbSubtasks.innerHTML = subtasks;
@@ -192,13 +199,14 @@ function tcbChangedRenderSubtasks(task) {
 
 function toggleSubtaskStatus(taskId, subtaskId) {
   tasks[taskId].subtask[subtaskId].done ^= true;
-  tcbRenderSubtasks(tasks[taskId]);
+  tcbChangedRenderSubtasks(tasks[taskId]);
 }
 
 function closeTask() {
   let taskcard = document.getElementById("taskcard-big");
   taskcard.classList.add("display-none");
   $("body").removeClass("no-scroll");
+  loadTask();
 }
 
 /**
