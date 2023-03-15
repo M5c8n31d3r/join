@@ -141,6 +141,7 @@ function showTask(id) {
     <span class="tcp-subline">Assigned to:</span>
     ${renderUser(task)}
   </div>
+  <button onclick="deleteTask(${task.id})">Delete</button>
 `;
 }
 
@@ -262,7 +263,7 @@ function toggleDropZone() {
 }
 
 /**
- *
+ * TODO Irgendetwas für Drag and Drop -> DOKU BEI W3-SCHOOLS NOCH LESEN
  * @param {} ev
  * ! ICH HABE KEINE AHNUNG WARUM MAN DIE FUNKTION BENÖTIGT !
  */

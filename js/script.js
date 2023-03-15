@@ -177,8 +177,6 @@ function toggleContextMenu(ctxMenuId) {
 /**
  * Shows the context menu
  * @param {Object} ctxMenu The context menu
- *
- *
  */
 function showCtxMenu(ctxMenu) {
   ctxMenu.classList.remove("display-none");
@@ -190,8 +188,6 @@ function showCtxMenu(ctxMenu) {
 /**
  * Hides the context menu
  * @param {Object} ctxMenu The context menu
- *
- *
  */
 function hideCtxMenu(ctxMenu) {
   ctxMenu.classList.remove("context--show");
@@ -209,4 +205,18 @@ async function logOut() {
   userLogIn = null;
   localStorage.setItem("userLogIn", userLogIn);
   loadPageWithDelay("../index.html");
+}
+
+/**
+ * Delete one Item of TASKS-Array
+ *
+ * @param {INT} id Item to delete
+ */
+function deleteTask(id) {
+  tasks.splice(id, 1);
+  for (let i = 0; i < tasks.length; i++) {
+    tasks[i].id = i;
+  }
+  backend.setItem("tasks", tasks);
+  closeTask();
 }
