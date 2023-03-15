@@ -145,6 +145,7 @@ function renderDetails(id) {
   <div class="pointer" onclick="addEditUser(${id}, ${true})">
     EDIT
   </div>
+  <button onclick="deleteUser(${id})">Delete</button>
   `;
 }
 
@@ -314,4 +315,17 @@ function returnContacts() {
  */
 function addTask() {
   document.getElementById("addtask-dialog").classList.remove("display-none");
+}
+
+/**
+ * Delete one User
+ * @param {INT} id Item to delete
+ */
+function deleteUser(id) {
+  users.splice(id, 1);
+  for (let i = 0; i < users.length; i++) {
+    users[i].id = i;
+  }
+  backend.setItem("users", users);
+  returnContacts();
 }
