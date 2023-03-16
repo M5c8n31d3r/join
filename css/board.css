@@ -10,6 +10,10 @@ a:hover {
   color: var(--white);
 }
 
+h2 {
+  margin: 0;
+}
+
 .taskcard-category-name {
   color: var(--white);
   font-size: 16px;
