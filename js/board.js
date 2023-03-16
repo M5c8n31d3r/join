@@ -17,6 +17,17 @@ async function initBoard() {
   loadTask();
 }
 
+function clearBoard() {
+  let toDoTasks = document.getElementById("col-todo");
+  let progressTasks = document.getElementById("col-progress");
+  let awaitingTasks = document.getElementById("col-awaiting");
+  let doneTasks = document.getElementById("col-done");
+  toDoTasks.innerHTML = "";
+  progressTasks.innerHTML = "";
+  awaitingTasks.innerHTML = "";
+  doneTasks.innerHTML = "";
+}
+
 /**
  * Load HTML-Elements
  * ToDo: Länge der Funktion prüfen
@@ -26,10 +37,7 @@ function loadTask() {
   let progressTasks = document.getElementById("col-progress");
   let awaitingTasks = document.getElementById("col-awaiting");
   let doneTasks = document.getElementById("col-done");
-  toDoTasks.innerHTML = "";
-  progressTasks.innerHTML = "";
-  awaitingTasks.innerHTML = "";
-  doneTasks.innerHTML = "";
+  clearBoard();
 
   for (let i = 0; i < tasks.length; i++) {
     const task = tasks[i];
@@ -385,3 +393,21 @@ function deleteTask(id) {
 function editTask(id) {
   alert(id);
 }
+
+function findTask() {
+  let input = document.getElementById("search-input").value;
+  const items = new Array();
+  let lastItem = tasks.title.lastIndexOf(input);
+  clearBoard();
+  // debugger;
+  console.log(lastItem);
+  // for (let i = 0; i < lastItem; i++) {
+  // let item = tasks.title.indexOf(input, i);
+  // items.push(item);
+  // i = item;
+  // }
+
+  console.log(items);
+}
+
+// loadTask()

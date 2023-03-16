@@ -37,9 +37,16 @@
         <h1>Board</h1>
         <div class="space-between center gap">
           <div class="desktop searchbar center">
-            <input type="search" name="q" placeholder="Find Task" /><img
+            <input
+              id="search-input"
+              type="search"
+              name="q"
+              placeholder="Find Task"
+            /><img
+              class="pointer"
               src="../assets/img/icons/icon-magnifier.svg"
               alt=""
+              onclick="findTask()"
             />
           </div>
           <button
