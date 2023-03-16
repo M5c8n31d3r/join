@@ -258,9 +258,9 @@ function renderSelectedUsers() {
   let selectedUserList = document.getElementById("assigned-to-user");
   selectedUserList.innerHTML = "";
   for (let i = 0; i < selectedUsers.length; i++) {
-    selectedUserList.innerHTML += `<div class="initials center">${renderSelectedUserDetails(
-      selectedUsers[i]
-    )}</div>`;
+    selectedUserList.innerHTML += `<div class="initials initials-bg${
+      i % 4
+    } center">${renderSelectedUserDetails(selectedUsers[i])}</div>`;
   }
 }
 
