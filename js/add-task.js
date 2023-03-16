@@ -325,9 +325,14 @@ function clearAll() {
  */
 function addSubtask() {
   let subtask = document.getElementById("task-subtask");
-  subtasks.push({ description: subtask.value, done: 0 });
-  subtask.value = "";
-  renderSubtasks();
+  if (subtask.value == "") {
+    document.getElementById("subtask-alert").classList.remove("display-none");
+  } else {
+    document.getElementById("subtask-alert").classList.add("display-none");
+    subtasks.push({ description: subtask.value, done: 0 });
+    subtask.value = "";
+    renderSubtasks();
+  }
 }
 
 /**
