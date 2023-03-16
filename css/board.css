@@ -171,6 +171,11 @@
     padding: 50px;
   }
 
+  .back-arrow {
+    filter: brightness(0) saturate(100%) invert(18%) sepia(48%) saturate(368%)
+      hue-rotate(174deg) brightness(93%) contrast(91%);
+  }
+
   button {
     z-index: auto;
   }
