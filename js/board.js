@@ -144,7 +144,7 @@ function showTask(id) {
     ${renderUser(task)}
   </div>
   <button onclick="deleteTask(${task.id})">Delete</button>
-  <div class="tcb-btn-edit-task flex center" onclick="editTask(${task})"><img class="icon-white" src="../assets/img/icons/icon-to-do.svg" alt="New Task"></div>
+  <div class="tcb-btn-edit-task flex center" onclick="editTask(${id})"><img class="icon-white" src="../assets/img/icons/icon-to-do.svg" alt="New Task"></div>
 `;
 }
 
@@ -307,7 +307,8 @@ function renderUserInitials(task) {
   let userList = "";
   for (let i = 0; i < task.assignedTo.length; i++) {
     const user = task.assignedTo[i];
-    userList += `<div class="initials-board font-12 center">${renderAssignedUserInitials(
+    let bg = i % 4;
+    userList += `<div class="initials-board initials-bg${bg} font-12 center">${renderAssignedUserInitials(
       user
     )}</div>`;
   }
@@ -321,13 +322,15 @@ function renderUserInitials(task) {
  */
 function renderUser(task) {
   let userList = "";
+
   for (let i = 0; i < task.assignedTo.length; i++) {
     const user = task.assignedTo[i];
+    let bg = i % 4;
     userList += /*html*/ `
     <div class="tcb-user-line flex center-row gap">
-      <div class="initials font-16 center">${renderAssignedUserInitials(
-        user
-      )}</div>
+      <div class="initials initials-bg${bg} font-16 center">${renderAssignedUserInitials(
+      user
+    )}</div>
       <div>${renderAssignedUserName(user)}</div>
     </div>
     `;
@@ -375,4 +378,8 @@ function deleteTask(id) {
   }
   backend.setItem("tasks", tasks);
   closeTask();
+}
+
+function editTask(id) {
+  alert(id);
 }
