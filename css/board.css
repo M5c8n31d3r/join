@@ -5,6 +5,11 @@
   margin: 0 0 15px 0;
 }
 
+a:hover {
+  text-decoration: none;
+  color: var(--white);
+}
+
 .taskcard-category-name {
   color: var(--white);
   font-size: 16px;
