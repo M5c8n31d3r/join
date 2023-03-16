@@ -8,14 +8,41 @@ const counter = [
 
 async function initSummary() {
   await includeHTML();
+  await handleWelcomeOnMobile();
   await loadDataFromServer();
   setActive("nav-summary");
   loadAllCounters();
   setWelcomeMsg();
   setCurrentUser();
+
   setDeadline();
 }
 
+/**
+ * Controls the welcome screen on mobile view
+ */
+function handleWelcomeOnMobile() {
+  let isLogin = new URLSearchParams(window.location.search);
+  if (!isLogin.get("login")) return;
+
+  const windowWidth = window.innerWidth;
+  const delay = WELCOME_MSG_TRANS + WELCOME_MSG_DELAY + 10;
+
+  if (windowWidth <= MOBILE_MAX_WIDTH) {
+    const welcome = document.getElementById("welcome-mobile");
+    welcome.classList.remove("d-none");
+    setTimeout(() => {
+      welcome.classList.add("welcome-mobile-fade");
+    }, 1);
+    setTimeout(() => {
+      welcome.classList.add("d-none");
+    }, delay);
+  }
+}
+
+/**
+ * Checking if guest log in, else Loading currentUser and changing welcome message
+ */
 function setCurrentUser() {
   userLogIn = localStorage.getItem("userLogIn", userLogIn);
   if (userLogIn == null || userLogIn == 0) {
@@ -29,6 +56,9 @@ function setCurrentUser() {
   }
 }
 
+/**
+ * Sets the welcome message depending on the current time
+ */
 function setWelcomeMsg() {
   const currDate = new Date();
   const currHour = currDate.getHours();

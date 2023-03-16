@@ -1,23 +1,19 @@
 /***** Responsive Design *****/
 
-@media (max-width: 1160px) {
+@media (max-width: 1200px) {
   .welcome-desk {
     display: none;
   }
-}
 
-/*////////////////////////////////////////////////////////////////////////////////////////////////*/
-
-@media (min-width: 800px) {
   #content-summary {
-    display: flex;
-    flex-direction: column;
-    margin-top: 3.5vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 24px;
   }
 
-  /* #ui {
+  #ui {
     flex-direction: column;
-  } */
+  }
 
   #data {
     margin-right: unset;
@@ -46,48 +42,49 @@
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-@media (max-width: 570px) {
+@media screen and (max-width: 940px) {
+  .welcome-desk {
+    display: none;
+  }
+}
+/*////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+@media (max-width: 780px) {
+  .content-container {
+    margin-left: 0;
+    margin-top: 90px;
+    height: 100vh;
+    width: 100%;
+  }
   .headline-tooltype {
     display: block;
-    margin-bottom: -20px;
-    font-size: 16px;
-    width: 255px;
-    height: 19px;
   }
-
   #welcome-text-mobile {
     font-size: 32px;
   }
-
   #welcome-name-mobile {
     font-size: 42px;
   }
-
+  #data {
+    gap: 30px;
+  }
   .summary-header {
     flex-direction: column;
     align-items: flex-start;
   }
-
   .summary-header > h1 {
     font-size: 47px;
   }
-  .summary-header > p {
-    margin-left: -30px;
-  }
   #headline-separator {
-    border-left: solid 3px var(--lightblue);
-    border-radius: 3px;
-    margin-right: 30px;
-    position: absolute;
-    height: 90px;
-    transform: rotate(90deg);
-    margin-top: 94px;
-    margin-left: 47px;
+    order: 1;
+    width: 90px;
+    height: 0px;
+    border-top: solid 3px var(--lightblue);
+    border-left: unset;
+    margin: unset;
   }
   #headline-sub {
     font-size: 21px;
-    margin-bottom: 20px;
-    margin-top: -16px;
   }
   .icon-arrow-back-black {
     cursor: pointer;
@@ -96,16 +93,12 @@
     margin-top: 120px;
   }
   /*************************/
-  .summary-row-1 {
+  #summary-row-1 {
     gap: 15px;
     width: 360px;
     height: 110px;
   }
   .summary-box {
-    margin: 4px;
-    margin-top: 6px;
-    padding: 25px 0px;
-    gap: 13px;
     width: 110px;
     height: 110px;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
@@ -124,10 +117,10 @@
     font-size: 14px;
   }
   /*************************/
-  .summary-row-2 {
-    padding: 28px 0px;
+  #summary-row-2 {
     width: 360px;
-    height: 72px;
+    height: 110px;
+    gap: 13px;
   }
   .urgent-box {
     gap: 20px;
@@ -141,11 +134,9 @@
     height: 120px;
     box-shadow: var(--box-shadow-hover);
   }
-
   .urgent-box-left {
     margin-left: -60px;
   }
-
   .urgent-box-left > img {
     width: 40px;
     height: 40px;
@@ -175,25 +166,19 @@
     width: 148px;
     height: 0px;
   }
-
   .upcoming-deadline-title {
     font-size: 14px;
     margin-right: 18px;
   }
   /*************************/
-  .summary-row-3 {
+  #summary-row-3 {
     gap: 10px;
     height: 40px;
-    width: 40px;
   }
   .todo-container,
   .done-container {
-    margin: 4px;
-    margin-left: 0px;
-    margin-top: 306px;
-    padding: 38px 19px;
     gap: 10px;
-    width: 177.5px;
+    width: 170px;
     height: 110px;
     box-shadow: var(--box-shadow);
     border-radius: 20px;
@@ -205,7 +190,6 @@
     width: 180.5px;
     height: 120px;
   }
-
   .done-container:hover {
     padding: 38px 19px;
     gap: 10px;
@@ -213,13 +197,8 @@
     width: 180.5px;
     height: 120px;
   }
-
   .todo-text-container,
   .done-text-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     margin-left: 2rem;
     width: 70px;
     height: 60px;
@@ -230,7 +209,6 @@
     height: 40px;
     border-radius: 100%;
     margin-left: 20px;
-    margin-right: -30px;
   }
   .summary-icons img {
     padding: 25px;
@@ -238,13 +216,11 @@
   }
   .todo-number,
   .done-number {
-    font-weight: 600;
     font-size: 47px;
-    width: 69px;
+    width: 56px;
     height: 73px;
   }
   .todo-text {
-    font-weight: 400;
     font-size: 14px;
     line-height: 120%;
     margin-top: auto;
@@ -252,7 +228,6 @@
     height: 17px;
   }
   .done-text {
-    font-weight: 400;
     font-size: 14px;
     line-height: 120%;
     margin-top: auto;
