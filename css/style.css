@@ -966,7 +966,6 @@ input[type="radio"] {
 
 .initials-board {
   border-radius: var(--border-radius-xl);
-  background-color: orange;
   height: 35px;
   width: 35px;
   color: var(--white);
