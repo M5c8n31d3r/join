@@ -5,6 +5,15 @@
   margin: 0 0 15px 0;
 }
 
+a:hover {
+  text-decoration: none;
+  color: var(--white);
+}
+
+h2 {
+  margin: 0;
+}
+
 .taskcard-category-name {
   color: var(--white);
   font-size: 16px;
@@ -47,6 +56,11 @@
 .task-done-1,
 .task-done-true {
   text-decoration: line-through;
+}
+
+.back-arrow {
+  filter: brightness(0) saturate(100%) invert(18%) sepia(48%) saturate(368%)
+    hue-rotate(174deg) brightness(93%) contrast(91%);
 }
 
 .taskcard-big {
@@ -102,6 +116,17 @@
   width: 16px;
 
   filter: brightness(100) saturate(0);
+}
+
+.tcb-btn-delete-task {
+  padding: 6px;
+  height: 40px;
+  width: 40px;
+  border-radius: var(--border-radius-m);
+  background-color: var(--darkblue);
+  position: absolute;
+  right: 22px;
+  bottom: calc(100px + var(--nav-height-m));
 }
 
 .tcb-btn-edit-task {
@@ -169,6 +194,38 @@
     position: absolute;
     margin: auto;
     padding: 50px;
+  }
+
+  .tcb-user-line {
+    padding-bottom: 25px;
+  }
+
+  .tcb-btn-delete-task {
+    padding: 0;
+    height: 57px;
+    width: 57px;
+    border-radius: var(--border-radius-m);
+    background-color: var(--darkblue);
+    position: absolute;
+    right: 120px;
+    bottom: 30px;
+  }
+
+  .tcb-btn-edit-task {
+    padding: 0px;
+    height: 57px;
+    width: 57px;
+    border-radius: var(--border-radius-m);
+    background-color: var(--darkblue);
+    position: absolute;
+    right: 41px;
+    bottom: 30px;
+  }
+
+  .tcb-btn-edit-task img,
+  .tcb-btn-delete-task img {
+    width: 35px;
+    height: 35px;
   }
 
   button {

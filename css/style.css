@@ -914,15 +914,29 @@ input[type="radio"] {
 
 .initials {
   border-radius: var(--border-radius-xl);
-  background-color: orange;
   height: 42px;
   width: 42px;
   color: var(--white);
 }
 
+.initials-bg0 {
+  background-color: var(--darkblue-active);
+}
+
+.initials-bg1 {
+  background-color: var(--lightblue);
+}
+
+.initials-bg2 {
+  background-color: var(--urgent);
+}
+
+.initials-bg3 {
+  background-color: var(--medium);
+}
+
 .initials-board {
   border-radius: var(--border-radius-xl);
-  background-color: orange;
   height: 35px;
   width: 35px;
   color: var(--white);

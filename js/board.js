@@ -17,6 +17,17 @@ async function initBoard() {
   loadTask();
 }
 
+function clearBoard() {
+  let toDoTasks = document.getElementById("col-todo");
+  let progressTasks = document.getElementById("col-progress");
+  let awaitingTasks = document.getElementById("col-awaiting");
+  let doneTasks = document.getElementById("col-done");
+  toDoTasks.innerHTML = "";
+  progressTasks.innerHTML = "";
+  awaitingTasks.innerHTML = "";
+  doneTasks.innerHTML = "";
+}
+
 /**
  * Load HTML-Elements
  * ToDo: Länge der Funktion prüfen
@@ -26,10 +37,7 @@ function loadTask() {
   let progressTasks = document.getElementById("col-progress");
   let awaitingTasks = document.getElementById("col-awaiting");
   let doneTasks = document.getElementById("col-done");
-  toDoTasks.innerHTML = "";
-  progressTasks.innerHTML = "";
-  awaitingTasks.innerHTML = "";
-  doneTasks.innerHTML = "";
+  clearBoard();
 
   for (let i = 0; i < tasks.length; i++) {
     const task = tasks[i];
@@ -143,8 +151,10 @@ function showTask(id) {
     <span class="tcp-subline">Assigned to:</span>
     ${renderUser(task)}
   </div>
-  <button onclick="deleteTask(${task.id})">Delete</button>
-  <div class="tcb-btn-edit-task flex center" onclick="editTask(${task})"><img class="icon-white" src="../assets/img/icons/icon-to-do.svg" alt="New Task"></div>
+  <button class="tcb-btn-delete-task flex center" onclick="deleteTask(${
+    task.id
+  })"><img class="icon-white" src="../assets/img/icons/icon-delete.svg"></button>
+  <button class="tcb-btn-edit-task flex center" onclick="editTask(${task})"><img class="icon-white" src="../assets/img/icons/icon-to-do.svg"></button>
 `;
 }
 
@@ -307,7 +317,8 @@ function renderUserInitials(task) {
   let userList = "";
   for (let i = 0; i < task.assignedTo.length; i++) {
     const user = task.assignedTo[i];
-    userList += `<div class="initials-board font-12 center">${renderAssignedUserInitials(
+    let bg = i % 4;
+    userList += `<div class="initials-board initials-bg${bg} font-12 center">${renderAssignedUserInitials(
       user
     )}</div>`;
   }
@@ -321,13 +332,15 @@ function renderUserInitials(task) {
  */
 function renderUser(task) {
   let userList = "";
+
   for (let i = 0; i < task.assignedTo.length; i++) {
     const user = task.assignedTo[i];
+    let bg = i % 4;
     userList += /*html*/ `
     <div class="tcb-user-line flex center-row gap">
-      <div class="initials font-16 center">${renderAssignedUserInitials(
-        user
-      )}</div>
+      <div class="initials initials-bg${bg} font-16 center">${renderAssignedUserInitials(
+      user
+    )}</div>
       <div>${renderAssignedUserName(user)}</div>
     </div>
     `;
@@ -376,3 +389,25 @@ function deleteTask(id) {
   backend.setItem("tasks", tasks);
   closeTask();
 }
+
+function editTask(id) {
+  alert(id);
+}
+
+function findTask() {
+  let input = document.getElementById("search-input").value;
+  const items = new Array();
+  let lastItem = tasks.title.lastIndexOf(input);
+  clearBoard();
+  // debugger;
+  console.log(lastItem);
+  // for (let i = 0; i < lastItem; i++) {
+  // let item = tasks.title.indexOf(input, i);
+  // items.push(item);
+  // i = item;
+  // }
+
+  console.log(items);
+}
+
+// loadTask()

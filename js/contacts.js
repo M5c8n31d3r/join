@@ -58,7 +58,7 @@ function renderContact() {
       const letterLetterlist = letterlist[j];
       if (letterLetterlist == firstLetter) {
         document.getElementById(`group-${firstLetter}`).innerHTML +=
-          renderSingleContact(users[i]);
+          renderSingleContact(users[i], i % 4);
       }
     }
   }
@@ -70,10 +70,10 @@ function renderContact() {
  * @returns HTML-Object
  * Render the contact-information of a single user
  */
-function renderSingleContact(user) {
+function renderSingleContact(user, classCounter) {
   return `
-    <div class="cl-contact center-row pointer" onclick="showDetails(${user.id})">
-      <div class="cl-contact-left initials center">${user.initials}</div>
+    <div id="${user.id}" class="cl-contact center-row pointer" onclick="showDetails(${user.id})">
+      <div class="cl-contact-left initials initials-bg${classCounter} center">${user.initials}</div>
       <div class="cl-contact-right center-column gap-s">
         <div class="cl-contact-name">${user["name"]}</div>
         <a
@@ -108,6 +108,8 @@ function showDetails(id) {
   contactlist.classList.add("display-none");
   details.classList.remove("display-none");
   btn.classList.add("display-none");
+
+  // document.getElementById(id).classList.add(""); // TODO CLASS WITH DARK BACKGROUND
 
   renderDetails(id);
 }
@@ -304,6 +306,8 @@ function returnContacts() {
   details.classList.add("display-none");
   addEditContact.classList.add("display-none");
   btn.classList.remove("display-none");
+
+  // document.getElementById(id).classList.remove(""); // TODO CLASS WITH DARK BACKGROUND
 
   renderContacts();
 }
