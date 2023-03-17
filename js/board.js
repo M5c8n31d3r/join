@@ -393,6 +393,10 @@ function editTask(id) {
   alert(id);
 }
 
+/**
+ * Filter list of view on search result
+ * @param {STRING} view ID of search input
+ */
 function findTask(view) {
   let search = document.getElementById(view).value;
   const items = new Array();
@@ -409,6 +413,11 @@ function findTask(view) {
   loadTask(deleteDoubleValues(items));
 }
 
+/**
+ * Deletes double entries
+ * @param {ARRAY} list List of filtered Items
+ * @returns
+ */
 function deleteDoubleValues(list) {
   let unique = list.filter((x, i) => list.indexOf(x) === i);
 
