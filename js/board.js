@@ -401,7 +401,16 @@ function findTask() {
     if (tasks[i].title.toLowerCase().includes(search.toLowerCase())) {
       items.push(tasks[i]);
     }
+    if (tasks[i].description.toLowerCase().includes(search.toLowerCase())) {
+      items.push(tasks[i]);
+    }
   }
 
-  loadTask(items);
+  loadTask(deleteDoubleValues(items));
+}
+
+function deleteDoubleValues(list) {
+  let unique = list.filter((x, i) => list.indexOf(x) === i);
+
+  return unique;
 }
