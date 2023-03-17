@@ -863,7 +863,7 @@ input[type="radio"] {
   height: 20px;
   width: 20px;
   border-radius: 50%;
-  border: 2px solid #ffffff;
+  border: 2px solid var(--white);
   margin: 0 0px 0 20px;
 }
 

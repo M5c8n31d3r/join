@@ -16,6 +16,80 @@
   right: 0;
 }
 
+.contacts-col-r {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: var(--nav-height-m);
+  background-color: var(--grey-bg);
+  z-index: 0;
+  display: none;
+  height: calc(100vh - 89px);
+  padding: 35px 34px;
+}
+
+.blue-line-h {
+  height: 3px;
+  width: 90px;
+  background-color: var(--lightblue);
+  margin-bottom: 20px;
+}
+
+.back-arrow {
+  position: absolute;
+  right: 34px;
+  top: 100px;
+}
+
+.contacts-subline {
+  padding: 20px 0 32px 0;
+}
+
+.initials-contact-big {
+  border-radius: 100%;
+  min-height: 80px;
+  min-width: 80px;
+  color: var(--white);
+  font-size: 27px;
+  border: 3px solid var(--white);
+}
+
+.contact-details-name {
+  font-size: 27px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.contact-details-edit {
+  display: none;
+}
+
+.btn-delete-contact {
+  padding: 6px;
+  height: 40px;
+  width: 40px;
+  border-radius: var(--border-radius-m);
+  background-color: var(--darkblue);
+  position: absolute;
+  right: 84px;
+  bottom: 110px;
+}
+
+.btn-edit-contact {
+  padding: 6px;
+  height: 40px;
+  width: 40px;
+  border-radius: var(--border-radius-m);
+  background-color: var(--darkblue);
+  position: absolute;
+  right: 22px;
+  bottom: 110px;
+}
+
+.btn-edit-contact img {
+  filter: brightness(1);
+}
+
 .cl-letters {
   font-size: 21px;
   padding: 24px 30px;
@@ -47,6 +121,9 @@
   }
 
   .contacts-col-r {
+    position: unset;
+    display: unset;
+    background-color: unset;
     padding: 82px 0 0 58px;
   }
 
@@ -63,6 +140,10 @@
   .contact-details-name {
     font-size: 47px;
     font-weight: 500;
+  }
+
+  .contact-details-edit {
+    display: flex;
   }
 
   .contact-details-edit img {

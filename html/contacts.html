@@ -1,60 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join | Contacts</title>
+    <link
+      rel="shortcut icon"
+      href="/assets/img/logos/logo-dark.png"
+      type="image/x-icon"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/contacts.css" />
+    <link rel="stylesheet" href="../css/fonts.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Join | Contacts</title>
-  <link rel="shortcut icon" href="/assets/img/logos/logo-dark.png" type="image/x-icon" />
-  <!-- CSS -->
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/contacts.css" />
-  <link rel="stylesheet" href="../css/fonts.css" />
+    <!-- JavaScript -->
+    <script src="../js/mini_backend.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/contacts.js"></script>
+    <script src="../js/add-task.js"></script>
+  </head>
 
-  <!-- JavaScript -->
-  <script src="../js/mini_backend.js"></script>
-  <script src="../js/script.js"></script>
-  <script src="../js/contacts.js"></script>
-  <script src="../js/add-task.js"></script>
-</head>
-
-<body onload="initContacts()">
-  <header w3-include-html="../assets/templates/header.html"></header>
-  <nav w3-include-html="../assets/templates/navbar.html"></nav>
-  <section class="content-contacts">
-    <section class="contacts-rows flex">
-      <div class="contacts-col-l"> <!-- Contact List -->
-        <section class="" id="contactlist"></section>
-      </div>
-      <div class="contacts-col-r">
-        <div class="contacts-headline flex center-row gap">
-          <h1 class="margin0">Contacts</h1>
-          <div class="blue-line"></div>
-          <div>Better with a team</div>
+  <body onload="initContacts()">
+    <header w3-include-html="../assets/templates/header.html"></header>
+    <nav w3-include-html="../assets/templates/navbar.html"></nav>
+    <section class="content-contacts">
+      <section class="contacts-rows flex">
+        <div class="contacts-col-l">
+          <!-- Contact List -->
+          <section class="" id="contactlist"></section>
         </div>
+        <div id="contacts-col-r" class="contacts-col-r">
+          <p class="mobile">Kanban Project Management Tool</p>
+          <div class="contacts-headline flex center-row gap">
+            <h1 class="margin0">Contacts</h1>
+            <div class="desktop blue-line"></div>
+            <div class="desktop">Better with a team</div>
+          </div>
+          <div class="mobile contacts-subline font-21">Better with a team</div>
+          <div class="mobile blue-line-h"></div>
 
-        <button class="btn-new-contact btn-icon center gap" id="btn" onclick="addEditUser(0, false)">
-          New Contact
-          <img src="../assets/img/icons/icon-new-contact.svg" alt="" srcset="" />
-        </button>
+          <button
+            class="btn-new-contact desktop btn-icon center gap"
+            id="btn"
+            onclick="addEditUser(0, false)"
+          >
+            New Contact
+            <img
+              src="../assets/img/icons/icon-new-contact.svg"
+              alt=""
+              srcset=""
+            />
+          </button>
 
-
-        <!-- Contact Details -->
-        <section class="display-none" id="details">
-          <div>details</div>
-        </section>
-        <!-- Add/Edit Contact -->
-        <section class="display-none" id="add-edit-contact">
-          <div>add / edit</div>
-        </section>
-        <div class="dialog content display-none" id="addtask-dialog">
-          <div w3-include-html="../assets/templates/addtask.html"></div>
+          <!-- Contact Details -->
+          <section class="display-none" id="details">
+            <div>details</div>
+          </section>
+          <!-- Add/Edit Contact -->
+          <section class="display-none" id="add-edit-contact">
+            <div>add / edit</div>
+          </section>
+          <div class="dialog content display-none" id="addtask-dialog">
+            <div w3-include-html="../assets/templates/addtask.html"></div>
+          </div>
         </div>
-      </div>
+      </section>
     </section>
-
-  </section>
-</body>
-
+  </body>
 </html>

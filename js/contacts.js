@@ -104,8 +104,10 @@ function showDetails(id) {
   let details = document.getElementById("details");
   let contactlist = document.getElementById("contactlist");
   let btn = document.getElementById("btn");
+  let columnRight = document.getElementById("contacts-col-r");
 
   details.classList.remove("display-none");
+  columnRight.style = "display: unset";
 
   // document.getElementById(id).classList.add(""); // TODO CLASS WITH DARK BACKGROUND
 
@@ -137,7 +139,7 @@ function renderDetails(id, classCounter) {
   </div>
   <div class="flex center-row gap-xl">
     <p class="font-21">Contact Information</p>
-    <div class="contact-details-edit flex center-row gap-s font-16 pointer" onclick="addEditUser(${id}, ${true})">
+    <div class="contact-details-edit desktop flex center-row gap-s font-16 pointer" onclick="addEditUser(${id}, ${true})">
       <img src="../assets/img/icons/icon-to-do.svg">
       Edit Contact
     </div>
@@ -149,6 +151,7 @@ function renderDetails(id, classCounter) {
   <p class="font-16 bold">Phone</p>
   <p class="contacts-text">${users[id].phone}</p>
   <button class="btn-delete-contact flex center" onclick="deleteUser(${id})"><img class="icon-white" src="../assets/img/icons/icon-delete.svg"></button>
+  <button class="btn-edit-contact mobile flex center" onclick="addEditUser(${id}, ${true})"><img class="icon-white" src="../assets/img/icons/icon-to-do.svg"></button>
   `;
 }
 
@@ -302,11 +305,13 @@ function returnContacts() {
   let details = document.getElementById("details");
   let addEditContact = document.getElementById("add-edit-contact");
   let btn = document.getElementById("btn");
+  let columnRight = document.getElementById("contacts-col-r");
 
   contactlist.classList.remove("display-none");
   details.classList.add("display-none");
   addEditContact.classList.add("display-none");
   btn.classList.remove("display-none");
+  columnRight.style = "display: none";
 
   // document.getElementById(id).classList.remove(""); // TODO CLASS WITH DARK BACKGROUND
 
