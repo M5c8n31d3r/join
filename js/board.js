@@ -14,7 +14,7 @@ async function initBoard() {
   await includeHTML();
   await loadDataFromServer();
   setActive("nav-board");
-  loadTask();
+  loadTask(tasks);
 }
 
 function clearBoard() {
@@ -32,23 +32,22 @@ function clearBoard() {
  * Load HTML-Elements
  * ToDo: Länge der Funktion prüfen
  */
-function loadTask() {
+function loadTask(ItemList) {
   let toDoTasks = document.getElementById("col-todo");
   let progressTasks = document.getElementById("col-progress");
   let awaitingTasks = document.getElementById("col-awaiting");
   let doneTasks = document.getElementById("col-done");
   clearBoard();
 
-  for (let i = 0; i < tasks.length; i++) {
-    const task = tasks[i];
-    if (tasks[i].state == "ToDo") {
-      toDoTasks.innerHTML += renderCard(task);
-    } else if (tasks[i].state == "progress") {
-      progressTasks.innerHTML += renderCard(task);
-    } else if (tasks[i].state == "awaiting") {
-      awaitingTasks.innerHTML += renderCard(task);
-    } else if (tasks[i].state == "done") {
-      doneTasks.innerHTML += renderCard(task);
+  for (let i = 0; i < ItemList.length; i++) {
+    if (ItemList[i].state == "ToDo") {
+      toDoTasks.innerHTML += renderCard(ItemList[i]);
+    } else if (ItemList[i].state == "progress") {
+      progressTasks.innerHTML += renderCard(ItemList[i]);
+    } else if (ItemList[i].state == "awaiting") {
+      awaitingTasks.innerHTML += renderCard(ItemList[i]);
+    } else if (ItemList[i].state == "done") {
+      doneTasks.innerHTML += renderCard(ItemList[i]);
     }
   }
   toDoTasks.innerHTML += renderDropArea("dropzone-ToDo");
@@ -395,19 +394,14 @@ function editTask(id) {
 }
 
 function findTask() {
-  let input = document.getElementById("search-input").value;
+  let search = document.getElementById("search-input").value;
   const items = new Array();
-  let lastItem = tasks.title.lastIndexOf(input);
-  clearBoard();
-  // debugger;
-  console.log(lastItem);
-  // for (let i = 0; i < lastItem; i++) {
-  // let item = tasks.title.indexOf(input, i);
-  // items.push(item);
-  // i = item;
-  // }
 
-  console.log(items);
+  for (let i = 0; i < tasks.length; i++) {
+    if (tasks[i].title.toLowerCase().includes(search.toLowerCase())) {
+      items.push(tasks[i]);
+    }
+  }
+
+  loadTask(items);
 }
-
-// loadTask()
