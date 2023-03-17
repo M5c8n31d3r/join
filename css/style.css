@@ -952,10 +952,6 @@ input[type="radio"] {
   margin: 10px 25px 10px 15px;
 }
 
-.cl-letters {
-  border-bottom: 1px solid var(--grey);
-}
-
 .pointer {
   cursor: pointer;
 }

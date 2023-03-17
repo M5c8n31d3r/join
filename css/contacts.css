@@ -1,0 +1,95 @@
+.content-contacts {
+  padding: calc(var(--nav-height-m) + 16px) 33px
+    calc(var(--nav-height-m) + 16px) 33px;
+}
+
+.contacts-row-l {
+  background-color: var(--white);
+}
+
+@media (min-width: 800px) {
+  .content-contacts {
+    height: 100vh;
+    padding: 89px 50px 0 calc(var(--nav-width-d));
+    margin: auto;
+  }
+
+  .contacts-row-l {
+    width: 453px;
+    padding: 12px 48px 0px 48px;
+    overflow-y: scroll;
+    height: calc(100vh - 89px);
+  }
+
+  .contacts-row-r {
+    padding: 82px 0 0 58px;
+  }
+
+  /* Contact-List */
+  #contactlist {
+    padding: 0 17px;
+  }
+
+  .cl-group {
+    padding: 14px 0;
+  }
+  .cl-letters {
+    font-size: 21px;
+    padding: 24px 30px;
+    border-bottom: 1px solid var(--grey);
+  }
+
+  .cl-contact {
+    padding: 8px 0;
+    border-radius: var(--border-radius-m);
+  }
+
+  .cl-contact:hover,
+  .cl-contact:hover .cl-contact-name {
+    background-color: var(--darkblue);
+    color: var(--white);
+  }
+
+  .initials {
+    border-radius: var(--border-radius-xl);
+    font-size: 12px;
+    height: 42px;
+    width: 42px;
+    color: var(--white);
+    border: 2px solid var(--white);
+  }
+
+  .cl-contact-email {
+    font-size: 16px;
+  }
+
+  /* Contact */
+
+  .btn-new-contact {
+    position: absolute;
+    right: 52px;
+    bottom: 64px;
+  }
+
+  /* Scrollbar */
+  /* width */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: var(--border-radius-m);
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}

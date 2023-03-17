@@ -43,7 +43,7 @@ function renderLetterGroup(contactlist) {
   letterlist.sort();
   for (let i = 0; i < letterlist.length; i++) {
     contactlist.innerHTML += `<div id=letter-${letterlist[i]} class="cl-letters">${letterlist[i]}</div>
-    <div id=group-${letterlist[i]}></div>
+    <div id=group-${letterlist[i]} class="cl-group"></div>
     `;
   }
 }
