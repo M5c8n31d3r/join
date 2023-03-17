@@ -38,16 +38,16 @@
         <div class="space-between center gap">
           <div class="desktop searchbar center">
             <input
-              id="search-input"
+              id="search-input-desktop"
               type="search"
               name="q"
               placeholder="Find Task"
-              onkeyup="findTask()"
+              onkeyup="findTask('search-input-desktop')"
             /><img
               class="pointer"
               src="../assets/img/icons/icon-magnifier.svg"
               alt=""
-              onclick="findTask()"
+              onclick="findTask('search-input-desktop')"
             />
           </div>
           <button
@@ -69,11 +69,11 @@
           type="search"
           name="q"
           placeholder="Find Task"
-          onkeyup="findTask()"
+          onkeyup="findTask('search-input-mobile')"
         /><img
           src="../assets/img/icons/icon-magnifier.svg"
           alt=""
-          onclick="findTask()"
+          onclick="findTask('search-input-mobile')"
           class="pointers"
         />
       </div>
