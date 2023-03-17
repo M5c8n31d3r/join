@@ -153,7 +153,7 @@ function showTask(id) {
   <button class="tcb-btn-delete-task flex center" onclick="deleteTask(${
     task.id
   })"><img class="icon-white" src="../assets/img/icons/icon-delete.svg"></button>
-  <button class="tcb-btn-edit-task flex center" onclick="editTask(${task})"><img class="icon-white" src="../assets/img/icons/icon-to-do.svg"></button>
+  <button class="tcb-btn-edit-task flex center" onclick="editTask(${id})"><img class="icon-white" src="../assets/img/icons/icon-to-do.svg"></button>
 `;
 }
 
@@ -219,7 +219,7 @@ function closeTask() {
   let taskcard = document.getElementById("taskcard-big-container");
   taskcard.classList.add("display-none");
   $("body").removeClass("no-scroll");
-  loadTask();
+  loadTask(tasks);
 }
 
 /**
@@ -302,7 +302,7 @@ function drag(id) {
 function changeState(state) {
   tasks[currentDragElementID].state = state;
   toggleDropZone();
-  loadTask();
+  loadTask(tasks);
   backend.setItem("tasks", tasks);
 }
 
