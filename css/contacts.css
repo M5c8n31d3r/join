@@ -14,6 +14,9 @@
     margin: auto;
   }
 
+  .contacts-text {
+  }
+
   .contacts-col-l {
     width: 453px;
     padding: 12px 48px 0px 48px;
@@ -27,8 +30,61 @@
 
   /* Right col */
 
+  .contacts-headline {
+    padding-bottom: 50px;
+  }
+
+  .contact-details-main {
+    padding-bottom: 40px;
+  }
+
+  .contact-details-name {
+    font-size: 47px;
+    font-weight: 500;
+  }
+
+  .contact-details-edit img {
+    filter: brightness(0);
+    height: 26px;
+  }
+
+  .contact-details-add-task,
+  .contact-details-add-task img {
+    font-size: 16px;
+    color: var(--lightblue);
+    filter: invert(58%) sepia(78%) saturate(1783%) hue-rotate(165deg)
+      brightness(95%) contrast(85%);
+    height: 15px;
+  }
+
   .back-arrow {
     display: none;
+  }
+
+  .blue-line {
+    background-color: var(--lightblue);
+    min-width: 3px;
+    min-height: 59px;
+  }
+
+  .initials-contact-big {
+    border-radius: 100%;
+    min-height: 120px;
+    min-width: 120px;
+    color: var(--white);
+    font-size: 47px;
+    border: 3px solid var(--white);
+  }
+
+  .btn-delete-contact {
+    padding: 6px;
+    height: 53px;
+    width: 53px;
+    border-radius: var(--border-radius-m);
+    background-color: var(--darkblue);
+    position: absolute;
+    right: 250px;
+    bottom: 64px;
   }
 
   /* Contact-List */
@@ -73,6 +129,7 @@
 
   .btn-new-contact {
     position: absolute;
+    height: 53px;
     right: 52px;
     bottom: 64px;
   }

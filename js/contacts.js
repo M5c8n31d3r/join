@@ -106,7 +106,6 @@ function showDetails(id) {
   let btn = document.getElementById("btn");
 
   details.classList.remove("display-none");
-  btn.classList.add("display-none");
 
   // document.getElementById(id).classList.add(""); // TODO CLASS WITH DARK BACKGROUND
 
@@ -122,32 +121,36 @@ function showDetails(id) {
  */
 function renderDetails(id, classCounter) {
   let details = document.getElementById("details");
-  details.innerHTML = /*html */ `
-    <img class="back-arrow" src="../assets/img/icons/icon-arrow-back-black.svg" onclick="returnContacts()">
-  <div>Better with a team</div>
-  <hr id="hr">
-  <div class="cl-contact-left initials initials-bg${classCounter} center">${
+  details.innerHTML = /* html */ `
+  <img class="back-arrow" src="../assets/img/icons/icon-arrow-back-black.svg" onclick="returnContacts()">
+  <div class="contact-details-main flex center-row">
+    <div class="cl-contact-left initials-contact-big initials-bg${classCounter} center">${
     users[id].initials
   }</div>
-  <div class="cl-contact-right center-column gap-s">
-    <div class="cl-contact-name">${users[id].name}</div>
-    <a onclick="addTask()">
-      <img src="../assets/img/icons/icon-plus.svg" alt="">
-      Add Task
-    </a>
+    <div class="cl-contact-right center-column gap-s">
+      <div class="contact-details-name">${users[id].name}</div>
+      <a onclick="addTask()" class="contact-details-add-task flex gap-m center-row">
+        <img src="../assets/img/icons/icon-plus.svg">
+        Add Task
+      </a>
+    </div>
   </div>
-  <div>Contact Information</div>
-  <h3>Email</h3>
-  <a href="mailto:${users[id].email}" class="cl-contact-email font-lightblue">${
+  <div class="flex center-row gap-xl">
+    <p class="font-21">Contact Information</p>
+    <div class="contact-details-edit flex center-row gap-s font-16 pointer" onclick="addEditUser(${id}, ${true})">
+      <img src="../assets/img/icons/icon-to-do.svg">
+      Edit Contact
+    </div>
+  </div>
+  <p class="font-16 bold">Email</p>
+  <a href="mailto:${
     users[id].email
-  }</a>
-  <h3>Mobil</h3>
-  <div>${users[id].phone}</div>
+  }" class="font-16 contacts-text font-lightblue">${users[id].email}</a>
+  <p class="font-16 bold">Phone</p>
+  <p class="contacts-text">${users[id].phone}</p>
 
-  <div class="pointer" onclick="addEditUser(${id}, ${true})">
-    EDIT
-  </div>
-  <button onclick="deleteUser(${id})">Delete</button>
+
+  <button class="btn-delete-contact flex center" onclick="deleteUser(${id})"><img class="icon-white" src="../assets/img/icons/icon-delete.svg"></button>
   `;
 }
 
