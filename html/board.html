@@ -64,10 +64,13 @@
         </div>
       </div>
       <div class="searchbar center mobile">
-        <input type="search" name="q" placeholder="Find Task" /><img
-          src="../assets/img/icons/icon-magnifier.svg"
-          alt=""
-        />
+        <input
+          id="search-input-mobile"
+          type="search"
+          name="q"
+          placeholder="Find Task"
+          onkeyup="findTask()"
+        /><img src="../assets/img/icons/icon-magnifier.svg" alt="" />
       </div>
       <section class="progress-cols">
         <div class="task-col">

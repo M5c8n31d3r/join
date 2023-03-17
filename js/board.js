@@ -395,13 +395,20 @@ function editTask(id) {
 
 function findTask() {
   let search = document.getElementById("search-input").value;
+  let searchMobile = document.getElementById("search-input-mobile").value;
   const items = new Array();
 
   for (let i = 0; i < tasks.length; i++) {
-    if (tasks[i].title.toLowerCase().includes(search.toLowerCase())) {
+    if (
+      tasks[i].title.toLowerCase().includes(search.toLowerCase()) ||
+      tasks[i].title.toLowerCase().includes(searchMobile.toLowerCase())
+    ) {
       items.push(tasks[i]);
     }
-    if (tasks[i].description.toLowerCase().includes(search.toLowerCase())) {
+    if (
+      tasks[i].description.toLowerCase().includes(search.toLowerCase()) ||
+      tasks[i].description.toLowerCase().includes(searchMobile.toLowerCase())
+    ) {
       items.push(tasks[i]);
     }
   }
