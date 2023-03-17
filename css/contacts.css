@@ -3,7 +3,7 @@
     calc(var(--nav-height-m) + 16px) 33px;
 }
 
-.contacts-row-l {
+.contacts-col-l {
   background-color: var(--white);
 }
 
@@ -14,15 +14,21 @@
     margin: auto;
   }
 
-  .contacts-row-l {
+  .contacts-col-l {
     width: 453px;
     padding: 12px 48px 0px 48px;
     overflow-y: scroll;
     height: calc(100vh - 89px);
   }
 
-  .contacts-row-r {
+  .contacts-col-r {
     padding: 82px 0 0 58px;
+  }
+
+  /* Right col */
+
+  .back-arrow {
+    display: none;
   }
 
   /* Contact-List */

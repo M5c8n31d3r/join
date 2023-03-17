@@ -105,13 +105,12 @@ function showDetails(id) {
   let contactlist = document.getElementById("contactlist");
   let btn = document.getElementById("btn");
 
-  contactlist.classList.add("display-none");
   details.classList.remove("display-none");
   btn.classList.add("display-none");
 
   // document.getElementById(id).classList.add(""); // TODO CLASS WITH DARK BACKGROUND
 
-  renderDetails(id);
+  renderDetails(id, id % 4);
 }
 
 /**
@@ -121,14 +120,15 @@ function showDetails(id) {
  *
  * TODO addTask noch programmieren
  */
-function renderDetails(id) {
+function renderDetails(id, classCounter) {
   let details = document.getElementById("details");
   details.innerHTML = /*html */ `
-  <h1>Contacts</h1>
-  <img src="../assets/img/icons/icon-arrow-back-black.svg" onclick="returnContacts()">
+    <img class="back-arrow" src="../assets/img/icons/icon-arrow-back-black.svg" onclick="returnContacts()">
   <div>Better with a team</div>
   <hr id="hr">
-  <div class="cl-contact-left initials center">${users[id].initials}</div>
+  <div class="cl-contact-left initials initials-bg${classCounter} center">${
+    users[id].initials
+  }</div>
   <div class="cl-contact-right center-column gap-s">
     <div class="cl-contact-name">${users[id].name}</div>
     <a onclick="addTask()">
