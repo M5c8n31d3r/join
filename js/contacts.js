@@ -148,8 +148,6 @@ function renderDetails(id, classCounter) {
   }" class="font-16 contacts-text font-lightblue">${users[id].email}</a>
   <p class="font-16 bold">Phone</p>
   <p class="contacts-text">${users[id].phone}</p>
-
-
   <button class="btn-delete-contact flex center" onclick="deleteUser(${id})"><img class="icon-white" src="../assets/img/icons/icon-delete.svg"></button>
   `;
 }
