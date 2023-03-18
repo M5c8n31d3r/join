@@ -72,7 +72,7 @@ function renderContact() {
  */
 function renderSingleContact(user, classCounter) {
   return `
-    <div id="${user.id}" class="cl-contact center-row pointer" onclick="showDetails(${user.id})">
+    <div id="${user.id}" class="cl-contact flex center-row pointer" onclick="showDetails(${user.id})">
       <div class="cl-contact-left initials initials-bg${classCounter} center">${user.initials}</div>
       <div class="cl-contact-right center-column gap-s">
         <div class="cl-contact-name">${user["name"]}</div>

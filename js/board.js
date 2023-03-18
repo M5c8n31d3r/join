@@ -62,7 +62,7 @@ function loadTask(ItemList) {
  * @returns HTML-Box for Drop-Area
  */
 function renderDropArea(id) {
-  return /* html */ `<div id="${id}" class="box display-none"></div>`;
+  return /* html */ `<div id="${id}" class="drop-box display-none"></div>`;
 }
 
 /**
@@ -94,7 +94,7 @@ function renderCard(task) {
             task.subtask
           )}/${task.subtask.length} Done</span></div>
         <div class="taskcard-user-prio"> 
-        <div class="center-row space-between">
+        <div class="flex center-row space-between">
             <div class="flex gap-s">${renderUserInitials(task)}</div>
             <img src="../assets/img/icons/icon-prio-${prioIconEnding(
               task
@@ -130,7 +130,7 @@ function showTask(id) {
     )}</span>
   </div>
   <div class="tcb-line flex">
-    <span class="tcp-subline center-row">Priority:</span>
+    <span class="tcp-subline flex center-row">Priority:</span>
     <div class="tcb-prio flex center-row gap-m" style="background-color: ${
       prios.find((item) => item.id === task.priority).color
     }">

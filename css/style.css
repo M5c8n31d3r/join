@@ -420,7 +420,6 @@ input:focus {
   justify-content: center;
 }
 .center-row {
-  display: flex;
   align-items: center;
 }
 .center-column {
@@ -428,15 +427,22 @@ input:focus {
   flex-direction: column;
   justify-content: space-between;
 }
+
+.space-between {
+  justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
 .flex-start {
   justify-content: flex-start;
 }
-
 .flex-end {
   display: flex;
   justify-content: flex-end;
 }
-
 .relative {
   position: relative;
 }
@@ -447,7 +453,6 @@ input:focus {
 .left {
   left: 20px;
 }
-
 .top {
   top: 20px;
 }
@@ -468,15 +473,7 @@ input:focus {
   height: 100vh;
   width: 100vw;
 }
-.bg-white {
-  background-color: var(--white);
-}
-.bg-dark {
-  background-color: var(--darkblue);
-}
-.bg-grey {
-  background-color: var(--grey-bg);
-}
+
 .container {
   margin: 0;
   display: flex;
@@ -536,10 +533,6 @@ input:focus {
   font-size: 21px;
 }
 
-.font-bold {
-  font-weight: bold;
-}
-
 .login-content-sign-up {
   width: 100vw;
   position: absolute;
@@ -560,18 +553,6 @@ input:focus {
 .link {
   color: var(--lightblue);
   cursor: pointer;
-}
-
-.btn-icon {
-  padding: 0 10px;
-  font-size: 16px;
-}
-.space-between {
-  justify-content: space-between;
-}
-
-.space-around {
-  justify-content: space-around;
 }
 
 .btn-login {
@@ -599,31 +580,15 @@ input:focus {
 .icon-white {
   height: 20px;
   width: 20px;
-  filter: brightness(100) saturate(0);
+  filter: brightness(100) saturate(0) invert(1);
 }
 
 .desktop {
   display: none;
 }
 
-.desktop-2 {
-  display: flex;
-}
-
-.min-height {
-  min-height: 250px;
-}
-
 .welcome-mobile-fade {
   opacity: 0;
-}
-
-.box {
-  width: 100%;
-  height: 100px;
-  padding-top: 15px;
-  border-radius: var(--border-radius-m);
-  border: 4px dashed var(--darkblue);
 }
 
 .progress-cols {
@@ -844,42 +809,6 @@ input[type="radio"] {
 
 .bg-sales {
   background-color: var(--light-blue);
-}
-
-.task-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 18px 20px;
-  background-color: var(--white);
-  border-radius: var(--border-radius-xl);
-  box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
-}
-
-.searchbar {
-  max-width: 260px;
-  height: 41px;
-  padding: 3px;
-  gap: 10px;
-  border: 1px solid #a8a8a8;
-  border-radius: var(--border-radius-m);
-  background-color: var(--white);
-  justify-content: space-between;
-}
-
-.searchbar input {
-  font-size: 16px;
-  width: 80%;
-  margin: auto;
-  border: 0 solid;
-  padding: 0 11px;
-  border-right: 1px solid #a8a8a8;
-  background-color: transparent;
-}
-
-.searchbar img {
-  width: 50px;
-  height: 25px;
 }
 
 .initials {
