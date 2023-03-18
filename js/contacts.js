@@ -138,10 +138,7 @@ function renderDetails(id, classCounter) {
   }</div>
     <div class="cl-contact-right center-column gap-s">
       <div class="contact-details-name">${users[id].name}</div>
-      <a onclick="addTask()" class="contact-details-add-task flex gap-m center-row">
-        <img src="../assets/img/icons/icon-plus.svg">
-        Add Task
-      </a>
+      ${renderAddTaskButton(id)}      
     </div>
   </div>
   <div class="flex center-row gap-xl">
@@ -160,6 +157,31 @@ function renderDetails(id, classCounter) {
   <button class="btn-delete-contact flex center" onclick="deleteUser(${id})"><img class="icon-white" src="../assets/img/icons/icon-delete.svg"></button>
   <button class="btn-edit-contact mobile flex center" onclick="addEditUser(${id}, ${true})"><img class="icon-white" src="../assets/img/icons/icon-to-do.svg"></button>
   `;
+}
+
+function renderAddTaskButton(id) {
+  if (users[id].isUser) {
+    return /*html */ `
+  <a id="${id}" onclick="addUserToTask(${id})" class="contact-details-add-task flex gap-m center-row">
+        <img src="../assets/img/icons/icon-plus.svg">
+        Add Task
+      </a>
+  `;
+  } else {
+    return "";
+  }
+}
+
+function addUserToTask(id) {
+  selectedUsers.push(id);
+  renderSelectedUsers();
+  document
+    .getElementById("save-task-button-mobile")
+    .setAttribute("onClick", `saveTask("ToDo")`);
+  document
+    .getElementById("save-task-button-desktop")
+    .setAttribute("onClick", `saveTask("ToDo")`);
+  addTask();
 }
 
 /**
