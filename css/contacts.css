@@ -273,7 +273,8 @@
   }
 
   .cl-contact:hover,
-  .cl-contact:hover .cl-contact-name {
+  .cl-contact:hover .cl-contact-name,
+  .cl-contact-active {
     background-color: var(--darkblue);
     color: var(--white);
   }

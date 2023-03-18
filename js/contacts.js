@@ -96,22 +96,29 @@ function getFirstLetter(user) {
 }
 
 /**
- *
  * @param {INT} id ID of the user
  * Hide the contactlist and show the details
  */
 function showDetails(id) {
   let details = document.getElementById("details");
-  let contactlist = document.getElementById("contactlist");
-  let btn = document.getElementById("btn");
   let columnRight = document.getElementById("contacts-col-r");
 
   details.classList.remove("display-none");
   columnRight.style = "display: unset";
 
-  // document.getElementById(id).classList.add(""); // TODO CLASS WITH DARK BACKGROUND
-
+  setActiveUser(id);
   renderDetails(id, id % 4);
+}
+
+/**
+ * Change class of active user
+ * @param {INT} id ID of active user
+ */
+function setActiveUser(id) {
+  for (let i = 1; i < users.length; i++) {
+    document.getElementById(i).classList.remove("cl-contact-active");
+  }
+  document.getElementById(id).classList.add("cl-contact-active");
 }
 
 /**
