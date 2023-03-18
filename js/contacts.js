@@ -173,7 +173,6 @@ function addEditUser(id, edit) {
   let details = document.getElementById("details");
   let contactlist = document.getElementById("contactlist");
   let btn = document.getElementById("btn");
-  let editUser = document.getElementById("add-edit-contact");
   let headline = "";
   let underheadline = "";
   let icon = "";
@@ -182,7 +181,7 @@ function addEditUser(id, edit) {
   // contactlist.classList.add("display-none");
   // details.classList.add("display-none");
   // btn.classList.add("display-none");
-  editUser.classList.remove("display-none");
+  toggleVisibility("add-edit-contact");
 
   if (edit) {
     headline = "Edit contact";
@@ -221,6 +220,9 @@ function renderAddEditUser(
   contact.innerHTML = /*html */ `
   <div class="nc-background animationFadeInBottom">
     <div class="nc-card">
+      <div class="nc-card-close" onclick="toggleVisibility('add-edit-contact')">
+      <img src="../assets/img/icons/icon-x.svg" />
+      </div>
       <div class="nc-card-top">
         <div class="head">
         <h1>${headline}</h1>
@@ -259,6 +261,15 @@ function renderAddEditUser(
     </div>
   </div>
   `;
+}
+
+function toggleVisibility(id) {
+  let card = document.getElementById(id);
+  if (card.classList.contains("display-none")) {
+    card.classList.remove("display-none");
+  } else {
+    card.classList.add("display-none");
+  }
 }
 
 /**

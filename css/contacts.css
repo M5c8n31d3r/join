@@ -127,12 +127,23 @@
 }
 
 .nc-card {
+  position: relative;
   background-color: var(--white);
   width: 88vw;
   height: calc(100vh - (2 * var(--nav-height-m)) - 5vh);
   border-radius: var(--border-radius-xl);
   margin: auto;
 }
+
+.nc-card-close {
+  position: absolute;
+  top: 33px;
+  right: 23px;
+  height: 22px;
+  width: 22px;
+  filter: brightness(10) saturate(0);
+}
+
 .nc-card-top {
   background-color: var(--darkblue-active);
   border-top-right-radius: var(--border-radius-xl);
@@ -161,7 +172,7 @@
 
 .nc-btn {
   position: absolute;
-  bottom: calc(var(--nav-height-m) + 50px);
+  bottom: 48px;
   height: 51px;
   font-size: 21px;
   padding: 0 10px;
