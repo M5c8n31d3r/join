@@ -6,7 +6,7 @@
 }
 
 .headline {
-  font-size: 48px;
+  font-size: 47px;
 }
 
 .question-cnt {
@@ -37,14 +37,15 @@
 
 /***** Responsive Design *****/
 
-@media (max-width: 1440px) {
+@media (max-width: 1200px) {
   .headline {
-    font-size: 48px;
+    font-size: 47px;
   }
 }
 
-@media (max-width: 600px) {
-  .help-container {
+@media (max-width: 780px) {
+  .help-container,
+  .legal-container {
     height: 80vh;
   }
 }
