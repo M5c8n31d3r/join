@@ -8,8 +8,8 @@ const counter = [
 
 async function initSummary() {
   await includeHTML();
-  await handleWelcomeOnMobile();
   await loadDataFromServer();
+  handleWelcomeOnMobile();
   setActive("nav-summary");
   loadAllCounters();
   setWelcomeMsg();
@@ -23,19 +23,19 @@ async function initSummary() {
  */
 function handleWelcomeOnMobile() {
   let isLogin = new URLSearchParams(window.location.search);
-  if (!isLogin.get("login")) return;
+  if (!isLogin.get("userLogIn")) return;
 
   const windowWidth = window.innerWidth;
   const delay = WELCOME_MSG_TRANS + WELCOME_MSG_DELAY + 10;
 
   if (windowWidth <= MOBILE_MAX_WIDTH) {
     const welcome = document.getElementById("welcome-mobile");
-    welcome.classList.remove("d-none");
+    welcome.classList.remove("display-none");
     setTimeout(() => {
       welcome.classList.add("welcome-mobile-fade");
     }, 1);
     setTimeout(() => {
-      welcome.classList.add("d-none");
+      welcome.classList.add("display-none");
     }, delay);
   }
 }
