@@ -204,6 +204,37 @@
   width: 30px;
 }
 
+/* Add task */
+
+.addtask-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.addtask-overlay {
+  position: absolute;
+  top: calc(var(--nav-height-m));
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.addtask-body {
+  background-color: var(--grey-bg);
+  padding: 0 32px;
+}
+
+.save-task-button-mobile {
+  z-index: 5;
+}
+
+.add-task-left .form-inputs {
+  margin: 9px 0;
+}
+
 @media (min-width: 800px) {
   .content-contacts {
     height: 100vh;
@@ -350,12 +381,13 @@
     display: flex;
     align-items: center;
     position: absolute;
-    top: 89px;
+    top: 0;
     right: 0;
     bottom: 0;
-    left: var(--nav-width-d);
+    left: 0;
     background-color: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(5px);
+    z-index: 2;
   }
 
   .nc-card {
