@@ -4,10 +4,6 @@
   .welcome-desk {
     display: none;
   }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
   #content-summary {
     margin-left: auto;
     margin-right: auto;
@@ -45,7 +41,6 @@
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-<<<<<<< Updated upstream
 @media screen and (max-width: 940px) {
   .welcome-desk {
     display: none;
@@ -60,14 +55,6 @@
     height: 100vh;
     width: 100%;
   }
-=======
-@media (min-width: 800px) {
-}
-
-/*////////////////////////////////////////////////////////////////////////////////////////////////*/
-
-@media (max-width: 570px) {
->>>>>>> Stashed changes
   .headline-tooltype {
     display: block;
   }

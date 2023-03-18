@@ -21,11 +21,7 @@
   align-items: center;
   flex-direction: column;
   z-index: 1;
-<<<<<<< Updated upstream
   background-color: var(--bg-body);
-=======
-  background-color: var(--grey-bg);
->>>>>>> Stashed changes
   opacity: 0;
   transition: opacity var(--welcome-mobile-transition) ease-in
     var(--welcome-mobile-delay);
@@ -39,58 +35,6 @@ d-none {
 }
 
 .welcome-desk {
-<<<<<<< Updated upstream
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  height: 90px;
-}
-
-#welcome-text-desk {
-  font-size: var(--welcome-text-size);
-  font-weight: 500;
-  line-height: 120%;
-  height: 56px;
-}
-
-#welcome-name-desk {
-  font-size: var(--welcome-name-size);
-  font-weight: 700;
-  color: var(--lightblue);
-  width: 385px;
-  height: 124px;
-  font-size: 64px;
-  line-height: 120%;
-=======
-  display: flex;
-  flex-direction: column;
-}
-
-#welcome-text-desk {
-  font-size: var(--welcome-text-size);
-  font-weight: 500;
-  line-height: 120%;
-  height: 56px;
-}
-
-#welcome-name-desk {
-  font-family: "Inter";
-  font-style: normal;
-  font-size: var(--welcome-name-size);
-  font-weight: 700;
-  color: var(--lightblue);
-  width: 385px;
-  height: 124px;
-  font-size: 64px;
-  line-height: 120%;
-}
-
-/***** Summary Header & Container *****/ /*////////////////////////////////////////////////////////////////////////////////////////////////*/
-
-.summary-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 #headline-separator {
@@ -112,51 +56,27 @@ d-none {
 #content-summary {
   margin-top: 8.5vh;
   margin-left: 120px;
-}
-
-#ui {
-  display: flex;
-  align-items: center;
-}
-
-#data {
   display: flex;
   flex-direction: column;
-  gap: 35px;
-  margin-top: 8.5vh;
-  margin-right: 65px;
+  gap: 3px;
+  height: 90px;
 }
 
-.summary-header {
-  display: flex;
-  align-items: center;
+#welcome-text-desk {
+  font-size: var(--welcome-text-size);
+  font-weight: 500;
+  line-height: 120%;
+  height: 56px;
 }
 
-.summary-header > h1 {
-  border-right: 1px solid var(--black-bg);
-  padding-right: 32px;
-  font-size: 48px;
-}
-
-.summary-header > p {
-  padding-left: 32px;
-}
-.headline-tooltype {
-  display: none;
-  font-size: 19px;
-  margin-bottom: 20px;
-}
-
-.summary-row123 {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  position: absolute;
-  width: 580px;
-  height: 540px;
-  left: 355px;
-  top: 331px;
->>>>>>> Stashed changes
+#welcome-name-desk {
+  font-size: var(--welcome-name-size);
+  font-weight: 700;
+  color: var(--lightblue);
+  width: 385px;
+  height: 124px;
+  font-size: 64px;
+  line-height: 120%;
 }
 
 /***** Summary Header & Container *****/ /*////////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -271,12 +191,7 @@ d-none {
 #summary-row-2 {
   display: flex;
   align-items: center;
-<<<<<<< Updated upstream
   justify-content: center;
-=======
-  height: 120px;
-  margin-top: 50px;
->>>>>>> Stashed changes
 }
 
 .urgent-box {
@@ -370,13 +285,7 @@ d-none {
 
 #summary-row-3 {
   display: flex;
-<<<<<<< Updated upstream
   justify-content: space-between;
-=======
-  align-items: center;
-  margin-top: 3rem;
-  gap: 35px;
->>>>>>> Stashed changes
 }
 
 .todo-container,
