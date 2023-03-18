@@ -16,6 +16,10 @@
   right: 0;
 }
 
+.btn-container {
+  padding: 15px 10px 0 0;
+}
+
 .contacts-col-r {
   position: fixed;
   left: 0;
@@ -133,6 +137,7 @@
   height: calc(100vh - (2 * var(--nav-height-m)) - 5vh);
   border-radius: var(--border-radius-xl);
   margin: auto;
+  top: var(--nav-height-m);
 }
 
 .nc-card-close {

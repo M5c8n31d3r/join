@@ -28,6 +28,20 @@
     <section class="content-contacts">
       <section class="contacts-rows flex">
         <div class="contacts-col-l">
+          <div class="btn-container flex-end mobile">
+            <button
+              class="btn-new-contact btn-icon center gap"
+              id="btn"
+              onclick="addEditUser(0, false)"
+            >
+              New Contact
+              <img
+                src="../assets/img/icons/icon-new-contact.svg"
+                alt=""
+                srcset=""
+              />
+            </button>
+          </div>
           <!-- Contact List -->
           <section class="" id="contactlist"></section>
         </div>
@@ -58,13 +72,13 @@
           <section class="display-none" id="details">
             <div>details</div>
           </section>
-          <!-- Add/Edit Contact -->
-          <section class="display-none" id="add-edit-contact">
-            <div>add / edit</div>
-          </section>
-          <div class="dialog content display-none" id="addtask-dialog">
-            <div w3-include-html="../assets/templates/addtask.html"></div>
-          </div>
+        </div>
+        <!-- Add/Edit Contact -->
+        <section class="display-none" id="add-edit-contact">
+          <div>add / edit</div>
+        </section>
+        <div class="dialog content display-none" id="addtask-dialog">
+          <div w3-include-html="../assets/templates/addtask.html"></div>
         </div>
       </section>
     </section>
