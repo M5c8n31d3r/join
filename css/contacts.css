@@ -36,7 +36,10 @@
   height: 3px;
   width: 90px;
   background-color: var(--lightblue);
-  margin-bottom: 20px;
+}
+
+.head {
+  padding-bottom: 123px;
 }
 
 .back-arrow {
@@ -154,11 +157,11 @@
   border-top-right-radius: var(--border-radius-xl);
   border-top-left-radius: var(--border-radius-xl);
   padding: 0 46px;
+  padding-bottom: 123px;
 }
 
 .nc-card-initials {
   position: relative;
-  top: 40px;
 }
 
 .nc-card-top h1 {
@@ -169,10 +172,12 @@
   line-height: 1;
   text-align: center;
 }
+
 .nc-card-bottom {
   border-bottom-right-radius: var(--border-radius-xl);
   border-bottom-left-radius: var(--border-radius-xl);
-  padding: 49px 46px;
+  padding: 0px 27px 49px 27px;
+  margin-top: -90px;
 }
 
 .nc-btn {
@@ -326,6 +331,8 @@
   /* new / add contact */
 
   .nc-background {
+    display: flex;
+    align-items: center;
     position: absolute;
     top: 89px;
     right: 0;
@@ -336,15 +343,64 @@
   }
 
   .nc-card {
-    position: relative;
+    position: unset;
     display: flex;
     flex-direction: row;
     background-color: var(--white);
-    width: 80%;
+    width: 90%;
+    max-width: 1080px;
     height: 594px;
     border-radius: var(--border-radius-xl);
     margin: auto;
-    top: var(--nav-height-m);
+  }
+
+  .nc-card-top h1 {
+    padding-top: 0;
+    color: var(--white);
+    padding-bottom: 0;
+    margin-bottom: 0;
+    line-height: 120%;
+    text-align: unset;
+  }
+
+  .nc-card-top h2 {
+    color: white;
+    font-size: 27px;
+    font-weight: 200;
+  }
+
+  .nc-card-close {
+    filter: brightness(0) saturate(0);
+  }
+
+  .head {
+  }
+
+  .nc-card-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--darkblue-active);
+    border-bottom-left-radius: var(--border-radius-xl);
+    border-top-right-radius: unset;
+    border-top-left-radius: var(--border-radius-xl);
+    padding: 0 46px;
+  }
+
+  .nc-card-bottom {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    border-bottom-right-radius: var(--border-radius-xl);
+    border-bottom-left-radius: var(--border-radius-xl);
+    padding: 0px 27px 49px 27px;
+    margin-top: unset;
+  }
+
+  .contact-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
   }
 
   /* Scrollbar */

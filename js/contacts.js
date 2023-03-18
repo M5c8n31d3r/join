@@ -246,16 +246,14 @@ function renderAddEditUser(
       <img src="../assets/img/icons/icon-x.svg" />
       </div>
       <div class="nc-card-top">
-        <div class="head">
         <h1>${headline}</h1>
         <h2 class="desktop">${underheadline}</h2>
         <div class="mobile blue-line-h"></div>
-        <div class="flex center">
-          <div class="initials-contact-big nc-card-initials initials-bg${classCounter} center">${icon}</div>
-        </div>
-        </div>
       </div>
       <div class="nc-card-bottom">
+      <div class="flex center">
+          <div class="initials-contact-big nc-card-initials initials-bg${classCounter} center">${icon}</div>
+        </div>
         <div class="contact-detail">
           <div class="input-login input-bar">
             <input type="text" required id="edit-name" value="${
