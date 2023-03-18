@@ -740,35 +740,6 @@ input:focus {
   height: 100%;
 }
 
-.add-task-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.add-task-left {
-  width: 100%;
-}
-
-.add-task-right {
-  width: 100%;
-}
-
-.add-task-prio-row {
-  width: 100%;
-}
-
-.add-task-btns {
-  display: none;
-}
-
-.add-task-btn-create-m {
-  position: fixed;
-  top: 13px;
-  right: 24px;
-  display: flex;
-  z-index: 10;
-}
-
 .dropdown {
   background-color: var(--white);
   border: 1px solid #a8a8a8;
@@ -1047,30 +1018,6 @@ input[type="radio"] {
   .form {
     padding-top: 25px;
     width: 100%;
-  }
-
-  .add-task-form {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: auto;
-  }
-
-  .add-task-middle {
-    width: 2px;
-    background-color: var(--shadow);
-    margin: 0 40px;
-  }
-
-  .add-task-btns {
-    display: flex;
-    position: absolute;
-    right: 50px;
-    bottom: 50px;
-  }
-
-  .add-task-btn-create-m {
-    display: none;
   }
 
   .task-prio-card {

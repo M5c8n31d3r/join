@@ -1,0 +1,85 @@
+.add-task-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-task-left {
+  width: 100%;
+}
+
+.add-task-right {
+  width: 100%;
+}
+
+.add-task-prio-row {
+  width: 100%;
+}
+
+.add-task-btns {
+  display: none;
+}
+
+.add-task-btn-create-m {
+  position: fixed;
+  top: 13px;
+  right: 24px;
+  display: flex;
+  z-index: 10;
+}
+
+/* template */
+
+.addtask-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.addtask-overlay {
+  position: absolute;
+  top: calc(var(--nav-height-m));
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.addtask-body {
+  background-color: var(--grey-bg);
+  padding: 0 32px;
+}
+
+.save-task-button-mobile {
+  z-index: 5;
+}
+
+.add-task-left .form-inputs {
+  margin: 9px 0;
+}
+
+@media (min-width: 1040px) {
+  .add-task-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .add-task-middle {
+    width: 2px;
+    background-color: var(--shadow);
+    margin: 0 40px;
+  }
+
+  .add-task-btns {
+    display: flex;
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+  }
+
+  .add-task-btn-create-m {
+    display: none;
+  }
+}
