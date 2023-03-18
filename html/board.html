@@ -52,7 +52,7 @@
           </div>
           <button
             class="btn-board flex gap-m center font-21 font-bold pointer"
-            onclick="showAddTask()"
+            onclick='showAddTask("ToDo")'
           >
             <span class="btn-board-text">Add task</span
             ><img
@@ -81,9 +81,12 @@
         <div class="task-col">
           <div class="center-row space-between padding-bottom">
             <h2>To do</h2>
-            <a class="plus-btn-small center" href=""
-              ><img src="../assets/img/icons/icon-plus.svg" alt="New To do"
-            /></a>
+            <div
+              class="plus-btn-small center pointer"
+              onclick='showAddTask("ToDo")'
+            >
+              <img src="../assets/img/icons/icon-plus.svg" alt="New To do" />
+            </div>
           </div>
           <div
             id="col-todo"
@@ -95,9 +98,12 @@
         <div class="task-col">
           <div class="center-row space-between padding-bottom">
             <h2>In progress</h2>
-            <a class="plus-btn-small center" href=""
-              ><img src="../assets/img/icons/icon-plus.svg" alt="New To do"
-            /></a>
+            <div
+              class="plus-btn-small center pointer"
+              onclick='showAddTask("progress")'
+            >
+              <img src="../assets/img/icons/icon-plus.svg" alt="New To do" />
+            </div>
           </div>
           <div
             id="col-progress"
@@ -109,9 +115,12 @@
         <div class="task-col">
           <div class="center-row space-between padding-bottom">
             <h2>Awaiting Feedback</h2>
-            <a class="plus-btn-small center" href=""
-              ><img src="../assets/img/icons/icon-plus.svg" alt="New To do"
-            /></a>
+            <div
+              class="plus-btn-small center pointer"
+              onclick='showAddTask("awaiting")'
+            >
+              <img src="../assets/img/icons/icon-plus.svg" alt="New To do" />
+            </div>
           </div>
           <div
             id="col-awaiting"
@@ -123,9 +132,12 @@
         <div class="task-col">
           <div class="center-row space-between padding-bottom">
             <h2>Done</h2>
-            <a class="plus-btn-small center" href=""
-              ><img src="../assets/img/icons/icon-plus.svg" alt="New To do"
-            /></a>
+            <div
+              class="plus-btn-small center pointer"
+              onclick='showAddTask("done")'
+            >
+              <img src="../assets/img/icons/icon-plus.svg" alt="New To do" />
+            </div>
           </div>
           <div
             id="col-done"

@@ -22,7 +22,7 @@ async function initAddTask() {
  * Save the input in a task-object and push the task to the tasks-array
  * saves the tasks-array in the backend
  */
-function saveTask() {
+function saveTask(state = "ToDo") {
   const title = document.getElementById("task-title").value;
   const description = document.getElementById("task-description").value;
   let task = {
@@ -33,7 +33,7 @@ function saveTask() {
     category: selectedCategory,
     assignedTo: selectedUsers,
     dueDate: Date.parse(document.getElementById("task-due-date").value),
-    state: "ToDo",
+    state: state,
     subtask: subtasks
   };
 

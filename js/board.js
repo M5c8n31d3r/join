@@ -371,7 +371,13 @@ function renderAssignedUserName(user) {
 /**
  * ToDO Beschreibung fehlt noch
  */
-function showAddTask() {
+function showAddTask(state) {
+  document
+    .getElementById("save-task-button-desktop")
+    .setAttribute("onClick", `saveTask(${'"' + state + '"'})`);
+  document
+    .getElementById("save-task-button-mobile")
+    .setAttribute("onClick", `saveTask(${'"' + state + '"'})`);
   document.getElementById("addtask-dialog").classList.remove("display-none");
 }
 
