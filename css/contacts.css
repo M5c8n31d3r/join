@@ -45,13 +45,22 @@
   padding: 20px 0 32px 0;
 }
 
-.initials-contact-big {
+.initials-contact-medium {
   border-radius: 100%;
   min-height: 80px;
   min-width: 80px;
   color: var(--white);
   font-size: 27px;
-  border: 3px solid var(--white);
+  border: 2px solid var(--white);
+}
+
+.initials-contact-big {
+  border-radius: 100%;
+  height: 120px;
+  width: 120px;
+  color: var(--white);
+  font-size: 27px;
+  border: 2px solid var(--white);
 }
 
 .contact-details-name {
@@ -119,8 +128,8 @@
 
 .nc-card {
   background-color: var(--white);
-  width: 80vw;
-  height: fit-content;
+  width: 88vw;
+  height: calc(100vh - (2 * var(--nav-height-m)) - 5vh);
   border-radius: var(--border-radius-xl);
   margin: auto;
 }
@@ -128,6 +137,34 @@
   background-color: var(--darkblue-active);
   border-top-right-radius: var(--border-radius-xl);
   border-top-left-radius: var(--border-radius-xl);
+  padding: 0 46px;
+}
+
+.nc-card-initials {
+  position: relative;
+  top: 40px;
+}
+
+.nc-card-top h1 {
+  padding-top: 115px;
+  color: var(--white);
+  padding-bottom: 12px;
+  margin-bottom: 0;
+  line-height: 1;
+  text-align: center;
+}
+.nc-card-bottom {
+  border-bottom-right-radius: var(--border-radius-xl);
+  border-bottom-left-radius: var(--border-radius-xl);
+  padding: 49px 46px;
+}
+
+.nc-btn {
+  position: absolute;
+  bottom: calc(var(--nav-height-m) + 50px);
+  height: 51px;
+  font-size: 21px;
+  padding: 0 10px;
 }
 
 @media (min-width: 800px) {
@@ -193,6 +230,15 @@
     background-color: var(--lightblue);
     min-width: 3px;
     min-height: 59px;
+  }
+
+  .initials-contact-medium {
+    border-radius: 100%;
+    min-height: 120px;
+    min-width: 120px;
+    color: var(--white);
+    font-size: 47px;
+    border: 3px solid var(--white);
   }
 
   .initials-contact-big {

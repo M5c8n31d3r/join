@@ -126,7 +126,7 @@ function renderDetails(id, classCounter) {
   details.innerHTML = /* html */ `
   <img class="back-arrow" src="../assets/img/icons/icon-arrow-back-black.svg" onclick="returnContacts()">
   <div class="contact-details-main flex center-row">
-    <div class="cl-contact-left initials-contact-big initials-bg${classCounter} center">${
+    <div class="cl-contact-left initials-contact-medium initials-bg${classCounter} center">${
     users[id].initials
   }</div>
     <div class="cl-contact-right center-column gap-s">
@@ -189,7 +189,7 @@ function addEditUser(id, edit) {
     id = users.length;
     checkout = "Create contact";
   }
-  renderAddEditUser(id, headline, underheadline, icon, checkout);
+  renderAddEditUser(id, headline, underheadline, icon, checkout, id % 4);
 }
 
 /**
@@ -202,17 +202,26 @@ function addEditUser(id, edit) {
  *
  * Render the Card for edditing and adding contacts
  */
-function renderAddEditUser(id, headline, underheadline, icon, checkout) {
+function renderAddEditUser(
+  id,
+  headline,
+  underheadline,
+  icon,
+  checkout,
+  classCounter
+) {
   let contact = document.getElementById("add-edit-contact");
   contact.innerHTML = /*html */ `
-  <div class="nc-background">
+  <div class="nc-background animationFadeInBottom">
     <div class="nc-card">
       <div class="nc-card-top">
         <div class="head">
         <h1>${headline}</h1>
-        <h2>${underheadline}</h2>
-        <hr id="hr">
-        <div class="cl-contact-left initials center">${icon}</div>
+        <h2 class="desktop">${underheadline}</h2>
+        <div class="mobile blue-line-h"></div>
+        <div class="flex center">
+          <div class="initials-contact-big nc-card-initials initials-bg${classCounter} center">${icon}</div>
+        </div>
         </div>
       </div>
       <div class="nc-card-bottom">
@@ -235,8 +244,9 @@ function renderAddEditUser(id, headline, underheadline, icon, checkout) {
             }" placeholder="Phonenumber">
             <img src="../assets/img/icons/icon-phone.svg" />
           </div>
-          
-          <button class="nc-btn" onclick="save(${id})">${checkout}</button>
+          <div class="flex center">
+            <button class="nc-btn" onclick="save(${id})">${checkout}</button>
+          </div>
         </div>
       </div>
     </div>
