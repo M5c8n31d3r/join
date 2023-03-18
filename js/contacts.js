@@ -218,8 +218,8 @@ function renderAddEditUser(
 ) {
   let contact = document.getElementById("add-edit-contact");
   contact.innerHTML = /*html */ `
-  <div class="nc-background animationFadeInBottom">
-    <div class="nc-card">
+  <div class="nc-background ">
+    <div class="nc-card animationFadeInBottom">
       <div class="nc-card-close" onclick="toggleVisibility('add-edit-contact')">
       <img src="../assets/img/icons/icon-x.svg" />
       </div>

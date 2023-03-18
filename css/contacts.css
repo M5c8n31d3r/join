@@ -323,6 +323,30 @@
     height: 30px;
   }
 
+  /* new / add contact */
+
+  .nc-background {
+    position: absolute;
+    top: 89px;
+    right: 0;
+    bottom: 0;
+    left: var(--nav-width-d);
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+  }
+
+  .nc-card {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--white);
+    width: 80%;
+    height: 594px;
+    border-radius: var(--border-radius-xl);
+    margin: auto;
+    top: var(--nav-height-m);
+  }
+
   /* Scrollbar */
   /* width */
   ::-webkit-scrollbar {
