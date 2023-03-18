@@ -164,6 +164,11 @@
   position: relative;
 }
 
+.nc-placeholder {
+  filter: brightness(10) saturate(0);
+  height: 54px;
+}
+
 .nc-card-top h1 {
   padding-top: 115px;
   color: var(--white);
@@ -171,6 +176,12 @@
   margin-bottom: 0;
   line-height: 1;
   text-align: center;
+}
+
+.nc-card-top h2 {
+  color: white;
+  font-size: 21px;
+  font-weight: 200;
 }
 
 .nc-card-bottom {
@@ -186,6 +197,11 @@
   height: 51px;
   font-size: 21px;
   padding: 0 10px;
+}
+
+.nc-btn img {
+  padding-left: 10px;
+  width: 30px;
 }
 
 @media (min-width: 800px) {
@@ -354,6 +370,11 @@
     margin: auto;
   }
 
+  .nc-logo {
+    width: 55px;
+    height: 66px;
+  }
+
   .nc-card-top h1 {
     padding-top: 0;
     color: var(--white);
@@ -361,6 +382,7 @@
     margin-bottom: 0;
     line-height: 120%;
     text-align: unset;
+    font-weight: 700;
   }
 
   .nc-card-top h2 {
@@ -371,9 +393,6 @@
 
   .nc-card-close {
     filter: brightness(0) saturate(0);
-  }
-
-  .head {
   }
 
   .nc-card-top {
@@ -395,6 +414,27 @@
     border-bottom-left-radius: var(--border-radius-xl);
     padding: 0px 27px 49px 27px;
     margin-top: unset;
+  }
+
+  .nc-btn-box {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+  }
+
+  .nc-btn {
+    position: unset;
+    bottom: unset;
+    height: 61px;
+    font-size: 21px;
+    padding: 0 17px;
+  }
+
+  .nc-btn-light {
+    height: 61px;
+    gap: 17px;
+    font-size: 21px;
+    padding: 0 17px;
   }
 
   .contact-detail {

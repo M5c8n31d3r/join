@@ -213,7 +213,8 @@ function addEditUser(id, edit) {
   } else {
     headline = "Add contact";
     underheadline = "Tasks are better with a team!";
-    icon = '<img src="../assets/img/icons/icon-name.svg">';
+    icon =
+      '<img class="nc-placeholder" src="../assets/img/icons/icon-name.svg">';
     id = users.length;
     checkout = "Create contact";
   }
@@ -246,9 +247,10 @@ function renderAddEditUser(
       <img src="../assets/img/icons/icon-x.svg" />
       </div>
       <div class="nc-card-top">
+        <img class="nc-logo desktop" src="../assets/img/logos/logo-white.png" />
         <h1>${headline}</h1>
-        <h2 class="desktop">${underheadline}</h2>
-        <div class="mobile blue-line-h"></div>
+        <h2>${underheadline}</h2>
+        <div class="blue-line-h"></div>
       </div>
       <div class="nc-card-bottom">
       <div class="flex center">
@@ -273,8 +275,9 @@ function renderAddEditUser(
             }" placeholder="Phonenumber">
             <img src="../assets/img/icons/icon-phone.svg" />
           </div>
-          <div class="flex center">
-            <button class="nc-btn" onclick="save(${id})">${checkout}</button>
+          <div class="nc-btn-box flex-row center gap">
+            <button class="nc-btn-light flex center btn-line desktop" onclick="toggleVisibility('add-edit-contact')">Cancel <img class="line-btn" src="../assets/img/icons/icon-x.svg"></button>
+            <button class="nc-btn" onclick="save(${id})">${checkout} <img src="../assets/img/icons/icon-check.svg"></button>
           </div>
         </div>
       </div>
