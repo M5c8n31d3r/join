@@ -175,7 +175,7 @@ h2 {
 
   #taskcard-big-container {
     position: absolute;
-    top: 0;
+    top: 89px;
     right: 0;
     bottom: 0;
     left: calc(var(--nav-width-d));
@@ -189,8 +189,7 @@ h2 {
     box-shadow: var(--box-shadow);
     width: 50vw;
     min-width: 623px;
-    height: 60vh;
-    min-height: 824px;
+    height: fit-content;
     position: absolute;
     margin: auto;
     padding: 50px;
