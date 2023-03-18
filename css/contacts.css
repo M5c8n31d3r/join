@@ -17,7 +17,7 @@
 }
 
 .contacts-col-r {
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   top: var(--nav-height-m);
@@ -103,6 +103,31 @@
 .cl-contact {
   padding: 8px 0;
   border-radius: var(--border-radius-m);
+}
+
+/* New Contact & Add Contact */
+
+.nc-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.nc-card {
+  background-color: var(--white);
+  width: 80vw;
+  height: fit-content;
+  border-radius: var(--border-radius-xl);
+  margin: auto;
+}
+.nc-card-top {
+  background-color: var(--darkblue-active);
+  border-top-right-radius: var(--border-radius-xl);
+  border-top-left-radius: var(--border-radius-xl);
 }
 
 @media (min-width: 800px) {

@@ -172,9 +172,9 @@ function addEditUser(id, edit) {
   let icon = "";
   let checkout = "";
 
-  contactlist.classList.add("display-none");
-  details.classList.add("display-none");
-  btn.classList.add("display-none");
+  // contactlist.classList.add("display-none");
+  // details.classList.add("display-none");
+  // btn.classList.add("display-none");
   editUser.classList.remove("display-none");
 
   if (edit) {
@@ -205,30 +205,41 @@ function addEditUser(id, edit) {
 function renderAddEditUser(id, headline, underheadline, icon, checkout) {
   let contact = document.getElementById("add-edit-contact");
   contact.innerHTML = /*html */ `
-  <div class="head">
-    <h1>${headline}</h1>
-    <h2>${underheadline}</h2>
-    <hr id="hr">
-    <div class="cl-contact-left initials center">${icon}</div>
-  </div>
-  <div class="contact-detail">
-    <div class="input-login input-bar">
-      <input type="text" required id="edit-name" value="${
-        id == users.length ? "" : users[id].name
-      }" placeholder="Name">
+  <div class="nc-background">
+    <div class="nc-card">
+      <div class="nc-card-top">
+        <div class="head">
+        <h1>${headline}</h1>
+        <h2>${underheadline}</h2>
+        <hr id="hr">
+        <div class="cl-contact-left initials center">${icon}</div>
+        </div>
+      </div>
+      <div class="nc-card-bottom">
+        <div class="contact-detail">
+          <div class="input-login input-bar">
+            <input type="text" required id="edit-name" value="${
+              id == users.length ? "" : users[id].name
+            }" placeholder="Name">
+            <img src="../assets/img/icons/icon-name.svg" />
+          </div>
+          <div class="input-login input-bar">
+            <input type="email" required id="edit-email" value="${
+              id == users.length ? "" : users[id].email
+            }" placeholder="Email">
+            <img src="../assets/img/icons/icon-email.svg" />
+          </div>
+          <div class="input-login input-bar">
+            <input type="phone" id="edit-phone" value="${
+              id == users.length ? "" : users[id].phone
+            }" placeholder="Phonenumber">
+            <img src="../assets/img/icons/icon-phone.svg" />
+          </div>
+          
+          <button class="nc-btn" onclick="save(${id})">${checkout}</button>
+        </div>
+      </div>
     </div>
-    <div class="input-login input-bar">
-      <input type="email" required id="edit-email" value="${
-        id == users.length ? "" : users[id].email
-      }" placeholder="Email">
-    </div>
-    <div class="input-login input-bar">
-      <input type="phone" id="edit-phone" value="${
-        id == users.length ? "" : users[id].phone
-      }" placeholder="Phonenumber">
-    </div>
-    
-    <button class="login-btn" onclick="save(${id})">${checkout}</button>
   </div>
   `;
 }
