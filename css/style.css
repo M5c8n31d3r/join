@@ -307,6 +307,7 @@ input:focus {
   color: var(--darkblue);
   font-weight: 600;
 }
+
 .btn-line:hover {
   background-color: var(--white) !important;
   color: var(--lightblue);
@@ -469,11 +470,6 @@ input:focus {
   filter: brightness(0) saturate(0);
 }
 
-.fullscreen {
-  height: 100vh;
-  width: 100vw;
-}
-
 .container {
   margin: 0;
   display: flex;
@@ -568,13 +564,6 @@ input:focus {
 .plus-btn-small:hover {
   filter: invert(63%) sepia(13%) saturate(5284%) hue-rotate(165deg)
     brightness(93%) contrast(89%);
-}
-
-.plus-btn-big {
-  background-color: var(--darkblue);
-  width: 40px;
-  height: 40px;
-  border-radius: var(--border-radius-m);
 }
 
 .icon-white {
@@ -1019,18 +1008,6 @@ input[type="radio"] {
     padding: calc(var(--nav-height-m) + 50px) 50px 0
       calc(var(--nav-width-d) + 50px);
     margin: auto;
-  }
-
-  .plus-btn-big {
-    gap: 15px;
-    height: 51px;
-    width: auto;
-    padding: 10px;
-  }
-
-  .plus-btn-big span {
-    color: var(--white);
-    font-weight: 600;
   }
 
   #head-help,
