@@ -1,176 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Join | Board</title>
-    <link
-      rel="shortcut icon"
-      href="../assets/img/logos/logo-dark.png"
-      type="image/x-icon"
-    />
-    <!-- CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/fonts.css" />
-    <link rel="stylesheet" href="../css/board.css" />
 
-    <!-- JavaScript -->
-    <script src="../js/mini_backend.js"></script>
-    <script src="../js/script.js"></script>
-    <script src="../js/board.js"></script>
-    <script src="../js/add-task.js"></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join | Board</title>
+  <link rel="shortcut icon" href="../assets/img/logos/logo-dark.png" type="image/x-icon" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/fonts.css" />
+  <link rel="stylesheet" href="../css/board.css" />
+  <link rel="stylesheet" href="../css/summary@media.css" />
 
-  <body onload="initBoard()">
-    <header w3-include-html="../assets/templates/header.html"></header>
-    <nav w3-include-html="../assets/templates/navbar.html"></nav>
-    <section class="content">
-      <p class="mobile">Kanban Project Management Tool</p>
-      <div class="flex center-row space-between">
-        <h1>Board</h1>
-        <div class="space-between center gap">
-          <div class="desktop searchbar center">
-            <input
-              id="search-input-desktop"
-              type="search"
-              name="q"
-              placeholder="Find Task"
-              onkeyup="findTask('search-input-desktop')"
-            /><img
-              class="pointer"
-              src="../assets/img/icons/icon-magnifier.svg"
-              alt=""
-              onclick="findTask('search-input-desktop')"
-            />
+  <!-- JavaScript -->
+  <script src="../js/mini_backend.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/board.js"></script>
+  <script src="../js/add-task.js"></script>
+</head>
+
+<body onload="initBoard()">
+  <header w3-include-html="../assets/templates/header.html"></header>
+  <nav w3-include-html="../assets/templates/navbar.html"></nav>
+  <section class="content">
+    <p class="mobile">Kanban Project Management Tool</p>
+    <div class="flex center-row space-between">
+      <h1>Board</h1>
+      <div class="space-between center gap">
+        <div class="desktop searchbar center">
+          <input id="search-input-desktop" type="search" name="q" placeholder="Find Task"
+            onkeyup="findTask('search-input-desktop')" /><img class="pointer"
+            src="../assets/img/icons/icon-magnifier.svg" alt="" onclick="findTask('search-input-desktop')" />
+        </div>
+        <button class="btn-board flex gap-m center font-21 bold pointer" onclick='showAddTask("ToDo")'>
+          <span class="btn-board-text">Add task</span><img class="icon-white icon-invert"
+            src="../assets/img/icons/icon-plus.svg" alt="New Task" />
+        </button>
+      </div>
+    </div>
+    <div class="searchbar center mobile">
+      <input id="search-input-mobile" type="search" name="q" placeholder="Find Task"
+        onkeyup="findTask('search-input-mobile')" /><img src="../assets/img/icons/icon-magnifier.svg" alt=""
+        onclick="findTask('search-input-mobile')" class="pointers" />
+    </div>
+    <section class="progress-cols">
+      <div class="task-col">
+        <div class="flex center-row space-between padding-bottom">
+          <h2>To do</h2>
+          <div class="plus-btn-small center pointer" onclick='showAddTask("ToDo")'>
+            <img src="../assets/img/icons/icon-plus.svg" alt="New To do" />
           </div>
-          <button
-            class="btn-board flex gap-m center font-21 bold pointer"
-            onclick='showAddTask("ToDo")'
-          >
-            <span class="btn-board-text">Add task</span
-            ><img
-              class="icon-white icon-invert"
-              src="../assets/img/icons/icon-plus.svg"
-              alt="New Task"
-            />
-          </button>
+        </div>
+        <div id="col-todo" class="flex-column gap-l" ondrop="changeState('ToDo')" ondragover="allowDrop(event)"></div>
+      </div>
+      <div class="task-col">
+        <div class="flex center-row space-between padding-bottom">
+          <h2>In progress</h2>
+          <div class="plus-btn-small center pointer" onclick='showAddTask("progress")'>
+            <img src="../assets/img/icons/icon-plus.svg" alt="New To do" />
+          </div>
+        </div>
+        <div id="col-progress" class="flex-column gap-l" ondrop="changeState('progress')" ondragover="allowDrop(event)">
         </div>
       </div>
-      <div class="searchbar center mobile">
-        <input
-          id="search-input-mobile"
-          type="search"
-          name="q"
-          placeholder="Find Task"
-          onkeyup="findTask('search-input-mobile')"
-        /><img
-          src="../assets/img/icons/icon-magnifier.svg"
-          alt=""
-          onclick="findTask('search-input-mobile')"
-          class="pointers"
-        />
+      <div class="task-col">
+        <div class="flex center-row space-between padding-bottom">
+          <h2>Awaiting Feedback</h2>
+          <div class="plus-btn-small center pointer" onclick='showAddTask("awaiting")'>
+            <img src="../assets/img/icons/icon-plus.svg" alt="New To do" />
+          </div>
+        </div>
+        <div id="col-awaiting" class="flex-column gap-l" ondrop="changeState('awaiting')" ondragover="allowDrop(event)">
+        </div>
       </div>
-      <section class="progress-cols">
-        <div class="task-col">
-          <div class="flex center-row space-between padding-bottom">
-            <h2>To do</h2>
-            <div
-              class="plus-btn-small center pointer"
-              onclick='showAddTask("ToDo")'
-            >
-              <img src="../assets/img/icons/icon-plus.svg" alt="New To do" />
-            </div>
+      <div class="task-col">
+        <div class="flex center-row space-between padding-bottom">
+          <h2>Done</h2>
+          <div class="plus-btn-small center pointer" onclick='showAddTask("done")'>
+            <img src="../assets/img/icons/icon-plus.svg" alt="New To do" />
           </div>
-          <div
-            id="col-todo"
-            class="flex-column gap-l"
-            ondrop="changeState('ToDo')"
-            ondragover="allowDrop(event)"
-          ></div>
         </div>
-        <div class="task-col">
-          <div class="flex center-row space-between padding-bottom">
-            <h2>In progress</h2>
-            <div
-              class="plus-btn-small center pointer"
-              onclick='showAddTask("progress")'
-            >
-              <img src="../assets/img/icons/icon-plus.svg" alt="New To do" />
-            </div>
-          </div>
-          <div
-            id="col-progress"
-            class="flex-column gap-l"
-            ondrop="changeState('progress')"
-            ondragover="allowDrop(event)"
-          ></div>
-        </div>
-        <div class="task-col">
-          <div class="flex center-row space-between padding-bottom">
-            <h2>Awaiting Feedback</h2>
-            <div
-              class="plus-btn-small center pointer"
-              onclick='showAddTask("awaiting")'
-            >
-              <img src="../assets/img/icons/icon-plus.svg" alt="New To do" />
-            </div>
-          </div>
-          <div
-            id="col-awaiting"
-            class="flex-column gap-l"
-            ondrop="changeState('awaiting')"
-            ondragover="allowDrop(event)"
-          ></div>
-        </div>
-        <div class="task-col">
-          <div class="flex center-row space-between padding-bottom">
-            <h2>Done</h2>
-            <div
-              class="plus-btn-small center pointer"
-              onclick='showAddTask("done")'
-            >
-              <img src="../assets/img/icons/icon-plus.svg" alt="New To do" />
-            </div>
-          </div>
-          <div
-            id="col-done"
-            class="flex-column gap-l"
-            ondrop="changeState('done')"
-            ondragover="allowDrop(event)"
-          ></div>
-        </div>
-      </section>
-      <div
-        id="taskcard-big-container"
-        class="taskcard-big-container display-none"
-      >
-        <div id="taskcard-big" class="taskcard-big"></div>
+        <div id="col-done" class="flex-column gap-l" ondrop="changeState('done')" ondragover="allowDrop(event)"></div>
       </div>
     </section>
-    <div class="dialog content display-none" id="addtask-dialog">
-      <div w3-include-html="../assets/templates/addtask.html"></div>
+    <div id="taskcard-big-container" class="taskcard-big-container display-none">
+      <div id="taskcard-big" class="taskcard-big"></div>
     </div>
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  </section>
+  <div class="dialog content display-none" id="addtask-dialog">
+    <div w3-include-html="../assets/templates/addtask.html"></div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
