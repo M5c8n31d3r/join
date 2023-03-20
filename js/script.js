@@ -102,6 +102,7 @@ function toggleVisibility(id) {
     card.classList.remove("display-none");
   } else {
     card.classList.add("display-none");
+    $("body").removeClass("no-scroll");
   }
 }
 

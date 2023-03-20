@@ -379,6 +379,7 @@ function showAddTask(state) {
     .getElementById("save-task-button-mobile")
     .setAttribute("onClick", `saveTask(${'"' + state + '"'})`);
   document.getElementById("addtask-dialog").classList.remove("display-none");
+  $("body").addClass("no-scroll");
 }
 
 /**
