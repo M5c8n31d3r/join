@@ -190,6 +190,22 @@ h2 {
   width: 26px;
 }
 
+/* Add task */
+
+.addtask-card-close {
+  height: 22px;
+  width: 22px;
+  display: unset !important;
+  position: absolute;
+  right: 40px;
+  top: calc(var(--nav-height-m) + 30px);
+}
+
+.addtask-card-close img {
+  height: 22px;
+  width: 22px;
+}
+
 @media (min-width: 800px) {
   .searchbar {
     display: flex;
@@ -273,5 +289,19 @@ h2 {
 
   button {
     z-index: auto;
+  }
+
+  /* Add task */
+
+  .addtask-card-close {
+    display: unset !important;
+    position: absolute;
+    right: 37px;
+    top: 38px;
+  }
+
+  .addtask-card-close img {
+    height: 22px;
+    width: 22px;
   }
 }
