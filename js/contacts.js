@@ -286,15 +286,6 @@ function renderAddEditUser(
   `;
 }
 
-function toggleVisibility(id) {
-  let card = document.getElementById(id);
-  if (card.classList.contains("display-none")) {
-    card.classList.remove("display-none");
-  } else {
-    card.classList.add("display-none");
-  }
-}
-
 /**
  *
  * @param {INT} id ID of the user

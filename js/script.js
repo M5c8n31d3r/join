@@ -93,6 +93,19 @@ function setActive(id) {
 }
 
 /**
+ * Changes the visibility of an element
+ * @param {id} ID of the element to be hidden or shown
+ */
+function toggleVisibility(id) {
+  let card = document.getElementById(id);
+  if (card.classList.contains("display-none")) {
+    card.classList.remove("display-none");
+  } else {
+    card.classList.add("display-none");
+  }
+}
+
+/**
  *
  * @param {STRING} elementID -> ID of the element, which should be displayed
  * Show the alert-massages
