@@ -153,7 +153,7 @@ function showTask(id) {
   <button class="tcb-btn-delete-task flex center" onclick="deleteTask(${
     task.id
   })"><img class="icon-white" src="../assets/img/icons/icon-delete.svg"></button>
-  <button class="tcb-btn-edit-task flex center" onclick="editTask(${id})"><img class="icon-white" src="../assets/img/icons/icon-to-do.svg"></button>
+  <button class="tcb-btn-edit-task flex center" onclick="loadEditTask(${id})"><img class="icon-white" src="../assets/img/icons/icon-to-do.svg"></button>
 `;
 }
 
@@ -331,7 +331,6 @@ function renderUserInitials(task) {
  */
 function renderUser(task) {
   let userList = "";
-
   for (let i = 0; i < task.assignedTo.length; i++) {
     const user = task.assignedTo[i];
     let bg = i % 4;
@@ -396,10 +395,6 @@ function deleteTask(id) {
   closeTask();
 }
 
-function editTask(id) {
-  alert(id);
-}
-
 /**
  * Filter list of view on search result
  * @param {STRING} view ID of search input
@@ -427,6 +422,24 @@ function findTask(view) {
  */
 function deleteDoubleValues(list) {
   let unique = list.filter((x, i) => list.indexOf(x) === i);
-
   return unique;
 }
+
+function loadEditTask(id) {
+  let title = document.getElementById("task-title");
+  let description = document.getElementById("task-description");
+  let category = document.getElementById("category-input");
+  let assignedTo = document.getElementById("assigned-to-user");
+  let dueDate = document.getElementById("task-due-date");
+  let subtasks = document.getElementById("task-subtasks");
+  toggleVisibility("addtask-dialog");
+  title.value = tasks[id].title;
+  description.value = tasks[id].description;
+  category.value = tasks[id].category.name;
+  assignedTo.value = tasks[id].assignedTo;
+  dueDate.valueAsNumber = tasks[id].dueDate;
+  subtasks.innerHTML = tcbRenderSubtasks(tasks[id]);
+  assignedTo.innerHTML = renderUser(tasks[id]);
+}
+
+function updateEditTask(id) {}
