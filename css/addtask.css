@@ -92,6 +92,9 @@ h1 {
   }
 
   .addtask-background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     top: 0;
     right: 0;
@@ -100,5 +103,14 @@ h1 {
     z-index: 5;
     background-color: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(5px);
+  }
+
+  .addtask-overlay {
+    position: relative;
+    background-color: var(--grey-bg);
+    max-width: 1116px;
+    height: fit-content;
+    padding: 63px 74px;
+    border-radius: var(--border-radius-xl);
   }
 }

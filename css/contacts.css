@@ -460,6 +460,20 @@
     gap: 35px;
   }
 
+  /* Add task */
+
+  .addtask-card-close {
+    display: unset !important;
+    position: absolute;
+    right: 37px;
+    top: 38px;
+  }
+
+  .addtask-card-close img {
+    height: 22px;
+    width: 22px;
+  }
+
   /* Scrollbar */
   /* width */
   ::-webkit-scrollbar {
