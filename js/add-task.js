@@ -348,7 +348,7 @@ function renderSubtasks() {
       <div class="flex">
         <input class="checkbox" type="checkbox" id="subtask-${i}">
       </div>
-      <label for="subtask-${i}"> ${subtask.description}</label>
+      <label class="subtask-label" for="subtask-${i}"> ${subtask.description}</label>
     </div>`;
   }
 }

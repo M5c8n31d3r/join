@@ -113,4 +113,8 @@ h1 {
     padding: 63px 74px;
     border-radius: var(--border-radius-xl);
   }
+
+  .subtask-label {
+    display: contents;
+  }
 }
