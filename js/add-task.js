@@ -82,7 +82,7 @@ function loadCategories() {
   listItems.innerHTML = "";
   for (let i = 0; i < categories.length; i++) {
     listItems.innerHTML += `
-      <div id='category-${categories[i].id}' onclick='selectCategory(${categories[i].id})' class="dropdown-item flex">
+      <div id='category-${categories[i].id}' onclick='selectCategory(${categories[i].id})' class="dropdown-item flex center-row">
         <span class="category-name">${categories[i].name}</span>
         <div class="category-color" style="background-color: ${categories[i].color}"></div>
       </div>`;
@@ -208,7 +208,7 @@ function fillCatergory(id) {
     color: categories[id].color
   };
   return `
-<div class="flex">
+<div class="flex center-row">
   <span>${categories[id].name}</span>
   <div class="category-color" style="background-color: ${categories[id].color}"></div>
 </div>`;

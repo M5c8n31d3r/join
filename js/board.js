@@ -15,6 +15,7 @@ async function initBoard() {
   await loadDataFromServer();
   loadCategories();
   loadUserList();
+  getToday();
   setActive("nav-board");
   loadTask(tasks);
 }
@@ -470,7 +471,6 @@ function updateEditTask(id) {
   let descriptionInput = document.getElementById("task-description").value;
   let categoryInput = document.getElementById("category-input").value;
   let assignedToInput = document.getElementById("assigned-to-user").value;
-  let dueDateInput = document.getElementById("task-due-date").value;
   let subtasksInput = document.getElementById("task-subtasks");
   taskChanged.title = titleInput;
   taskChanged.description = descriptionInput;
@@ -480,4 +480,6 @@ function updateEditTask(id) {
     document.getElementById("task-due-date").value
   );
   backend.setItem("tasks", tasks);
+  toggleVisibility("addtask-dialog");
+  showTask(id);
 }
