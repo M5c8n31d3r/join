@@ -335,6 +335,16 @@ function addSubtask() {
   }
 }
 
+function addSubtaskEnter() {
+  window.addEventListener("keydown", (e) => {
+    if (document.getElementById("task-subtask")) {
+      if (e.key === "Enter" && document.getElementById("task-subtask").value) {
+        addSubtask();
+      }
+    }
+  });
+}
+
 /**
  * render the list of subtasks
  */
