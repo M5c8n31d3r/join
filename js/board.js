@@ -380,6 +380,12 @@ function showAddTask(state) {
     .getElementById("save-task-button-mobile")
     .setAttribute("onClick", `saveTask(${'"' + state + '"'})`);
   document.getElementById("addtask-dialog").classList.remove("display-none");
+  document
+    .getElementById("add-task-btn-clear")
+    .classList.remove("display-none");
+  document
+    .getElementById("add-task-category-container")
+    .classList.remove("display-none");
   $("body").addClass("no-scroll");
 }
 
@@ -438,8 +444,10 @@ function loadEditTask(id) {
   let btnMobile = document.getElementById("save-task-button-mobile");
 
   toggleVisibility("addtask-dialog");
-  toggleVisibility("add-task-btn-clear");
-  toggleVisibility("add-task-category-container");
+  document.getElementById("add-task-btn-clear").classList.add("display-none");
+  document
+    .getElementById("add-task-category-container")
+    .classList.add("display-none");
 
   btnDesktop.setAttribute("onclick", `updateEditTask(${id})`);
   btnDesktop.innerHTML = "Save";
