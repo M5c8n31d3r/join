@@ -13,6 +13,8 @@ let prios = [
 async function initBoard() {
   await includeHTML();
   await loadDataFromServer();
+  loadCategories();
+  loadUserList();
   setActive("nav-board");
   loadTask(tasks);
 }
@@ -436,6 +438,8 @@ function loadEditTask(id) {
   let btnMobile = document.getElementById("save-task-button-mobile");
 
   toggleVisibility("addtask-dialog");
+  toggleVisibility("add-task-btn-clear");
+  toggleVisibility("add-task-category-container");
 
   btnDesktop.setAttribute("onclick", `updateEditTask(${id})`);
   btnDesktop.innerHTML = "Save";
@@ -452,5 +456,19 @@ function loadEditTask(id) {
 }
 
 function updateEditTask(id) {
-  alert("!");
+  let taskChanged = tasks[id];
+  let titleInput = document.getElementById("task-title").value;
+  let descriptionInput = document.getElementById("task-description").value;
+  let categoryInput = document.getElementById("category-input").value;
+  let assignedToInput = document.getElementById("assigned-to-user").value;
+  let dueDateInput = document.getElementById("task-due-date").value;
+  let subtasksInput = document.getElementById("task-subtasks");
+  taskChanged.title = titleInput;
+  taskChanged.description = descriptionInput;
+  taskChanged.category = categoryInput;
+  taskChanged.assignedTo = assignedToInput;
+  taskChanged.dueDate = Date.parse(
+    document.getElementById("task-due-date").value
+  );
+  backend.setItem("tasks", tasks);
 }
