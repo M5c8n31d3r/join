@@ -386,6 +386,7 @@ function showAddTask(state) {
   document
     .getElementById("add-task-category-container")
     .classList.remove("display-none");
+  clearAll();
   $("body").addClass("no-scroll");
 }
 
