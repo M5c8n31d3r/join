@@ -76,14 +76,15 @@ function renderDropArea(id) {
  * ToDo Länge der Funktion prüfen
  */
 function renderCard(task) {
-  return /* html */ `<div class="task-card" onclick="showTask(${
+  return /* html */ `
+  <div class="task-card" onclick="selectInputType()" draggable="true" ondragstart="drag(${
     task.id
-  })" draggable="true" ondragstart="drag(${task.id})">
+  })">
         <div style="background-color: ${
           task.category.color
-        }" class="taskcard-category flex center"><div class="taskcard-category-name">${
-    task.category.name
-  }</div></div>
+        }" class="taskcard-category flex center">
+          <div class="taskcard-category-name">${task.category.name}</div>
+        </div>
         <h3 class="taskcard-title font-16 bold">${task["title"]}</h3>
         <p class="taskcard-description">${task["description"]}
         </p>
@@ -105,6 +106,37 @@ function renderCard(task) {
             </div>
         </div>
     </div>`;
+}
+
+function selectInputType() {
+  let cards = document.querySelectorAll(".task-card");
+
+  for (let i = 0; i < cards.length; i++) {
+    cards[i].addEventListener(
+      "touchstart",
+      function (event) {
+        touchScreen(event, cards[i]);
+      },
+      false
+    );
+    cards[i].addEventListener(
+      "click",
+      function (event) {
+        mouseInput(event, cards[i]);
+      },
+      false
+    );
+  }
+}
+
+// onclick="showTask(${task.id})"
+
+function touchScreen(event, card) {
+  alert("TOUCH SCREEN");
+}
+
+function mouseInput(event, card) {
+  alert("MAUS EINGABE");
 }
 
 function showTask(id) {
@@ -465,6 +497,7 @@ function loadEditTask(id) {
   assignedTo.innerHTML = renderUser(tasks[id]);
 }
 
+//  !ES FEHLT NOCH DIE PRIORITY
 function updateEditTask(id) {
   let taskChanged = tasks[id];
   let titleInput = document.getElementById("task-title").value;
@@ -480,4 +513,51 @@ function updateEditTask(id) {
   backend.setItem("tasks", tasks);
   toggleVisibility("addtask-dialog");
   showTask(id);
+}
+
+/* //////////////////////////////////////////////////////////////////////////////
+! DIEBSTAHL || INSPIRATION
+////////////////////////////////////////////////////////////////////////////// */
+
+/**
+ * check if user use a touch device, for work with a single task
+ */
+function checkDevice() {
+  let allTaskContainer = document.querySelectorAll(".todo");
+  allTaskContainer.forEach((taskContainer) => {
+    taskContainer.addEventListener(
+      "touchstart",
+      function (event) {
+        onlyTouch(event, taskContainer);
+      },
+      false
+    );
+    taskContainer.addEventListener(
+      "click",
+      function (event) {
+        onlyClick(event, taskContainer);
+      },
+      false
+    );
+  });
+}
+
+/**
+ * show the context for touch devices
+ * @param {object} eve is the event from an event Listener when user use a touch device
+ * @param {object} taskContainer html object wich contains the context menu for working with tasks on a touch device
+ */
+function onlyTouch(eve, taskContainer) {
+  showTaskTouchMenu(taskContainer.id);
+  eve.preventDefault();
+}
+
+/**
+ * shows the detail window of a task when user don#t use a touch device
+ * @param {object} eve is the event from an event Listener when user use not a touch device
+ * @param {object} taskContainer html object wich contains the context menu for working with tasks on desktop
+ */
+function onlyClick(eve, taskContainer) {
+  showDetailWindow(taskContainer.id);
+  eve.preventDefault();
 }
