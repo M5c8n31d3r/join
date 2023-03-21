@@ -432,7 +432,16 @@ function loadEditTask(id) {
   let assignedTo = document.getElementById("assigned-to-user");
   let dueDate = document.getElementById("task-due-date");
   let subtasks = document.getElementById("task-subtasks");
+  let btnDesktop = document.getElementById("save-task-button-desktop");
+  let btnMobile = document.getElementById("save-task-button-mobile");
+
   toggleVisibility("addtask-dialog");
+
+  btnDesktop.setAttribute("onclick", `updateEditTask(${id})`);
+  btnDesktop.innerHTML = "Save";
+  btnMobile.setAttribute("onclick", `updateEditTask(${id})`);
+  btnMobile.innerHTML = "Save";
+
   title.value = tasks[id].title;
   description.value = tasks[id].description;
   category.value = tasks[id].category.name;
@@ -442,4 +451,6 @@ function loadEditTask(id) {
   assignedTo.innerHTML = renderUser(tasks[id]);
 }
 
-function updateEditTask(id) {}
+function updateEditTask(id) {
+  alert("!");
+}
