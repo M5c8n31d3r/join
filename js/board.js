@@ -76,10 +76,11 @@ function renderDropArea(id) {
  * ToDo Länge der Funktion prüfen
  */
 function renderCard(task) {
+  let cardID = "card" + task.id;
   return /* html */ `
-  <div class="task-card" onclick="selectInputType()" draggable="true" ondragstart="drag(${
+  <div id="${cardID}" class="task-card pointer" onclick="selectInputType(${
     task.id
-  })">
+  })" draggable="true" ondragstart="drag(${task.id})">
         <div style="background-color: ${
           task.category.color
         }" class="taskcard-category flex center">
@@ -105,38 +106,55 @@ function renderCard(task) {
             )}.svg" alt="${prioIconEnding(task)} prio" />
             </div>
         </div>
+        <div id="touch-menu${task.id}">MENÜ FÜR TOUCH</div>
     </div>`;
 }
 
-function selectInputType() {
-  let cards = document.querySelectorAll(".task-card");
-
-  for (let i = 0; i < cards.length; i++) {
-    cards[i].addEventListener(
-      "touchstart",
-      function (event) {
-        touchScreen(event, cards[i]);
-      },
-      false
-    );
-    cards[i].addEventListener(
-      "click",
-      function (event) {
-        mouseInput(event, cards[i]);
-      },
-      false
-    );
-  }
+function selectInputType(cardID) {
+  let htmlID = "card" + cardID;
+  let card = document.getElementById(htmlID);
+  card.addEventListener(
+    "touchstart",
+    function (event) {
+      touchScreen(event, cardID);
+    },
+    false
+  );
+  card.addEventListener(
+    "click",
+    function (event) {
+      mouseInput(event, cardID);
+    },
+    false
+  );
 }
 
 // onclick="showTask(${task.id})"
 
-function touchScreen(event, card) {
-  alert("TOUCH SCREEN");
+function touchScreen(event1, cardID) {
+  let itemID = "touch-menu" + cardID;
+  let touchMenu = document.getElementById(itemID).innerHTML;
+  let states = ["ToDo", "progress", "awaiting", "done"];
+  debugger;
+  for (let i = 0; i < states.length; i++) {
+    if (tasks[cardID].state == states[i]) {
+      states.splice(i, 1);
+    }
+  }
+
+  touchMenu = "";
+
+  for (let i = 0; i < states.length; i++) {
+    touchMenu += /* html */ `
+    <div>${states[i]}</div>
+    `;
+  }
+  event1.preventDefault();
 }
 
-function mouseInput(event, card) {
-  alert("MAUS EINGABE");
+function mouseInput(event1, cardID) {
+  showTask(cardID);
+  event1.preventDefault();
 }
 
 function showTask(id) {
@@ -522,6 +540,7 @@ function updateEditTask(id) {
 /**
  * check if user use a touch device, for work with a single task
  */
+/*
 function checkDevice() {
   let allTaskContainer = document.querySelectorAll(".todo");
   allTaskContainer.forEach((taskContainer) => {
@@ -541,23 +560,27 @@ function checkDevice() {
     );
   });
 }
+*/
 
 /**
  * show the context for touch devices
  * @param {object} eve is the event from an event Listener when user use a touch device
  * @param {object} taskContainer html object wich contains the context menu for working with tasks on a touch device
  */
+/*
 function onlyTouch(eve, taskContainer) {
   showTaskTouchMenu(taskContainer.id);
   eve.preventDefault();
 }
-
+*/
 /**
  * shows the detail window of a task when user don#t use a touch device
  * @param {object} eve is the event from an event Listener when user use not a touch device
  * @param {object} taskContainer html object wich contains the context menu for working with tasks on desktop
  */
+/*
 function onlyClick(eve, taskContainer) {
   showDetailWindow(taskContainer.id);
   eve.preventDefault();
 }
+*/
