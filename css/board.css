@@ -190,6 +190,10 @@ h2 {
   width: 26px;
 }
 
+#assigned-to-user {
+  flex-direction: column !important;
+}
+
 /* Add task */
 
 .addtask-card-close {

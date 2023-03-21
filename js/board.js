@@ -469,12 +469,10 @@ function updateEditTask(id) {
   let taskChanged = tasks[id];
   let titleInput = document.getElementById("task-title").value;
   let descriptionInput = document.getElementById("task-description").value;
-  let categoryInput = document.getElementById("category-input").value;
   let assignedToInput = document.getElementById("assigned-to-user").value;
   let subtasksInput = document.getElementById("task-subtasks");
   taskChanged.title = titleInput;
   taskChanged.description = descriptionInput;
-  taskChanged.category = categoryInput;
   taskChanged.assignedTo = assignedToInput;
   taskChanged.dueDate = Date.parse(
     document.getElementById("task-due-date").value

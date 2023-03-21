@@ -29,6 +29,14 @@
 
 /* template */
 
+.input-bar {
+  height: 48px;
+}
+
+.input-bar input {
+  font-size: 16px;
+}
+
 .addtask-background {
   position: fixed;
   z-index: 1;
@@ -79,6 +87,14 @@ h1 {
     width: 2px;
     background-color: var(--shadow);
     margin: 0 40px;
+  }
+
+  .input-bar {
+    height: 53px;
+  }
+
+  .input-bar input {
+    font-size: 21px;
   }
 
   .add-task-btns {
