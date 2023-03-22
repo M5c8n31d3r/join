@@ -164,7 +164,7 @@ function showTouchMenu(cardID) {
 function renderTouchMenu(cardID) {
   let cardMenu = document.getElementById("touch-menu" + cardID);
   let states = ["ToDo", "progress", "awaiting", "done"];
-  cardMenu.innerHTML = "";
+  cardMenu.innerHTML = /* html */ `<div onClick="showTask(${cardID})">Details</div> <hr>`;
   for (let i = 0; i < states.length; i++) {
     if (tasks[cardID].state == states[i]) {
       states.splice(i, 1);
