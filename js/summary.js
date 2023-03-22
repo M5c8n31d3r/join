@@ -1,3 +1,19 @@
+/**
+ * Maximum width for mobile screen
+ */
+const MOBILE_MAX_WIDTH = 780;
+/**
+ * Delay for fade-out of welcome message on mobile device
+ */
+const WELCOME_MSG_DELAY = 800;
+/**
+ * Fade-out time for welcome message on mobile device
+ */
+const WELCOME_MSG_TRANS = 400;
+/**
+ * Fade-in/fade-out time for context menu in header
+ */
+const HEADER_CTX_MENU_ANIM_TIME = 220;
 const counter = [
   { type: "progress", name: "counterProgress", value: 0 },
   { type: "awaiting", name: "counterReview", value: 0 },

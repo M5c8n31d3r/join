@@ -22,7 +22,7 @@
   flex-direction: column;
   z-index: 1;
   background-color: var(--bg-body);
-  opacity: 0;
+  opacity: 1;
   transition: opacity var(--welcome-mobile-transition) ease-in
     var(--welcome-mobile-delay);
 }
@@ -47,22 +47,6 @@ d-none {
   border-radius: 3px;
   margin-left: 60px;
   margin-right: 30px;
-}
-.content-container {
-  margin-left: 232px;
-  margin-top: 90px;
-  height: calc(100vh - 90px);
-  width: calc(100% - 232px);
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-#content-summary {
-  margin-top: 8.5vh;
-  margin-left: 120px;
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  height: 90px;
 }
 
 #welcome-text-desk {
@@ -94,6 +78,15 @@ d-none {
   overflow-y: auto;
 }
 
+#content-summary {
+  margin-top: 8.5vh;
+  margin-left: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  height: 90px;
+}
+
 #headline-separator {
   width: 0;
   height: 59px;
@@ -101,24 +94,6 @@ d-none {
   border-radius: 3px;
   margin-left: 60px;
   margin-right: 30px;
-}
-
-#content-summary {
-  margin-top: 8.5vh;
-  margin-left: 120px;
-}
-
-#ui {
-  display: flex;
-  align-items: center;
-}
-
-#data {
-  display: flex;
-  flex-direction: column;
-  gap: 35px;
-  margin-top: 3vh;
-  margin-right: 65px;
 }
 
 .summary-header {
@@ -143,6 +118,18 @@ d-none {
   margin-bottom: 20px;
 }
 
+#ui {
+  display: flex;
+  align-items: center;
+}
+
+#data {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  margin-top: 3vh;
+  margin-right: 65px;
+}
 /***** Summary Row 1 *****/ /*////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 #summary-row-1 {
@@ -155,24 +142,23 @@ d-none {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 30px;
   background-color: var(--white);
+  border-radius: 30px;
   padding: 25px 0px;
   gap: 0px;
-  width: 170px;
-  height: 170px;
-  box-shadow: var(--box-shadow);
-  padding: 25px 0px;
+  cursor: pointer;
   transition: all 100ms ease-in-out;
 }
 
-.summary-box:hover {
+.sum-size {
+  width: 170px;
+  height: 170px;
+}
+.sum-size:hover {
   background-color: var(--darkblue);
-  cursor: pointer;
   color: var(--white);
-  width: 180px;
-  height: 180px;
   box-shadow: var(--box-shadow-hover);
+  transform: scale(1.035);
 }
 
 .text-in-box {
@@ -204,7 +190,6 @@ d-none {
   align-items: center;
   background-color: var(--white);
   border-radius: 30px;
-  border: 2px solid var(--white);
   box-shadow: var(--box-shadow);
   padding: 28px 48px;
   gap: 14px;
@@ -217,9 +202,8 @@ d-none {
   cursor: pointer;
   background-color: var(--darkblue);
   color: var(--white);
-  width: 590px;
-  height: 160px;
   box-shadow: var(--box-shadow-hover);
+  transform: scale(1.035);
 }
 
 .urgent-box-left {
@@ -301,7 +285,6 @@ d-none {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid var(--white);
   cursor: pointer;
   padding: 38px 19px;
   gap: 18px;
@@ -312,9 +295,8 @@ d-none {
 .done-container:hover {
   background-color: var(--darkblue);
   color: var(--white);
-  width: 282.5px;
-  height: 160px;
   box-shadow: var(--box-shadow-hover);
+  transform: scale(1.035);
 }
 
 .todo-container:hover .summary-icons,
