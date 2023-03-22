@@ -18,7 +18,9 @@ async function initBoard() {
   getToday();
   setActive("nav-board");
   loadTask(tasks);
+}
 
+function inputType() {
   for (let i = 0; i < tasks.length; i++) {
     selectInputType(i);
   }
@@ -61,6 +63,7 @@ function loadTask(ItemList) {
   progressTasks.innerHTML += renderDropArea("dropzone-progress");
   awaitingTasks.innerHTML += renderDropArea("dropzone-awaiting");
   doneTasks.innerHTML += renderDropArea("dropzone-done");
+  inputType();
 }
 
 /**
