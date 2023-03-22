@@ -113,8 +113,9 @@ function renderCard(task) {
             )}.svg" alt="${prioIconEnding(task)} prio" />
             </div>
         </div>
-        <div id="touch-menu${task.id}" class="display-none">Here I am!!!</div>
-    </div>`;
+        
+    </div>
+    <div id="touch-menu${task.id}" class="display-none">Here I am!!!</div>`;
 }
 
 function selectInputType(cardID) {
@@ -171,12 +172,11 @@ function renderTouchMenu(cardID) {
   }
   for (let i = 0; i < states.length; i++) {
     cardMenu.innerHTML += /*html */ ` 
-      <div onclick="changeStateOnTouch(${cardID}, ${states[i]}">${states[i]}</div>`;
+      <div onclick="changeStateOnTouch(${cardID}, '${states[i]}')">${states[i]}</div>`;
   }
 }
 
 function changeStateOnTouch(cardID, state) {
-  debugger;
   currentDragElementID = cardID;
   changeState(state);
 }
@@ -377,7 +377,6 @@ function drag(id) {
  * Set the new state of a task
  */
 function changeState(state) {
-  debugger;
   tasks[currentDragElementID].state = state;
   toggleDropZone();
   loadTask(tasks);
