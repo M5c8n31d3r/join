@@ -132,23 +132,7 @@ function selectInputType(cardID) {
 // onclick="showTask(${task.id})"
 
 function touchScreen(event1, cardID) {
-  let itemID = "touch-menu" + cardID;
-  let touchMenu = document.getElementById(itemID).innerHTML;
-  let states = ["ToDo", "progress", "awaiting", "done"];
-  debugger;
-  for (let i = 0; i < states.length; i++) {
-    if (tasks[cardID].state == states[i]) {
-      states.splice(i, 1);
-    }
-  }
-
-  touchMenu = "";
-
-  for (let i = 0; i < states.length; i++) {
-    touchMenu += /* html */ `
-    <div>${states[i]}</div>
-    `;
-  }
+  document.getElementById("touch-menu" + cardID).innerHTML = "Touch input";
   event1.preventDefault();
 }
 
