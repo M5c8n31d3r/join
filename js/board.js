@@ -18,6 +18,10 @@ async function initBoard() {
   getToday();
   setActive("nav-board");
   loadTask(tasks);
+
+  for (let i = 0; i < tasks.length; i++) {
+    selectInputType(i);
+  }
 }
 
 function clearBoard() {
@@ -106,13 +110,14 @@ function renderCard(task) {
             )}.svg" alt="${prioIconEnding(task)} prio" />
             </div>
         </div>
-        <div id="touch-menu${task.id}">MENÜ FÜR TOUCH</div>
+        <div id="touch-menu${task.id}" class="display-none">Here I am!!!</div>
     </div>`;
 }
 
 function selectInputType(cardID) {
   let htmlID = "card" + cardID;
   let card = document.getElementById(htmlID);
+
   card.addEventListener(
     "touchstart",
     function (event) {
@@ -129,16 +134,48 @@ function selectInputType(cardID) {
   );
 }
 
-// onclick="showTask(${task.id})"
-
-function touchScreen(event1, cardID) {
-  document.getElementById("touch-menu" + cardID).innerHTML = "Touch input";
-  event1.preventDefault();
+function touchScreen(eventTouch, cardID) {
+  showTouchMenu(cardID);
+  eventTouch.preventDefault();
 }
 
-function mouseInput(event1, cardID) {
+function mouseInput(eventMouse, cardID) {
   showTask(cardID);
-  event1.preventDefault();
+  eventMouse.preventDefault();
+}
+
+function showTouchMenu(cardID) {
+  let cardMenu = document.getElementById("touch-menu" + cardID);
+  cardMenu.classList.remove("display-none");
+  renderTouchMenu(cardID);
+  setTimeout(
+    function (cardMenu) {
+      cardMenu.classList.add("display-none");
+    },
+    10000,
+    cardMenu
+  );
+}
+
+function renderTouchMenu(cardID) {
+  let cardMenu = document.getElementById("touch-menu" + cardID);
+  let states = ["ToDo", "progress", "awaiting", "done"];
+  cardMenu.innerHTML = "";
+  for (let i = 0; i < states.length; i++) {
+    if (tasks[cardID].state == states[i]) {
+      states.splice(i, 1);
+    }
+  }
+  for (let i = 0; i < states.length; i++) {
+    cardMenu.innerHTML += /*html */ ` 
+      <div onclick="changeStateOnTouch(${cardID}, ${states[i]}">${states[i]}</div>`;
+  }
+}
+
+function changeStateOnTouch(cardID, state) {
+  debugger;
+  currentDragElementID = cardID;
+  changeState(state);
 }
 
 function showTask(id) {
@@ -337,6 +374,7 @@ function drag(id) {
  * Set the new state of a task
  */
 function changeState(state) {
+  debugger;
   tasks[currentDragElementID].state = state;
   toggleDropZone();
   loadTask(tasks);
@@ -516,55 +554,3 @@ function updateEditTask(id) {
   toggleVisibility("addtask-dialog");
   showTask(id);
 }
-
-/* //////////////////////////////////////////////////////////////////////////////
-! DIEBSTAHL || INSPIRATION
-////////////////////////////////////////////////////////////////////////////// */
-
-/**
- * check if user use a touch device, for work with a single task
- */
-/*
-function checkDevice() {
-  let allTaskContainer = document.querySelectorAll(".todo");
-  allTaskContainer.forEach((taskContainer) => {
-    taskContainer.addEventListener(
-      "touchstart",
-      function (event) {
-        onlyTouch(event, taskContainer);
-      },
-      false
-    );
-    taskContainer.addEventListener(
-      "click",
-      function (event) {
-        onlyClick(event, taskContainer);
-      },
-      false
-    );
-  });
-}
-*/
-
-/**
- * show the context for touch devices
- * @param {object} eve is the event from an event Listener when user use a touch device
- * @param {object} taskContainer html object wich contains the context menu for working with tasks on a touch device
- */
-/*
-function onlyTouch(eve, taskContainer) {
-  showTaskTouchMenu(taskContainer.id);
-  eve.preventDefault();
-}
-*/
-/**
- * shows the detail window of a task when user don#t use a touch device
- * @param {object} eve is the event from an event Listener when user use not a touch device
- * @param {object} taskContainer html object wich contains the context menu for working with tasks on desktop
- */
-/*
-function onlyClick(eve, taskContainer) {
-  showDetailWindow(taskContainer.id);
-  eve.preventDefault();
-}
-*/
