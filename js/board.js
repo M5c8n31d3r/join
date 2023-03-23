@@ -579,7 +579,7 @@ function updateEditTask(id) {
     document.getElementById("task-due-date").value
   );
   tasks[id].subtask = subtasks;
-
+  subtasks = [];
   backend.setItem("tasks", tasks);
   toggleVisibility("addtask-dialog");
   showTask(id);
