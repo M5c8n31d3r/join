@@ -448,6 +448,7 @@ function renderAssignedUserName(user) {
  * ToDO Beschreibung fehlt noch
  */
 function showAddTask(state) {
+  document.getElementById("addtask-card-headline").innerHTML = "Add Task";
   document
     .getElementById("save-task-button-desktop")
     .setAttribute("onClick", `saveTask(${'"' + state + '"'})`);
@@ -518,6 +519,8 @@ function loadEditTask(id) {
   let subtasks = document.getElementById("task-subtasks");
   let btnDesktop = document.getElementById("save-task-button-desktop");
   let btnMobile = document.getElementById("save-task-button-mobile");
+  document.getElementById("addtask-card-headline").innerHTML = "Edit Task";
+  checkPriority(id);
 
   toggleVisibility("addtask-dialog");
   document.getElementById("add-task-btn-clear").classList.add("display-none");
@@ -537,6 +540,16 @@ function loadEditTask(id) {
   dueDate.valueAsNumber = tasks[id].dueDate;
   subtasks.innerHTML = tcbRenderSubtasks(tasks[id]);
   assignedTo.innerHTML = renderUser(tasks[id]);
+}
+
+function checkPriority(id) {
+  if (tasks[id].priority == -1) {
+    document.getElementById("task-urgent").checked = true;
+  } else if (tasks[id].priority == 0) {
+    document.getElementById("task-medium").checked = true;
+  } else {
+    document.getElementById("task-low").checked = true;
+  }
 }
 
 //  !ES FEHLT NOCH DIE PRIORITY
