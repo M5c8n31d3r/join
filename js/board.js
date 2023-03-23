@@ -539,12 +539,20 @@ function loadEditTask(id) {
   assignedTo.innerHTML = renderUser(tasks[id]);
 }
 
+/**
+ * Push the tasks into subtasks-Array in add-task.js
+ * @param {INT} id id of the current Task
+ */
 function fillSubtasks(id) {
   for (let i = 0; i < tasks[id].subtask.length; i++) {
     subtasks.push(tasks[id].subtask[i]);
   }
 }
 
+/**
+ * Set the priority in HTML
+ * @param {INT} id id of the current Task
+ */
 function checkPriority(id) {
   selectedPriority = tasks[id].priority;
   if (tasks[id].priority == -1) {
@@ -556,7 +564,10 @@ function checkPriority(id) {
   }
 }
 
-//  !ES FEHLT NOCH DIE PRIORITY
+/**
+ * Save updated datas to the backend
+ * @param {INT} id id of the current Task
+ */
 function updateEditTask(id) {
   tasks[id].title = document.getElementById("task-title").value;
   tasks[id].description = document.getElementById("task-description").value;
