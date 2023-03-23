@@ -75,8 +75,9 @@ h1 {
   margin: 9px 0;
 }
 
-@media (min-width: 1040px) {
+@media (min-width: 1022px) {
   .add-task-form {
+    max-width: 1080px;
     display: flex;
     flex-direction: row;
     justify-content: center;

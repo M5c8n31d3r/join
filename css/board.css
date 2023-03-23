@@ -261,6 +261,7 @@ h2 {
     align-items: flex-start;
     padding: 0px;
     gap: 26px;
+    flex-wrap: wrap;
   }
 
   .btn-board {
@@ -343,5 +344,11 @@ h2 {
   .addtask-card-close img {
     height: 22px;
     width: 22px;
+  }
+}
+
+@media (min-width: 1340px) {
+  .progress-cols {
+    flex-wrap: nowrap;
   }
 }

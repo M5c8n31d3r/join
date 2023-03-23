@@ -229,7 +229,7 @@
 
   .contacts-col-l {
     position: unset;
-    width: 453px;
+    min-width: 453px;
     padding: 12px 48px 0px 48px;
     overflow-y: scroll;
     height: calc(100vh - 89px);
@@ -335,8 +335,8 @@
   .initials {
     border-radius: var(--border-radius-xl);
     font-size: 12px;
-    height: 42px;
-    width: 42px;
+    min-height: 42px;
+    min-width: 42px;
     color: var(--white);
     border: 2px solid var(--white);
   }
