@@ -336,9 +336,10 @@ function addSubtask() {
 }
 
 function addSubtaskEnter() {
-  window.addEventListener("keydown", (e) => {
-    if (document.getElementById("task-subtask")) {
-      if (e.key === "Enter" && document.getElementById("task-subtask").value) {
+  let input = document.getElementById("task-subtask");
+  input.addEventListener("keydown", (e) => {
+    if (input) {
+      if (e.key === "Enter" && input.value) {
         addSubtask();
       }
     }
