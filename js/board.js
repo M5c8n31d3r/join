@@ -115,7 +115,9 @@ function renderCard(task) {
         </div>
         
     </div>
-    <div id="touch-menu${task.id}" class="display-none">Here I am!!!</div>`;
+    <div id="touch-menu${
+      task.id
+    }" class="card-touch-menu display-none">Here I am!!!</div>`;
 }
 
 function selectInputType(cardID) {
@@ -164,7 +166,7 @@ function showTouchMenu(cardID) {
 function renderTouchMenu(cardID) {
   let cardMenu = document.getElementById("touch-menu" + cardID);
   let states = ["ToDo", "progress", "awaiting", "done"];
-  cardMenu.innerHTML = /* html */ `<div onClick="showTask(${cardID})">Details</div> <hr>`;
+  cardMenu.innerHTML = /* html */ `<div class="ctm-small">⬇ open ⬇</div><div onClick="showTask(${cardID})">Details</div> <hr> <div class="ctm-small">⬇ move to ⬇</div>`;
   for (let i = 0; i < states.length; i++) {
     if (tasks[cardID].state == states[i]) {
       states.splice(i, 1);
@@ -172,7 +174,7 @@ function renderTouchMenu(cardID) {
   }
   for (let i = 0; i < states.length; i++) {
     cardMenu.innerHTML += /*html */ ` 
-      <div onclick="changeStateOnTouch(${cardID}, '${states[i]}')">${states[i]}</div>`;
+      <div onclick="changeStateOnTouch(${cardID}, '${states[i]}')" class="ctm-item">${states[i]}</div>`;
   }
 }
 
