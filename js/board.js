@@ -511,16 +511,18 @@ function deleteDoubleValues(list) {
 }
 
 function loadEditTask(id) {
-  let title = document.getElementById("task-title");
-  let description = document.getElementById("task-description");
-  let category = document.getElementById("category-input");
-  let assignedTo = document.getElementById("assigned-to-user");
-  let dueDate = document.getElementById("task-due-date");
+  document.getElementById("task-title").value = tasks[id].title;
+  document.getElementById("task-description").value = tasks[id].description;
+  document.getElementById("category-input").value = tasks[id].category.name;
+  document.getElementById("assigned-to-user").value = tasks[id].assignedTo;
+  document.getElementById("task-due-date").valueAsNumber = tasks[id].dueDate;
   let subtasks = document.getElementById("task-subtasks");
   let btnDesktop = document.getElementById("save-task-button-desktop");
   let btnMobile = document.getElementById("save-task-button-mobile");
+  selectedUsers = tasks[id].assignedTo;
   document.getElementById("addtask-card-headline").innerHTML = "Edit Task";
   checkPriority(id);
+  fillSubtasks(id);
 
   toggleVisibility("addtask-dialog");
   document.getElementById("add-task-btn-clear").classList.add("display-none");
@@ -533,16 +535,18 @@ function loadEditTask(id) {
   btnMobile.setAttribute("onclick", `updateEditTask(${id})`);
   btnMobile.innerHTML = "Save";
 
-  title.value = tasks[id].title;
-  description.value = tasks[id].description;
-  category.value = tasks[id].category.name;
-  assignedTo.value = tasks[id].assignedTo;
-  dueDate.valueAsNumber = tasks[id].dueDate;
   subtasks.innerHTML = tcbRenderSubtasks(tasks[id]);
   assignedTo.innerHTML = renderUser(tasks[id]);
 }
 
+function fillSubtasks(id) {
+  for (let i = 0; i < tasks[id].subtask.length; i++) {
+    subtasks.push(tasks[id].subtask[i]);
+  }
+}
+
 function checkPriority(id) {
+  selectedPriority = tasks[id].priority;
   if (tasks[id].priority == -1) {
     document.getElementById("task-urgent").checked = true;
   } else if (tasks[id].priority == 0) {
@@ -554,17 +558,15 @@ function checkPriority(id) {
 
 //  !ES FEHLT NOCH DIE PRIORITY
 function updateEditTask(id) {
-  let taskChanged = tasks[id];
-  let titleInput = document.getElementById("task-title").value;
-  let descriptionInput = document.getElementById("task-description").value;
-  let assignedToInput = document.getElementById("assigned-to-user").value;
-  let subtasksInput = document.getElementById("task-subtasks");
-  taskChanged.title = titleInput;
-  taskChanged.description = descriptionInput;
-  taskChanged.assignedTo = assignedToInput;
-  taskChanged.dueDate = Date.parse(
+  tasks[id].title = document.getElementById("task-title").value;
+  tasks[id].description = document.getElementById("task-description").value;
+  tasks[id].priority = selectedPriority;
+  tasks[id].assignedTo = selectedUsers;
+  tasks[id].dueDate = Date.parse(
     document.getElementById("task-due-date").value
   );
+  tasks[id].subtask = subtasks;
+
   backend.setItem("tasks", tasks);
   toggleVisibility("addtask-dialog");
   showTask(id);
