@@ -132,7 +132,7 @@
     box-shadow: var(--box-shadow-hover);
   }
   .urgent-box-left {
-    margin-left: -60px;
+    margin-left: -40px;
   }
   .urgent-box-left > img {
     width: 40px;
@@ -147,7 +147,7 @@
     font-size: 47px;
   }
   .number-container {
-    margin-right: -24px;
+    margin-left: 8px;
   }
   #urgent-separator {
     border-left: solid 2px var(--dimmed);

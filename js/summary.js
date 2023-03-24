@@ -34,24 +34,22 @@ async function initSummary() {
   setDeadline();
 }
 
-/**
- * Controls the welcome screen on mobile view
- */
 function handleWelcomeOnMobile() {
-  let isLogin = new URLSearchParams(window.location.search);
-  if (!isLogin.get("userLogIn")) return;
+  let isLogin = localStorage.getItem("userLogIn");
+  if (!isLogin) {
+    window.location.href = "/index.html";
+  }
 
   const windowWidth = window.innerWidth;
-  const delay = WELCOME_MSG_TRANS + WELCOME_MSG_DELAY + 10;
+  const delay = WELCOME_MSG_TRANS + WELCOME_MSG_DELAY + 100;
+  console.log(delay);
 
   if (windowWidth <= MOBILE_MAX_WIDTH) {
     const welcome = document.getElementById("welcome-mobile");
-    welcome.classList.remove("display-none");
+    welcome.classList.remove("d-none");
+
     setTimeout(() => {
-      welcome.classList.add("welcome-mobile-fade");
-    }, 1);
-    setTimeout(() => {
-      welcome.classList.add("display-none");
+      welcome.classList.add("d-none");
     }, delay);
   }
 }
