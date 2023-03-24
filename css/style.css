@@ -45,8 +45,8 @@
   --welcome-name-size: 64px;
 
   /* Animations/Transitions */
-  --welcome-mobile-transition: 800ms;
-  --welcome-mobile-delay: 400ms;
+  --welcome-mobile-transition: 400ms;
+  --welcome-mobile-delay: 800ms;
 
   /* Elemente */
 }
