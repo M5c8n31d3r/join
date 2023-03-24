@@ -152,8 +152,13 @@
       <div
         id="taskcard-big-container"
         class="taskcard-big-container display-none"
+        onclick="toggleVisibility('taskcard-big-container')"
       >
-        <div id="taskcard-big" class="taskcard-big"></div>
+        <div
+          id="taskcard-big"
+          class="taskcard-big"
+          onclick="event.stopPropagation()"
+        ></div>
       </div>
     </section>
     <div
