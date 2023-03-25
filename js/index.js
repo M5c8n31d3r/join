@@ -77,21 +77,18 @@ function signInGuest() {
 }
 
 /**
- *
- * @param {INT} id -> ID of the user
  * Store the id in localStorage
+ * @param {INT} id -> ID of the user
  */
 function storeLocal(id) {
   localStorage.setItem("userLogIn", id);
 }
 
 /**
- *
- * @param {STRING} passwordParameter HTML-ID of Password input field
- * @param {STRING} iconParameter HTML-ID of Icon in Password input field
- *
  * switch type of input-field for password, to show and hide password.
  * switch the icon in the password-input-field
+ * @param {STRING} passwordParameter HTML-ID of Password input field
+ * @param {STRING} iconParameter HTML-ID of Icon in Password input field
  */
 function swapPassword(passwordParameter, iconParameter) {
   let password = document.getElementById(passwordParameter);
@@ -145,10 +142,10 @@ function passwordReset() {
 }
 
 /**
- * ! NOCH NICHT FERTIG !
  * ToDo: Email versand einrichten
+ * Script sendet Email an feste Adresse, nicht an den Benutzer
  */
 function sendNewPassword() {
   let email = document.getElementById("forgotpasswordemail");
-  alert(email.value);
+  alert(email.value + " you will get a new password.");
 }
