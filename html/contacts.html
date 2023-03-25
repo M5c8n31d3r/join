@@ -1,72 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join | Contacts</title>
+    <link
+      rel="shortcut icon"
+      href="/assets/img/logos/logo-dark.png"
+      type="image/x-icon"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/contacts.css" />
+    <link rel="stylesheet" href="../css/addtask.css" />
+    <link rel="stylesheet" href="../css/fonts.css" />
+    <link rel="stylesheet" href="../css/summary@media.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Join | Contacts</title>
-  <link rel="shortcut icon" href="/assets/img/logos/logo-dark.png" type="image/x-icon" />
-  <!-- CSS -->
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/contacts.css" />
-  <link rel="stylesheet" href="../css/addtask.css" />
-  <link rel="stylesheet" href="../css/fonts.css" />
-  <link rel="stylesheet" href="../css/summary@media.css" />
+    <!-- JavaScript -->
+    <script src="../js/mini_backend.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/contacts.js"></script>
+    <script src="../js/contactshtml.js"></script>
+    <script src="../js/add-task.js"></script>
+    <script src="../js/add-taskhtml.js"></script>
+  </head>
 
-  <!-- JavaScript -->
-  <script src="../js/mini_backend.js"></script>
-  <script src="../js/script.js"></script>
-  <script src="../js/contacts.js"></script>
-  <script src="../js/add-task.js"></script>
-</head>
+  <body onload="initContacts()">
+    <header w3-include-html="../assets/templates/header.html"></header>
+    <nav w3-include-html="../assets/templates/navbar.html"></nav>
+    <section class="content-contacts">
+      <section class="contacts-rows flex">
+        <div class="contacts-col-l">
+          <div class="btn-container flex-end mobile">
+            <button
+              class="btn-new-contact center gap"
+              id="btn"
+              onclick="addEditUser(0, false)"
+            >
+              New Contact
+              <img
+                src="../assets/img/icons/icon-new-contact.svg"
+                alt=""
+                srcset=""
+              />
+            </button>
+          </div>
+          <!-- Contact List -->
+          <section class="" id="contactlist"></section>
+        </div>
+        <div id="contacts-col-r" class="contacts-col-r">
+          <p class="mobile">Kanban Project Management Tool</p>
+          <div class="contacts-headline flex center-row gap">
+            <h1 class="margin0">Contacts</h1>
+            <div class="desktop blue-line"></div>
+            <div class="desktop">Better with a team</div>
+          </div>
+          <div class="mobile contacts-subline font-21">Better with a team</div>
+          <div class="mobile blue-line-h"></div>
 
-<body onload="initContacts()">
-  <header w3-include-html="../assets/templates/header.html"></header>
-  <nav w3-include-html="../assets/templates/navbar.html"></nav>
-  <section class="content-contacts">
-    <section class="contacts-rows flex">
-      <div class="contacts-col-l">
-        <div class="btn-container flex-end mobile">
-          <button class="btn-new-contact center gap" id="btn" onclick="addEditUser(0, false)">
+          <button
+            class="btn-new-contact desktop center gap"
+            id="btn"
+            onclick="addEditUser(0, false)"
+          >
             New Contact
-            <img src="../assets/img/icons/icon-new-contact.svg" alt="" srcset="" />
+            <img
+              src="../assets/img/icons/icon-new-contact.svg"
+              alt=""
+              srcset=""
+            />
           </button>
-        </div>
-        <!-- Contact List -->
-        <section class="" id="contactlist"></section>
-      </div>
-      <div id="contacts-col-r" class="contacts-col-r">
-        <p class="mobile">Kanban Project Management Tool</p>
-        <div class="contacts-headline flex center-row gap">
-          <h1 class="margin0">Contacts</h1>
-          <div class="desktop blue-line"></div>
-          <div class="desktop">Better with a team</div>
-        </div>
-        <div class="mobile contacts-subline font-21">Better with a team</div>
-        <div class="mobile blue-line-h"></div>
 
-        <button class="btn-new-contact desktop center gap" id="btn" onclick="addEditUser(0, false)">
-          New Contact
-          <img src="../assets/img/icons/icon-new-contact.svg" alt="" srcset="" />
-        </button>
-
-        <!-- Contact Details -->
-        <section class="display-none" id="details">
-          <div>details</div>
+          <!-- Contact Details -->
+          <section class="display-none" id="details">
+            <div>details</div>
+          </section>
+        </div>
+        <!-- Add/Edit Contact -->
+        <section class="display-none" id="add-edit-contact">
+          <div>add / edit</div>
         </section>
-      </div>
-      <!-- Add/Edit Contact -->
-      <section class="display-none" id="add-edit-contact">
-        <div>add / edit</div>
       </section>
     </section>
-  </section>
-  <div class="addtask-background flex display-none" id="addtask-dialog">
-    <div class="addtask-overlay animationFadeInBottom">
-      <div w3-include-html="../assets/templates/addtask.html"></div>
+    <div class="addtask-background flex display-none" id="addtask-dialog">
+      <div class="addtask-overlay animationFadeInBottom">
+        <div w3-include-html="../assets/templates/addtask.html"></div>
+      </div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>

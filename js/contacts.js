@@ -35,67 +35,6 @@ function createLetterlist() {
 }
 
 /**
- *
- * @param {OBJECT} contactlist HTML-Object
- * Render the Letters for grouping the contacts
- */
-function renderLetterGroup(contactlist) {
-  letterlist.sort();
-  for (let i = 0; i < letterlist.length; i++) {
-    contactlist.innerHTML += `<div id=letter-${letterlist[i]} class="cl-letters">${letterlist[i]}</div>
-    <div id=group-${letterlist[i]} class="cl-group"></div>
-    `;
-  }
-}
-
-/**
- * ToDO Beschreibung ergänzen
- */
-function renderContact() {
-  for (let i = 0; i < users.length; i++) {
-    let firstLetter = getFirstLetter(users[i]);
-    for (let j = 0; j < letterlist.length; j++) {
-      const letterLetterlist = letterlist[j];
-      if (letterLetterlist == firstLetter) {
-        document.getElementById(`group-${firstLetter}`).innerHTML +=
-          renderSingleContact(users[i], i % 4);
-      }
-    }
-  }
-}
-
-/**
- *
- * @param {Object} user one user of users-array
- * @returns HTML-Object
- * Render the contact-information of a single user
- */
-function renderSingleContact(user, classCounter) {
-  return `
-    <div id="${user.id}" class="cl-contact flex center-row pointer" onclick="showDetails(${user.id})">
-      <div class="cl-contact-left initials initials-bg${classCounter} center">${user.initials}</div>
-      <div class="cl-contact-right center-column gap-s">
-        <div class="cl-contact-name">${user["name"]}</div>
-        <a
-          href="mailto:${user["email"]}"
-          class="cl-contact-email font-lightblue"
-          >${user["email"]}</a
-        >
-      </div>
-    </div>`;
-}
-
-/**
- *
- * @param {Object} user one user of users-array
- * @returns CHAR
- * Return the first letter of the name
- */
-function getFirstLetter(user) {
-  return user["name"].charAt(0);
-}
-
-/**
  * @param {INT} id ID of the user
  * Hide the contactlist and show the details
  */
@@ -122,56 +61,9 @@ function setActiveUser(id) {
 }
 
 /**
- *
- * @param {INT} id ID of the user
- * render the detail-screen of user-informations
- *
- * TODO addTask noch programmieren
+ * Preset the user as assigned to
+ * @param {INT} id ID of the selected-user
  */
-function renderDetails(id, classCounter) {
-  let details = document.getElementById("details");
-  details.innerHTML = /* html */ `
-  <img class="back-arrow" src="../assets/img/icons/icon-arrow-back-black.svg" onclick="returnContacts()">
-  <div class="contact-details-main flex center-row">
-    <div class="cl-contact-left initials-contact-medium initials-bg${classCounter} center">${
-    users[id].initials
-  }</div>
-    <div class="cl-contact-right center-column gap-s">
-      <div class="contact-details-name">${users[id].name}</div>
-      ${renderAddTaskButton(id)}      
-    </div>
-  </div>
-  <div class="flex center-row gap-xl">
-    <p class="font-21">Contact Information</p>
-    <div class="contact-details-edit desktop flex center-row gap-s font-16 pointer" onclick="addEditUser(${id}, ${true})">
-      <img src="../assets/img/icons/icon-to-do.svg">
-      Edit Contact
-    </div>
-  </div>
-  <p class="font-16 bold">Email</p>
-  <a href="mailto:${
-    users[id].email
-  }" class="font-16 contacts-text font-lightblue">${users[id].email}</a>
-  <p class="font-16 bold">Phone</p>
-  <p class="contacts-text">${users[id].phone}</p>
-  <button class="btn-delete-contact flex center" onclick="deleteUser(${id})"><img class="icon-white" src="../assets/img/icons/icon-delete.svg"></button>
-  <button class="btn-edit-contact mobile flex center" onclick="addEditUser(${id}, ${true})"><img class="icon-white" src="../assets/img/icons/icon-to-do.svg"></button>
-  `;
-}
-
-function renderAddTaskButton(id) {
-  if (users[id].isUser) {
-    return /*html */ `
-  <a id="${id}" onclick="addUserToTask(${id})" class="contact-details-add-task flex gap-m center-row">
-        <img src="../assets/img/icons/icon-plus.svg">
-        Add Task
-      </a>
-  `;
-  } else {
-    return "";
-  }
-}
-
 function addUserToTask(id) {
   selectedUsers.push(id);
   renderSelectedUsers();
@@ -181,28 +73,23 @@ function addUserToTask(id) {
   document
     .getElementById("save-task-button-desktop")
     .setAttribute("onClick", `saveTask("ToDo")`);
+  loadCategories();
+  loadUserList();
+  getToday();
   addTask();
 }
 
 /**
- *
- * @param {INT} id
- * @param {BOOLEAN} edit EDIT is TRUE, ADD is FALSE
- *
  * switch between add-user and edit-user
+ * @param {INT} id id of the selected-user
+ * @param {BOOLEAN} edit EDIT is TRUE, ADD is FALSE
  */
 function addEditUser(id, edit) {
-  let details = document.getElementById("details");
-  let contactlist = document.getElementById("contactlist");
-  let btn = document.getElementById("btn");
   let headline = "";
   let underheadline = "";
   let icon = "";
   let checkout = "";
 
-  // contactlist.classList.add("display-none");
-  // details.classList.add("display-none");
-  // btn.classList.add("display-none");
   toggleVisibility("add-edit-contact");
 
   if (edit) {
@@ -222,74 +109,8 @@ function addEditUser(id, edit) {
 }
 
 /**
- *
- * @param {INT*} id ID of the user
- * @param {STRING} headline Headline of edit-card
- * @param {STRING} underheadline Underheadline of edit-card
- * @param {STRING} icon URL of the icon / Initials of the user
- * @param {STRING} checkout Button-text
- *
- * Render the Card for edditing and adding contacts
- */
-function renderAddEditUser(
-  id,
-  headline,
-  underheadline,
-  icon,
-  checkout,
-  classCounter
-) {
-  let contact = document.getElementById("add-edit-contact");
-  contact.innerHTML = /*html */ `
-  <div class="nc-background ">
-    <div class="nc-card animationFadeInBottom">
-      <div class="nc-card-close" onclick="toggleVisibility('add-edit-contact')">
-      <img src="../assets/img/icons/icon-x.svg" />
-      </div>
-      <div class="nc-card-top">
-        <img class="nc-logo desktop" src="../assets/img/logos/logo-white.png" />
-        <h1>${headline}</h1>
-        <h2>${underheadline}</h2>
-        <div class="blue-line-h"></div>
-      </div>
-      <div class="nc-card-bottom">
-      <div class="flex center">
-          <div class="initials-contact-big nc-card-initials initials-bg${classCounter} center">${icon}</div>
-        </div>
-        <div class="contact-detail">
-          <div class="input-login input-bar">
-            <input type="text" required id="edit-name" value="${
-              id == users.length ? "" : users[id].name
-            }" placeholder="Name">
-            <img src="../assets/img/icons/icon-name.svg" />
-          </div>
-          <div class="input-login input-bar">
-            <input type="email" required id="edit-email" value="${
-              id == users.length ? "" : users[id].email
-            }" placeholder="Email">
-            <img src="../assets/img/icons/icon-email.svg" />
-          </div>
-          <div class="input-login input-bar">
-            <input type="number" id="edit-phone" value="${
-              id == users.length ? "" : users[id].phone
-            }" placeholder="Phonenumber">
-            <img src="../assets/img/icons/icon-phone.svg" />
-          </div>
-          <div class="nc-btn-box flex-row center gap">
-            <button class="nc-btn-light flex center btn-line desktop" onclick="toggleVisibility('add-edit-contact')">Cancel <img class="line-btn" src="../assets/img/icons/icon-x.svg"></button>
-            <button class="nc-btn" onclick="save(${id})">${checkout} <img src="../assets/img/icons/icon-check.svg"></button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  `;
-}
-
-/**
- *
- * @param {INT} id ID of the user
  * Push the user input to users-array and save the array in the backend
+ * @param {INT} id ID of the user
  */
 function save(id) {
   const name = document.getElementById("edit-name").value;
@@ -328,13 +149,11 @@ function save(id) {
 }
 
 /**
- *
+ * override user-details with input data
  * @param {INT} id
  * @param {STRING} name Name of the user
  * @param {STRING} email Email of the user
  * @param {STRING} phone Phonenumber of the user
- *
- * override user-details with input data
  */
 function saveExistingUser(id, name, email, phone) {
   users[id].name = name;
@@ -351,7 +170,7 @@ function errorMSG() {
 }
 
 /**
- * ToDo Beschreibung erstellen
+ * Go back to contactlist
  */
 function returnContacts() {
   let contactlist = document.getElementById("contactlist");
@@ -366,15 +185,11 @@ function returnContacts() {
   btn.classList.remove("display-none");
   columnRight.style = "display: none";
 
-  // document.getElementById(id).classList.remove(""); // TODO CLASS WITH DARK BACKGROUND
-
   renderContacts();
 }
 
 /**
  * Add a new Task
- *
- * ToDo -> open the overlay template
  */
 function addTask() {
   document.getElementById("addtask-dialog").classList.remove("display-none");
