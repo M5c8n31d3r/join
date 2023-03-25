@@ -45,7 +45,6 @@ function clearBoard() {
 
 /**
  * Load HTML-Elements
- * ToDo: Länge der Funktion prüfen
  */
 function loadTask(ItemList) {
   let toDoTasks = document.getElementById("col-todo");
@@ -213,9 +212,8 @@ function toggleDropZone() {
 }
 
 /**
- * TODO Irgendetwas für Drag and Drop -> DOKU BEI W3-SCHOOLS NOCH LESEN
+ * Cancels the drag-event when its not feasable to drop at a dropzone
  * @param {EVENT} ev
- * ! ICH HABE KEINE AHNUNG WARUM MAN DIE FUNKTION BENÖTIGT !
  */
 function allowDrop(ev) {
   ev.preventDefault();
