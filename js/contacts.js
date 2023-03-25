@@ -28,7 +28,7 @@ function renderContacts() {
  */
 function createLetterlist() {
   for (let i = 1; i < users.length; i++) {
-    if (letterlist.indexOf(getFirstLetter(users[i]))) {
+    if (letterlist.indexOf(getFirstLetter(users[i])) == -1) {
       letterlist.push(getFirstLetter(users[i]));
     }
   }
