@@ -11,8 +11,6 @@ function renderDropArea(id) {
  * Generate HTML for card
  * @param {OBJECT} task One Task of Tasks-Array
  * @returns HTML-Card with Task-Information
- *
- * ToDo Länge der Funktion prüfen
  */
 function renderCard(task) {
   let cardID = "card" + task.id;
@@ -157,7 +155,7 @@ function tcbRenderSubtasks(task) {
 
 /**
  * tcb = TaskCardBig
- * ! DA MUSS DENNIS NOCH MAL ETWAS ZU SAGEN !!!
+ * renders the changed subtasks when done in the task display
  * @param {OBJECT} task
  */
 function tcbChangedRenderSubtasks(task) {

@@ -30,7 +30,6 @@ async function initSummary() {
   loadAllCounters();
   setWelcomeMsg();
   setCurrentUser();
-
   setDeadline();
 }
 
