@@ -140,15 +140,32 @@ function selectInputType(cardID) {
   );
 }
 
+/**
+ *
+ * @param {event} eventTouch
+ * @param {number} cardID
+ */
 function touchScreen(eventTouch, cardID) {
   showTouchMenu(cardID);
   eventTouch.preventDefault();
 }
 
+/**
+ *
+ * @param {event} eventMouse
+ * @param {number} cardID
+ */
+
 function mouseInput(eventMouse, cardID) {
   showTask(cardID);
   eventMouse.preventDefault();
 }
+
+/**
+ *
+ * @param {number} cardID
+ * shows the mobile menu for cards
+ */
 
 function showTouchMenu(cardID) {
   let cardMenu = document.getElementById("touch-menu" + cardID);
@@ -156,9 +173,9 @@ function showTouchMenu(cardID) {
   renderTouchMenu(cardID);
   setTimeout(
     function (cardMenu) {
-      cardMenu.classList.add("display-none");
+      hideElement("touch-menu" + cardID);
     },
-    10000,
+    5000,
     cardMenu
   );
 }
@@ -447,7 +464,8 @@ function renderAssignedUserName(user) {
 }
 
 /**
- * ToDO Beschreibung fehlt noch
+ * Shows the Task
+ * @param {string} state
  */
 function showAddTask(state) {
   document.getElementById("addtask-card-headline").innerHTML = "Add Task";
