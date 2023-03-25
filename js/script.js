@@ -97,13 +97,21 @@ function setActive(id) {
  * @param {id} ID of the element to be hidden or shown
  */
 function toggleVisibility(id) {
-  let card = document.getElementById(id);
-  if (card.classList.contains("display-none")) {
-    card.classList.remove("display-none");
+  let element = document.getElementById(id);
+  if (element.classList.contains("display-none")) {
+    element.classList.remove("display-none");
   } else {
-    card.classList.add("display-none");
+    element.classList.add("display-none");
     $("body").removeClass("no-scroll");
   }
+}
+
+/**
+ * Hide an element
+ * @param {id} ID of the element to be hidden or shown
+ */
+function hideElement(id) {
+  document.getElementById(id).classList.add("display-none");
 }
 
 /**

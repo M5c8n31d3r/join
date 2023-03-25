@@ -1,4 +1,4 @@
-<div class="addtask-body">
+<div class="addtask-body" onclick="hideElement('dropdown-list-assigned-to')">
   <div class="addtask-card-close" onclick="toggleVisibility('addtask-dialog')">
     <img src="../assets/img/icons/icon-x.svg" />
   </div>
@@ -141,7 +141,7 @@
       <!-- Assigned to -->
       <div class="form-inputs center-column">
         <label for="assigned-to-user-input">Assigned to</label>
-        <div class="dropdown">
+        <div class="dropdown" onclick="event.stopPropagation()">
           <div class="dropdown-input flex space-between">
             <div id="new-assigned-to-user-inputs" class="flex">
               <input
