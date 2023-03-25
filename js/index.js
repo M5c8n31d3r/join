@@ -96,10 +96,10 @@ function swapPassword(passwordParameter, iconParameter) {
 
   if (password.type == "password") {
     password.type = "text";
-    icon.src = "/assets/img/icons/icon-password-visible.svg";
+    icon.src = "../assets/img/icons/icon-password-visible.svg";
   } else {
     password.type = "password";
-    icon.src = "/assets/img/icons/icon-password-not-visible.svg";
+    icon.src = "../assets/img/icons/icon-password-not-visible.svg";
   }
 }
 
