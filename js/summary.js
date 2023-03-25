@@ -22,6 +22,9 @@ const counter = [
   { type: -1, name: "counterUrgent", value: 0 }
 ];
 
+/**
+ * Initialisation after loading the page
+ */
 async function initSummary() {
   await includeHTML();
   await loadDataFromServer();
@@ -34,6 +37,9 @@ async function initSummary() {
   setDeadline();
 }
 
+/**
+ * Welcome message
+ */
 function handleWelcomeOnMobile() {
   let isLogin = localStorage.getItem("userLogIn");
   if (!isLogin) {
@@ -70,32 +76,6 @@ function setCurrentUser() {
   }
 }
 
-/**
- * Sets the welcome message depending on the current time
- */
-function setWelcomeMsg() {
-  const currDate = new Date();
-  const currHour = currDate.getHours();
-  const welcomeTextDesk = document.getElementById("welcome-text-desk");
-  const welcomeTextMobile = document.getElementById("welcome-text-mobile");
-  let welcomeText = "";
-
-  switch (true) {
-    case currHour < 12:
-      welcomeText = "Good morning!";
-      break;
-    case currHour >= 12 && currHour < 17:
-      welcomeText = "Good afternoon!";
-      break;
-    case currHour >= 17:
-      welcomeText = "Good evening!";
-      break;
-  }
-
-  welcomeTextDesk.innerHTML = welcomeText;
-  welcomeTextMobile.innerHTML = welcomeText;
-}
-
 function loadAllCounters() {
   for (let i = 0; i < tasks.length; i++) {
     for (let j = 0; j < counter.length; j++) {
@@ -105,15 +85,12 @@ function loadAllCounters() {
   renderCounter();
 }
 
-function renderCounter() {
-  document.getElementById("board-counter").innerHTML = tasks.length;
-  document.getElementById("progress-counter").innerHTML = counter[0].value;
-  document.getElementById("feedback-counter").innerHTML = counter[1].value;
-  document.getElementById("todo-counter").innerHTML = counter[2].value;
-  document.getElementById("done-counter").innerHTML = counter[3].value;
-  document.getElementById("urgent-counter").innerHTML = counter[4].value;
-}
-
+/**
+ * counts the tasks with right state or priority
+ * @param {INT} id ID of the task
+ * @param {STRING} name state or priority
+ * @returns
+ */
 function counterLoop(id, name) {
   if (tasks[id].state == name || tasks[id].priority == name) {
     return 1;
@@ -122,14 +99,23 @@ function counterLoop(id, name) {
   }
 }
 
+/**
+ * load board.html with delay. Backend delete files without delay
+ */
 function goToBoard() {
   loadPageWithDelay("./board.html");
 }
 
+/**
+ * load board.html with delay. Backend delete files without delay
+ */
 function goToSummary() {
   loadPageWithDelay("./summary.html");
 }
 
+/**
+ * search the smallest value for deadline and set it on html
+ */
 function setDeadline() {
   let dateField = document.getElementById("deadline-date");
   let minDate = Number.MAX_SAFE_INTEGER;
