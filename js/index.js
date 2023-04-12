@@ -17,22 +17,66 @@ function signUp() {
   const password = document.getElementById("passwordsignup").value;
   let user = {};
 
-  if (!getUserExist(email)) {
-    user = {
-      id: users.length,
-      name: userName,
-      email: email.toLowerCase(),
-      password: password,
-      isUser: true
-    };
+  cleanScreenErrors();
 
-    users.push(user);
-    setInitials(user.id);
-    backend.setItem("users", users);
-    switchscreen();
-  } else {
-    showAlert("signup-alert");
+  if (checkinput(userName, email, password)) {
+    if (!getUserExist(email)) {
+      user = {
+        id: users.length,
+        name: userName,
+        email: email.toLowerCase(),
+        password: password,
+        isUser: true
+      };
+
+      saveUser(user);
+
+      let timeout = setTimeout(function () {
+        hideAlert("signup-infobox");
+        switchscreen();
+      }, 1000);
+    } else {
+      showAlert("signup-alert");
+    }
   }
+}
+
+function saveUser(user) {
+  users.push(user);
+  setInitials(user.id);
+  backend.setItem("users", users);
+  showAlert("signup-infobox");
+}
+
+/**
+ *
+ * @param {STRING} userName
+ * @param {STRING} email
+ * @param {STRING} password
+ * @returns
+ */
+function checkinput(userName, email, password) {
+  let check = true;
+  if (userName == "") {
+    showAlert("signup-username");
+    check = false;
+  }
+  if (email == "") {
+    showAlert("signup-email");
+    check = false;
+  }
+  if (password == "") {
+    showAlert("signup-password");
+    check = false;
+  }
+  return check;
+}
+
+function cleanScreenErrors() {
+  hideAlert("signup-alert");
+  hideAlert("signup-username");
+  hideAlert("signup-email");
+  hideAlert("signup-password");
 }
 
 /**
@@ -110,6 +154,8 @@ function switchscreen() {
   let login = document.getElementById("login");
   let signup = document.getElementById("signup");
   let btn = document.getElementById("btn");
+
+  cleanScreenErrors();
 
   if (login.classList.contains("display-none")) {
     login.classList.remove("display-none");

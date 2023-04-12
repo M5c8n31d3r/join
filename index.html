@@ -110,6 +110,9 @@
         </form>
       </div>
       <!-- Sign UP -->
+      <div id="signup-infobox" class="infobox display-none">
+        <div class="info">User created</div>
+      </div>
       <div
         class="sign-up-content relative center display-none animationFadeInRight"
         id="signup"
@@ -131,7 +134,11 @@
               />
               <img src="./assets/img/icons/icon-name.svg" />
             </div>
-            <div class="input-alert-box"></div>
+            <div class="input-alert-box">
+              <div id="signup-username" class="input-alert display-none">
+                Input required
+              </div>
+            </div>
           </div>
 
           <div class="input-box">
@@ -146,6 +153,9 @@
               <img src="./assets/img/icons/icon-email.svg" />
             </div>
             <div class="input-alert-box">
+              <div id="signup-email" class="input-alert display-none">
+                Input required
+              </div>
               <div id="signup-alert" class="input-alert display-none">
                 Email already exist!
               </div>
@@ -167,7 +177,11 @@
                 onclick="swapPassword('passwordsignup', 'signup-password-icon')"
               />
             </div>
-            <div class="input-alert-box"></div>
+            <div class="input-alert-box">
+              <div id="signup-password" class="input-alert display-none">
+                Input required
+              </div>
+            </div>
           </div>
 
           <div class="login-btns">

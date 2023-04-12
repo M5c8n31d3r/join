@@ -115,12 +115,18 @@ function hideElement(id) {
 }
 
 /**
- *
- * @param {STRING} elementID -> ID of the element, which should be displayed
  * Show the alert-massages
+ * @param {STRING} elementID -> ID of the element, which should be displayed
  */
 function showAlert(elementID) {
   document.getElementById(elementID).classList.remove("display-none");
+}
+/**
+ * Hide the alert-massages
+ * @param {STRING} elementID -> ID of the element, which should be hide
+ */
+function hideAlert(elementID) {
+  document.getElementById(elementID).classList.add("display-none");
 }
 
 /**
