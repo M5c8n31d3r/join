@@ -2,9 +2,7 @@
  * This File contains all functions, which are used in different files.
  */
 
-setURL(
-  "https://kay-beckmann.developerakademie.net/smallest_backend_ever"
-);
+setURL("https://kay-beckmann.developerakademie.net/smallest_backend_ever");
 
 // Arrays for the Data
 const users = [];
@@ -104,7 +102,7 @@ function toggleVisibility(id) {
     element.classList.remove("display-none");
   } else {
     element.classList.add("display-none");
-    $("body").removeClass("no-scroll");
+    // $("body").removeClass("no-scroll");
   }
 }
 

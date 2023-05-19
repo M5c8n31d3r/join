@@ -106,7 +106,7 @@ function renderAddTaskButton(id) {
       </a>
   `;
   } else {
-    return /* html */`
+    return /* html */ `
       <div class="contact-details-add-task flex gap-m center-row">
         Add Task only for Users.
         </div>`;
@@ -160,7 +160,7 @@ function renderAddEditUser(
             <img src="../assets/img/icons/icon-email.svg" />
           </div>
           <div class="input-login input-bar">
-            <input type="number" id="edit-phone" value="${
+            <input type="text" id="edit-phone" value="${
               id == users.length ? "" : users[id].phone
             }" placeholder="Phonenumber">
             <img src="../assets/img/icons/icon-phone.svg" />

@@ -1,6 +1,8 @@
 // Global variables
 let currentDragElementID = -1;
 
+let userInputtype = 0;
+
 let prios = [
   { id: -1, name: "Urgent", color: "var(--urgent)" },
   { id: 0, name: "Medium", color: "var(--medium)" },
@@ -27,6 +29,7 @@ function inputType() {
   for (let i = 0; i < tasks.length; i++) {
     selectInputType(i);
   }
+  userInputtype = 1;
 }
 
 /**
@@ -59,7 +62,9 @@ function loadTask(ItemList) {
   progressTasks.innerHTML += renderDropArea("dropzone-progress");
   awaitingTasks.innerHTML += renderDropArea("dropzone-awaiting");
   doneTasks.innerHTML += renderDropArea("dropzone-done");
-  inputType();
+  if (userInputtype) {
+    inputType();
+  }
 }
 
 /**
@@ -143,7 +148,7 @@ function showTouchMenu(cardID) {
     function (cardMenu) {
       hideElement("touch-menu" + cardID);
     },
-    5000,
+    2000,
     cardMenu
   );
 }

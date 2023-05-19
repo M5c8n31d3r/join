@@ -78,6 +78,7 @@
   display: flex;
   margin-left: 232px;
   margin-top: 90px;
+  margin-bottom: 90px;
   height: calc(100vh - 90px);
   width: calc(100% - 232px);
   overflow-x: hidden;

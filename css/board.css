@@ -116,6 +116,7 @@ h2 {
   padding: calc(var(--nav-height-m) + 60px) 33px
     calc(var(--nav-height-m) + 16px) 33px;
   background-color: var(--grey-bg);
+  overflow: auto;
 }
 
 .tcb-headline {

@@ -31,8 +31,13 @@
 
 .icon-arrow-back-black {
   cursor: pointer;
-  position: absolute;
+
   right: 100px;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
 }
 
 .content {

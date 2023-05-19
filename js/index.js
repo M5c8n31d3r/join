@@ -114,7 +114,7 @@ function signIn() {
   let rememberMe = document.getElementById("rememberme").checked;
   let userID = getUserExist(email);
   checkUserAndLogin(userID, password);
-  checkRememberMe(userID, email, password);
+  checkRememberMe(rememberMe, email, password);
 }
 
 /**
@@ -125,7 +125,7 @@ function signIn() {
  * @param email - The email address of the user.
  * @param password - The password parameter is a string that represents the user's password.
  */
-function checkRememberMe(userID, email, password) {
+function checkRememberMe(rememberMe, email, password) {
   if (rememberMe) {
     user = {
       email: email,
