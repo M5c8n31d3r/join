@@ -1,19 +1,6 @@
-/**
- * Maximum width for mobile screen
- */
-const MOBILE_MAX_WIDTH = 780;
-/**
- * Delay for fade-out of welcome message on mobile device
- */
-const WELCOME_MSG_DELAY = 800;
-/**
- * Fade-out time for welcome message on mobile device
- */
-const WELCOME_MSG_TRANS = 400;
-/**
- * Fade-in/fade-out time for context menu in header
- */
-const HEADER_CTX_MENU_ANIM_TIME = 220;
+const mobileMaxWidth = 780;
+const welcomeMsgDelay = 800;
+const welcomeMsgTrans = 400;
 const counter = [
   { type: "progress", name: "counterProgress", value: 0 },
   { type: "awaiting", name: "counterReview", value: 0 },
@@ -23,7 +10,8 @@ const counter = [
 ];
 
 /**
- * Initialisation after loading the page
+ * The function initializes the summary page by including HTML, loading data from the server, setting
+ * active navigation, loading counters, setting welcome message, current user, and deadline.
  */
 async function initSummary() {
   await includeHTML();
@@ -37,19 +25,17 @@ async function initSummary() {
 }
 
 /**
- * Welcome message
+ * This function checks if the user is logged in and displays a welcome message on mobile devices
+ * before hiding it after a certain delay.
  */
 function handleWelcomeOnMobile() {
   let isLogin = localStorage.getItem("userLogIn");
   if (!isLogin) {
     window.location.href = "/index.html";
   }
-
   const windowWidth = window.innerWidth;
-  const delay = WELCOME_MSG_TRANS + WELCOME_MSG_DELAY + 100;
-  console.log(delay);
-
-  if (windowWidth <= MOBILE_MAX_WIDTH) {
+  const delay = welcomeMsgTrans + welcomeMsgDelay + 100;
+  if (windowWidth <= mobileMaxWidth) {
     const welcome = document.getElementById("welcome-mobile");
     welcome.classList.remove("d-none");
 
@@ -75,6 +61,10 @@ function setCurrentUser() {
   }
 }
 
+/**
+ * The function loads all counters by looping through tasks and counter types and updating their
+ * values.
+ */
 function loadAllCounters() {
   for (let i = 0; i < tasks.length; i++) {
     for (let j = 0; j < counter.length; j++) {

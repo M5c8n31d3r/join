@@ -19,8 +19,10 @@ async function initAddTask() {
 }
 
 /**
- * Save the input in a task-object and push the task to the tasks-array
- * saves the tasks-array in the backend
+ * The function saves a task with various properties and checks for input validation.
+ * @param [state=ToDo] - The state parameter is a string that represents the current state of the task
+ * being saved. It has a default value of "ToDo" which means that if no state is provided, the task
+ * will be saved in the "ToDo" state. However, if a different state is provided as an argument, the
  */
 function saveTask(state = "ToDo") {
   const title = document.getElementById("task-title").value;
@@ -36,8 +38,25 @@ function saveTask(state = "ToDo") {
     state: state,
     subtask: subtasks
   };
+  checkInputs(task);
+}
 
-  if (task.title != "" && task.description != "" && !isNaN(task.dueDate)) {
+/**
+ * The function checks if the task input has a title, description, and a valid due date before adding
+ * it to the tasks array and storing it in the backend.
+ * @param task - The parameter "task" is an object that contains information about a task, including
+ * its title, description, and due date. The function checks if all of these properties are filled out
+ * and if the due date is a valid number before adding the task to an array called "tasks" and storing
+ * it in
+ */
+function checkInputs(task) {
+  if (
+    task.title != "" &&
+    task.description != "" &&
+    !isNaN(task.dueDate) &&
+    selectedPriority != null &&
+    document.getElementById("category-input").value != ""
+  ) {
     tasks.push(task);
     backend.setItem("tasks", tasks);
     showTaskAddedInfobox();
@@ -57,19 +76,45 @@ function showTaskAddedInfobox() {
 }
 
 /**
- * check the requiered fields and show the information in HTML-file
- * @param {OBJECT} task -> one task
+ * The function checks for alerts on various task properties and toggles them accordingly.
+ * @param task - The task object that contains the information to be checked for alerts.
  */
 function checkAlert(task) {
-  console.log(task);
-  if (task.title == "") {
-    showAlert("title-alert");
+  let cat = document.getElementById("category-input").value;
+  toggleAlert(task, "title", "title-alert");
+  toggleAlert(task, "description", "description-alert");
+  toggleAlert(task, "assignedTo", "assigned-to-alert");
+  if (cat == "") {
+    showAlert("category-alert");
+  } else {
+    hideAlert("category-alert");
   }
-  if (task.description == "") {
-    showAlert("description-alert");
+  if (selectedPriority == null) {
+    showAlert("prio-alert");
+  } else {
+    hideAlert("prio-alert");
   }
   if (isNaN(task.dueDate)) {
     showAlert("due-date-alert");
+  } else {
+    hideAlert("due-date-alert");
+  }
+}
+
+/**
+ * The function checks if a task input is empty or not a number and shows or hides an alert
+ * accordingly.
+ * @param task - It is a variable that likely contains an object or array with information about a
+ * task.
+ * @param input - The name of the input field being checked for a valid value.
+ * @param inputId - inputId is a string parameter that represents the ID of the HTML element where the
+ * alert message will be displayed.
+ */
+function toggleAlert(task, input, inputId) {
+  if (task[input] == "") {
+    showAlert(inputId);
+  } else {
+    hideAlert(inputId);
   }
 }
 
@@ -82,21 +127,25 @@ function selectCategory(id) {
   filledCategory.innerHTML = fillCatergory(id);
   filledCategory.classList.remove("display-none");
   document.getElementById("category-input").value = categories[id].name;
-  document.getElementById("category-input").classList.add("display-none");
-  document.getElementById("new-category-colors").classList.add("display-none");
+  hideElement("category-input");
+  hideElement("new-category-colors");
   toggleDropdown("category");
 }
 
 /**
- * Show and hide the drop-down-menus
- * @param {STRING} listName HTML-Name of the Drop-Down-List
+ * The function toggles the display of a dropdown list based on its current state.
+ * @param listName - The parameter `listName` is a string that represents the name of the dropdown list
+ * that needs to be toggled.
  */
 function toggleDropdown(listName) {
-  let list = document.getElementById(`dropdown-list-${listName}`);
-  if (list.classList.contains("display-none")) {
-    list.classList.remove("display-none");
+  if (
+    document
+      .getElementById(`dropdown-list-${listName}`)
+      .classList.contains("display-none")
+  ) {
+    showElement(`dropdown-list-${listName}`);
   } else {
-    list.classList.add("display-none");
+    hideElement(`dropdown-list-${listName}`);
   }
 }
 
@@ -105,35 +154,26 @@ function toggleDropdown(listName) {
  */
 function newCategory() {
   let categoryInput = document.getElementById("category-input");
-
-  document
-    .getElementById("new-category-colors")
-    .classList.remove("display-none");
+  showElement("new-category-colors");
+  showElement("dropdown-accept");
+  hideElement("category-dropdown-arrow");
+  hideElement("filled-category");
   categoryInput.classList.remove("display-none");
-  document.getElementById("dropdown-accept").classList.remove("display-none");
   categoryInput.disabled = false;
-  document
-    .getElementById("category-dropdown-arrow")
-    .classList.add("display-none");
-
   categoryInput.value = "";
   categoryInput.select();
-  document.getElementById("filled-category").classList.add("display-none");
   toggleDropdown("category");
 }
 
 /**
- * Clear all user inputs
+ * This function clears input fields and toggles the visibility of certain elements.
  */
 function clearInput() {
-  document.getElementById("new-category-colors").classList.add("display-none");
-  document.getElementById("category-input").classList.add("display-none");
-  document.getElementById("dropdown-accept").classList.add("display-none");
-  document
-    .getElementById("category-dropdown-arrow")
-    .classList.remove("display-none");
-
-  document.getElementById("filled-category").classList.remove("display-none");
+  hideElement("new-category-colors");
+  hideElement("category-input");
+  hideElement("dropdown-accept");
+  showElement("category-dropdown-arrow");
+  showElement("filled-category");
   toggleDropdown("category");
 }
 
@@ -145,7 +185,7 @@ function saveNewCategory() {
   let newCatColor =
     document.getElementById("new-category-color").style.backgroundColor;
   categories.push({
-    id: categories.length + 1,
+    id: categories.length,
     name: newCatValue,
     color: newCatColor
   });
@@ -154,12 +194,10 @@ function saveNewCategory() {
   let filledCategory = document.getElementById("filled-category");
   filledCategory.innerHTML = fillCatergory(categories.length - 1);
   filledCategory.classList.remove("display-none");
-  document.getElementById("category-input").classList.add("display-none");
-  document.getElementById("new-category-colors").classList.add("display-none");
-  document.getElementById("dropdown-accept").classList.add("display-none");
-  document
-    .getElementById("category-dropdown-arrow")
-    .classList.remove("display-none");
+  hideElement("category-input");
+  hideElement("new-category-colors");
+  hideElement("dropdown-accept");
+  showElement("category-dropdown-arrow");
 }
 
 /**
@@ -249,9 +287,9 @@ function clearAll() {
 function addSubtask() {
   let subtask = document.getElementById("task-subtask");
   if (subtask.value == "") {
-    document.getElementById("subtask-alert").classList.remove("display-none");
+    showElement("subtask-alert");
   } else {
-    document.getElementById("subtask-alert").classList.add("display-none");
+    hideElement("subtask-alert");
     subtasks.push({ description: subtask.value, done: 0 });
     subtask.value = "";
     renderSubtasks();

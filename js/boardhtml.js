@@ -17,7 +17,7 @@ function renderCard(task) {
   return /* html */ `
   <div id="${cardID}" class="task-card pointer" onclick="selectInputType(${
     task.id
-  })" draggable="true" ondragstart="drag(${task.id})">
+  })" draggable="true" ondragstart="drag(${task.id})" ondragend="hideDropZone()">
         <div style="background-color: ${
           task.category.color
         }" class="taskcard-category flex center">
@@ -26,15 +26,7 @@ function renderCard(task) {
         <h3 class="taskcard-title font-16 bold">${task["title"]}</h3>
         <p class="taskcard-description">${task["description"]}
         </p>
-        <div class="taskcard-subtasks flex center gap-s space-between"> 
-          <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: ${
-              (countDoneSubtasks(task.subtask) / task.subtask.length) * 100
-            }%"></div>
-          </div>
-          <span class="taskcard-subtasks-done">${countDoneSubtasks(
-            task.subtask
-          )}/${task.subtask.length} Done</span></div>
+        ${renderCardProgressbar(task)}
         <div class="taskcard-user-prio"> 
         <div class="flex center-row space-between">
             <div class="flex gap-s">${renderUserInitials(task)}</div>
@@ -48,6 +40,23 @@ function renderCard(task) {
     <div id="touch-menu${
       task.id
     }" class="card-touch-menu display-none">Here I am!!!</div>`;
+}
+
+function renderCardProgressbar(task){
+  if(task.subtask.length){
+    return /* html */`
+  <div class="taskcard-subtasks flex center gap-s space-between"> 
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: ${
+              (countDoneSubtasks(task.subtask) / task.subtask.length) * 100
+            }%"></div>
+          </div>
+          <span class="taskcard-subtasks-done">${countDoneSubtasks(
+            task.subtask
+          )}/${task.subtask.length} Done</span></div>`
+  }else{
+    return "";
+  }
 }
 
 /**

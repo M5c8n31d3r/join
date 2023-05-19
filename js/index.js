@@ -9,16 +9,29 @@ async function initialisation() {
 }
 
 /**
- * Save new user to the backend
+ * The function "signUp" takes user input for a username, email, and password, saves it to an object,
+ * and checks for any errors.
  */
 function signUp() {
   const userName = document.getElementById("usersignup").value;
   const email = document.getElementById("emailsignup").value.toLowerCase();
   const password = document.getElementById("passwordsignup").value;
   let user = {};
-
   cleanScreenErrors();
+  checkInputAndSave(userName, email, password, user);
+}
 
+/**
+ * The function checks user input and saves the user's information if it is valid and the user does not
+ * already exist.
+ * @param userName - A string representing the user's name.
+ * @param email - The email input provided by the user during signup.
+ * @param password - The password parameter is a string that represents the user's chosen password for
+ * their account.
+ * @param user - The parameter "user" is an object that represents a user. It contains the user's id,
+ * name, email, password, and a boolean value indicating whether the user is a regular user or not.
+ */
+function checkInputAndSave(userName, email, password, user) {
   if (checkinput(userName, email, password)) {
     if (!getUserExist(email)) {
       user = {
@@ -28,9 +41,7 @@ function signUp() {
         password: password,
         isUser: true
       };
-
       saveUser(user);
-
       let timeout = setTimeout(function () {
         hideAlert("signup-infobox");
         switchscreen();
@@ -41,6 +52,13 @@ function signUp() {
   }
 }
 
+/**
+ * The function saves a user's information, sets their initials, stores the information in the backend,
+ * and displays a signup infobox alert.
+ * @param user - The "user" parameter is an object that represents a user. It likely contains
+ * properties such as "id", "name", "email", and "password". This function adds the user object to an
+ * array called "users", sets the user's initials using their id, saves the updated "users"
+ */
 function saveUser(user) {
   users.push(user);
   setInitials(user.id);
@@ -49,11 +67,15 @@ function saveUser(user) {
 }
 
 /**
- *
- * @param {STRING} userName
- * @param {STRING} email
- * @param {STRING} password
- * @returns
+ * The function checks if the input fields for username, email, and password are empty and returns a
+ * boolean value.
+ * @param userName - The username entered by the user during sign up.
+ * @param email - The email parameter is a string that represents the email address entered by the user
+ * during sign up.
+ * @param password - The password parameter is a string that represents the user's password input.
+ * @returns a boolean value (either true or false) depending on whether all three input parameters
+ * (userName, email, and password) are not empty strings. If any of the input parameters are empty
+ * strings, the function will call the showAlert function and return false.
  */
 function checkinput(userName, email, password) {
   let check = true;
@@ -65,13 +87,16 @@ function checkinput(userName, email, password) {
     showAlert("signup-email");
     check = false;
   }
-  if (password == "") {
+  if (password == "" || password.length < 5) {
     showAlert("signup-password");
     check = false;
   }
   return check;
 }
 
+/**
+ * The function cleans the screen of any error messages related to signing up.
+ */
 function cleanScreenErrors() {
   hideAlert("signup-alert");
   hideAlert("signup-username");
@@ -80,14 +105,45 @@ function cleanScreenErrors() {
 }
 
 /**
- * If the Email and Password are correct, the user will get access
+ * The function signIn takes user input for email and password, checks if the user exists and logs them
+ * in, and also checks if the "remember me" option is selected.
  */
 function signIn() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
   let rememberMe = document.getElementById("rememberme").checked;
   let userID = getUserExist(email);
+  checkUserAndLogin(userID, password);
+  checkRememberMe(userID, email, password);
+}
 
+/**
+ * The function checks if the "remember me" option is selected and saves the user's email and password
+ * in local storage if it is.
+ * @param userID - The parameter "userID" is not being used in the function, so it is not relevant to
+ * the functionality of the code.
+ * @param email - The email address of the user.
+ * @param password - The password parameter is a string that represents the user's password.
+ */
+function checkRememberMe(userID, email, password) {
+  if (rememberMe) {
+    user = {
+      email: email,
+      password: password
+    };
+    localStorage.setItem("user", JSON.stringify(user));
+  }
+}
+
+/**
+ * The function checks the user ID and password, stores the user ID locally, and loads a summary page
+ * with a delay if the login is successful.
+ * @param userID - The user ID is a unique identifier assigned to each user in the system. It is used
+ * to identify the user and retrieve their information from the database.
+ * @param password - The password parameter is a string representing the password entered by the user
+ * during the login process.
+ */
+function checkUserAndLogin(userID, password) {
   if (userID) {
     if (password == users[userID].password) {
       storeLocal(userID);
@@ -96,17 +152,7 @@ function signIn() {
       showAlert("signin-alert");
     }
   } else {
-    document
-      .getElementById("signin-alert-user")
-      .classList.remove("display-none");
-  }
-
-  if (rememberMe) {
-    user = {
-      email: email,
-      password: password
-    };
-    localStorage.setItem("user", JSON.stringify(user));
+    showElement("signin-alert-user");
   }
 }
 
@@ -169,7 +215,8 @@ function switchscreen() {
 }
 
 /**
- * switch the screen between SignIn and Forgot-Password
+ * The function toggles the display of the login and password reset screens and the visibility of a
+ * button.
  */
 function passwordReset() {
   let login = document.getElementById("login");

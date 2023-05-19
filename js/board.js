@@ -30,7 +30,7 @@ function inputType() {
 }
 
 /**
- * delete all tasks from the board
+ * The function clears the contents of four columns in a task board.
  */
 function clearBoard() {
   let toDoTasks = document.getElementById("col-todo");
@@ -44,7 +44,9 @@ function clearBoard() {
 }
 
 /**
- * Load HTML-Elements
+ * The function loads a task list and renders drop areas for each status column.
+ * @param ItemList - It is a parameter that represents an array of task items that need to be loaded
+ * onto the task board.
  */
 function loadTask(ItemList) {
   let toDoTasks = document.getElementById("col-todo");
@@ -52,7 +54,27 @@ function loadTask(ItemList) {
   let awaitingTasks = document.getElementById("col-awaiting");
   let doneTasks = document.getElementById("col-done");
   clearBoard();
+  checkStatus(ItemList);
+  toDoTasks.innerHTML += renderDropArea("dropzone-ToDo");
+  progressTasks.innerHTML += renderDropArea("dropzone-progress");
+  awaitingTasks.innerHTML += renderDropArea("dropzone-awaiting");
+  doneTasks.innerHTML += renderDropArea("dropzone-done");
+  inputType();
+}
 
+/**
+ * The function checks the status of items in a list and renders them in their respective columns on a
+ * webpage.
+ * @param ItemList - an array of objects representing tasks/items to be displayed on a Kanban board.
+ * Each object has a "state" property indicating which column of the board the task/item belongs to
+ * (ToDo, progress, awaiting, or done). The function iterates through the array and renders each
+ * task/item as a card
+ */
+function checkStatus(ItemList) {
+  let toDoTasks = document.getElementById("col-todo");
+  let progressTasks = document.getElementById("col-progress");
+  let awaitingTasks = document.getElementById("col-awaiting");
+  let doneTasks = document.getElementById("col-done");
   for (let i = 0; i < ItemList.length; i++) {
     if (ItemList[i].state == "ToDo") {
       toDoTasks.innerHTML += renderCard(ItemList[i]);
@@ -64,17 +86,15 @@ function loadTask(ItemList) {
       doneTasks.innerHTML += renderCard(ItemList[i]);
     }
   }
-  toDoTasks.innerHTML += renderDropArea("dropzone-ToDo");
-  progressTasks.innerHTML += renderDropArea("dropzone-progress");
-  awaitingTasks.innerHTML += renderDropArea("dropzone-awaiting");
-  doneTasks.innerHTML += renderDropArea("dropzone-done");
-  inputType();
 }
 
+/**
+ * This function adds event listeners to a card element for touch and mouse input.
+ * @param cardID - The ID of the card element that the function is selecting the input type for.
+ */
 function selectInputType(cardID) {
   let htmlID = "card" + cardID;
   let card = document.getElementById(htmlID);
-
   card.addEventListener(
     "touchstart",
     function (event) {
@@ -190,9 +210,9 @@ function prioIconEnding(task) {
 }
 
 /**
- * Show and hide the drop-zone for switching tasks
+ * Show the drop-zone for switching tasks
  */
-function toggleDropZone() {
+function showDropZone() {
   let todo = document.getElementById("dropzone-ToDo");
   let progress = document.getElementById("dropzone-progress");
   let awaiting = document.getElementById("dropzone-awaiting");
@@ -203,7 +223,19 @@ function toggleDropZone() {
     progress.classList.remove("display-none");
     awaiting.classList.remove("display-none");
     done.classList.remove("display-none");
-  } else {
+  }
+}
+
+/**
+ * Hide the drop-zone for switching tasks
+ */
+function hideDropZone() {
+  let todo = document.getElementById("dropzone-ToDo");
+  let progress = document.getElementById("dropzone-progress");
+  let awaiting = document.getElementById("dropzone-awaiting");
+  let done = document.getElementById("dropzone-done");
+
+  if (todo.classList.contains(!"display-none")) {
     todo.classList.add("display-none");
     progress.classList.add("display-none");
     awaiting.classList.add("display-none");
@@ -226,7 +258,7 @@ function allowDrop(ev) {
 function drag(id) {
   currentDragElementID = id;
   tasks[id].state = "";
-  toggleDropZone();
+  showDropZone();
 }
 
 /**
@@ -235,7 +267,7 @@ function drag(id) {
  */
 function changeState(state) {
   tasks[currentDragElementID].state = state;
-  toggleDropZone();
+  hideDropZone();
   loadTask(tasks);
   backend.setItem("tasks", tasks);
 }
@@ -261,8 +293,10 @@ function renderAssignedUserName(user) {
 }
 
 /**
- * Shows add-task-card with predefined state
- * @param {string} state
+ * The function shows an "Add Task" dialog box and sets the onClick event for the save task button.
+ * @param state - The state parameter is a string that is passed as an argument to the saveTask
+ * function when the "Save Task" button is clicked. It is used to determine whether the task being
+ * added is a new task or an edited task.
  */
 function showAddTask(state) {
   document.getElementById("addtask-card-headline").innerHTML = "Add Task";
@@ -272,21 +306,16 @@ function showAddTask(state) {
   document
     .getElementById("save-task-button-mobile")
     .setAttribute("onClick", `saveTask(${'"' + state + '"'})`);
-  document.getElementById("addtask-dialog").classList.remove("display-none");
-  document
-    .getElementById("add-task-btn-clear")
-    .classList.remove("display-none");
-  document
-    .getElementById("add-task-category-container")
-    .classList.remove("display-none");
+  showElement("addtask-dialog");
+  showElement("add-task-btn-clear");
+  showElement("add-task-category-container");
   clearAll();
   $("body").addClass("no-scroll");
 }
 
 /**
- * Delete one Item of TASKS-Array
- * count the IDs new of all other tasks
- * @param {INT} id Item to delete
+ * This function deletes a task from an array of tasks and updates the IDs of the remaining tasks.
+ * @param id - The id parameter is the index of the task to be deleted from the tasks array.
  */
 function deleteTask(id) {
   tasks.splice(id, 1);
@@ -298,13 +327,13 @@ function deleteTask(id) {
 }
 
 /**
- * Filter list of view on search result
- * @param {STRING} view ID of search input
+ * This function searches for tasks based on a given view and keyword, and loads the matching tasks
+ * while removing any duplicates.
+ * @param view - The ID of the HTML input element where the user enters their search query.
  */
 function findTask(view) {
   let search = document.getElementById(view).value;
   const items = new Array();
-
   for (let i = 0; i < tasks.length; i++) {
     if (tasks[i].title.toLowerCase().includes(search.toLowerCase())) {
       items.push(tasks[i]);
@@ -313,14 +342,14 @@ function findTask(view) {
       items.push(tasks[i]);
     }
   }
-
   loadTask(deleteDoubleValues(items));
 }
 
 /**
- * Deletes double entries
- * @param {ARRAY} list List of filtered Items
- * @returns
+ * The function takes a list and returns a new list with only the unique values.
+ * @param list - The parameter "list" is an array of values that may contain duplicates.
+ * @returns The function `deleteDoubleValues` is returning a new array that contains only the unique
+ * values from the input `list` array.
  */
 function deleteDoubleValues(list) {
   let unique = list.filter((x, i) => list.indexOf(x) === i);
@@ -338,8 +367,9 @@ function fillSubtasks(id) {
 }
 
 /**
- * Save updated datas to the backend
- * @param {INT} id id of the current Task
+ * The function updates the properties of a task object and saves it to local storage.
+ * @param id - The id parameter is the unique identifier of the task that needs to be updated. It is
+ * used to access the specific task object in the tasks array and update its properties.
  */
 function updateEditTask(id) {
   tasks[id].title = document.getElementById("task-title").value;

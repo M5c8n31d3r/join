@@ -2,7 +2,9 @@
  * This File contains all functions, which are used in different files.
  */
 
-setURL("https://gruppe-445.developerakademie.net/smallest_backend_ever/");
+setURL(
+  "https://kay-beckmann.developerakademie.net/smallest_backend_ever"
+);
 
 // Arrays for the Data
 const users = [];
@@ -107,11 +109,25 @@ function toggleVisibility(id) {
 }
 
 /**
- * Hide an element
- * @param {id} ID of the element to be hidden or shown
+ * The function hides an HTML element by adding a "display-none" class to it.
+ * @param id - The parameter "id" is a string representing the id attribute of an HTML element that
+ * needs to be hidden. The function uses the getElementById method to select the element with the
+ * specified id and then adds the "display-none" class to it, which sets the display property to "none"
+ * in CSS
  */
 function hideElement(id) {
   document.getElementById(id).classList.add("display-none");
+}
+
+/**
+ * The function removes the "display-none" class from an HTML element with a specified ID.
+ * @param id - The parameter "id" is a string that represents the ID of an HTML element that we want to
+ * show on the webpage. The function uses the document.getElementById() method to select the element
+ * with the specified ID and then removes the "display-none" class from its classList property. This
+ * will make the
+ */
+function showElement(id) {
+  document.getElementById(id).classList.remove("display-none");
 }
 
 /**

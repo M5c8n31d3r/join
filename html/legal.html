@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join | Legal</title>
+    <link
+      rel="shortcut icon"
+      href="/assets/img/logos/logo-dark.png"
+      type="image/x-icon"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/help.css" />
+    <link rel="stylesheet" href="../css/summary.css" />
+    <link rel="stylesheet" href="../css/summary@media.css" />
+    <link rel="stylesheet" href="../css/fonts.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Join | Legal</title>
-  <link rel="shortcut icon" href="/assets/img/logos/logo-dark.png" type="image/x-icon" />
-  <!-- CSS -->
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/help.css" />
-  <link rel="stylesheet" href="../css/summary.css" />
-  <link rel="stylesheet" href="../css/summary@media.css" />
-  <link rel="stylesheet" href="../css/fonts.css" />
+    <!-- JavaScript -->
+    <script src="../js/script.js"></script>
+    <script src="../js/summary.js"></script>
+  </head>
 
-  <!-- JavaScript -->
-  <script src="../js/script.js"></script>
-  <script src="../js/script.js"></script>
-  <script src="../js/summary.js"></script>
-</head>
-
-<body onload="includeHTML()">
-  <section class="content">
+  <body onload="includeHTML()">
     <header w3-include-html="../assets/templates/header.html"></header>
     <nav w3-include-html="../assets/templates/navbar.html"></nav>
-    <div class="tooltype-legal">
-      <span class="headline-tooltype">Kanban Project Management Tool</span>
-    </div>
-    <div>
-      <img class="icon-arrow-back-black" src="../assets/img/icons/icon-arrow-back-black.svg" onclick="goToSummary()" />
-    </div>
-    <div class="legal-container">
+    <section class="content">
+      <div>
+        <img
+          class="icon-arrow-back-black"
+          src="../assets/img/icons/icon-arrow-back-black.svg"
+          onclick="goToSummary()"
+        />
+      </div>
+
       <h1>Legal Notice</h1>
 
       <h2>Impressum</h2>
@@ -123,7 +126,9 @@
         Anbieter ist die ALL-INKL.COM - Neue Medien Münnich, Inh. René Münnich,
         Hauptstraße 68, 02742 Friedersdorf (nachfolgend All-Inkl). Details
         entnehmen Sie der Datenschutzerklärung von All-Inkl:
-        <a href="https://all-inkl.com/datenschutzinformationen/">https://all-inkl.com/datenschutzinformationen/</a>.
+        <a href="https://all-inkl.com/datenschutzinformationen/"
+          >https://all-inkl.com/datenschutzinformationen/</a
+        >.
       </p>
       <p>
         Die Verwendung von All-Inkl erfolgt auf Grundlage von Art. 6 Abs. 1 lit.
@@ -389,8 +394,6 @@
           <a href="https://www.e-recht24.de">www.e-recht24.de</a>
         </p>
       </div>
-    </div>
-  </section>
-</body>
-
+    </section>
+  </body>
 </html>

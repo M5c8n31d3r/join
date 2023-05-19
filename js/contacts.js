@@ -119,7 +119,7 @@ function save(id) {
 
   //Save a new user
   if (id == users.length) {
-    if (!getUserExist(email)) {
+    if (!getUserExist(email) && name != "") {
       let user = {
         id: id,
         name: name,
@@ -166,7 +166,7 @@ function saveExistingUser(id, name, email, phone) {
  */
 function errorMSG() {
   // !Error erstellen
-  alert("Email schon vergeben");
+  alert("Es ist ein Fehler aufgetreten!");
 }
 
 /**

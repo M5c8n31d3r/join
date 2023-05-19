@@ -415,6 +415,10 @@ input:focus {
   display: flex;
   flex-direction: column;
 }
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
 .center {
   display: flex;
   align-items: center;
@@ -711,6 +715,7 @@ input:focus {
 
 .dropdown-item {
   padding: 13px 21px;
+  cursor: pointer;
 }
 
 .dropdown-item:hover {
@@ -753,6 +758,7 @@ input:focus {
   border-radius: 10px;
   height: 41px;
   background-color: var(--white);
+  cursor: pointer;
 }
 
 .task-prio-card:hover {
@@ -872,8 +878,14 @@ input[type="radio"] {
   bottom: 0;
 }
 
-/* Desktop View 800px+*/ /*////////////////////////////////////////////////////////////////////////////////////////////////*/
-@media (min-width: 800px) {
+@media (max-width: 400px) {
+  .nav-item-text {
+    font-size: 12px !important;
+  }
+}
+
+/* Desktop View 1000px+*/
+@media (min-width: 860px) {
   *,
   input,
   textarea {
@@ -917,6 +929,7 @@ input[type="radio"] {
 
   .login-btns {
     flex-direction: row;
+    height: auto;
   }
 
   .login-input-bars {
@@ -1022,4 +1035,27 @@ input[type="radio"] {
   }
 }
 
-/* New Contact */ /*////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* Mobile View */
+@media (max-height: 800px) {
+  .login-btns{
+    padding: 4px 0px;
+  gap: 5px;
+  margin-top: 5px;
+  }
+
+  .btn-login,
+   .btn-small{
+    max-height: 25px;
+  }
+
+  .font-21{
+    font-size: 15px;
+  }
+
+  .login-content-sign-up {
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+  }
+}
+

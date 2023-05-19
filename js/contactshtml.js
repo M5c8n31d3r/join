@@ -106,7 +106,10 @@ function renderAddTaskButton(id) {
       </a>
   `;
   } else {
-    return "";
+    return /* html */`
+      <div class="contact-details-add-task flex gap-m center-row">
+        Add Task only for Users.
+        </div>`;
   }
 }
 

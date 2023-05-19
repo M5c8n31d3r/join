@@ -226,7 +226,14 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 860px) {
+  .contacts-col-l,
+  .contacts-col-r {
+    padding-left: calc(48px + var(--nav-width-d));
+  }
+}
+
+@media (min-width: 1160px) {
   .content-contacts {
     height: 100vh;
     padding: 89px 50px 0 calc(var(--nav-width-d));

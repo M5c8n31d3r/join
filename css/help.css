@@ -10,7 +10,7 @@
 }
 
 .question-cnt {
-  margin-top: 64px;
+  margin-top: 40px;
 }
 
 .number-cnt {
@@ -33,6 +33,10 @@
   cursor: pointer;
   position: absolute;
   right: 100px;
+}
+
+.content {
+  margin-bottom: 50px;
 }
 
 /***** Responsive Design *****/

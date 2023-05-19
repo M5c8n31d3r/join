@@ -65,7 +65,7 @@ h2 {
 
 .drop-box {
   width: 100%;
-  height: 100px;
+  height: 250px;
   padding-top: 15px;
   border-radius: var(--border-radius-m);
   border: 4px dashed var(--darkblue);
@@ -188,10 +188,6 @@ h2 {
   filter: brightness(1) saturate(0);
   height: 26px;
   width: 26px;
-}
-
-#assigned-to-user {
-  flex-direction: column !important;
 }
 
 /* Add task */
