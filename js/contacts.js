@@ -132,20 +132,31 @@ function save(id) {
       errorMSG();
     }
   } else {
-    //edit an existing user
-    if (users[id].email == email) {
-      saveExistingUser(id, name, email, phone);
-    } else {
-      if (!getUserExist(email)) {
-        saveExistingUser(id, name, email, phone);
-      } else {
-        errorMSG();
-      }
-    }
+    editUser(id);
   }
   setInitials(id);
   backend.setItem("users", users);
   returnContacts();
+}
+
+/**
+ * Save the new input for a existing user
+ * @param {INT} id ID of the user
+ */
+function editUser(id) {
+  const name = document.getElementById("edit-name").value;
+  const email = document.getElementById("edit-email").value;
+  const phone = document.getElementById("edit-phone").value;
+
+  if (users[id].email == email) {
+    saveExistingUser(id, name, email, phone);
+  } else {
+    if (!getUserExist(email)) {
+      saveExistingUser(id, name, email, phone);
+    } else {
+      errorMSG();
+    }
+  }
 }
 
 /**
