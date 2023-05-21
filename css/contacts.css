@@ -170,7 +170,8 @@
 }
 
 .nc-card-top h1 {
-  padding-top: 115px;
+  /* padding-top: 115px; */
+  padding-top: 16px;
   color: var(--white);
   padding-bottom: 12px;
   margin-bottom: 0;
@@ -193,7 +194,8 @@
 
 .nc-btn {
   position: absolute;
-  bottom: 48px;
+  /* bottom: 48px; */
+  bottom: 12px;
   height: 51px;
   font-size: 21px;
   padding: 0 10px;
@@ -507,5 +509,45 @@ input::-webkit-inner-spin-button {
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
+  }
+}
+
+@media (max-width: 415px) {
+  .nc-card-top h1 {
+    font-size: 26px;
+  }
+
+  .nc-card-top h2 {
+    font-size: 14px;
+  }
+
+  .nc-card-top {
+    padding-bottom: 20px;
+  }
+
+  .nc-placeholder {
+    height: 24px;
+  }
+
+  .nc-card {
+    height: calc(100vh - (2 * var(--nav-height-m)) - 2vh);
+  }
+
+  .nc-card-initials {
+    position: fixed;
+  }
+
+  .initials-contact-big {
+    height: 40px;
+    width: 40px;
+    top: 88px;
+  }
+
+  .contact-detail {
+    margin-top: 110px;
+  }
+
+  .input-bar {
+    height: 36px;
   }
 }

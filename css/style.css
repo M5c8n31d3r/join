@@ -362,6 +362,7 @@ input:focus {
 .nav-item:hover,
 .nav-item-active {
   background-color: var(--darkblue-active);
+  border-radius: 12px;
 }
 .checkbox {
   display: grid;
@@ -647,11 +648,13 @@ input:focus {
 }
 #head-user-image {
   width: 49px;
+  height: 49px;
   border-radius: 25px;
   border: 3px solid var(--darkblue);
   cursor: pointer;
   overflow: hidden;
   padding: 2px;
+  object-fit: cover;
 }
 #head-user-image:hover {
   border: solid 3px var(--lightblue);
@@ -665,7 +668,8 @@ input:focus {
 
 .icon-arrow-back-black {
   cursor: pointer;
-  position: absolute;
+  /* position: absolute; */
+  position: fixed;
   right: 100px;
 }
 
@@ -1037,18 +1041,18 @@ input[type="radio"] {
 
 /* Mobile View */
 @media (max-height: 800px) {
-  .login-btns{
+  .login-btns {
     padding: 4px 0px;
-  gap: 5px;
-  margin-top: 5px;
+    gap: 5px;
+    margin-top: 5px;
   }
 
   .btn-login,
-   .btn-small{
+  .btn-small {
     max-height: 25px;
   }
 
-  .font-21{
+  .font-21 {
     font-size: 15px;
   }
 
@@ -1058,4 +1062,3 @@ input[type="radio"] {
     bottom: 0;
   }
 }
-
