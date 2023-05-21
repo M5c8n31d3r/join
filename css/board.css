@@ -68,7 +68,7 @@ h2 {
   height: 250px;
   padding-top: 15px;
   border-radius: var(--border-radius-m);
-  border: 4px dashed var(--darkblue);
+  border: 3px dashed var(--darkblue);
 }
 
 .taskcard-subtasks-done {
