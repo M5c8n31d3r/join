@@ -2,7 +2,7 @@
  * This File contains all functions, which are used in different files.
  */
 
-setURL("https://kay-beckmann.developerakademie.net/smallest_backend_ever");
+setURL("https://michael-schneider.developerakademie.net/smallest_backend_ever");
 
 // Arrays for the Data
 const users = [];
