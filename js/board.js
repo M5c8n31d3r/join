@@ -1,8 +1,6 @@
 // Global variables
 let currentDragElementID = -1;
-
 let userInputtype = 0;
-
 let prios = [
   { id: -1, name: "Urgent", color: "var(--urgent)" },
   { id: 0, name: "Medium", color: "var(--medium)" },
