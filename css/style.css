@@ -1062,3 +1062,17 @@ input[type="radio"] {
     bottom: 0;
   }
 }
+
+@media (max-width: 320px) {
+  .container {
+    margin-top: 75px;
+  }
+
+  .notAUser {
+    height: 750px;
+  }
+
+  .login-content {
+    height: 72vh;
+  }
+}
