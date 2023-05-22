@@ -190,6 +190,7 @@ button {
 }
 
 button:hover {
+  cursor: pointer;
   background-color: var(--lightblue);
   border: 1px solid var(--lightblue);
 }
@@ -362,7 +363,8 @@ input:focus {
 .nav-item:hover,
 .nav-item-active {
   background-color: var(--darkblue-active);
-  border-radius: 12px;
+  border-radius: var(--border-radius-m);
+  margin: 0.5px;
 }
 .checkbox {
   display: grid;
@@ -424,6 +426,7 @@ input:focus {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 8px;
 }
 .center-row {
   align-items: center;
@@ -491,9 +494,9 @@ input:focus {
   justify-content: flex-start;
   background-color: var(--white);
   border-radius: var(--border-radius-xl);
-  height: 60vh;
+  height: 62vh;
   width: 80vw;
-  padding: 35px 28px;
+  padding: 16px 24px;
   box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
 }
 
@@ -514,7 +517,7 @@ input:focus {
   margin-top: 0;
 }
 .login-content-pw {
-  gap: 15px;
+  gap: 12px;
   z-index: 2;
 }
 
@@ -532,6 +535,7 @@ input:focus {
 
 .font-21 {
   font-size: 21px;
+  margin-top: 12px;
 }
 
 .login-content-sign-up {
@@ -686,7 +690,7 @@ input:focus {
 #logo-container {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 16px;
   margin: 30px;
 }
 #logo {
@@ -799,11 +803,18 @@ input[type="radio"] {
 }
 
 .category-color {
-  height: 20px;
-  width: 20px;
+  height: 24px;
+  width: 24px;
   border-radius: 50%;
-  border: 2px solid var(--white);
+  border: 2px solid var(--grey-font);
   margin: 0 0px 0 20px;
+  cursor: pointer;
+}
+
+.category-color:hover {
+  box-shadow: 2px 2px 3px 0px black;
+  height: 28px;
+  width: 28px;
 }
 
 .bg-marketing {
@@ -1063,6 +1074,12 @@ input[type="radio"] {
   }
 }
 
+/* @media (min-width: 750px) {
+  .font-21 {
+    margin-top: 0px;
+  }
+} */
+
 @media (max-width: 320px) {
   .container {
     margin-top: 75px;
@@ -1070,6 +1087,8 @@ input[type="radio"] {
 
   .notAUser {
     height: 750px;
+    margin-left: 44px;
+    margin-right: -24px;
   }
 
   .login-content {

@@ -77,7 +77,7 @@ function renderDetails(id, classCounter) {
   <div class="flex center-row gap-xl">
     <p class="font-21">Contact Information</p>
     <div class="contact-details-edit desktop flex center-row gap-s font-16 pointer" onclick="addEditUser(${id}, ${true})">
-      <img src="../assets/img/icons/icon-to-do.svg">
+      <img style= "cursor: pointer" src="../assets/img/icons/icon-to-do.svg">
       Edit Contact
     </div>
   </div>
@@ -87,8 +87,8 @@ function renderDetails(id, classCounter) {
   }" class="font-16 contacts-text font-lightblue">${users[id].email}</a>
   <p class="font-16 bold">Phone</p>
   <p class="contacts-text">${users[id].phone}</p>
-  <button class="btn-delete-contact flex center" onclick="deleteUser(${id})"><img class="icon-white" src="../assets/img/icons/icon-delete.svg"></button>
-  <button class="btn-edit-contact mobile flex center" onclick="addEditUser(${id}, ${true})"><img class="icon-white" src="../assets/img/icons/icon-to-do.svg"></button>
+  <button class="btn-delete-contact flex center" onclick="deleteUser(${id})"><img style= "cursor: pointer" class="icon-white"  src="../assets/img/icons/icon-delete.svg"></button>
+  <button class="btn-edit-contact mobile flex center" onclick="addEditUser(${id}, ${true})"><img style= "cursor: pointer" class="icon-white" src="../assets/img/icons/icon-to-do.svg"></button>
   `;
 }
 
@@ -134,7 +134,7 @@ function renderAddEditUser(
   <div class="nc-background ">
     <div class="nc-card animationFadeInBottom">
       <div class="nc-card-close" onclick="toggleVisibility('add-edit-contact')">
-      <img src="../assets/img/icons/icon-x.svg" />
+      <img style="cursor:pointer" src="../assets/img/icons/icon-x.svg" />
       </div>
       <div class="nc-card-top">
         <img class="nc-logo desktop" src="../assets/img/logos/logo-white.png" />

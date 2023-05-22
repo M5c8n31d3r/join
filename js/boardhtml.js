@@ -17,7 +17,9 @@ function renderCard(task) {
   return /* html */ `
   <div id="${cardID}" class="task-card pointer" onclick="selectInputType(${
     task.id
-  })" draggable="true" ondragstart="drag(${task.id})" ondragend="hideDropZone()">
+  })" draggable="true" ondragstart="drag(${
+    task.id
+  })" ondragend="hideDropZone()">
         <div style="background-color: ${
           task.category.color
         }" class="taskcard-category flex center">
@@ -42,9 +44,9 @@ function renderCard(task) {
     }" class="card-touch-menu display-none">Here I am!!!</div>`;
 }
 
-function renderCardProgressbar(task){
-  if(task.subtask.length){
-    return /* html */`
+function renderCardProgressbar(task) {
+  if (task.subtask.length) {
+    return /* html */ `
   <div class="taskcard-subtasks flex center gap-s space-between"> 
           <div class="progress">
             <div class="progress-bar" role="progressbar" style="width: ${
@@ -53,8 +55,8 @@ function renderCardProgressbar(task){
           </div>
           <span class="taskcard-subtasks-done">${countDoneSubtasks(
             task.subtask
-          )}/${task.subtask.length} Done</span></div>`
-  }else{
+          )}/${task.subtask.length} Done</span></div>`;
+  } else {
     return "";
   }
 }
@@ -130,8 +132,8 @@ function showTask(id) {
   </div>
   <button class="tcb-btn-delete-task flex center" onclick="deleteTask(${
     task.id
-  })"><img class="icon-white" src="../assets/img/icons/icon-delete.svg"></button>
-  <button class="tcb-btn-edit-task flex center" onclick="loadEditTask(${id})"><img class="icon-white" src="../assets/img/icons/icon-to-do.svg"></button>
+  })"><img class="icon-white" style= "cursor: pointer" src="../assets/img/icons/icon-delete.svg"></button>
+  <button class="tcb-btn-edit-task flex center" onclick="loadEditTask(${id})"><img style= "cursor: pointer" class="icon-white" src="../assets/img/icons/icon-to-do.svg"></button>
 `;
 }
 
