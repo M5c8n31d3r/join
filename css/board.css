@@ -159,7 +159,6 @@ h2 {
 
 .tcp-prio-icon {
   width: 16px;
-
   filter: brightness(100) saturate(0);
 }
 
@@ -243,6 +242,20 @@ h2 {
   font-size: 14px !important;
 }
 
+@media (min-width: 860px) {
+  .taskcard-big {
+    background-color: var(--white);
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--box-shadow);
+    width: 50vw;
+    min-width: 623px;
+    height: fit-content;
+    position: absolute;
+    margin: auto;
+    padding: 50px;
+  }
+}
+
 @media (min-width: 800px) {
   .searchbar {
     display: flex;
@@ -281,7 +294,7 @@ h2 {
     backdrop-filter: blur(5px);
   }
 
-  .taskcard-big {
+  /* .taskcard-big {
     background-color: var(--white);
     border-radius: var(--border-radius-xl);
     box-shadow: var(--box-shadow);
@@ -291,7 +304,7 @@ h2 {
     position: absolute;
     margin: auto;
     padding: 50px;
-  }
+  } */
 
   .tcb-user-line {
     padding-bottom: 25px;

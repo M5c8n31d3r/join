@@ -43,6 +43,7 @@
 }
 
 .back-arrow {
+  cursor: pointer;
   position: absolute;
   right: 34px;
   top: 100px;
@@ -228,7 +229,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-@media (min-width: 860px) {
+@media (min-width: 800px) {
   .contacts-col-l,
   .contacts-col-r {
     padding-left: calc(48px + var(--nav-width-d));
@@ -292,6 +293,7 @@ input::-webkit-inner-spin-button {
 
   .back-arrow {
     display: none;
+    cursor: pointer;
   }
 
   .blue-line {

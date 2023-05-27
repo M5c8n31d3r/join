@@ -260,7 +260,7 @@ function loadEditTask(id) {
   btnMobile.innerHTML = "Save";
 
   subtasks.innerHTML = tcbRenderSubtasks(tasks[id]);
-  assignedTo.innerHTML = renderUser(tasks[id]);
+  // assignedTo.innerHTML = renderUser(tasks[id]);
 }
 
 /**

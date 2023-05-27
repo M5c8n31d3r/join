@@ -21,14 +21,17 @@
 
 .add-task-btn-create-m {
   position: fixed;
-  top: 13px;
-  right: 24px;
+  /* top: 13px;
+  right: 24px; */
+  top: 4px;
+  right: 80px;
   display: flex;
   z-index: 10;
 }
 
-.back-arrow{
-  filter: invert(0%) sepia(0%) saturate(7469%) hue-rotate(217deg) brightness(108%) contrast(108%) !important;
+.back-arrow {
+  filter: invert(0%) sepia(0%) saturate(7469%) hue-rotate(217deg)
+    brightness(108%) contrast(108%) !important;
 }
 
 /* template */
@@ -43,7 +46,7 @@
 
 .addtask-background {
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   right: 0;
   left: 0;
@@ -79,11 +82,30 @@ h1 {
   margin: 9px 0;
 }
 
+/* --------------------------------------------------------------------------- */
+
 @media (max-width: 445px) {
   .add-task-prio-row {
     flex-direction: column;
   }
 }
+
+/* --------------------------------------------------------------------------- */
+
+@media (max-width: 800px) {
+  .addtask-overlay {
+    position: relative;
+    background-color: var(--grey-bg);
+    max-width: 1116px;
+    height: fit-content;
+    max-height: 100%;
+    overflow: auto;
+    padding: 63px 74px;
+    border-radius: var(--border-radius-xl);
+  }
+}
+
+/* --------------------------------------------------------------------------- */
 
 @media (min-width: 1000px) {
   .add-task-form {
@@ -138,6 +160,7 @@ h1 {
     position: relative;
     background-color: var(--grey-bg);
     max-width: 1116px;
+
     height: fit-content;
     max-height: 100%;
     overflow: auto;

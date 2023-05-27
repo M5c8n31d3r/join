@@ -31,9 +31,11 @@
 
 .icon-arrow-back-black {
   cursor: pointer;
-
   right: 100px;
 }
+/* .icon-arrow-back-black:hover {
+  color: var(--lightblue);
+} */
 
 .sticky {
   position: sticky;

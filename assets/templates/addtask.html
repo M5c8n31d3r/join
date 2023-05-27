@@ -1,6 +1,6 @@
 <div class="addtask-body" onclick="hideElement('dropdown-list-assigned-to')">
   <div class="addtask-card-close" onclick="toggleVisibility('addtask-dialog')">
-    <img src="../assets/img/icons/icon-x.svg" />
+    <img style="cursor: pointer;" src="../assets/img/icons/icon-x.svg" />
   </div>
   <h1 id="addtask-card-headline">Add Task</h1>
   <div id="task-added-infobox" class="infobox display-none">
@@ -46,11 +46,12 @@
               <div class="category-color display-none" id="new-category-color"></div>
             </div>
             <div id="category-dropdown-arrow" onclick="toggleDropdown('category')" class="dropdown-arrow">
-              <img style="cursor:pointer" src="../assets/img/icons/icon-dopdown-arrow.svg" />
+              <img class="icon-color" style="cursor:pointer" src="../assets/img/icons/icon-dopdown-arrow.svg" />
             </div>
             <div id="dropdown-accept" class="flex display-none">
               <div class="icon-dropdown icon-dropdown-left center">
-                <img onclick="clearInput()" class="" style="cursor:pointer" src="../assets/img/icons/icon-x.svg" />
+                <img onclick="clearInput()" class="icon-color" style="cursor:pointer"
+                  src="../assets/img/icons/icon-x.svg" />
               </div>
               <div class="icon-dropdown center">
                 <img onclick="saveNewCategory()" class="svg-white" style="cursor:pointer"
@@ -93,8 +94,9 @@
             <div id="new-assigned-to-user-inputs" class="flex">
               <input id="assigned-to-user-input" disabled type="text" placeholder="Select contact to assign" />
             </div>
-            <div id="assigned-to-dropdown-arrow" onclick="toggleDropdown('assigned-to')" class="dropdown-arrow">
-              <img style="cursor: pointer" src="../assets/img/icons/icon-dopdown-arrow.svg" />
+            <div id="assigned-to-dropdown-arrow" onclick="toggleDropdown('assigned-to')"
+              class="dropdown-arrow icon-color">
+              <img style="cursor:pointer" src="../assets/img/icons/icon-dopdown-arrow.svg" />
             </div>
             <div id="dropdown-accept-user" class="flex display-none">
               <div class="icon-dropdown icon-dropdown-left center">
@@ -128,7 +130,7 @@
       <div class="form-inputs center-column">
         <label for="task-due-date">Due date</label>
         <div class="input-bar margin0">
-          <input style="cursor: pointer" required id="task-due-date" type="date" class="margin0"
+          <input style="cursor: pointer" required id="task-due-date" type="date" class="margin0 "
             placeholder="dd/mm/yyyy" />
         </div>
         <div class="input-alert-box">
@@ -174,8 +176,8 @@
         <label for="task-subtask">Subtasks</label>
         <div class="dropdown flex center">
           <input id="task-subtask" type="text" placeholder="Add new Subtask" class="dropdown-input" />
-          <div id="btn-subtask" onclick="addSubtask()" class="dropdown-arrow flex center-row">
-            <img style="cursor: pointer" src="../assets/img/icons/icon-plus.svg" />
+          <div id="btn-subtask" onclick="addSubtask()" class="dropdown-arrow flex center-row icon-color">
+            <img style="cursor:pointer" src="../assets/img/icons/icon-plus.svg" />
           </div>
         </div>
         <div class="input-alert-box">
