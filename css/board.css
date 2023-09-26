@@ -239,7 +239,7 @@ h2 {
 }
 
 .ctm-small {
-  font-size: 14px !important;
+  font-size: 30px !important;
 }
 
 @media (min-width: 860px) {
@@ -262,6 +262,7 @@ h2 {
     align-items: center;
     width: 300px;
     height: 51px;
+    margin-top: 12px;
   }
 
   .progress-cols {
