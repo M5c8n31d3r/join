@@ -23,8 +23,8 @@
   position: fixed;
   /* top: 13px;
   right: 24px; */
-  top: 4px;
-  right: 80px;
+  top: 0px;
+  right: 96px;
   display: flex;
   z-index: 10;
 }

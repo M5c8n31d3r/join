@@ -146,7 +146,7 @@ function showTouchMenu(cardID) {
     function (cardMenu) {
       hideElement("touch-menu" + cardID);
     },
-    2000,
+    4000,
     cardMenu
   );
 }

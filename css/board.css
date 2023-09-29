@@ -170,7 +170,7 @@ h2 {
   background-color: var(--darkblue);
   position: absolute;
   right: 22px;
-  bottom: calc(100px + var(--nav-height-m));
+  bottom: calc(66px + var(--nav-height-m));
 }
 
 .tcb-btn-edit-task {
@@ -181,7 +181,7 @@ h2 {
   background-color: var(--darkblue);
   position: absolute;
   right: 22px;
-  bottom: calc(41px + var(--nav-height-m));
+  bottom: calc(14px + var(--nav-height-m));
 }
 
 .tcb-btn-edit-task img {
@@ -256,7 +256,7 @@ h2 {
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 915px) {
   .searchbar {
     display: flex;
     align-items: center;

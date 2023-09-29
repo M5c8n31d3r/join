@@ -232,7 +232,7 @@ input::-webkit-inner-spin-button {
 @media (min-width: 800px) {
   .contacts-col-l,
   .contacts-col-r {
-    padding-left: calc(48px + var(--nav-width-d));
+    padding-left: calc(-22px + var(--nav-width-d));
   }
 }
 
